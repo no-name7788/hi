@@ -10,7 +10,7 @@
  **/
 const axios = require('axios');
 const fs = require('fs-extra')
-const { plugins,plugindb, remove, isUrl,Module_Exports , tlang , Module_Exports , name } = require('../lib')
+const { plugins,plugindb, remove, isUrl,Module_Exports , tlang  , name } = require('../lib')
 //---------------------------------------------------------------------------
 Module_Exports({
         kingcmd: "plugins",
