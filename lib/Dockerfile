@@ -1,8 +1,8 @@
-FROM quay.io/sampandey001/secktor
-RUN git clone https://github.com/SuhailTechInfo/Secktor-bot /root/SuhailTech_BOt
-WORKDIR /root/SuhailTech_BOt/
+FROM quay.io/maherzubair/sigma-md
+RUN git clone https://github.com/ali-khan77/same-md /root/ali-khan77/same-md
+WORKDIR /root/ali-khan77/same-mdt/
 RUN npm install npm@latest
-RUN yarn install --network-concurrency 1
+RUN npm install
 EXPOSE 8000
 CMD ["npm", "start"]
  
