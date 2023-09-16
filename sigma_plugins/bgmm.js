@@ -1,4 +1,4 @@
-const {TelegraPh , bgms, Module_Exports  } = require('../lib/')
+const {TelegraPh , bgms } = require('../lib/')
 
 const ffmpeg = require('fluent-ffmpeg');
 const axios = require('axios')
