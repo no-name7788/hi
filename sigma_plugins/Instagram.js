@@ -1,4 +1,4 @@
-const { Insta,Module_Exports , name, Module_Exports , prefix } = require('../lib')
+const { Insta , name, Module_Exports , prefix } = require('../lib')
 Module_Exports({
         kingcmd: "insta",
         shortcut  : ['ig','instagram'],
