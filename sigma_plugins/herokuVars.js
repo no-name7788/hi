@@ -8,7 +8,7 @@
 
 
 const Config = require('../Setting')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,cmd } = require("../lib");
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,Module_Exports } = require("../lib");
 const axios = require('axios');
 const appName = Config.HEROKU_APP_NAME;
 const authToken = Config.HEROKU_API_KEY;
