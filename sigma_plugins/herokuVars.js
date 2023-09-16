@@ -8,7 +8,7 @@
 
 
 
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,Module_Exports,name } = require("../lib");
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,Module_Exports } = require("../lib");
 const axios = require('axios');
 const appName = name.HEROKU_APP_NAME;
 const authToken = name.HEROKU_API_KEY;
@@ -16,7 +16,7 @@ const fetch = require('node-fetch');
 
 if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY ){
         
-         Module_Exports,name({
+         Module_Exports({
              kingcmd: "setsudo",
              infocmd: "Makes wa me of quoted or mentioned user.",
              kingclass: "tools",
@@ -48,7 +48,7 @@ fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
          })
 
 //--------------------------------------------------------------------
- Module_Exports,name({
+ Module_Exports({
              kingcmd: "getsudo",
              infocmd: "Makes wa me of quoted or mentioned user.",
              kingclass: "tools",
@@ -57,7 +57,7 @@ fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
 async(Void, citel, text) => {  return await  citel.reply(global.sudo);})
 //-------------------------------------------------------------------------
 
- Module_Exports,name({
+ Module_Exports({
              kingcmd: "delsudo",
              infocmd: "Makes wa me of quoted or mentioned user.",
              kingclass: "tools",
@@ -102,7 +102,7 @@ fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
  //------------------------------------------------------------------------       
         
         
-Module_Exports,name({
+Module_Exports({
         kingcmd: "allvar",
         shortcut:['getallvar','allvars'],
         infocmd: "To get All  Heroku Vars",
@@ -130,7 +130,7 @@ fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, { headers })
   
 });
 //----------------------------------------------------------------------------------
-Module_Exports,name({
+Module_Exports({
         kingcmd: "addvar",
         infocmd: "To Set Heroku Vars",
         kingclass: "tools",
@@ -162,7 +162,7 @@ fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
   });
 //-----------------------------------------------------------------------------------
 
-Module_Exports,name({
+Module_Exports({
         kingcmd: "getvar",
         infocmd: "To Get A Heroku Var",
         kingclass: "tools",
@@ -190,7 +190,7 @@ fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, { headers })
 
 
 //----------------------------------------------------------------------------------
-Module_Exports,name({
+Module_Exports({
         kingcmd: "setvar",
         infocmd: "To Set Heroku Vars",
         kingclass: "tools",
