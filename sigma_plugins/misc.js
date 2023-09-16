@@ -1,57 +1,18 @@
-/**
 
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-//                                                                                                      //
-//                                ＷＨＡＴＳＡＰＰ ＢＯＴ－ＭＤ ＢＥＴＡ                                   //
-//                                                                                                      // 
-//                                         Ｖ：１．０．１                                                // 
-//                                                                                                      // 
-//            ███████╗██╗   ██╗██╗  ██╗ █████╗ ██╗██╗         ███╗   ███╗██████╗                        //
-//            ██╔════╝██║   ██║██║  ██║██╔══██╗██║██║         ████╗ ████║██╔══██╗                       //
-//            ███████╗██║   ██║███████║███████║██║██║         ██╔████╔██║██║  ██║                       //
-//            ╚════██║██║   ██║██╔══██║██╔══██║██║██║         ██║╚██╔╝██║██║  ██║                       //
-//            ███████║╚██████╔╝██║  ██║██║  ██║██║███████╗    ██║ ╚═╝ ██║██████╔╝                       //
-//            ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝    ╚═╝     ╚═╝╚═════╝                        //
-//                                                                                                      //
-//                                                                                                      //
-//                                                                                                      //
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-
-CURRENTLY RUNNING ON BETA VERSION!!
-*
-   * @project_name : Suhail-Md
-   * @author : Suhail Tech Info
-   * @youtube : https://www.youtube.com/SuhailTechInfo
-   * @description : Suhail-Md ,A Multi-functional whatsapp user bot.
-   * @version 1.0.1
-*
-   * Licensed under the  GPL-3.0 License;
-* 
-   * Created By Suhail Tech Info.
-   * © 2023 Suhail-Md.
-* 
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-**/
  
- const {tlang, getAdmin, prefix, Config, sck,sck1, fetchJson,getBuffer, runtime,cmd } = require('../lib')
+ const {tlang, getAdmin, prefix, name, sck,sck1, fetchJson,getBuffer, runtime,Module_Exports } = require('../lib')
  let { dBinary, eBinary } = require("../lib/binary");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
  const fs = require('fs')
  const axios = require('axios')
  const fetch = require("node-fetch");
   //---------------------------------------------------------------------------
- cmd({
-    pattern: "welcome",
-    alias:["setwelcome"],
-    desc: "sets welcome message in specific group.",
-    category: "misc",
- filename: __filename
+ Module_Exports({
+    kingcmd: "welcome",
+    shortcut:["setwelcome"],
+    infocmd: "sets welcome message in specific group.",
+    kingclass: "misc",
+ kingpath: __filename
 },
 async(Void, citel, text,{ isCreator }) => {
 
@@ -68,7 +29,7 @@ async(Void, citel, text,{ isCreator }) => {
       var ppuser;
       let num = citel.sender;
   
-      var welcome_messages = text.replace(/@pp/g, '').replace(/@user/gi, `@${num.split("@")[0]}`).replace(/@gname/gi, metadata.subject).replace(/@desc/gi, metadata.desc);
+      var welcome_messages = text.replace(/@pp/g, '').replace(/@user/gi, `@${num.split("@")[0]}`).replace(/@gname/gi, metadata.subject).replace(/@infocmd/gi, metadata.infocmd);
       try {  ppuser = await Void.profilePictureUrl(num, 'image') }catch { ppuser = 'https://telegra.ph/file/93f1e7e8a1d7c4486df9e.jpg' ; }
       return await Void.sendMessage(citel.chat, { image: { url: ppuser }, caption: welcome_messages,} )
 
@@ -85,12 +46,12 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
  //---------------------------------------------------------------------------
-cmd({
-    pattern: "goodbye",
-    alias: ["setgoodbye","setbye"],
-    desc: "sets goodbye message in specific group.",
-    category: "misc",
- filename: __filename
+Module_Exports({
+    kingcmd: "goodbye",
+    shortcut: ["setgoodbye","setbye"],
+    infocmd: "sets goodbye message in specific group.",
+    kingclass: "misc",
+ kingpath: __filename
 },
 async(Void, citel, text,{ isCreator }) => {
 
@@ -106,7 +67,7 @@ async(Void, citel, text,{ isCreator }) => {
     let metadata = await Void.groupMetadata(citel.chat);
     var ppuser;
     let num = citel.sender;
-    var goodbye_messages = text.replace(/@pp/g, '').replace(/@user/gi, `@${num.split("@")[0]}`).replace(/@gname/gi, metadata.subject).replace(/@desc/gi, metadata.desc);
+    var goodbye_messages = text.replace(/@pp/g, '').replace(/@user/gi, `@${num.split("@")[0]}`).replace(/@gname/gi, metadata.subject).replace(/@infocmd/gi, metadata.infocmd);
     try {  ppuser = await Void.profilePictureUrl(num, 'image') }catch { ppuser = 'https://telegra.ph/file/93f1e7e8a1d7c4486df9e.jpg' ; }
 
         return await Void.sendMessage(citel.chat, { image: { url: ppuser }, caption: goodbye_messages, })
@@ -122,13 +83,13 @@ async(Void, citel, text,{ isCreator }) => {
 })
  //---------------------------------------------------------------------------
  //---------------------------------------------------------------------------
-/* cmd({
-             pattern: "vv",
-             alias : ['viewonce','retrive'],
-             desc: "Flips given text.",
-             category: "misc",
+/* Module_Exports({
+             kingcmd: "vv",
+             shortcut : ['viewonce','retrive'],
+             infocmd: "Flips given text.",
+             kingclass: "misc",
              use: '<query>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text) => {
 if(!citel.quoted) return citel.reply("```Uh Please Reply A ViewOnce Message```")
@@ -156,11 +117,11 @@ else return citel.reply("```This is Not A ViewOnce Message```")
 
      */
  //---------------------------------------------------------------------------
- cmd({
-        pattern: "quoted",
-        desc: "get reply Message from Replied Message",
-        category: "user",
-        filename: __filename
+ Module_Exports({
+        kingcmd: "quoted",
+        infocmd: "get reply Message from Replied Message",
+        kingclass: "user",
+        kingpath: __filename
     },
     async(Void, citel, text) => {
         if(!citel.quoted) return await citel.send("*_Uhh Dear, Reply to a Message_*")
@@ -183,11 +144,11 @@ else return citel.reply("```This is Not A ViewOnce Message```")
     })
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "blocklist",
-        desc: "get list of all Blocked Numbers",
-        category: "user",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "blocklist",
+        infocmd: "get list of all Blocked Numbers",
+        kingclass: "user",
+        kingpath: __filename,
         use: '<text>',
     },
     async(Void, citel, text , {isCreator}) => {
@@ -206,11 +167,11 @@ else return citel.reply("```This is Not A ViewOnce Message```")
     }
     )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "location",
-             desc: "Adds *readmore* in given text.",
-             category: "user",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "location",
+             infocmd: "Adds *readmore* in given text.",
+             kingclass: "user",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
           if (!text) return await citel.reply(`Give Coordinates To Send Location\n *Example:* ${prefix}location 24.121231,55.1121221`);
@@ -221,7 +182,7 @@ else return citel.reply("```This is Not A ViewOnce Message```")
 let txt  = "*----------LOCATION------------*"
    txt +="``` \n Sending Location Of Given Data: ";
    txt +="\n Latitude     :  "+cord1;
-   txt +="\n Longitude  :  "+cord2 +"```\n"+Config.caption;
+   txt +="\n Longitude  :  "+cord2 +"```\n"+name.caption;
 
 await citel.reply (txt);
 
@@ -234,11 +195,11 @@ await citel.reply (txt);
 
 /*
 
-cmd({
-             pattern: "exec",
-             desc: "Evaluates quoted code with given language.",
-             category: "misc",
-             filename: __filename
+Module_Exports({
+             kingcmd: "exec",
+             infocmd: "Evaluates quoted code with given language.",
+             kingclass: "misc",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
   if (!citel.quoted) return citel.reply("*Reply to A Code Of Statements to Execute*")
@@ -263,11 +224,11 @@ cmd({
 
      //---------------------------------------------------------------------------
 
- cmd({
-             pattern: "getpp",
-             desc: "Get Profile Pic For Given User",
-             category: "user",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "getpp",
+             infocmd: "Get Profile Pic For Given User",
+             kingclass: "user",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
 
@@ -282,7 +243,7 @@ if (!citel.quoted) return citel.reply (`*Please Reply To A User*`)
                             //quoted: "923184474176@s.whatsapp.net", 
                             //contextInfo: { forwardingScore: 1999999, isForwarded: false },
                             image: { url: pfp },
-                            caption: '  *---Profile Pic Is Here---*\n'+Config.caption,
+                            caption: '  *---Profile Pic Is Here---*\n'+name.caption,
                             footer: tlang().footer,
                             headerType: 4,
                    
@@ -293,12 +254,12 @@ if (!citel.quoted) return citel.reply (`*Please Reply To A User*`)
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "readmore",
-             alias:["rmore",'readmor'],
-             desc: "Adds *readmore* in given text.",
-             category: "misc",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "readmore",
+             shortcut:["rmore",'readmor'],
+             infocmd: "Adds *readmore* in given text.",
+             kingclass: "misc",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
             if(!text) {text = `*Uhh Dear, Give Text, Eg:- _.readmor text1 readmore text2_*`; }
@@ -307,12 +268,12 @@ if (!citel.quoted) return citel.reply (`*Please Reply To A User*`)
          }
      )
   //---------------------------------------------------------------------------
-cmd({
-            pattern: "whois",
-            desc: "Makes photo of replied sticker.",
-            category: "user",
+Module_Exports({
+            kingcmd: "whois",
+            infocmd: "Makes photo of replied sticker.",
+            kingclass: "user",
             use: '<reply to any person>',
-            filename: __filename
+            kingpath: __filename
         },
 async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`Please Reply To A Person`);
@@ -350,11 +311,11 @@ async(Void, citel, text) => {
         }
     )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "vcard",
-             desc: "Create Contact by given name.",
-             category: "user",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "vcard",
+             infocmd: "Create Contact by given name.",
+             kingclass: "user",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
 
@@ -380,11 +341,11 @@ const vcard = 'BEGIN:VCARD\n' +
      //---------------------------------------------------------------------------
 /*
 
- cmd({
-             pattern: "calc",
-             desc: "Adds *readmore* in given text.",
-             category: "misc",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "calc",
+             infocmd: "Adds *readmore* in given text.",
+             kingclass: "misc",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
 let func  =  text.split(";")[0];
@@ -427,11 +388,11 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
 */
 
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "take",
-             desc: "Makes sticker of replied image/video.",
-             category: "sticker",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "take",
+             infocmd: "Makes sticker of replied image/video.",
+             kingclass: "sticker",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
              if (!citel.quoted) return citel.reply(`*Reply to a Sticker Sir.*`);
@@ -442,10 +403,10 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
              if (text) {
                 let anu = text.split("|");
                  pack = anu[0] !== "" ? anu[0] : citel.pushName + '♥️';
-                 author = anu[1] !== "" ? anu[1] : Config.packname;
+                 author = anu[1] !== "" ? anu[1] : name.packname;
              } else {
                  pack = citel.pushName;
-                 author =Config.packname;
+                 author =name.packname;
              }
                  let media = await citel.quoted.download();
                 let sticker = new Sticker(media, {
@@ -462,12 +423,12 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "uptime",
-             alias: ["runtime"],
-             desc: "Tells runtime/uptime of bot.",
-             category: "misc",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "uptime",
+             shortcut: ["runtime"],
+             infocmd: "Tells runtime/uptime of bot.",
+             kingclass: "misc",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
@@ -475,11 +436,11 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "wa",
-             desc: "Makes wa me of quoted or mentioned user.",
-             category: "user",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "wa",
+             infocmd: "Makes wa me of quoted or mentioned user.",
+             kingclass: "user",
+             kingpath: __filename
          },
          async(Void, citel, text) => {
              if(!citel.quoted && !citel.mentionedJid) return await citel.reply(`*Please Reply Or Mention A User*`);
@@ -489,19 +450,19 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "mee",
-             desc: "Makes wa me for user.",
-             category: "user",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "mee",
+             infocmd: "Makes wa me for user.",
+             kingclass: "user",
+             kingpath: __filename
          },
          async(Void, citel, text) => {  let user = citel.sender.split('@')[0]  ; return await citel.reply( `https://wa.me/${user}` ); })
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "pick",
-             desc: "Pics random user from Group",
-             category: "group",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "pick",
+             infocmd: "Pics random user from Group",
+             kingclass: "group",
+             kingpath: __filename
          },
          async(Void, citel, match) => {
              if (!match) return citel.reply("*Which type of User you want?*");
@@ -520,11 +481,11 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "nsfw",
-             desc: "activates and deactivates nsfw.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "nsfw",
+             infocmd: "activates and deactivates nsfw.\nuse buttons to toggle.",
+             kingclass: "misc",
+             kingpath: __filename
          },
          async(Void, citel, text,{isCreator}) => {
              let checkgroup = await sck.findOne({ id: citel.chat })
@@ -544,12 +505,12 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
  }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "npm",
-             desc: "download mp4 from url.",
-             category: "search",
+ Module_Exports({
+             kingcmd: "npm",
+             infocmd: "download mp4 from url.",
+             kingclass: "search",
              use: '<package name>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text) => {
              if (!text) return citel.reply('Please give me package name.📦')
@@ -560,12 +521,12 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "fliptext",
-             desc: "Flips given text.",
-             category: "misc",
+ Module_Exports({
+             kingcmd: "fliptext",
+             infocmd: "Flips given text.",
+             kingclass: "misc",
              use: '<query>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text) => {
              if (!text) return citel.reply(`Example : ${prefix}fliptext Back in black`)
@@ -575,14 +536,14 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "downmp4",
+ Module_Exports({
+             kingcmd: "downmp4",
   
-             alias:['mp4down','mp4fromurl'],
-             desc: "download mp4 from url.",
-             category: "downloader",
+             shortcut:['mp4down','mp4fromurl'],
+             infocmd: "download mp4 from url.",
+             kingclass: "downloader",
              use: '<url>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text) => {
              if (!text) return citel.reply(`_give me Video Link ?_`);
@@ -607,11 +568,11 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "events",
-             desc: "activates and deactivates events.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "events",
+             infocmd: "activates and deactivates events.\nuse buttons to toggle.",
+             kingclass: "misc",
+             kingpath: __filename
          },
          async(Void, citel, text,{isCreator}) => {
              let checkgroup = await sck.findOne({ id: citel.chat })
@@ -631,12 +592,12 @@ return citel.reply(`Give me Query Like :  ${prefix}calc add;10;50 `);
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "emix",
-             desc: "Mixes two emojies.",
-             category: "sticker",
+ Module_Exports({
+             kingcmd: "emix",
+             infocmd: "Mixes two emojies.",
+             kingclass: "sticker",
              use: '<query>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
              if (!text) return citel.reply(`Example : ${prefix}emix 😅,🤔`);
@@ -651,8 +612,8 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
 let media =await getBuffer(data.results[0].url)
 
 let sticker = new Sticker(media, {
-                    pack: Config.packname, 
-                    author: Config.author, 
+                    pack: name.packname, 
+                    author: name.author, 
                     type: StickerTypes.FULL ,
                     categories: ["🤩", "🎉"], 
                     id: "12345", 
@@ -669,12 +630,12 @@ const buffer = await sticker.toBuffer();
 
  
 
- cmd({
-             pattern: "lydea",
-             alias : ["chatbot"],
-             desc: "activates and deactivates chatbot.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "lydea",
+             shortcut : ["chatbot"],
+             infocmd: "activates and deactivates chatbot.\nuse buttons to toggle.",
+             kingclass: "misc",
+             kingpath: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
              if (!isCreator) return citel.reply(tlang().owner)
@@ -704,7 +665,7 @@ const buffer = await sticker.toBuffer();
                             let buttons = [{  buttonId: `${prefix}chatbot on`,   buttonText: {   displayText: "Turn On" },  type: 1, },
                                           {   buttonId: `${prefix}chatbot off`,  buttonText: { displayText: "Turn Off" },   type: 1, }];
                                            
-                            await Void.sendButtonText(citel.chat, buttons, `Lydea Status: ${chatbott.worktype} `, Config.botname, citel);
+                            await Void.sendButtonText(citel.chat, buttons, `Lydea Status: ${chatbott.worktype} `, name.botname, citel);
                         */
                      }
              }
@@ -712,12 +673,12 @@ const buffer = await sticker.toBuffer();
  
       })
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "ebinary",
-             desc: "encode binary",
-             category: "misc",
+ Module_Exports({
+             kingcmd: "ebinary",
+             infocmd: "encode binary",
+             kingclass: "misc",
              use: '<query>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
              try {
@@ -732,12 +693,12 @@ const buffer = await sticker.toBuffer();
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "dbinary",
-             desc: "decode binary",
-             category: "misc",
+ Module_Exports({
+             kingcmd: "dbinary",
+             infocmd: "decode binary",
+             kingclass: "misc",
              use: '<query>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
              try {
@@ -752,14 +713,14 @@ const buffer = await sticker.toBuffer();
 
 //-----------------------------------------------------------------------------------
 
-if(Config.WORKTYPE != 'private')
+if(name.WORKTYPE != 'private')
 {
  
-cmd({
-  pattern: "bot",
-  desc: "activates and deactivates bot.\nuse buttons to toggle.",
-  category: "misc",
-  filename: __filename
+Module_Exports({
+  kingcmd: "bot",
+  infocmd: "activates and deactivates bot.\nuse buttons to toggle.",
+  kingclass: "misc",
+  kingpath: __filename
 },
 async(Void, citel, text,{isCreator}) => {
   if (!citel.isGroup) return citel.reply(tlang().group);
@@ -818,11 +779,11 @@ async(Void, citel, text,{isCreator}) => {
 } // if Statements
      //---------------------------------------------------------------------------
  /*
- cmd({
-             pattern: "antispam",
-             desc: "Kick Spamers From Group.\nuse buttons to toggle.",
-             category: "group",
-             filename: __filename
+ Module_Exports({
+             kingcmd: "antispam",
+             infocmd: "Kick Spamers From Group.\nuse buttons to toggle.",
+             kingclass: "group",
+             kingpath: __filename
          },
          async(Void, citel, text , {isCreator}) => {
              if (!citel.isGroup) return citel.reply(tlang().group);
@@ -853,20 +814,20 @@ else return citel.reply(`Antispam : kick Users Who Spamming in Groupn\n\nAntispa
  })
  */
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "antilink",
-        desc: "activates and deactivates antilink.\nuse buttons to toggle.",
-        category: "group",
-        filename: __filename
+     Module_Exports({
+        kingcmd: "antilink",
+        infocmd: "activates and deactivates antilink.\nuse buttons to toggle.",
+        kingclass: "group",
+        kingpath: __filename
     },
     async(Void, citel, text , {isCreator}) => {
-        function _0x1dd1(_0x190e77,_0x3842b6){const _0x3a2918=_0x3a29();return _0x1dd1=function(_0x1dd110,_0xc0890d){_0x1dd110=_0x1dd110-0x12f;let _0x2f3ec3=_0x3a2918[_0x1dd110];return _0x2f3ec3;},_0x1dd1(_0x190e77,_0x3842b6);}const _0x537363=_0x1dd1;(function(_0x2a498c,_0xe9d7f2){const _0x20fff1=_0x1dd1,_0x275af4=_0x2a498c();while(!![]){try{const _0x1bf60a=-parseInt(_0x20fff1(0x135))/0x1+-parseInt(_0x20fff1(0x14a))/0x2*(-parseInt(_0x20fff1(0x14b))/0x3)+parseInt(_0x20fff1(0x12f))/0x4*(parseInt(_0x20fff1(0x14e))/0x5)+-parseInt(_0x20fff1(0x139))/0x6+parseInt(_0x20fff1(0x13b))/0x7+-parseInt(_0x20fff1(0x136))/0x8+-parseInt(_0x20fff1(0x13c))/0x9*(parseInt(_0x20fff1(0x148))/0xa);if(_0x1bf60a===_0xe9d7f2)break;else _0x275af4['push'](_0x275af4['shift']());}catch(_0x96c32a){_0x275af4['push'](_0x275af4['shift']());}}}(_0x3a29,0xebdc8));if(!citel['isGroup'])return citel['reply'](tlang()[_0x537363(0x141)]);const groupAdmins=await getAdmin(Void,citel),isAdmins=citel[_0x537363(0x130)]?groupAdmins[_0x537363(0x143)](citel[_0x537363(0x131)]):![];if(!isAdmins&&!isCreator)return citel[_0x537363(0x149)](tlang()[_0x537363(0x137)]);let checkinfo=await sck['findOne']({'id':citel[_0x537363(0x142)]})||await new sck({'id':citel[_0x537363(0x142)]})[_0x537363(0x13f)](),textt=text?text[_0x537363(0x151)]()['trim']():![],action=textt?textt[_0x537363(0x13e)]('\x20')[0x0]:![];function _0x3a29(){const _0x5d7267=['3041848KwfWrd','admin','delete','3314166wTfUba','antilink\x20kick/delete/off_*','3559514diYetN','9CvvJaC','*_Antilink\x20','split','save','updateOne','group','chat','includes','send','deact','off','*_Uhh\x20Dear,\x20Please\x20Provide\x20Valid\x20Instruction_*\x0a*Eg:\x20_','1361390agAqTj','reply','26518zyirsz','237MuHrUF','\x0a\x0a*Antilink\x20Modes:*\x0a\x20\x20.antilink\x20kick\x20(Delete\x20Links\x20&\x20Kick\x20Senders)\x0a\x20\x20.antilink\x20delete\x20(Delete\x20Links\x20Only)\x0a\x20\x20.antilink\x20off\x20(Disable\x20Antilink\x20in\x20chat)\x0a\x0a\x0a','disable','126675qiyDRV','*_Anti_Link\x20Succesfully\x20set\x20to\x20kick\x20link\x20senders!_*','kick','toLowerCase','caption','Disabled','startsWith','antilink','196ZzhnRb','isGroup','sender','false','*_Anti_Link\x20Disabled\x20Succesfully!_*','*Current\x20Mode:*\x20_','762559wgiCsM'];_0x3a29=function(){return _0x5d7267;};return _0x3a29();}if(!action)return await citel[_0x537363(0x144)](_0x537363(0x13d)+(checkinfo[_0x537363(0x155)]===_0x537363(0x132)?_0x537363(0x153):'Enabled')+'\x20in\x20this\x20Group!_*\x20\x0a\x20'+(checkinfo[_0x537363(0x155)]==='false'?'':_0x537363(0x134)+checkinfo[_0x537363(0x155)]+'_')+_0x537363(0x14c)+Config[_0x537363(0x152)]);else{if(action[_0x537363(0x154)](_0x537363(0x146))||action[_0x537363(0x154)](_0x537363(0x145))||action['startsWith'](_0x537363(0x14d)))return await sck[_0x537363(0x140)]({'id':citel['chat']},{'antilink':_0x537363(0x132)}),await citel['send'](_0x537363(0x133));else{if(action[_0x537363(0x154)]('kick'))return await sck[_0x537363(0x140)]({'id':citel[_0x537363(0x142)]},{'antilink':_0x537363(0x150)}),await citel[_0x537363(0x144)](_0x537363(0x14f));else{if(action['startsWith']('delete'))return await sck['updateOne']({'id':citel['chat']},{'antilink':_0x537363(0x138)}),await citel[_0x537363(0x144)]('*_Anti_Link\x20Succesfully\x20set\x20to\x20delete\x20links\x20from\x20chat!_*');else return await citel[_0x537363(0x144)](_0x537363(0x147)+prefix+_0x537363(0x13a));}}}
+        function _0x1dd1(_0x190e77,_0x3842b6){const _0x3a2918=_0x3a29();return _0x1dd1=function(_0x1dd110,_0xc0890d){_0x1dd110=_0x1dd110-0x12f;let _0x2f3ec3=_0x3a2918[_0x1dd110];return _0x2f3ec3;},_0x1dd1(_0x190e77,_0x3842b6);}const _0x537363=_0x1dd1;(function(_0x2a498c,_0xe9d7f2){const _0x20fff1=_0x1dd1,_0x275af4=_0x2a498c();while(!![]){try{const _0x1bf60a=-parseInt(_0x20fff1(0x135))/0x1+-parseInt(_0x20fff1(0x14a))/0x2*(-parseInt(_0x20fff1(0x14b))/0x3)+parseInt(_0x20fff1(0x12f))/0x4*(parseInt(_0x20fff1(0x14e))/0x5)+-parseInt(_0x20fff1(0x139))/0x6+parseInt(_0x20fff1(0x13b))/0x7+-parseInt(_0x20fff1(0x136))/0x8+-parseInt(_0x20fff1(0x13c))/0x9*(parseInt(_0x20fff1(0x148))/0xa);if(_0x1bf60a===_0xe9d7f2)break;else _0x275af4['push'](_0x275af4['shift']());}catch(_0x96c32a){_0x275af4['push'](_0x275af4['shift']());}}}(_0x3a29,0xebdc8));if(!citel['isGroup'])return citel['reply'](tlang()[_0x537363(0x141)]);const groupAdmins=await getAdmin(Void,citel),isAdmins=citel[_0x537363(0x130)]?groupAdmins[_0x537363(0x143)](citel[_0x537363(0x131)]):![];if(!isAdmins&&!isCreator)return citel[_0x537363(0x149)](tlang()[_0x537363(0x137)]);let checkinfo=await sck['findOne']({'id':citel[_0x537363(0x142)]})||await new sck({'id':citel[_0x537363(0x142)]})[_0x537363(0x13f)](),textt=text?text[_0x537363(0x151)]()['trim']():![],action=textt?textt[_0x537363(0x13e)]('\x20')[0x0]:![];function _0x3a29(){const _0x5d7267=['3041848KwfWrd','admin','delete','3314166wTfUba','antilink\x20kick/delete/off_*','3559514diYetN','9CvvJaC','*_Antilink\x20','split','save','updateOne','group','chat','includes','send','deact','off','*_Uhh\x20Dear,\x20Please\x20Provide\x20Valid\x20Instruction_*\x0a*Eg:\x20_','1361390agAqTj','reply','26518zyirsz','237MuHrUF','\x0a\x0a*Antilink\x20Modes:*\x0a\x20\x20.antilink\x20kick\x20(Delete\x20Links\x20&\x20Kick\x20Senders)\x0a\x20\x20.antilink\x20delete\x20(Delete\x20Links\x20Only)\x0a\x20\x20.antilink\x20off\x20(Disable\x20Antilink\x20in\x20chat)\x0a\x0a\x0a','disable','126675qiyDRV','*_Anti_Link\x20Succesfully\x20set\x20to\x20kick\x20link\x20senders!_*','kick','toLowerCase','caption','Disabled','startsWith','antilink','196ZzhnRb','isGroup','sender','false','*_Anti_Link\x20Disabled\x20Succesfully!_*','*Current\x20Mode:*\x20_','762559wgiCsM'];_0x3a29=function(){return _0x5d7267;};return _0x3a29();}if(!action)return await citel[_0x537363(0x144)](_0x537363(0x13d)+(checkinfo[_0x537363(0x155)]===_0x537363(0x132)?_0x537363(0x153):'Enabled')+'\x20in\x20this\x20Group!_*\x20\x0a\x20'+(checkinfo[_0x537363(0x155)]==='false'?'':_0x537363(0x134)+checkinfo[_0x537363(0x155)]+'_')+_0x537363(0x14c)+name[_0x537363(0x152)]);else{if(action[_0x537363(0x154)](_0x537363(0x146))||action[_0x537363(0x154)](_0x537363(0x145))||action['startsWith'](_0x537363(0x14d)))return await sck[_0x537363(0x140)]({'id':citel['chat']},{'antilink':_0x537363(0x132)}),await citel['send'](_0x537363(0x133));else{if(action[_0x537363(0x154)]('kick'))return await sck[_0x537363(0x140)]({'id':citel[_0x537363(0x142)]},{'antilink':_0x537363(0x150)}),await citel[_0x537363(0x144)](_0x537363(0x14f));else{if(action['startsWith']('delete'))return await sck['updateOne']({'id':citel['chat']},{'antilink':_0x537363(0x138)}),await citel[_0x537363(0x144)]('*_Anti_Link\x20Succesfully\x20set\x20to\x20delete\x20links\x20from\x20chat!_*');else return await citel[_0x537363(0x144)](_0x537363(0x147)+prefix+_0x537363(0x13a));}}}
       
 })
      //---------------------------------------------------------------------------
- cmd({ on: "body" }, async(Void, citel) => {
-   if (!Config.autoreaction) return 
-   else if (Config.autoreaction === 'true' && citel.text.startsWith(prefix)) {
+ Module_Exports({ on: "body" }, async(Void, citel) => {
+   if (!name.autoreaction) return 
+   else if (name.autoreaction === 'true' && citel.text.startsWith(prefix)) {
          const emojis = ['❤', '💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌', '🙂', '🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈', '👋']
          const emokis = emojis[Math.floor(Math.random() * (emojis.length))]
          Void.sendMessage(citel.chat, {
@@ -877,7 +838,7 @@ else return citel.reply(`Antispam : kick Users Who Spamming in Groupn\n\nAntispa
          })
      }
   
-  else if (Config.autoreaction === 'all') {
+  else if (name.autoreaction === 'all') {
          const mojis = ['💘','💝','💖','💗','💓','💞','💕','💟','❣️','💔','❤️','🧡','💛','💚','💙','💜','🤎','🖤','🤍','❤️‍','🔥','❤️‍','🩹','💯','♨️','💢','💬','👁️‍🗨️','🗨️','🗯️','💭','💤','🌐','♠️','♥️','♦️','♣️','🃏','🀄️','🎴','🎭️','🔇','🔈️','🔉','🔊','🔔','🔕','🎼','🎵','🎶','💹','🏧','🚮','🚰','♿️','🚹️','🚺️','🚻','🚼️','🚾','🛂','🛃','🛄','🛅','⚠️','🚸','⛔️','🚫','🚳','🚭️','🚯','🚱','🚷','📵','🔞','☢️','☣️','⬆️','↗️','➡️','↘️','⬇️','↙️','⬅️','↖️','↕️','↔️','↩️','↪️','⤴️','⤵️','🔃','🔄','🔙','🔚','🔛','🔜','🔝','🛐','⚛️','🕉️','✡️','☸️','☯️','✝️','☦️','☪️','☮️','🕎','🔯','♈️','♉️','♊️','♋️','♌️','♍️','♎️','♏️','♐️','♑️','♒️','♓️','⛎','🔀','🔁','🔂','▶️','⏩️','⏭️','⏯️','◀️','⏪️','⏮️','🔼','⏫','🔽','⏬','⏸️','⏹️','⏺️','⏏️','🎦','🔅','🔆','📶','📳','📴','♀️','♂️','⚧','✖️','➕','➖','➗','♾️','‼️','⁉️','❓️','❔','❕','❗️','〰️','💱','💲','⚕️','♻️','⚜️','🔱','📛','🔰','⭕️','✅','☑️','✔️','❌','❎','➰','➿','〽️','✳️','✴️','❇️','©️','®️','™️','#️⃣','*️⃣','0️⃣','1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟','🔠','🔡','🔢','🔣','🔤','🅰️','🆎','🅱️','🆑','🆒','🆓','ℹ️','🆔','Ⓜ️','🆕','🆖','🅾️','🆗','🅿️','🆘','🆙','🆚','🈁','🈂️','🈷️','🈶','🈯️','🉐','🈹','🈚️','🈲','🉑','🈸','🈴','🈳','㊗️','㊙️','🈺','🈵','🔴','🟠','🟡','🟢','🔵','🟣','🟤','⚫️','⚪️','🟥','🟧','🟨','🟩','🟦','🟪','🟫','⬛️','⬜️','◼️','◻️','◾️','◽️','▪️','▫️','🔶','🔷','🔸','🔹','🔺','🔻','💠','🔘','🔳','🔲','🕛️','🕧️','🕐️','🕜️','🕑️','🕝️','🕒️','🕞️','🕓️','🕟️','🕔️','🕠️','🕕️','🕡️','🕖️','🕢️','🕗️','🕣️','🕘️','🕤️','🕙️','🕥️','🕚️','🕦️','*️','#️','0️','1️','2️','3️','4️','5️','6️','7️','8️','9️','🛎️','🧳','⌛️','⏳️','⌚️','⏰','⏱️','⏲️','🕰️','🌡️','🗺️','🧭','🎃','🎄','🧨','🎈','🎉','🎊','🎎','🎏','🎐','🎀','🎁','🎗️','🎟️','🎫','🔮','🧿','🎮️','🕹️','🎰','🎲','♟️','🧩','🧸','🖼️','🎨','🧵','🧶','👓️','🕶️','🥽','🥼','🦺','👔','👕','👖','🧣','🧤','🧥','🧦','👗','👘','🥻','🩱','🩲','🩳','👙','👚','👛','👜','👝','🛍️','🎒','👞','👟','🥾','🥿','👠','👡','🩰','👢','👑','👒','🎩','🎓️','🧢','⛑️','📿','💄','💍','💎','📢','📣','📯','🎙️','🎚️','🎛️','🎤','🎧️','📻️','🎷','🎸','🎹','🎺','🎻','🪕','🥁','📱','📲','☎️','📞','📟️','📠','🔋','🔌','💻️','🖥️','🖨️','⌨️','🖱️','🖲️','💽','💾','💿️','📀','🧮','🎥','🎞️','📽️','🎬️','📺️','📷️','📸','📹️','📼','🔍️','🔎','🕯️','💡','🔦','🏮','🪔','📔','📕','📖','📗','📘','📙','📚️','📓','📒','📃','📜','📄','📰','🗞️','📑','🔖','🏷️','💰️','💴','💵','💶','💷','💸','💳️','🧾','✉️','💌','📧','🧧','📨','📩','📤️','📥️','📦️','📫️','📪️','📬️','📭️','📮','🗳️','✏️','✒️','🖋️','🖊️','🖌️','🖍️','📝','💼','📁','📂','🗂️','📅','📆','🗒️','🗓️','📇','📈','📉','📊','📋️','📌','📍','📎','🖇️','📏','📐','✂️','🗃️','🗄️','🗑️','🔒️','🔓️','🔏','🔐','🔑','🗝️','🔨','🪓','⛏️','⚒️','🛠️','🗡️','⚔️','💣️','🏹','🛡️','🔧','🔩','⚙️','🗜️','⚖️','🦯','🔗','⛓️','🧰','🧲','⚗️','🧪','🧫','🧬','🔬','🔭','📡','💉','🩸','💊','🩹','🩺','🚪','🛏️','🛋️','🪑','🚽','🚿','🛁','🪒','🧴','🧷','🧹','🧺','🧻','🧼','🧽','🧯','🛒','🚬','⚰️','⚱️','🏺','🕳️','🏔️','⛰️','🌋','🗻','🏕️','🏖️','🏜️','🏝️','🏟️','🏛️','🏗️','🧱','🏘️','🏚️','🏠️','🏡','🏢','🏣','🏤','🏥','🏦','🏨','🏩','🏪','🏫','🏬','🏭️','🏯','🏰','💒','🗼','🗽','⛪️','🕌','🛕','🕍','⛩️','🕋','⛲️','⛺️','🌁','🌃','🏙️','🌄','🌅','🌆','🌇','🌉','🗾','🏞️','🎠','🎡','🎢','💈','🎪','🚂','🚃','🚄','🚅','🚆','🚇️','🚈','🚉','🚊','🚝','🚞','🚋','🚌','🚍️','🚎','🚐','🚑️','🚒','🚓','🚔️','🚕','🚖','🚗','🚘️','🚙','🚚','🚛','🚜','🏎️','🏍️','🛵','🦽','🦼','🛺','🚲️','🛴','🛹','🚏','🛣️','🛤️','🛢️','⛽️','🚨','🚥','🚦','🛑','🚧','⚓️','⛵️','🛶','🚤','🛳️','⛴️','🛥️','🚢','✈️','🛩️','🛫','🛬','🪂','💺','🚁','🚟','🚠','🚡','🛰️','🚀','🛸','🎆','🎇','🎑','🗿','⚽️','⚾️','🥎','🏀','🏐','🏈','🏉','🎾','🥏','🎳','🏏','🏑','🏒','🥍','🏓','🏸','🥊','🥋','🥅','⛳️','⛸️','🎣','🤿','🎽','🎿','🛷','🥌','🎯','🪀','🪁','🎱','🎖️','🏆️','🏅','🥇','🥈','🥉','🍇','🍈','🍉','🍊','🍋','🍌','🍍','🥭','🍎','🍏','🍐','🍑','🍒','🍓','🥝','🍅','🥥','🥑','🍆','🥔','🥕','🌽','🌶️','🥒','🥬','🥦','🧄','🧅','🍄','🥜','🌰','🍞','🥐','🥖','🥨','🥯','🥞','🧇','🧀','🍖','🍗','🥩','🥓','🍔','🍟','🍕','🌭','🥪','🌮','🌯','🥙','🧆','🥚','🍳','🥘','🍲','🥣','🥗','🍿','🧈','🧂','🥫','🍱','🍘','🍙','🍚','🍛','🍜','🍝','🍠','🍢','🍣','🍤','🍥','🥮','🍡','🥟','🥠','🥡','🍦','🍧','🍨','🍩','🍪','🎂','🍰','🧁','🥧','🍫','🍬','🍭','🍮','🍯','🍼','🥛','☕️','🍵','🍶','🍾','🍷','🍸️','🍹','🍺','🍻','🥂','🥃','🥤','🧃','🧉','🧊','🥢','🍽️','🍴','🥄','🔪','🐵','🐒','🦍','🦧','🐶','🐕️','🦮','🐕‍','🦺','🐩','🐺','🦊','🦝','🐱','🐈️','🐈‍','🦁','🐯','🐅','🐆','🐴','🐎','🦄','🦓','🦌','🐮','🐂','🐃','🐄','🐷','🐖','🐗','🐽','🐏','🐑','🐐','🐪','🐫','🦙','🦒','🐘','🦏','🦛','🐭','🐁','🐀','🐹','🐰','🐇','🐿️','🦔','🦇','🐻','🐻‍','❄️','🐨','🐼','🦥','🦦','🦨','🦘','🦡','🐾','🦃','🐔','🐓','🐣','🐤','🐥','🐦️','🐧','🕊️','🦅','🦆','🦢','🦉','🦩','🦚','🦜','🐸','🐊','🐢','🦎','🐍','🐲','🐉','🦕','🦖','🐳','🐋','🐬','🐟️','🐠','🐡','🦈','🐙','🦑','🦀','🦞','🦐','🦪','🐚','🐌','🦋','🐛','🐜','🐝','🐞','🦗','🕷️','🕸️','🦂','🦟','🦠','💐','🌸','💮','🏵️','🌹','🥀','🌺','🌻','🌼','🌷','🌱','🌲','🌳','🌴','🌵','🎋','🎍','🌾','🌿','☘️','🍀','🍁','🍂','🍃','🌍️','🌎️','🌏️','🌑','🌒','🌓','🌔','🌕️','🌖','🌗','🌘','🌙','🌚','🌛','🌜️','☀️','🌝','🌞','🪐','💫','⭐️','🌟','✨','🌠','🌌','☁️','⛅️','⛈️','🌤️','🌥️','🌦️','🌧️','🌨️','🌩️','🌪️','🌫️','🌬️','🌀','🌈','🌂','☂️','☔️','⛱️','⚡️','❄️','☃️','⛄️','☄️','🔥','💧','🌊','💥','💦','💨','😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃','😉','😊','😇','🥰','😍','🤩','😘','😗','☺️','😚','😙','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🤫','🤔','🤐','🤨','😐️','😑','😶','😏','😒','🙄','😬','🤥','😌','😔','😪','😮‍','💨','🤤','😴','😷','🤒','🤕','🤢','🤮','🤧','🥵','🥶','😶‍','🌫️','🥴','😵‍','💫','😵','🤯','🤠','🥳','😎','🤓','🧐','😕','😟','🙁','☹️','😮','😯','😲','😳','🥺','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠️','💩','🤡','👹','👺','👻','👽️','👾','🤖','😺','😸','😹','😻','😼','😽','🙀','😿','😾','🙈','🙉','🙊','👋','🤚','🖐️','✋','🖖','👌','🤏','✌️','🤞','🤟','🤘','🤙','👈️','👉️','👆️','🖕','👇️','☝️','👍️','👎️','✊','👊','🤛','🤜','👏','🙌','👐','🤲','🤝','🙏','✍️','💅','🤳','💪','🦾','🦿','🦵','🦶','👂️','🦻','👃','🧠','🦷','🦴','👀','👁️','👅','👄','💋','👶','🧒','👦','👧','🧑','👨','👩','🧔','🧔‍♀️','🧔‍♂️','🧑','👨‍','🦰','👩‍','🦰','🧑','👨‍','🦱','👩‍','🦱','🧑','👨‍','🦳','👩‍','🦳','🧑','👨‍','🦲','👩‍','🦲','👱','👱‍♂️','👱‍♀️','🧓','👴','👵','🙍','🙍‍♂️','🙍‍♀️','🙎','🙎‍♂️','🙎‍♀️','🙅','🙅‍♂️','🙅‍♀️','🙆','🙆‍♂️','🙆‍♀️','💁','💁‍♂️','💁‍♀️','🙋','🙋‍♂️','🙋‍♀️','🧏','🧏‍♂️','🧏‍♀️','🙇','🙇‍♂️','🙇‍♀️','🤦','🤦‍♂️','🤦‍♀️','🤷','🤷‍♂️','🤷‍♀️','🧑‍⚕️','👨‍⚕️','👩‍⚕️','🧑‍🎓','👨‍🎓','👩‍🎓','🧑‍🏫','👨‍🏫','👩‍🏫','🧑‍⚖️','👨‍⚖️','👩‍⚖️','🧑‍🌾','👨‍🌾','👩‍🌾','🧑‍🍳','👨‍🍳','👩‍🍳','🧑‍🔧','👨‍🔧','👩‍🔧','🧑‍🏭','👨‍🏭','👩‍🏭','🧑‍💼','👨‍💼','👩‍💼','🧑‍🔬','👨‍🔬','👩‍🔬','🧑‍💻','👨‍💻','👩‍💻','🧑‍🎤','👨‍🎤','👩‍🎤','🧑‍🎨','👨‍🎨','👩‍🎨','🧑‍✈️','👨‍✈️','👩‍✈️','🧑‍🚀','👨‍🚀','👩‍🚀','🧑‍🚒','👨‍🚒','👩‍🚒','👮','👮‍♂️','👮‍♀️','🕵️','🕵️‍♂️','🕵️‍♀️','💂','💂‍♂️','💂‍♀️','👷','👷‍♂️','👷‍♀️','🤴','👸','👳','👳‍♂️','👳‍♀️','👲','🧕','🤵','🤵‍♂️','🤵‍♀️','👰','👰‍♂️','👰‍♀️','🤰','🤱','👩‍','🍼','👨‍','🍼','🧑‍','🍼','👼','🎅','🤶','🧑‍','🎄','🦸','🦸‍♂️','🦸‍♀️','🦹','🦹‍♂️','🦹‍♀️','🧙','🧙‍♂️','🧙‍♀️','🧚','🧚‍♂️','🧚‍♀️','🧛','🧛‍♂️','🧛‍♀️','🧜','🧜‍♂️','🧜‍♀️','🧝','🧝‍♂️','🧝‍♀️','🧞','🧞‍♂️','🧞‍♀️','🧟','🧟‍♂️','🧟‍♀️','💆','💆‍♂️','💆‍♀️','💇','💇‍♂️','💇‍♀️','🚶','🚶‍♂️','🚶‍♀️','🧍','🧍‍♂️','🧍‍♀️','🧎','🧎‍♂️','🧎‍♀️','🧑‍','🦯','👨‍','🦯','👩‍','🦯','🧑‍','🦼','👨‍','🦼','👩‍','🦼','🧑‍','🦽','👨‍','🦽','👩‍','🦽','🏃','🏃‍♂️','🏃‍♀️','💃','🕺','🕴️','👯','👯‍♂️','👯‍♀️','🧖','🧖‍♂️','🧖‍♀️','🧗','🧗‍♂️','🧗‍♀️','🤺','🏇','⛷️','🏂️','🏌️','🏌️‍♂️','🏌️‍♀️','🏄️','🏄‍♂️','🏄‍♀️','🚣','🚣‍♂️','🚣‍♀️','🏊️','🏊‍♂️','🏊‍♀️','⛹️','⛹️‍♂️','⛹️‍♀️','🏋️','🏋️‍♂️','🏋️‍♀️','🚴','🚴‍♂️','🚴‍♀️','🚵','🚵‍♂️','🚵‍♀️','🤸','🤸‍♂️','🤸‍♀️','🤼','🤼‍♂️','🤼‍♀️','🤽','🤽‍♂️','🤽‍♀️','🤾','🤾‍♂️','🤾‍♀️','🤹','🤹‍♂️','🤹‍♀️','🧘','🧘‍♂️','🧘‍♀️','🛀','🛌','🧑‍','🤝‍','🧑','👭','👫','👬','💏','👩‍❤️‍💋‍👨','👨‍❤️‍💋‍👨','👩‍❤️‍💋‍👩','💑','👩‍❤️‍👨','👨‍❤️‍👨','👩‍❤️‍👩','👪️','👨‍👩‍👦','👨‍👩‍👧','👨‍👩‍👧‍👦','👨‍👩‍👦‍👦','👨‍👩‍👧‍👧','👨‍👨‍👦','👨‍👨‍👧','👨‍👨‍👧‍👦','👨‍👨‍👦‍👦','👨‍👨‍👧‍👧','👩‍👩‍👦','👩‍👩‍👧','👩‍👩‍👧‍👦','👩‍👩‍👦‍👦','👩‍👩‍👧‍👧','👨‍👦','👨‍👦‍👦','👨‍👧','👨‍👧‍👦','👨‍👧‍👧','👩‍👦','👩‍👦‍👦','👩‍👧','👩‍👧‍👦','👩‍👧‍👧','🗣️','👤','👥','👣']
          const mokis = mojis[Math.floor(Math.random() * (mojis.length))]
          Void.sendMessage(citel.chat, {

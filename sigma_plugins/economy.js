@@ -10,23 +10,23 @@
  * @version 0.0.6
  **/
 
- const { sck,sck1,cmd, getBuffer, tlang, prefix } = require('../lib')
- const Config = require('../config')
+ const { sck,sck1,Module_Exports, getBuffer, tlang, prefix,name } = require('../lib')
+ 
  const eco = require('discord-mongoose-economy')
  const ty = eco.connect(mongodb);
  /*
-  cmd({
-         pattern: "economy",
-         desc: "daily gold.",
-         category: "economy",
+  Module_Exports({
+         kingcmd: "economy",
+         infocmd: "daily gold.",
+         kingclass: "economy",
      },
      */
      //---------------------------------------------------------------------------
- cmd({
-         pattern: "daily",
-         desc: "daily gold.",
-         category: "economy",
-         filename: __filename,
+ Module_Exports({
+         kingcmd: "daily",
+         infocmd: "daily gold.",
+         kingclass: "economy",
+         kingpath: __filename,
          react: "💷"
      },
      async(Void, citel, text,{ isCreator }) => {
@@ -45,11 +45,11 @@
  }
  )
 
- cmd({
-         pattern: "resetwallet",
-         desc: "reset wallet of quoted user.",
-         category: "economy",
-         filename: __filename,
+ Module_Exports({
+         kingcmd: "resetwallet",
+         infocmd: "reset wallet of quoted user.",
+         kingclass: "economy",
+         kingpath: __filename,
          react: "💷"
      },
      async(Void, citel, text,{ isCreator }) => {
@@ -65,11 +65,11 @@
  }
  )
     //---------------------------------------------------------------------------
- cmd({
-    pattern: "capacity",
-    desc: "update capacity.",
-    category: "economy",
-    filename: __filename,
+ Module_Exports({
+    kingcmd: "capacity",
+    infocmd: "update capacity.",
+    kingclass: "economy",
+    kingpath: __filename,
     react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
@@ -90,7 +90,7 @@ async(Void, citel, text,{ isCreator }) => {
           const deduct1 = await eco.deduct(user, secktor, 100);
           const add1 = eco.giveCapacity(user, secktor, 1000);
           return await citel.reply(`*1000 🪙diamond storage has been added in ${citel.pushName} bank*`)
-        //return await Void.sendButtonText(citel.chat, `*1000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
+        //return await Void.sendButtonText(citel.chat, `*1000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${name.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
 
               break
         case '100000':
@@ -99,7 +99,7 @@ async(Void, citel, text,{ isCreator }) => {
           const deduct2 = await eco.deduct(user, secktor, 1000);
           const add2 = eco.giveCapacity(user, secktor, 100000);
           return await citel.reply(`*100000 🪙diamond storage has been added in ${citel.pushName} bank*`)
-        //return await Void.sendButtonText(citel.chat,  `*100000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
+        //return await Void.sendButtonText(citel.chat,  `*100000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${name.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
 
 
               break
@@ -109,7 +109,7 @@ async(Void, citel, text,{ isCreator }) => {
            const deduct3 = await eco.deduct(user, secktor, 10000);
            const add3 = eco.giveCapacity(user, secktor, 10000000);
            return await citel.reply(`*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`)
-       // return await Void.sendButtonText(citel.chat,  `*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`, `${Config.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
+       // return await Void.sendButtonText(citel.chat,  `*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`, `${name.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
 
 
              break
@@ -121,11 +121,11 @@ default:
 )
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "deposit",
-        desc: "deposit gold.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "deposit",
+        infocmd: "deposit gold.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -139,14 +139,14 @@ default:
         const balance = await eco.balance(citel.sender, "secktor")
         if(deposit.noten) return citel.reply('You can\'t deposit what you don\'t have💰.'); //if user states more than whats in his wallet
         return await citel.reply(`⛩️ Sender: ${citel.pushName}\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`)
-    //return await Void.sendButtonText(citel.chat,  `⛩️ Sender: ${citel.pushName}\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `${Config.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
+    //return await Void.sendButtonText(citel.chat,  `⛩️ Sender: ${citel.pushName}\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `${name.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
     }
 )
-     cmd({
-        pattern: "lb",
-        desc: "check leaderboard.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "lb",
+        infocmd: "check leaderboard.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -169,11 +169,11 @@ str+= `*${i+1}*\n╭─────────────◆\n│ *Name:-* _${
 	     
      })
 
-cmd({
-    pattern: "transfer",
-    desc: "transfer gold.",
-    category: "economy",
-    filename: __filename,
+Module_Exports({
+    kingcmd: "transfer",
+    infocmd: "transfer gold.",
+    kingclass: "economy",
+    kingpath: __filename,
     react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
@@ -199,18 +199,18 @@ async(Void, citel, text,{ isCreator }) => {
         const deduct = await eco.deduct(user1, secktor, value[0]);
         const give = await eco.give(user2, secktor, value[0]);
         return await citel.reply(`*📠 Transaction successful of ${value[0]} 💰*`)
-   // return await Void.sendButtonText(citel.chat, `*📠 Transaction successful of ${value[0]} 💰*`, `${Config.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
+   // return await Void.sendButtonText(citel.chat, `*📠 Transaction successful of ${value[0]} 💰*`, `${name.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
 
 
 }
 )
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "wallet",
-        desc: "shows wallet.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "wallet",
+        infocmd: "shows wallet.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -225,17 +225,17 @@ async(Void, citel, text,{ isCreator }) => {
          const secktor = "secktor"
          const balance = await eco.balance(citel.sender, secktor); //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
          return await citel.reply(`*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`)
-    //return await Void.sendButtonText(citel.chat, `*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`, `${Config.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
+    //return await Void.sendButtonText(citel.chat, `*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`, `${name.ownername.split(' ')[0]}-Economy Version: 0.0.6`, citel);
 
     }
 )
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "give",
-        desc: "Add money in wallet.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "give",
+        infocmd: "Add money in wallet.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -251,11 +251,11 @@ async(Void, citel, text,{ isCreator }) => {
 )
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "bank",
-        desc: "shows bank amount.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "bank",
+        infocmd: "shows bank amount.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -264,17 +264,17 @@ async(Void, citel, text,{ isCreator }) => {
         if (mongoschemas == "false") return citel.reply("*🚦Economy* is not active in current group.");
         const balance = await eco.balance(citel.sender, "secktor"); //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
         return await citel.reply(`🍀User: ${citel.pushName}\n\n_🪙${balance.bank}/${balance.bankCapacity}_`)
-    //return await Void.sendButtonText(citel.chat, `🍀User: ${citel.pushName}\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `${Config.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
+    //return await Void.sendButtonText(citel.chat, `🍀User: ${citel.pushName}\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `${name.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
 
     }
 )
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "rob",
-        desc: "rob bank amount.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "rob",
+        infocmd: "rob bank amount.",
+        kingclass: "economy",
+        kingpath: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({   id: citel.chat,  })) || (await new sck({  id: citel.chat,   })  .save());
@@ -323,11 +323,11 @@ default:
 )
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "withdraw",
-        desc: "withdraw money from bank account.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "withdraw",
+        infocmd: "withdraw money from bank account.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -346,11 +346,11 @@ default:
 )
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "gamble",
-        desc: "gamble money.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "gamble",
+        infocmd: "gamble money.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     }, 
     async(Void, citel, text,{ isCreator }) => {
@@ -390,7 +390,7 @@ default:
            if ( r == opp){
            let give = await eco.give(user , secktor, twice);    //citel.react('⭐️')
            return await citel.reply(`*📈 You won 🪙${twice}*`)
-    //return await Void.sendButtonText(citel.chat, `*📈 You won 🪙${twice}*`, `${Config.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
+    //return await Void.sendButtonText(citel.chat, `*📈 You won 🪙${twice}*`, `${name.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
 
         }
         else{
@@ -398,7 +398,7 @@ default:
 
     //citel.react('🤮')
     return await citel.reply(`*📉 You lost 🪙${texts[0]}*`)
-    //return await Void.sendButtonText(citel.chat,`*📉 You lost 🪙${texts[0]}*`, `${Config.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
+    //return await Void.sendButtonText(citel.chat,`*📉 You lost 🪙${texts[0]}*`, `${name.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
 
          }
     }
@@ -408,11 +408,11 @@ default:
 
 
      //---------------------------------------------------------------------------
-     cmd({
-        pattern: "slot2",
-        desc: "withdraw money from bank account.",
-        category: "economy",
-        filename: __filename,
+     Module_Exports({
+        kingcmd: "slot2",
+        infocmd: "withdraw money from bank account.",
+        kingclass: "economy",
+        kingpath: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -514,11 +514,11 @@ if(value<=balance.wallet){
     }
 )
 
-cmd({
-    pattern: "slot",
-    desc: "slot game.",
-    category: "economy",
-    filename: __filename,
+Module_Exports({
+    kingcmd: "slot",
+    infocmd: "slot game.",
+    kingclass: "economy",
+    kingpath: __filename,
     react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
@@ -579,7 +579,7 @@ async(Void, citel, text,{ isCreator }) => {
         let str = st.replace(/1/g, `🔴`).replace(/2/g, `🔵`).replace(/3/g, `🟣`).replace(/4/g, `🟢`).replace(/5/g, `🟡`).replace(/6/g, `⚪️`).replace(/7/g, `⚫️`).replace(/:/g, `  `)
 
         return await citel.reply(`You got ${deduff*10} in your wallet.`)
-   // return await Void.sendButtonText(citel.chat,str+`You got ${deduff*10} in your wallet.`, `${Config.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
+   // return await Void.sendButtonText(citel.chat,str+`You got ${deduff*10} in your wallet.`, `${name.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
 
     } else {
     const deduff = Math.floor(Math.random() * 300)
@@ -587,7 +587,7 @@ async(Void, citel, text,{ isCreator }) => {
     let st = `\n🎰 Slot Machine Result\n     ${i}\n\n      ${j}\n\n      ${k}\n\nNot Jacpot📉 but lost `
             let str = st.replace(/1/g, `🔴`).replace(/2/g, `🔵`).replace(/3/g, `🟣`).replace(/4/g, `🟢`).replace(/5/g, `🟡`).replace(/6/g, `⚪️`).replace(/7/g, `⚫️`).replace(/:/g, `    `)
             return await citel.reply(str+` ${deduff}.`)
-//return await Void.sendButtonText(citel.chat,str+` ${deduff}.`, `${Config.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
+//return await Void.sendButtonText(citel.chat,str+` ${deduff}.`, `${name.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, citel);
 }
 }
 ) 

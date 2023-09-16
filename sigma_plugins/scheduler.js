@@ -1,19 +1,10 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
 
- const { tlang,sck,prefix,cmd } = require('../lib')
- cmd({
-     pattern: "amute",
-     desc: "sets auto mute time in group.",
-     category: "moderation",
+
+ const { tlang,sck,prefix,Module_Exports } = require('../lib')
+ Module_Exports({
+     kingcmd: "amute",
+     infocmd: "sets auto mute time in group.",
+     kingclass: "moderation",
  },
  async(Void, citel, text,{ isCreator }) => {
      if (!isCreator) return citel.reply(tlang().owner)
@@ -33,10 +24,10 @@
  )
 
  //--------------------------------------------------------------------------------
- cmd({
-    pattern: "aunmute",
-    desc: "sets unmute time in group.",
-    category: "moderation",
+ Module_Exports({
+    kingcmd: "aunmute",
+    infocmd: "sets unmute time in group.",
+    kingclass: "moderation",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
@@ -56,10 +47,10 @@ async(Void, citel, text,{ isCreator }) => {
 } 
 )
  //--------------------------------------------------------------------------------
- cmd({
-    pattern: "dunmute",
-    desc: "Delete unmute from group.",
-    category: "moderation",
+ Module_Exports({
+    kingcmd: "dunmute",
+    infocmd: "Delete unmute from group.",
+    kingclass: "moderation",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
@@ -75,10 +66,10 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
  //--------------------------------------------------------------------------------
- cmd({
-    pattern: "dmute",
-    desc: "Delete mute from group.",
-    category: "moderation",
+ Module_Exports({
+    kingcmd: "dmute",
+    infocmd: "Delete mute from group.",
+    kingclass: "moderation",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)

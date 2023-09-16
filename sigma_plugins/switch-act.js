@@ -9,15 +9,15 @@
  * @version 0.0.6
  **/
 
-const { cmd,sck,sck1, getAdmin, tlang, prefix } = require('../lib')
-const Config = require('../config')
+const { Module_Exports,sck,sck1, getAdmin, tlang, prefix,name } = require('../lib')
+
     //---------------------------------------------------------------------------
-cmd({
-        pattern: "act",
-        alias:['activate','active'],
-        desc: "Switches for varios works.",
-        category: "group",
-        filename: __filename,
+Module_Exports({
+        kingcmd: "act",
+        shortcut:['activate','active'],
+        infocmd: "Switches for varios works.",
+        kingclass: "group",
+        kingpath: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
         //-----------------------------------------

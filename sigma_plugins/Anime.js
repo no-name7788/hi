@@ -1,5 +1,5 @@
-const Config = require('../config')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1, cmd, GIFBufferToVideoBuffer } = require("../lib");
+
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1, Module_Exports,name, GIFBufferToVideoB, Module_Exportsuffer } = require("../lib");
 const axios = require('axios');
 const fetch = require('node-fetch');
 // let gis = '' // require("g-i-s")
@@ -7,7 +7,7 @@ const { Anime, Manga } = require("@shineiichijo/marika");
 const {  fetchJson, getBuffer} = require('../lib/')
 
 //----------------------------------------------------------------------
-cmd({
+Module_Exports({
             pattern: "poke",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -30,7 +30,7 @@ cmd({
         }
     )
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
             pattern: "hug",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -53,7 +53,7 @@ cmd({
         }
     )
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
             pattern: "hold",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -76,7 +76,7 @@ cmd({
         }
     ) 
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
             pattern: "hifi",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -99,7 +99,7 @@ cmd({
         }
     )
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
         pattern: "waifu",
         desc: "To get Waifu Random Pics",
         category: "Anime Pics",
@@ -129,7 +129,7 @@ for (let i = 0; i < name2; i++)
 
 })
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
         pattern: "naruto",
         desc: "To get Naruto Random Videos",
         category: "Anime Pics",
@@ -139,10 +139,10 @@ async(Void, citel,text) =>
 {
         let res=await axios.get("https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Naruto.json")
         let url =  res.data.result[Math.floor(Math.random() * res.data.result.length)];
-        return await Void.sendMessage(citel.chat,{video :{url : url } , caption: Config.caption }, { quoted: citel })
+        return await Void.sendMessage(citel.chat,{video :{url : url } , caption: name.caption }, { quoted: citel })
 })
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
     pattern: "neko",
     category: "Anime Pics",
     desc: "Sends a Neko Image in chat",
@@ -170,7 +170,7 @@ for (let i = 0; i < name2; i++)
         
 })
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
     pattern: "foxgirl",
     category: "Anime Pics",
     desc: "Sends image of Fox Girl in current chat.",
@@ -182,7 +182,7 @@ async(Void, citel, text) =>
     await Void.sendMessage(citel.chat, {image: { url: waifuddfg.data.url } }, { quoted: citel })
 })
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
         pattern: "animenews",
        category: "Anime Pics" ,
         desc: "Sends Anime News in chat",
@@ -222,7 +222,7 @@ cmd({
     }
 )
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
     pattern: "loli",
     category: "Anime Pics",
         filename: __filename,
@@ -241,7 +241,7 @@ async(Void, citel, text) => {
 )
 //-----------------------------------------------------------------------
 /*
-cmd({
+Module_Exports({
     pattern: "pokepic",
     category: "Anime Pics",
         filename: __filename,
@@ -280,7 +280,7 @@ async(Void, citel, text) => {
 )
 */
 //---------------------------------------------------------------------------
-cmd({
+Module_Exports({
     pattern: "pokemon",
     category: "Anime Pics",
          filename: __filename,
@@ -304,7 +304,7 @@ async(Void, citel, text) => {
 /*
 
 
-cmd({
+Module_Exports({
         pattern: "animepic",
         category: "Anime Pics",
         desc: "Anime image"
@@ -346,7 +346,7 @@ cmd({
 //-----------------------------------------------------------------------
 
 /*
-cmd({
+Module_Exports({
         pattern: "animewall",
         category: "Anime Pics",
         desc: "Anime Wallpaper Random",
@@ -393,7 +393,7 @@ cmd({
 )
 */
 //-----------------------------------------------------------------------
-cmd({
+Module_Exports({
     pattern: "manga",
      category: "Anime Pics",
         filename: __filename,
@@ -428,7 +428,7 @@ async(Void, citel, text) => {
 }
 )
 //----------------------------------------------------------------------------
-cmd({
+Module_Exports({
     pattern: "anime",
     category: "Anime Pics",
     desc: "Searches Info about Anime and Provides result."
@@ -477,7 +477,7 @@ async(Void, citel, text) => {
    )
 //---------------------------------------------------------------------------
 
-cmd({
+Module_Exports({
         pattern: "wallpaper",
         desc: "To get Random Pics",
        category: "Anime Pics",

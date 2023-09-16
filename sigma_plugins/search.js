@@ -1,16 +1,7 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
+
 
 const moment = require('moment-timezone')
-const {fetchJson,cmd, tlang, getBuffer, prefix, Config } = require('../lib')
+const {fetchJson,Module_Exports, tlang, getBuffer, prefi, Module_Exportsx, name } = require('../lib')
 let gis ='' // require("g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
@@ -18,11 +9,11 @@ const fetch = require('node-fetch')
    //---------------------------------------------------------------------------
    const { shazam } = require('../lib')
    let yts = require("secktor-pack");
-   cmd({
-           pattern: "find",
-           category: "misc",
-           desc: "Finds info about song",
-           filename: __filename,
+   Module_Exports({
+           kingcmd: "find",
+           kingclass: "misc",
+           infocmd: "Finds info about song",
+           kingpath: __filename,
        },
        async(Void, citel, text) => {
             let mime = citel.quoted.mtype
@@ -61,13 +52,13 @@ const fetch = require('node-fetch')
        }
     )
     //------------------------------------------------------------------------------------
-cmd({
-            pattern: 'ss',
-            alias :['webss' , 'fullss'],
-            category: "search",
-            desc: "Searches Image on Google",
+Module_Exports({
+            kingcmd: 'ss',
+            shortcut :['webss' , 'fullss'],
+            kingclass: "search",
+            infocmd: "Searches Image on Google",
             use: '<text>',
-            filename: __filename,
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
 let limit = 5;
@@ -85,12 +76,12 @@ catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
 
 
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "imdb",
-            category: "search",
-            desc: "Sends image of asked Movie/Series.",
+Module_Exports({
+            kingcmd: "imdb",
+            kingclass: "search",
+            infocmd: "Sends image of asked Movie/Series.",
             use: '<text>',
-            filename: __filename,
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`_Name a Series or movie ${tlang().greet}._`);
@@ -115,18 +106,18 @@ cmd({
             imdbt += "🏙️Production : " + fids.data.Production + "\n";
             imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n";
             imdbt += "❎imdbVotes  : " + fids.data.imdbVotes + "\n";
-            imdbt += Config.caption ;
+            imdbt += name.caption ;
             Void.sendMessage(citel.chat, {  image: { url: fids.data.Poster, }, caption: imdbt,  }, {   quoted: citel,  });
 
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "weather",
-            category: "search",
-            desc: "Sends weather info about asked place.",
+Module_Exports({
+            kingcmd: "weather",
+            kingclass: "search",
+            infocmd: "Sends weather info about asked place.",
             use: '<location>',
-            filename: __filename,
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Give me location.Baka!!`);
@@ -145,19 +136,19 @@ cmd({
             textw += `*Latitude:-* ${wdata.data.coord.lat}\n`;
             textw += `*Longitude:-* ${wdata.data.coord.lon}\n`;
             textw += `*Country:-* ${wdata.data.sys.country}\n`;
-            textw +=Config.caption ;
+            textw +=name.caption ;
 
             Void.sendMessage( citel.chat, {  text: textw }, {  quoted: citel } );
 
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "horo",
-            category: "search",
-            desc: "Gives horoscope info of user.",
+Module_Exports({
+            kingcmd: "horo",
+            kingclass: "search",
+            infocmd: "Gives horoscope info of user.",
             use: '<sign>\n:Example: horo libra',
-            filename: __filename,
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Provide me a sign!`)
@@ -180,7 +171,7 @@ cmd({
                         textw += `*Lucky Color:* ${json.color}.\n`;
                         textw += `*Today Mood:* ${json.mood}.\n`;
                         textw += `*Overall:* ${json.description}.\n`;
-                        textw +=Config.caption ;
+                        textw +=name.caption ;
                         citel.reply(textw)
                     });
 
@@ -189,13 +180,13 @@ cmd({
     )
     //---------------------------------------------------------------------------
 
-cmd({
-            pattern: "cric",
-            alias :['search','gsearch'],
-            category: "search",
-            desc: "Sends info of given query from Google Search.",
+Module_Exports({
+            kingcmd: "cric",
+            shortcut :['search','gsearch'],
+            kingclass: "search",
+            infocmd: "Sends info of given query from Google Search.",
             use: '<text>',
-            filename: __filename,
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
 
@@ -220,13 +211,13 @@ text +="\n*Match Ended:* " + dat.data[i].matchEnded;
 })
 
 //---------------------------------------------------------------------------
-cmd({
-            pattern: "google",
-            alias :['search','gsearch'],
-            category: "search",
-            desc: "Sends info of given query from Google Search.",
+Module_Exports({
+            kingcmd: "google",
+            shortcut :['search','gsearch'],
+            kingclass: "search",
+            infocmd: "Sends info of given query from Google Search.",
             use: '<text>',
-            filename: __filename,
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`give me a query\n*Example : .google Who is Suhail Tech.*`);
@@ -244,13 +235,13 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "image",
-            alias: ["img" , "pic"],
-            category: "search",
-            desc: "Searches Image on Google",
+Module_Exports({
+            kingcmd: "image",
+            shortcut: ["img" , "pic"],
+            kingclass: "search",
+            infocmd: "Searches Image on Google",
             use: '<text>',
-            filename: __filename,
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
 
@@ -317,7 +308,7 @@ else return citel.reply("*Google Images Not Working, Try it Later*");
             
              
              if(!num){ buttonMessage = {   image: { url: images },
-                                caption: Config.caption,
+                                caption: name.caption,
                                 }
              }else {  buttonMessage = {   image: { url: images },}   }
                     
@@ -330,11 +321,11 @@ else return citel.reply("*Google Images Not Working, Try it Later*");
             */
  })
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "couplepp",
-            category: "search",
-            desc: "Sends two couples pics.",
-            filename: __filename,
+Module_Exports({
+            kingcmd: "couplepp",
+            kingclass: "search",
+            infocmd: "Sends two couples pics.",
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -344,19 +335,19 @@ cmd({
         }
     ) 
     //---------------------------------------------------------------------------
-cmd({
-        pattern: "iswa",
-        alias: ["oldwa","bio","onwa"],
-        category: "search",
-        desc: "Searches in given rage about given number.",
+Module_Exports({
+        kingcmd: "iswa",
+        shortcut: ["oldwa","bio","onwa"],
+        kingclass: "search",
+        infocmd: "Searches in given rage about given number.",
         use: '9112345678xx',
-        filename: __filename,
+        kingpath: __filename,
     },
     async(Void, citel, text) => {
  if(!text) return await citel.reply('Give Me Number without + sign. Example: .iswa 9231844741xx')
         var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return citel.reply(`*You did not add x*\nExample: iswa 9231844741xx  \n ${Config.caption}`)
-        citel.reply(`*Searching for WhatsApp account in given range...* \n ${Config.caption}`)
+        if (!inputnumber.includes('x')) return citel.reply(`*You did not add x*\nExample: iswa 9231844741xx  \n ${name.caption}`)
+        citel.reply(`*Searching for WhatsApp account in given range...* \n ${name.caption}`)
 
         function countInstances(string, word) {  return string.split(word).length - 1; }
         var number0 = inputnumber.split('x')[0]
@@ -398,18 +389,18 @@ cmd({
 )
 
 
-cmd({
-        pattern: "nowa",
-        category: "search",
-        desc: "Searches in given rage about given number.",
+Module_Exports({
+        kingcmd: "nowa",
+        kingclass: "search",
+        infocmd: "Searches in given rage about given number.",
         use: '9112345678xx',
-        filename: __filename,
+        kingpath: __filename,
     },
     async(Void, citel, text) => {
 if(!text) return await citel.reply('Give Me Number without + sign. Example: .nowa 9231844741xx')
 const inputNumber = text.split(" ")[0]
-if (!inputNumber.includes('x')) return citel.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 9231844741xx  \n ${Config.caption}`)
-citel.reply(`*Searching for WhatsApp account in the given range...*\n${Config.caption}`);
+if (!inputNumber.includes('x')) return citel.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 9231844741xx  \n ${name.caption}`)
+citel.reply(`*Searching for WhatsApp account in the given range...*\n${name.caption}`);
 function countInstances(string, word) { return string.split(word).length - 1; }
 const number0 = inputNumber.split('x')[0];
 const number1 = inputNumber.split('x').slice(-1)[0] || '';
@@ -432,6 +423,6 @@ for (let i = 0; i < randomxx; i++)
     } catch { nowhatsapp += `${number0}${i}${number1}\n`;  }
 }
 if(!nobios){ nobio = ''; } else {nobio += nobios+'\n' ;}
-return await citel.reply(`${nobio}${nowhatsapp}${Config.caption}`);
+return await citel.reply(`${nobio}${nowhatsapp}${name.caption}`);
   
 })

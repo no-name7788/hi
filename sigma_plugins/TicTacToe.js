@@ -1,15 +1,3 @@
-/**
- * 
- * 
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SuhailTechInfo <https://youtube.com/SuhailTechInfo>
- * @description : Secktor,A Multi-functional whatsapp bot Created by Suhail Tech.
- * @version 0.0.6
- **/
 
 
 
@@ -21,18 +9,17 @@
 
 
 
-
- const { cmd, parseJid,getAdmin,tlang } = require("../lib/");
+ const { Module_Exports, parseJid,getAdmin,tlang } = require("../lib/");
  const eco = require('discord-mongoose-economy')
  const ty = eco.connect(mongodb);
 
 
- cmd(
+ Module_Exports(
   {
-    pattern: "dice",
-    desc: "Play TicTacToe",
-    filename: __filename,
-    category: "game",
+    kingcmd: "dice",
+    infocmd: "Play TicTacToe",
+    kingpth: __filename,
+    kingclass: "game",
   },
   async (Void,citel,text) => {
     const randomNumber = Math.floor(Math.random() * 6);
@@ -43,12 +30,12 @@
     return await Void.sendMessage(citel.chat, { react: { text: reactEmoji[index] , key: msg.key }}); 
   })
  
-cmd(
+Module_Exports(
   {
-    pattern: "delttt",
-    desc: "deletes TicTacToe running session.",
-    filename: __filename,
-    category: "game",
+    kingcmd: "delttt",
+    infocmd: "deletes TicTacToe running session.",
+    kingpth: __filename,
+    kingclass: "game",
   },
   async (Void,citel,text,{isCreator}) => {
         if (!citel.isGroup) return citel.reply(tlang().group);
@@ -72,12 +59,12 @@ cmd(
 
   })
   
-cmd(
+Module_Exports(
   {
-    pattern: "ttt",
-    desc: "Play TicTacToe",
-    filename: __filename,
-    category: "game",
+    kingcmd: "ttt",
+    infocmd: "Play TicTacToe",
+    kingpth: __filename,
+    kingclass: "game",
   },
   async (Void,citel,text) => {
     if (!citel.isGroup) return citel.reply(tlang().group);
@@ -131,7 +118,7 @@ ${arr.slice(6).join("  ")}
   }
 );
 
-cmd({ on: "text" },
+Module_Exports({ on: "text" },
   async (Void,citel,text) => {
     if(!citel.isGroup) return
     let {prefix} = require('../lib')
@@ -215,7 +202,7 @@ ${ isWin ? `@${winner.split("@")[0]} Won ! and got 2000💎 in wallet🤑` : isT
   }
 );
 
-cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
+Module_Exports({ kingcmd: "ship" , kingclass: "fun" }, async(Void, citel, text) => {
     const { tlang } = require('../lib')
    if (!citel.isGroup) return citel.reply(tlang().group);
    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";

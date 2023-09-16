@@ -9,49 +9,49 @@
  * @version 0.0.6
  **/
 
-const { dare, truth, random_question ,Config } = require('../lib/truth-dare.js')
+const { dare, truth, random_question ,name } = require('../lib/truth-dare.js')
 const axios = require('axios')
-const { cmd } = require('../lib')
+const { Module_Exports } = require('../lib')
 const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "question",
-            desc: "Random Question.",
-            category: "fun",
-            filename: __filename,
+Module_Exports({
+            kingcmd: "question",
+            infocmd: "Random Question.",
+            kingclass: "fun",
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             return await citel.reply(`${random_question()}`);
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "truth",
-            desc: "truth and dare(truth game.).",
-            category: "fun",
-            filename: __filename,
+Module_Exports({
+            kingcmd: "truth",
+            infocmd: "truth and dare(truth game.).",
+            kingclass: "fun",
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             return await citel.reply(`${truth()}`);
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "dare",
-            desc: "truth and dare(dare game.).",
-            category: "fun",
-            filename: __filename,
+Module_Exports({
+            kingcmd: "dare",
+            infocmd: "truth and dare(dare game.).",
+            kingclass: "fun",
+            kingpath: __filename,
         },
         async(Void, citel, text) => {
             return await citel.reply(`${dare()}`);
         }
     )
 //--------------------------------------------------------------------------------
-cmd({
-            pattern: "joke",
-            desc: "Sends Joke in chat.",
-            category: "fun",
-            filename: __filename,
+Module_Exports({
+            kingcmd: "joke",
+            infocmd: "Sends Joke in chat.",
+            kingclass: "fun",
+            kingpath: __filename,
         },
         async(Void, citel, text) => { 
 
@@ -61,11 +61,11 @@ citel.reply( `Joke: ${joke.setup}\nPunchline :  ${joke.punchline}`);
 
 })
 //---------------------------------------------------------------------------
-cmd({
-            pattern: "joke2",
-            desc: "Sends Joke in chat.",
-            category: "fun",
-            filename: __filename,
+Module_Exports({
+            kingcmd: "joke2",
+            infocmd: "Sends Joke in chat.",
+            kingclass: "fun",
+            kingpath: __filename,
         },
         async(Void, citel, text) => { 
  
@@ -81,11 +81,11 @@ cmd({
     )
 
 //---------------------------------------------------------------------------
-cmd({
-        pattern: "fact",
-        desc: "Sends fact in chat.",
-        category: "fun",
-        filename: __filename,
+Module_Exports({
+        kingcmd: "fact",
+        infocmd: "Sends fact in chat.",
+        kingclass: "fun",
+        kingpath: __filename,
     },
     async(Void, citel, text) => {
         const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
@@ -94,11 +94,11 @@ cmd({
 
 )
     //---------------------------------------------------------------------------
-    cmd({
-        pattern: "quotes",
-        desc: "Sends quotes in chat.",
-        category: "fun",
-        filename: __filename,
+    Module_Exports({
+        kingcmd: "quotes",
+        infocmd: "Sends quotes in chat.",
+        kingclass: "fun",
+        kingpath: __filename,
     },
     async(Void, citel, text) => {
         var quoo = await axios.get(`https://favqs.com/api/qotd`)
@@ -113,11 +113,11 @@ return citel.reply(replyf)
  
 )
     //---------------------------------------------------------------------------
-    cmd({
-        pattern: "define",
-        desc: "urban dictionary.",
-        category: "fun",
-        filename: __filename,
+    Module_Exports({
+        kingcmd: "define",
+        infocmd: "urban dictionary.",
+        kingclass: "fun",
+        kingpath: __filename,
     },
     async(Void, citel, text) => {
         try{

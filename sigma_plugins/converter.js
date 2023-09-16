@@ -10,18 +10,18 @@
  **/
 
 const axios = require('axios')
-const { sck1, tiny, fancytext,getBuffer, listall,cmd , TelegraPh , Config} = require('../lib/')
+const { sck1, tiny, fancytext,getBuffer, listall,Module_Exports , TelegraPh , name} = require('../lib/')
 const fs = require('fs-extra');
 const { exec } = require('child_process')
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "photo",
-            desc: "Makes photo of replied sticker.",
-            category: "converter",
+Module_Exports({
+            kingcmd: "photo",
+            infocmd: "Makes photo of replied sticker.",
+            kingclass: "converter",
             use: '<reply to any gif>',
-            filename: __filename
+            kingpath: __filename
         },
         async(Void, citel, text) => {
             const getRandom = (ext) => {
@@ -49,13 +49,13 @@ cmd({
     )
 //---------------------------------------------------------------------------
     
- cmd({
-             pattern: "vv",
-             alias : ['viewonce','retrive'],
-             desc: "Flips given text.",
-             category: "misc",
+ Module_Exports({
+             kingcmd: "vv",
+             shortcut : ['viewonce','retrive'],
+             infocmd: "Flips given text.",
+             kingclass: "misc",
              use: '<query>',
-             filename: __filename
+             kingpath: __filename
          },
          async(Void, citel, text) => {
 try {
@@ -105,12 +105,12 @@ else return citel.reply("```This is Not A ViewOnce Message```")
 })
  //---------------------------------------------------------------------------
  //---------------------------------------------------------------------------
-cmd({
-            pattern: "attp",
-            alias: ["circlestic","circlesticker","cs"],
-            desc: "Makes sticker of replied image/video.",
-            category: "sticker",
-filename: __filename,
+Module_Exports({
+            kingcmd: "attp",
+            shortcut: ["circlestic","circlesticker","cs"],
+            infocmd: "Makes sticker of replied image/video.",
+            kingclass: "sticker",
+kingpath: __filename,
             use: '<reply to any image/video.>'
         },
         async(Void, citel, text) => {
@@ -119,8 +119,8 @@ let url = `https://raganork-api.onrender.com/api/attp?text=${text}&apikey=with_l
 let media  = await getBuffer(url)
 
                 let sticker = new Sticker(media, {
-                    pack: Config.packname, 
-                    author: Config.author, 
+                    pack: name.packname, 
+                    author: name.author, 
                     type: StickerTypes.FULL,
                     categories: ["🤩", "🎉"], 
                     id: "12345", 
@@ -134,19 +134,19 @@ let media  = await getBuffer(url)
     )
     //---------------------------------------------------------------------------
  //---------------------------------------------------------------------------
-cmd({
-            pattern: "sticker",
-            alias: ["s"],
-            desc: "Makes sticker of replied image/video.",
-            category: "sticker",
-filename: __filename,
+Module_Exports({
+            kingcmd: "sticker",
+            shortcut: ["s"],
+            infocmd: "Makes sticker of replied image/video.",
+            kingclass: "sticker",
+kingpath: __filename,
             use: '<reply to any image/video.>'
         },
         async(Void, citel, text) => {
  let mime = citel.mtype;
 let media ;
-let pack = Config.packname
-let author = Config.author 
+let pack = name.packname
+let author = name.author 
 if (mime =="imageMessage" || mime =="videoMessage") {  media = await citel.download(); }
 else if (citel.quoted){ 
  mime = citel.quoted.mtype; 
@@ -157,7 +157,7 @@ else return citel.reply("```Uhh,Please reply to any image or video```");
           
 if(mime =="videoMessage")
 {
-    let caption = { packname :Config.packname, author:Config.author}
+    let caption = { packname :name.packname, author:name.author}
     const { writeExifVid }  = require("../lib/exif.js")
     let buffer = await writeExifVid(media , caption  );   
     return await Void.sendMessage(   citel.chat ,  { sticker: { url: buffer }, } );
@@ -171,7 +171,7 @@ if(mime =="videoMessage")
                     pack: pack, // The pack name
                     author: author, // The author name
                     type: StickerTypes.FULL ,
-                    categories: ["🤩", "🎉"], // The sticker category
+                    categories: ["🤩", "🎉"], // The sticker kingclass
                     id: "12345", // The sticker id
                     quality: 100, // The quality of the output file
                     background: "transparent",
@@ -182,20 +182,20 @@ if(mime =="videoMessage")
         }
     )
  //---------------------------------------------------------------------------
-cmd({
-            pattern: "circle",
-            alias: ["circlestic","circlesticker","cs"],
-            desc: "Makes sticker of replied image/video.",
-            category: "sticker",
-filename: __filename,
+Module_Exports({
+            kingcmd: "circle",
+            shortcut: ["circlestic","circlesticker","cs"],
+            infocmd: "Makes sticker of replied image/video.",
+            kingclass: "sticker",
+kingpath: __filename,
             use: '<reply to any image/video.>'
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`*Reply To any Image or video Sir.*`);
           //console.log("Quoted Data here : ",citel.quoted);
             let mime = citel.quoted.mtype
-            pack = Config.packname
-            author = Config.author
+            pack = name.packname
+            author = name.author
            if (mime =="imageMessage" || mime =="stickerMessage") {
                 let media = await citel.quoted.download();
                 //citel.reply("*Processing Your request*");
@@ -203,7 +203,7 @@ filename: __filename,
                     pack: pack, // The pack name
                     author: author, // The author name
                     type: StickerTypes.CIRCLE ,
-                    categories: ["🤩", "🎉"], // The sticker category
+                    categories: ["🤩", "🎉"], // The sticker kingclass
                     id: "12345", // The sticker id
                     quality: 75, // The quality of the output file
                 });
@@ -214,20 +214,20 @@ filename: __filename,
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "crop",
-            alias: ["cropstic","csticker","cropsticker"],
-            desc: "Makes sticker of replied image/video.",
-            category: "sticker",
-filename: __filename,
+Module_Exports({
+            kingcmd: "crop",
+            shortcut: ["cropstic","csticker","cropsticker"],
+            infocmd: "Makes sticker of replied image/video.",
+            kingclass: "sticker",
+kingpath: __filename,
             use: '<reply to any image/video.>'
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`*Reply To any Image or video Sir.*`);
           //console.log("Quoted Data here : ",citel.quoted);
             let mime = citel.quoted.mtype
-            pack = Config.packname
-            author = Config.author
+            pack = name.packname
+            author = name.author
             if (mime =="imageMessage"  || mime =="stickerMessage") {
                 let media = await citel.quoted.download();
                 //citel.reply("*Processing Your request*");
@@ -235,7 +235,7 @@ filename: __filename,
                     pack: pack, // The pack name
                     author: author, // The author name
                     type: StickerTypes.CROPPED,
-                    categories: ["🤩", "🎉"], // The sticker category
+                    categories: ["🤩", "🎉"], // The sticker kingclass
                     id: "12345", // The sticker id
                     quality: 75, // The quality of the output file
                 });
@@ -246,20 +246,20 @@ filename: __filename,
         }
     )
    //---------------------------------------------------------------------------
-cmd({
-            pattern: "round",
-            alias: ["roundstic","roundsticker"],
-            desc: "Makes sticker of replied image/video.",
-            category: "sticker",
-filename: __filename,
+Module_Exports({
+            kingcmd: "round",
+            shortcut: ["roundstic","roundsticker"],
+            infocmd: "Makes sticker of replied image/video.",
+            kingclass: "sticker",
+kingpath: __filename,
             use: '<reply to any image/video.>'
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`*Reply To any Image or video Sir.*`);
           //console.log("Quoted Data here : ",citel.quoted);
             let mime = citel.quoted.mtype
-            pack = Config.packname
-            author = Config.author
+            pack = name.packname
+            author = name.author
            if (mime =="imageMessage" || mime =="stickerMessage") {
                 let media = await citel.quoted.download();
                 //citel.reply("*Processing Your request*");
@@ -267,7 +267,7 @@ filename: __filename,
                     pack: pack, // The pack name
                     author: author, // The author name
                     type: StickerTypes.ROUNDED ,
-                    categories: ["🤩", "🎉"], // The sticker category
+                    categories: ["🤩", "🎉"], // The sticker kingclass
                     id: "12345", // The sticker id
                     quality: 75, // The quality of the output file
                 });
@@ -279,11 +279,11 @@ filename: __filename,
     )
 //---------------------------------------------------------------------------
 
-cmd({
-            pattern: "memegen",
-            desc: "Write text on quoted image.",
-            category: "sticker",
-            filename: __filename,
+Module_Exports({
+            kingcmd: "memegen",
+            infocmd: "Write text on quoted image.",
+            kingclass: "sticker",
+            kingpath: __filename,
             use: '<text>',
         },
         async(Void, citel, text) => {
@@ -299,12 +299,12 @@ cmd({
             let bg = await TelegraPh(mee)
             let thmb =await getBuffer(`https://api.memegen.link/images/custom/${tex2}/${tex1}.png?background=${bg}`)
 
-          if (isCheck.startsWith('p') || isCheck.startsWith('P')) { await Void.sendMessage(citel.chat , {image : thmb , caption : Config.caption })  }
+          if (isCheck.startsWith('p') || isCheck.startsWith('P')) { await Void.sendMessage(citel.chat , {image : thmb , caption : name.caption })  }
           else
           {
             let sticker = new Sticker(thmb, {
-                    pack: Config.packname, 
-                    author: Config.author, 
+                    pack: name.packname, 
+                    author: name.author, 
                     type: StickerTypes.FULL,
                     categories: ["🤩", "🎉"], 
                     id: "12345", 
@@ -322,13 +322,13 @@ cmd({
 
  //---------------------------------------------------------------------------
  //---------------------------------------------------------------------------
-cmd({
-            pattern: "quotely",
-            desc: "Makes Sticker of quoted text.",
-            alias: ["q"],
-            category: "sticker",
+Module_Exports({
+            kingcmd: "quotely",
+            infocmd: "Makes Sticker of quoted text.",
+            shortcut: ["q"],
+            kingclass: "sticker",
             use: '<reply to any message.>',
-            filename: __filename
+            kingpath: __filename
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`Please quote/reply to any message`);
@@ -371,18 +371,18 @@ cmd({
             };
             let res = await axios.post("https://bot.lyo.su/quote/generate", body);
             let img = Buffer.alloc(res.data.result.image.length, res.data.result.image, "base64");
-            return citel.send(img,{packname:Config.packname,author:''},"sticker")
+            return citel.send(img,{packname:name.packname,author:''},"sticker")
 
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "fancy",
-            desc: "Makes stylish/fancy given text",
-            category: "converter",
+Module_Exports({
+            kingcmd: "fancy",
+            infocmd: "Makes stylish/fancy given text",
+            kingclass: "converter",
             use: '56 Secktor',
             react: "✅",
-            filename: __filename
+            kingpath: __filename
         },
         async(Void, citel, text) => {
             if (isNaN(text.split(" ")[0]) || !text) {
@@ -401,13 +401,13 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "tiny",
-            desc: "Makes url tiny.",
-            category: "converter",
+Module_Exports({
+            kingcmd: "tiny",
+            infocmd: "Makes url tiny.",
+            kingclass: "converter",
             use: '<url>',
             react: "✅",
-            filename: __filename
+            kingpath: __filename
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Provide me a link`)
@@ -421,13 +421,13 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-        pattern: "toaudio",
-        alias:['mp3','tomp3'],
-        desc: "changes type to audio.",
-        category: "converter",
+Module_Exports({
+        kingcmd: "toaudio",
+        shortcut:['mp3','tomp3'],
+        infocmd: "changes type to audio.",
+        kingclass: "converter",
         use: '<reply to any Video>',
-        filename: __filename
+        kingpath: __filename
     },
    async(Void, citel, text) => {
         if (!citel.quoted) return citel.reply(`_Reply to Any Video_`);
@@ -451,13 +451,13 @@ if (mime =="audioMessage" || mime =="videoMessage")
     }
 )
      //---------------------------------------------------------------------------
-cmd({
-    pattern: "toMp4",
-    alias:['mp4','tovideo','tovid'],
-    desc: "changes type to audio.",
-    category: "converter",
+Module_Exports({
+    kingcmd: "toMp4",
+    shortcut:['mp4','tovideo','tovid'],
+    infocmd: "changes type to audio.",
+    kingclass: "converter",
     use: '<reply to any Video>',
-    filename: __filename
+    kingpath: __filename
 },
 async(Void, citel, text) => {
     const { webp2mp4File } = require ("../lib")
@@ -468,7 +468,7 @@ async(Void, citel, text) => {
     let media = await Void.downloadAndSaveMediaMessage(citel.quoted)
     try {
         if (/webp/.test(mimetype)) {  let webpToMp4 = await webp2mp4File(media);  media =  webpToMp4.result; }
-        await Void.sendMessage(citel.chat, { video: { url: media ,}, caption: Config.caption  },)
+        await Void.sendMessage(citel.chat, { video: { url: media ,}, caption: name.caption  },)
         try{ return await fs.unlink(media);}catch(e){ return console.log("Error While Deleting Tomp4 File :  ", e)}
     }catch(e){ return console.log("*Your Request Not Be Proceed due to Error.*  \n*_Error :_* ", e)}
 }

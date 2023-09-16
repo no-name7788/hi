@@ -8,14 +8,14 @@
  * @description : Suhail-Md, A Multi-functional whatsapp bot.
  **/
 
-const { tlang, ffmpeg,cmd } = require('../lib')
+const { tlang, ffmpeg,Module_Exports } = require('../lib')
 const fs = require('fs')
 const { exec } = require('child_process')
 //---------------------------------------------------------------------------
-cmd({
-        pattern: "bass",
-        desc: "adds bass in given sound",
-        category: "audio",
+Module_Exports({
+        kingcmd: "bass",
+        infocmd: "adds bass in given sound",
+        kingclass: "audio",
         use: '<reply to any audio>',
       //  react:"✅",
     },
@@ -47,10 +47,10 @@ cmd({
     }
 )
 //---------------------------------------------------------------------------
-cmd({
-        pattern: "blown",
-        desc: "adds blown in given audio",
-        category: "audio",
+Module_Exports({
+        kingcmd: "blown",
+        infocmd: "adds blown in given audio",
+        kingclass: "audio",
         use: '<reply to any audio>',
        // react:"✅",
     },
@@ -82,10 +82,10 @@ cmd({
     }
 )
 //---------------------------------------------------------------------------
-cmd({
-        pattern: "deep",
-        desc: "adds deep effect in given audio",
-        category: "audio",
+Module_Exports({
+        kingcmd: "deep",
+        infocmd: "adds deep effect in given audio",
+        kingclass: "audio",
         use: '<reply to any audio>',
       //  react:"✅",
     },
@@ -117,10 +117,10 @@ cmd({
     }
 )
 //---------------------------------------------------------------------------
-cmd({
-        pattern: "fast",
-        desc: "Adds fast(equilizer) in quoted audio.",
-        category: "audio",
+Module_Exports({
+        kingcmd: "fast",
+        infocmd: "Adds fast(equilizer) in quoted audio.",
+        kingclass: "audio",
         use: '<reply to any audio>',
        // react:"✅",
     },
@@ -152,10 +152,10 @@ cmd({
     }
 )
 //---------------------------------------------------------------------------
-cmd({
-        pattern: "reverse",
-        desc: "Adds reverse(equilizer) in quoted audio.",
-        category: "audio",
+Module_Exports({
+        kingcmd: "reverse",
+        infocmd: "Adds reverse(equilizer) in quoted audio.",
+        kingclass: "audio",
         use: '<reply to any audio>',
       //  react:"✅",
     },

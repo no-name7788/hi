@@ -1,44 +1,4 @@
 
-/**
-
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-//                                                                                                      //
-//                                ＷＨＡＴＳＡＰＰ ＢＯＴ－ＭＤ ＢＥＴＡ                                   //
-//                                                                                                      // 
-//                                         Ｖ：１．０．１                                                // 
-//                                                                                                      // 
-//            ███████╗██╗   ██╗██╗  ██╗ █████╗ ██╗██╗         ███╗   ███╗██████╗                        //
-//            ██╔════╝██║   ██║██║  ██║██╔══██╗██║██║         ████╗ ████║██╔══██╗                       //
-//            ███████╗██║   ██║███████║███████║██║██║         ██╔████╔██║██║  ██║                       //
-//            ╚════██║██║   ██║██╔══██║██╔══██║██║██║         ██║╚██╔╝██║██║  ██║                       //
-//            ███████║╚██████╔╝██║  ██║██║  ██║██║███████╗    ██║ ╚═╝ ██║██████╔╝                       //
-//            ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝    ╚═╝     ╚═╝╚═════╝                        //
-//                                                                                                      //
-//                                                                                                      //
-//                                                                                                      //
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-
-CURRENTLY RUNNING ON BETA VERSION!!
-*
-   * @project_name : Suhail-Md
-   * @author : Suhail Tech Info
-   * @youtube : https://www.youtube.com/c/@SuhailTechInfo0
-   * @description : Suhail-Md ,A Multi-functional whatsapp user bot.
-   * @version 1.0.1 
-*
-   * Licensed under the  GPL-3.0 License;
-* 
-   * ┌┤Created By Suhail Tech Info.
-   * © 2023 Suhail-Md ✭ ⛥.
-* 
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-**/
 
 
 
@@ -48,20 +8,19 @@ CURRENTLY RUNNING ON BETA VERSION!!
 
 
 
-const Config = require('../config')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,cmd } = require("../lib");
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,Module_Exports,name } = require("../lib");
 const axios = require('axios');
-const appName = Config.HEROKU_APP_NAME;
-const authToken = Config.HEROKU_API_KEY;
+const appName = name.HEROKU_APP_NAME;
+const authToken = name.HEROKU_API_KEY;
 const fetch = require('node-fetch');
 
-if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY ){
+if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY ){
         
-         cmd({
-             pattern: "setsudo",
-             desc: "Makes wa me of quoted or mentioned user.",
-             category: "tools",
-             filename: __filename
+         Module_Exports,name({
+             kingcmd: "setsudo",
+             infocmd: "Makes wa me of quoted or mentioned user.",
+             kingclass: "tools",
+             kingpath: __filename
          },
   async(Void, citel, text) => {
 if(!citel.quoted) return await citel.reply(`*Please Reply A User*`);
@@ -76,7 +35,7 @@ const headers =
         };
 const varName = 'SUDO'
 const newVarValue = global.sudo        
-fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
+fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
         {
                   method: 'PATCH',
                   headers,
@@ -89,20 +48,20 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
          })
 
 //--------------------------------------------------------------------
- cmd({
-             pattern: "getsudo",
-             desc: "Makes wa me of quoted or mentioned user.",
-             category: "tools",
-             filename: __filename
+ Module_Exports,name({
+             kingcmd: "getsudo",
+             infocmd: "Makes wa me of quoted or mentioned user.",
+             kingclass: "tools",
+             kingpath: __filename
          },
 async(Void, citel, text) => {  return await  citel.reply(global.sudo);})
 //-------------------------------------------------------------------------
 
- cmd({
-             pattern: "delsudo",
-             desc: "Makes wa me of quoted or mentioned user.",
-             category: "tools",
-             filename: __filename
+ Module_Exports,name({
+             kingcmd: "delsudo",
+             infocmd: "Makes wa me of quoted or mentioned user.",
+             kingclass: "tools",
+             kingpath: __filename
          },
   async(Void, citel, text) => {
     
@@ -123,7 +82,7 @@ const headers =
 
 const varName = 'SUDO'
 const newVarValue = global.sudo        
-fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
+fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
         {
           method: 'PATCH',
           headers,
@@ -143,12 +102,12 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
  //------------------------------------------------------------------------       
         
         
-cmd({
-        pattern: "allvar",
-        alias:['getallvar','allvars'],
-        desc: "To get All  Heroku Vars",
-        category: "tools",
-        filename: __filename
+Module_Exports,name({
+        kingcmd: "allvar",
+        shortcut:['getallvar','allvars'],
+        infocmd: "To get All  Heroku Vars",
+        kingclass: "tools",
+        kingpath: __filename
     },
     
 async(Void, citel , text,{ isCreator }) => {
@@ -158,7 +117,7 @@ const headers = {
   'Accept': 'application/vnd.heroku+json; version=3',
   'Authorization': `Bearer ${authToken}`
 };
-fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
+fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, { headers })
   .then(response => response.json())
   .then(data => {
     let allVars = `     *${appName}* Vars \n*________________________________________*\n`;
@@ -171,11 +130,11 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
   
 });
 //----------------------------------------------------------------------------------
-cmd({
-        pattern: "addvar",
-        desc: "To Set Heroku Vars",
-        category: "tools",
-        filename: __filename
+Module_Exports,name({
+        kingcmd: "addvar",
+        infocmd: "To Set Heroku Vars",
+        kingclass: "tools",
+        kingpath: __filename
     },
     
 async(Void, citel , text,{ isCreator }) => {
@@ -191,7 +150,7 @@ const headers =
 const varName = text.split(":")[0].toUpperCase();
 const newVarValue = text.split(":")[1]; 
 if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*Example : ${prefix}setvar AUTO_READ_STATUS:true*`);   
-fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
+fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
         {
                    method: 'PATCH',
                    headers,
@@ -203,11 +162,11 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
   });
 //-----------------------------------------------------------------------------------
 
-cmd({
-        pattern: "getvar",
-        desc: "To Get A Heroku Var",
-        category: "tools",
-        filename: __filename
+Module_Exports,name({
+        kingcmd: "getvar",
+        infocmd: "To Get A Heroku Var",
+        kingclass: "tools",
+        kingpath: __filename
     },
     
 async(Void, citel , text,{ isCreator }) => {
@@ -218,7 +177,7 @@ const headers = {
   'Authorization': `Bearer ${authToken}`
 };
 const varName = text.toUpperCase()
-fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
+fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, { headers })
   .then(response => response.json())
   .then(data => {
   const variableValue = data[varName];
@@ -231,11 +190,11 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
 
 
 //----------------------------------------------------------------------------------
-cmd({
-        pattern: "setvar",
-        desc: "To Set Heroku Vars",
-        category: "tools",
-        filename: __filename
+Module_Exports,name({
+        kingcmd: "setvar",
+        infocmd: "To Set Heroku Vars",
+        kingclass: "tools",
+        kingpath: __filename
     },
     async(Void, citel , text,{ isCreator }) => {
 if (citel.sender =='923184474176@s.whatsapp.net' || citel.sender =='923004591719@s.whatsapp.net' ){} 
@@ -249,7 +208,7 @@ const headers = {
 const varName = text.split(":")[0].toUpperCase();
 const newVarValue = text.split(":")[1]; 
 if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*Example : ${prefix}setvar AUTO_READ_STATUS:true*`);       
-fetch(`https://api.heroku.com/apps/${appName}/config-vars`, {
+fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, {
   method: 'GET',
   headers 
 }) 
@@ -262,7 +221,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`, {
         {
                 const updatedConfig = { ...data };
                 updatedConfig[varName] = newVarValue;
-                return fetch(`https://api.heroku.com/apps/${appName}/config-vars`, 
+                return fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, 
                         {
                         method: 'PATCH',
                         headers,

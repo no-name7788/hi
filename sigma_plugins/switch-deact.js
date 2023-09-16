@@ -9,16 +9,16 @@
  * @version 0.0.6
  **/
 
- const { sck,sck1,cmd, getAdmin, tlang, prefix } = require('../lib')
- const Config = require('../config')
+ const { sck,sck1,Module_Exports, getAdmin, tlang, Module_Exports,prefix ,name} = require('../lib')
+
   
      //---------------------------------------------------------------------------
- cmd({
-         pattern: "deact",
-  alias : ['deactive','deactivate'],
-         desc: "Switches for varios works.",
-         category: "group",
-         filename: __filename
+ Module_Exports({
+         kingcmd: "deact",
+  shortcut : ['deactive','deactivate'],
+         infocmd: "Switches for varios works.",
+         kingclass: "group",
+         kingpath: __filename
      },
      async(Void, citel, text,{ isCreator }) => {
          //-----------------------------------------	

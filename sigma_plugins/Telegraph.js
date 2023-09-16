@@ -1,25 +1,15 @@
 
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
 //---------------------------------------------------------------------------
-const { cmd }   = require('../lib');
+const { Module_Exports }   = require('../lib');
 const util = require('util');
 const axios = require('axios');
 const PastebinAPI = require("pastebin-js");
 pastebin = new PastebinAPI("EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL");
-cmd({
-        pattern: "pastebin",
-        desc: "To check ping",
-        category: "converter",
-        filename: __filename,
+Module_Exports({
+        kingcmd: "pastebin",
+        infocmd: "To check ping",
+        kingclass: "converter",
+        kingpath: __filename,
     },
     async(Void, citel,text) => {
  if (!text) { text=citel.quoted.text;}
@@ -29,11 +19,11 @@ cmd({
     }
 );
 //----------------------------------------------- ---------------------------
-cmd({
-        pattern: "paste",
-        desc: "create paste of text.",
-        category: "converter",
-        filename: __filename,
+Module_Exports({
+        kingcmd: "paste",
+        infocmd: "create paste of text.",
+        kingclass: "converter",
+        kingpath: __filename,
     },
     async(Void, citel,text) => {
  let a = citel.quoted ? citel.quoted.text : citel.text;

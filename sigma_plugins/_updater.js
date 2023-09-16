@@ -10,7 +10,7 @@
  **/
 
 const DB = require('../lib/scraper')
-const { tlang, Config, prefix,cmd } = require('../lib')
+const { tlang, name, prefix,Modu, Module_Exportsle_Exports } = require('../lib')
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
@@ -35,11 +35,11 @@ async function updateHerokuApp() {
 
   
 //---------------------------------------------------------------------------
-cmd({
-            pattern: "update",
-            desc: "Shows repo\'s refreshed commits.",
-            category: "tools",
-            filename: __filename
+Module_Exports({
+            kingcmd: "update",
+            infocmd: "Shows repo\'s refreshed commits.",
+            kingclass: "tools",
+            kingpath: __filename
         },
         async(Void, citel, text,{ isCreator }) => {
             if (!isCreator) return citel.reply(`This command is only for my owner`)
@@ -67,14 +67,14 @@ else return
 //---------------------------------------------------------------------------
 //                  UPDATE COMMANDS
 //---------------------------------------------------------------------------
-if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY )
+if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
 {
         
-     cmd({
-                 pattern: "updatenow",
-                 desc: "Shows repo\'s refreshed commits.",
-                 category: "tools",
-                 filename: __filename
+     Module_Exports({
+                 kingcmd: "updatenow",
+                 infocmd: "Shows repo\'s refreshed commits.",
+                 kingclass: "tools",
+                 kingpath: __filename
              },
         async(Void, citel, text,{ isCreator }) => {
                 if(!isCreator) return await citel.reply("Only Owner Can Use This Command")
@@ -95,11 +95,11 @@ if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY )
        })
 }
 /*
-cmd({
-    pattern: "update start",
-    desc: "Shows repo\'s refreshed commits.",
-    category: "misc",
-    filename: __filename
+Module_Exports({
+    kingcmd: "update start",
+    infocmd: "Shows repo\'s refreshed commits.",
+    kingclass: "misc",
+    kingpath: __filename
 },
 async(Void, citel, text,{ isCreator }) => {
     await git.fetch();
@@ -117,13 +117,13 @@ async(Void, citel, text,{ isCreator }) => {
        // await fixHerokuAppName(message)
         await citel.reply('Update Started...')
 
- try { var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)  }
+ try { var app = await heroku.get('/apps/' + name.HEROKU_APP_NAME)  }
  catch { await citel.reply('Heroku Information Wrong')
         await new Promise(r => setTimeout(r, 1000)); }
  
         git.fetch('upstream', 'main');
         git.reset('hard', ['FETCH_HEAD']);
-        var git_url = app.git_url.replace( "https://", "https://api:" + Config.HEROKU_API_KEY + "@"  )
+        var git_url = app.git_url.replace( "https://", "https://api:" + name.HEROKU_API_KEY + "@"  )
         try { await git.addRemote('heroku', git_url);  } 
        catch { console.log('null '); }
         await git.push('heroku', 'main');
@@ -142,17 +142,17 @@ async function fixHerokuAppName(message){
     if (!HEROKU_API_KEY) return await message.sendReply(`_You have not provided HEROKU_API_KEY\n\nPlease fill this var, get api key from heroku account settings_`)
     let apps = await heroku.get('/apps')
     let app_names = apps.map(e=>e.name)
-    if (!HEROKU_APP_NAME || !app_names.includes(Config.HEROKU_APP_NAME)){
+    if (!HEROKU_APP_NAME || !app_names.includes(name.HEROKU_APP_NAME)){
     function findGreatestNumber(e){let t=e[0];for(let n=1;n<e.length;n++)e[n]>t&&(t=e[n]);return t}
     let times = apps.map(e=>new Date(e.updated_at).getTime())
     let latest = findGreatestNumber(times)
     let index = times.indexOf(latest)
     let app_name = apps[index].name
-    Config.HEROKU_APP_NAME = app_name
+    name.HEROKU_APP_NAME = app_name
     process.env.HEROKU_APP_NAME = app_name
     baseURI = '/apps/' + app_name;
     await message.sendReply(`_You provided an incorrect heroku app name, and I have corrected your app name to "${app_name}"_\n\n_Please retry this command after restart!_`)    
-    Config.HEROKU_APP_NAME = app_name
+    name.HEROKU_APP_NAME = app_name
         return await setVar("HEROKU_APP_NAME",app_name,message)
     }
 }
