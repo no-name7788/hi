@@ -9,7 +9,7 @@
  * @version 0.0.6
  **/
 
- const { sck,sck1,Module_Exports, getAdmin, tlang, Module_Exports,prefix ,name} = require('../lib')
+ const { sck,sck1,Module_Exports, getAdmin, tlang,prefix ,name} = require('../lib')
 
   
      //---------------------------------------------------------------------------

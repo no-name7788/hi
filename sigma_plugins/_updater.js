@@ -10,7 +10,7 @@
  **/
 
 const DB = require('../lib/scraper')
-const { tlang, name, prefix,Modu, Module_Exportsle_Exports } = require('../lib')
+const { tlang, name, prefix, Module_Exports } = require('../lib')
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');

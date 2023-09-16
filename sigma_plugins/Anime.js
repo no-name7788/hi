@@ -1,5 +1,5 @@
 
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1, Module_Exports,name, GIFBufferToVideoB, Module_Exportsuffer } = require("../lib");
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1, Module_Exports,name, GIFBufferToVideoBuffer } = require("../lib");
 const axios = require('axios');
 const fetch = require('node-fetch');
 // let gis = '' // require("g-i-s")
