@@ -7,14 +7,14 @@
 
 
 
-
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,Module_Exports,name } = require("../lib");
+const Config = require('../config')
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,cmd } = require("../lib");
 const axios = require('axios');
-const appName = name.HEROKU_APP_NAME;
-const authToken = name.HEROKU_API_KEY;
+const appName = Config.HEROKU_APP_NAME;
+const authToken = Config.HEROKU_API_KEY;
 const fetch = require('node-fetch');
 
-if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY ){
+if(Cofig.HEROKU_APP_NAME && Cofig.HEROKU_API_KEY ){
         
          Module_Exports({
              kingcmd: "setsudo",
@@ -35,7 +35,7 @@ const headers =
         };
 const varName = 'SUDO'
 const newVarValue = global.sudo        
-fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
+fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
         {
                   method: 'PATCH',
                   headers,
@@ -82,7 +82,7 @@ const headers =
 
 const varName = 'SUDO'
 const newVarValue = global.sudo        
-fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
+fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
         {
           method: 'PATCH',
           headers,
@@ -117,7 +117,7 @@ const headers = {
   'Accept': 'application/vnd.heroku+json; version=3',
   'Authorization': `Bearer ${authToken}`
 };
-fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, { headers })
+fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
   .then(response => response.json())
   .then(data => {
     let allVars = `     *${appName}* Vars \n*________________________________________*\n`;
@@ -150,7 +150,7 @@ const headers =
 const varName = text.split(":")[0].toUpperCase();
 const newVarValue = text.split(":")[1]; 
 if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*Example : ${prefix}setvar AUTO_READ_STATUS:true*`);   
-fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`,
+fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
         {
                    method: 'PATCH',
                    headers,
@@ -177,7 +177,7 @@ const headers = {
   'Authorization': `Bearer ${authToken}`
 };
 const varName = text.toUpperCase()
-fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, { headers })
+fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
   .then(response => response.json())
   .then(data => {
   const variableValue = data[varName];
@@ -208,7 +208,7 @@ const headers = {
 const varName = text.split(":")[0].toUpperCase();
 const newVarValue = text.split(":")[1]; 
 if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*Example : ${prefix}setvar AUTO_READ_STATUS:true*`);       
-fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, {
+fetch(`https://api.heroku.com/apps/${appName}/config-vars`, {
   method: 'GET',
   headers 
 }) 
@@ -221,7 +221,7 @@ fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, {
         {
                 const updatedConfig = { ...data };
                 updatedConfig[varName] = newVarValue;
-                return fetch(`https://api.heroku.com/apps/${appName}/Setting-vars`, 
+                return fetch(`https://api.heroku.com/apps/${appName}/config-vars`, 
                         {
                         method: 'PATCH',
                         headers,
