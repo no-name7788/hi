@@ -63,4 +63,11 @@ Module_Exports({
 },
 
         async(sigma, person, memo) => {
-            var _0xfdb1=["\x72\x65\x70\x6C\x79","\x20","\x73\x70\x6C\x69\x74","","\x74\x65\x73\x74","\x63\x68\x61\x74","\x62\x6F\x74\x6E\x61\x6D\x65","\x2A","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65","\x45\x72\x72\x6F\x72\x20\x77\x68\x69\x6C\x65\x20\x64\x6F\x77\x6E\x6C\x6F\x61\x64\x69\x6E\x67\x20\x79\x6F\x75\x72\x20\x76\x69\x64\x65\x6F"];if(!memo){return  await person[_0xfdb1[0]]("\x2A\x5F\x47\x69\x76\x65\x20\x6D\x65\x20\x74\x69\x6B\x74\x6F\x6B\x20\x76\x69\x64\x65\x6F\x20\x6C\x69\x6E\x6B\x5F\x2A")};let txt=memo?memo[_0xfdb1[2]](_0xfdb1[1])[0]:_0xfdb1[3];if(!/tiktok/[_0xfdb1[4]](txt)){return  await person[_0xfdb1[0]]("\x2A\x5F\x50\x6C\x65\x61\x73\x65\x20\x67\x69\x76\x65\x20\x6D\x65\x20\x76\x61\x6C\x69\x64\x20\x74\x69\x6B\x74\x6F\x6B\x20\x76\x69\x64\x65\x6F\x20\x6C\x69\x6E\x6B\x2E\x2E\x21\x5F\x2A")};const {status,thumbnail,video,audio}= await tiktokdl(txt);if(status){return  await sigma[_0xfdb1[8]](person[_0xfdb1[5]],{video:{url:video},caption:("\x2A\u2570\u2508\u27A4\x20\uD835\uDE76\uD835\uDE74\uD835\uDE7D\uD835\uDE74\uD835\uDE81\uD835\uDE70\uD835\uDE83\uD835\uDE74\uD835\uDE73\x20\uD835\uDE71\uD835\uDE88\x20"+name[_0xfdb1[6]]+_0xfdb1[7]),height:470,width:540},{quoted:person})}else {return  await person[_0xfdb1[0]](_0xfdb1[9])}	})
+            if(!memo) return await person.reply(`*_Give me tiktok video link_*`);
+            let txt = memo ? memo.split(" ")[0]:'';
+            if (!/tiktok/.test(txt)) return await person.reply(`*_Please give me valid tiktok video link..!_*`);
+            const { status ,thumbnail, video, audio } = await tiktokdl(txt)
+            //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
+            if (status) return await sigma.sendMessage(person.chat, {video : {url : video } ,caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,height: 470,width: 540,  } , {quoted : person });
+            else return await person.reply("Error while downloading your video") 
+        })           
