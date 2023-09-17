@@ -43,7 +43,7 @@ Module_Exports({
 
 if(text == 'all')
 {
-          citel.reply(`Started Updating You Bot...`);
+          citel.reply(`Started Updating You Bot...\nPlease Wait`);
           const update = await updateHerokuApp();
           return await citel.reply(update);
 }
