@@ -29,10 +29,10 @@ async function convertAudioToBlackScreenVideo(audioPath, outputPath) {
 }
 //------------------------------------------------------------------
 cmd({
-        pattern: "delbgm",
-        desc: "create paste of text.",
-        category: "general",
-        filename: __filename,
+        kingcmd: "delbgm",
+        infocmd: "create paste of text.",
+        kingclass: "general",
+        kingpath: __filename,
     },
 async(Void,citel,text)=>{
 if(!text) return await citel.reply("*Give Me Song Name to Delete From BGM*")
@@ -51,10 +51,10 @@ if (bgmm.bgmArray.has(text)) {
 })
 ///============================================================================
 cmd({
-        pattern: "allbgm",
-        desc: "create paste of text.",
-        category: "general",
-        filename: __filename,
+        kingcmd: "allbgm",
+        infocmd: "create paste of text.",
+        kingclass: "general",
+        kingpath: __filename,
     },
 async(Void,citel,text)=>{
  text = ' *BGM SONG INFORMATION*\n'
@@ -69,10 +69,10 @@ return await citel.reply(text);
 })
 ///============================================================================
 cmd({
-        pattern: "addbgm",
-        desc: "create paste of text.",
-        category: "general",
-        filename: __filename,
+        kingcmd: "addbgm",
+        infocmd: "create paste of text.",
+        kingclass: "general",
+        kingpath: __filename,
     },
 
 async(Void,citel,text)=>
