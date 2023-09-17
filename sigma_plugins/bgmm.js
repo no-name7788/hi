@@ -1,11 +1,12 @@
-const {TelegraPh , bgms } = require('../lib/')
+const {TelegraPh , bgms  } = require('../lib/')
 
 const ffmpeg = require('fluent-ffmpeg');
 const axios = require('axios')
-const { getBuffer, Module_Exports , name} = require('../lib/')
+const { getBuffer, cmd } = require('../lib/')
 const fs = require('fs-extra');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const Config = require('../Setting')
  
 // -------------------------------------------------------------------
 
@@ -27,11 +28,11 @@ async function convertAudioToBlackScreenVideo(audioPath, outputPath) {
   } catch (error) {  console.error('An error occurred:', error); return {result : false }}
 }
 //------------------------------------------------------------------
-Module_Exports({
-        kingcmd: "delbgm",
-        infocmd: "create paste of text.",
-        kingclass: "general",
-        kingpath: __filename,
+cmd({
+        pattern: "delbgm",
+        desc: "create paste of text.",
+        category: "general",
+        filename: __filename,
     },
 async(Void,citel,text)=>{
 if(!text) return await citel.reply("*Give Me Song Name to Delete From BGM*")
@@ -49,11 +50,11 @@ if (bgmm.bgmArray.has(text)) {
 
 })
 ///============================================================================
-Module_Exports({
-        kingcmd: "allbgm",
-        infocmd: "create paste of text.",
-        kingclass: "general",
-        kingpath: __filename,
+cmd({
+        pattern: "allbgm",
+        desc: "create paste of text.",
+        category: "general",
+        filename: __filename,
     },
 async(Void,citel,text)=>{
  text = ' *BGM SONG INFORMATION*\n'
@@ -67,11 +68,11 @@ return await citel.reply(text);
   //await citel.reply("bgm Data  : " + bgmm)
 })
 ///============================================================================
-Module_Exports({
-        kingcmd: "addbgm",
-        infocmd: "create paste of text.",
-        kingclass: "general",
-        kingpath: __filename,
+cmd({
+        pattern: "addbgm",
+        desc: "create paste of text.",
+        category: "general",
+        filename: __filename,
     },
 
 async(Void,citel,text)=>
@@ -110,8 +111,8 @@ if (!path) return await citel.reply("There's an Error While Adding Bgm Song")
 
 
 
-Module_Exports({ on: "text" }, async (Void,citel,text)=> {
-  if(name.disablepm)
+cmd({ on: "text" }, async (Void,citel,text)=> {
+  if(Config.disablepm)
   {
     let citelText = ` ${citel.text} ` ; 
      let bgmm= await bgms.findOne({ id:"3" }) || await new bgms({ id:"3"}).save();
@@ -122,4 +123,3 @@ Module_Exports({ on: "text" }, async (Void,citel,text)=> {
     }
   }
 })
-
