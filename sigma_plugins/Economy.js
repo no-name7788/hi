@@ -189,7 +189,7 @@ async(sigma, person, text,{ isCreator }) => {
     let mongoschemas = zerogroup.economy || "false";
     if (mongoschemas == "false") return person.reply("*Economy* _is not active in current group._");
     let value = text.trim().split(" ");
-    if (value[0] === "") return person.reply(`Use ${prefix}transfer 100 @user`);
+    if (value[0] === "") return person.reply(`Use ${prefix}transfer 100 reply a user`);
     let user = person.mentionedJid ? person.mentionedJid[0] : person.msg.contextInfo.participant || false;
     if(!user) return person.reply('Please give me any user.');
     const zubair = "zubair"
