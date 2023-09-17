@@ -21,7 +21,7 @@ global.website = 'https://github.com/SuhailTechInfo/Secktor-Md' ; //wa.me/+91000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png' ;
 module.exports = {
   sessionName: process.env.SESSION_ID || '',      //Put Your Session Id Here
-  botname: process.env.BOT_NAME || 'sɪɢᴍᴀ²⁰²³-ᴍᴅ',
+  botname: process.env.BOT_NAME || 'sᴜʜᴀɪʟ²²¹-ᴍᴅ',
   ownername:  process.env.OWNER_NAME || `It'x Suhail`,
   author:  process.env.PACK_AUTHER || '', 
   auto_read_status : process.env.AUTO_READ_STATUS || 'true',
