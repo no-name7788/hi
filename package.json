@@ -20,6 +20,7 @@
                     "aptoide-scraper": "^1.0.1",
                     "async-g-i-s": "^1.4.0",
                     "awesome-phonenumber": "^3.3.0",
+                    "@bochilteam/scraper": "latest",
                     "axios": "^0.24.0",
                     "chalk": "^4.1.2",
                     "cheerio": "^1.0.0-rc.10",
