@@ -43,7 +43,7 @@ Module_Exports({
 
 if(text == 'start')
 {
-          citel.reply('Updater Started...');
+          citel.reply(`Started Updating You Bot...`);
           const update = await updateHerokuApp();
           return await citel.reply(update);
 }
@@ -89,7 +89,7 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
 }
 /*
 Module_Exports({
-    kingcmd: "update start",
+    kingcmd: "update all",
     infocmd: "Shows repo's refreshed commits.",
     kingclass: "tools",
     kingpath: __filename
