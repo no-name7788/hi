@@ -63,8 +63,8 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
 {
         
      Module_Exports({
-                 kingcmd: "updatenow",
-                 shortcut: ["unow"],
+                 kingcmd: "updatebot",
+                 shortcut: ["ubot"],
                  infocmd: "Shows repo\'s refreshed commits.",
                  kingclass: "tools",
                  kingpath: __filename
