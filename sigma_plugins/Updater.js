@@ -41,7 +41,7 @@ Module_Exports({
             await Void.sendMessage(citel.chat, { text: update, },{ quoted : citel });
 
 
-if(text == 'start')
+if(text == 'all')
 {
           citel.reply(`Started Updating You Bot...`);
           const update = await updateHerokuApp();
