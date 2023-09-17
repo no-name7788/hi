@@ -8,9 +8,10 @@
  * @description : Suhail-Md, A Multi-functional whatsapp bot.
  **/
 
-const { tlang, ffmpeg,Module_Exports } = require('../lib')
+const { tlang,Module_Exports } = require('../lib')
 const fs = require('fs')
 const { exec } = require('child_process')
+const {ffmpeg} = require('../lib')
 //---------------------------------------------------------------------------
 Module_Exports({
         kingcmd: "bass",
