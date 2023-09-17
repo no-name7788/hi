@@ -1,30 +1,58 @@
-const { Insta , name, Module_Exports , prefix } = require('../lib')
+const {Module_Exports , name , prefix,getBuffer,tlang,fetchJson } = require('../lib')
+const fetch = require('node-fetch');
+const bocil = require('@bochilteam/scraper');
+const cheerio = require('cheerio')
+const axios= require('axios');
+
 Module_Exports({
         kingcmd: "insta",
-        shortcut  : ['ig','instagram'],
-        infocmd: "download instagram post.",
+        shortcut: ["ig","igdl","instagram"],
+        infocmd: "download instagram videos",
         kingclass: "downloader",
-        kingpath: __filename
+        use: "paste insta video link"
     },
-    async(Void, citel,text,{isCreator}) => {
-if(!text) return citel.send('Need insta post url.')
-let response = await Insta(text)
-for (let i=0;i<response.length;i++) {
-await Void.sendFileUrl(citel.chat, response[i], `*Downloaded Media from instagram.*` +  name.caption, citel)
-}
-    });
-//----------------------------------------------------------------------------------
-Module_Exports({
-    kingcmd: "insta2",
-    infocmd: "Downloads Instagram videos.",
-    kingclass: "downloader",
-    kingpath: __filename,
-    use: '<add fb url.>'
-},
-async(Void, citel, text) => {
-    const _0x3a394f=_0x1abc;function _0x1abc(_0x2aabc3,_0x588a3c){const _0x1ab7b4=_0x1ab7();return _0x1abc=function(_0x1abc1a,_0x25b3c4){_0x1abc1a=_0x1abc1a-0x10b;let _0x363012=_0x1ab7b4[_0x1abc1a];return _0x363012;},_0x1abc(_0x2aabc3,_0x588a3c);}(function(_0x357e15,_0x3e2c17){const _0x3b988d=_0x1abc,_0x20b59d=_0x357e15();while(!![]){try{const _0x501fce=parseInt(_0x3b988d(0x10e))/0x1+-parseInt(_0x3b988d(0x11e))/0x2+parseInt(_0x3b988d(0x117))/0x3*(-parseInt(_0x3b988d(0x114))/0x4)+-parseInt(_0x3b988d(0x10f))/0x5+-parseInt(_0x3b988d(0x112))/0x6*(-parseInt(_0x3b988d(0x11d))/0x7)+parseInt(_0x3b988d(0x10c))/0x8*(parseInt(_0x3b988d(0x115))/0x9)+parseInt(_0x3b988d(0x110))/0xa*(-parseInt(_0x3b988d(0x11c))/0xb);if(_0x501fce===_0x3e2c17)break;else _0x20b59d['push'](_0x20b59d['shift']());}catch(_0x3ed9a8){_0x20b59d['push'](_0x20b59d['shift']());}}}(_0x1ab7,0x4d698));function _0x1ab7(){const _0x3475eb=['661500VUTwpF','132598FUAMeU','mumaker','*_Error,\x20Video\x20Not\x20Found_*','4903064bnKfzi','https://','113491EMbBhu','779600klsVgJ','10cdVIhI','chat','6BpypDO','error\x20while\x20Fb\x20Downloading\x20:\x20','32bVOAfE','9yDBwqi','caption','103932JLKfIc','sendFileUrl','send','insta2\x20https://www.instagram.com/reel/Cmvj5aWJE56/?utm_source=ig_web_copy_link_*','*_Please\x20Give\x20me\x20Insta\x20Video\x20Url_*\x0a*Example\x20_','48653TrWnhJ'];_0x1ab7=function(){return _0x3475eb;};return _0x1ab7();}if(!text||!text['startsWith'](_0x3a394f(0x10d)))return await citel[_0x3a394f(0x119)](_0x3a394f(0x11b)+prefix+_0x3a394f(0x11a));try{const {instagram}=require(_0x3a394f(0x11f));let insta=await instagram(text);for(let i=0x0;i<insta['length'];i++){await Void[_0x3a394f(0x118)](citel[_0x3a394f(0x111)],insta[i],name[_0x3a394f(0x116)]+name['caption'],citel);}}catch(_0x1a69c1){return await citel[_0x3a394f(0x119)](_0x3a394f(0x10b));console['log'](_0x3a394f(0x113),_0x1a69c1);}
+    async(sigma,person,memo) => {
+if(!memo) return person.reply('*_Give me insta video link_*')
+let txt = memo ? memo.split(" ")[0]:'';
+if (!/instagram/.test(txt)) return await person.reply(`*_Please give me valid instagram video link..!_*`);
+let data;
+try{ data= await (await fetch(`https://inrl-web.onrender.com/api/insta?url=${memo}`)).json();} 
+catch { return person.reply(`An error occurred`);  }
+return sigma.sendMessage(person.chat, {video : {url : data.result[0] },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 600,height: 490, },{ quoted: person })
+    })
 
-
+Module_Exports({kingcmd: "facebook",
+     shortcut: ["fb","fbdl"],
+     kingclass: "downloader",
+     infocmd: "downloads facebook videos",
+     use: "paste fb video link"
+     },
+    async(sigma, person, memo) => {
+        if (!memo) return person.reply(`Give me facebook video link`);
+         let txt = memo ? memo.split(" ")[0]:'';
+ if (!/facebook/.test(txt)) return await person.reply(`Please give me valid facebook video link..!`);
+         bocil.facebookdlv2(memo).then(async (data) =>
+          {  return sigma.sendMessage(person.chat, { video: { url: data.result[0].url },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 550,height: 470, },{ quoted: person }) }) 
+         return person.reply("Error while downloading your video") 
 })
 
-//---------------------------------------------------------------------------
+
+
+
+
+Module_Exports({
+            kingcmd: "tiktok",
+	    shortcut :  ['tt','ttdl'],
+            infocmd: "Downloads Tiktok Videos Via Url.",
+            kingclass: "downloader",
+            use: "paste tiktok video link",
+},
+
+        async(sigma, person, memo) => {
+ if(!memo) return await person.reply(`*_Give me tiktok video link_*`);
+ let txt = memo ? memo.split(" ")[0]:'';
+ if (!/tiktok/.test(txt)) return await person.reply(`*_Please give me valid tiktok video link..!_*`);
+ const { status ,thumbnail, video, audio } = await tiktokdl(txt)
+ //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
+ if (status) return await sigma.sendMessage(person.chat, {video : {url : video } ,caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,height: 470,width: 540,  } , {quoted : person });
+ else return await person.reply("Error while downloading your video") 	})
