@@ -76,7 +76,7 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
                 let update = await DB.sync()
                 let buttonMessaged = 
                 {
-                     text:" *♕ Updating Your Bot...!*\n  *★────────────────────────★*\n"+update +"\n  *★────────────────────────★*",
+                     text:" ♕ *Updating Your Bot...!*\n  *★────────────────────────★*\n"+update +"\n  *★────────────────────────★*",
                      footer: 'UPDATER --- sᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo',
                      headerType: 4,
                 };
