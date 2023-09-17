@@ -28,7 +28,7 @@ Module_Exports({
             let ran = citel.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
-                if (err) return reply(err);
+                if (err) return citel.reply(err);
                 let buff = fs.readFileSync(ran);
                 Void.sendMessage(
                     citel.chat, {
@@ -63,7 +63,7 @@ Module_Exports({
             let ran = citel.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
-                if (err) return reply(err);
+                if (err) return citel.reply(err);
                 let buff = fs.readFileSync(ran);
                 Void.sendMessage(
                     citel.chat, {
@@ -98,7 +98,7 @@ Module_Exports({
             let ran = citel.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
-                if (err) return reply(err);
+                if (err) return citel.reply(err);
                 let buff = fs.readFileSync(ran);
                 Void.sendMessage(
                     citel.chat, {
@@ -133,7 +133,7 @@ Module_Exports({
             let ran = citel.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
-                if (err) return reply(err);
+                if (err) return citel.reply(err);
                 let buff = fs.readFileSync(ran);
                 Void.sendMessage(
                     citel.chat, {
@@ -168,7 +168,7 @@ Module_Exports({
             let ran = citel.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
-                if (err) return reply(err);
+                if (err) return citel.reply(err);
                 let buff = fs.readFileSync(ran);
                 Void.sendMessage( citel.chat, {  audio: buff, mimetype: "audio/mpeg",}, { quoted: citel, });
                 fs.unlinkSync(ran);
