@@ -81,7 +81,7 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
                 await Void.sendMessage(citel.chat, buttonMessaged);
                 await require("simple-git")().reset("hard",["HEAD"])
                 await require("simple-git")().pull()
-                await citel.reply(`*_HEY_* ${name.ownername} *_Your Bot Is_*\n*_Running on Latest Version_*`)
+                await citel.reply(`*Update Started*`)
                 process.exit(0);
        })
 }
