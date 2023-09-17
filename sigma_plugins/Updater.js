@@ -35,7 +35,7 @@ Module_Exports({
         async(Void, citel, text,{ isCreator }) => {
             if (!isCreator) return citel.reply(tlang().owner)
             let commits = await DB.syncgit()
-            if (commits.total === 0) return await citel.reply(`*_HEY_* ${name.ownername} *_Your Bot Is_*\n*_Running on Latest Version_*`) 
+            if (commits.total === 0) return await citel.reply(`*HEY* *${name.ownername}* *Your Bot Is*\n*Running on Latest Version*`) 
             let update = await DB.sync()
             await Void.sendMessage(citel.chat, { text: update, },{ quoted : citel });
 
@@ -70,7 +70,7 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
         async(Void, citel, text,{ isCreator }) => {
                 if(!isCreator) return await citel.reply(tlang().owner)
                 let commits = await DB.syncgit()
-                if (commits.total === 0) return await citel.reply(`*_HEY_* ${name.ownername} *_Your Bot Is_*\n*_Running on Latest Version_*`)
+                if (commits.total === 0) return await citel.reply(`*HEY* *${name.ownername}* *Your Bot Is*\n*Running on Latest Version*`)
                 let update = await DB.sync()
                 let buttonMessaged = 
                 {
