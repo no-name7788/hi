@@ -9,221 +9,226 @@ async function singleText(Void, citel , url = '' , text1 , text2 ){
 
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "slice", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('*_Example : .slice Suhail Tech_*');
+        if (!text) return citel.reply(`*_Example : ${prefix}slice Maher Zubair_*`);
         return await singleText(Void, citel , 'create-light-glow-sliced-text-effect-online-1068' , text )
     })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "glow", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('*_Example : .glow Suhail Tech_*');
+        if (!text) return citel.reply(`*_Example : ${prefix}glow Maher Zubair_*`);
         return await singleText(Void, citel , 'free-advanced-glow-text-effect-873' , text )
     })
 //----------------------------------------------------------------------------------- 
-Module_Exports({ kingcmd: "gitch1", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('*_Example : .gitch1 Suhail Tech_*');
+Module_Exports({ kingcmd: "glittch", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
+        if (!text) return citel.reply(`*_Example : ${prefix}glittch Maher Zubair_*`);
         return await singleText(Void, citel , 'create-impressive-glitch-text-effects-online-1027' , text )        
     }) 
 //---------------------------------------------------------------------------
 //================================================================================================================================
 Module_Exports({ kingcmd: "stel",alias:['steal'],kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Example : .steel suhail;tech info_');  
+            if (!text) return citel.reply(`_Example : ${prefix}stel Maher;Zubair_`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
-            if(!text2 || !text1) return await citel.reply("*Uhh Please Provide text. Example: .stel text1;text2*");
+            if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}stel text1;text2*`);
             return await singleText(Void, citel , '3d-steel-text-effect-877' , text1 , text2 )
         })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "avenger",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('*_Example : .avenger suhail;tech_*');  
+            if (!text) return citel.reply(`*_Example : ${prefix}avenger Maher;Zubair_*`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
-            if(!text2 || !text1) return await citel.reply("*Uhh Please Provide text. Example: .avenger text1;text2*");
+            if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}avenger text1;text2*`);
             return await singleText(Void, citel ,'create-3d-avengers-logo-online-974' , text1 , text2 )
         })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "marvel",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('*_Example : .marvel suhail;tech_*');  
+            if (!text) return citel.reply(`*_Example : ${prefix}marvel Maher;Zubair_*`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
-            if(!text2 || !text1) return await citel.reply("*Uhh Please Provide text. Example: .marvel text1;text2*");
+            if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}marvel text1;text2*`);
             return await singleText(Void, citel , 'create-logo-style-marvel-studios-ver-metal-972' , text1 , text2 )
         })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "phub",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('*_Example : .phub suhail;tech_*');  
+            if (!text) return citel.reply(`*_Example : ${prefix}phub Maher;Zubair_*`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
-            if(!text2 || !text1) return await citel.reply("*Uhh Please Provide text. Example: .phub text1;text2*");
+            if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}phub text1;text2*`);
             return await singleText(Void, citel , 'pornhub-style-logo-online-generator-free-977' , text1 , text2 )
         })
 //-----------------------------------------------------------------------------------
 
-Module_Exports({ kingcmd: "glitch",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('*_Example : .glitch suhail;tech_*');  
+Module_Exports({ kingcmd: "glitch3",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
+            if (!text) return citel.reply(`*_Example : ${prefix}glitch3 Maher;Zubair_*`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
-            if(!text2 || !text1) return await citel.reply("*Uhh Please Provide text. Example: .glitch text1;text2*");
+            if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}glitch3 text1;text2*`);
             return await singleText(Void, citel ,'create-glitch-text-effect-style-tik-tok-983', text1 , text2 )
         })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "glitch2",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('*_Example : .glitch2 suhail;tech_*');  
+            if (!text) return citel.reply(`*_Example : ${prefix}glitch2 Maher;Zubair_*`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
-            if(!text2 || !text1) return await citel.reply("*Uhh Please Provide text. Example: .glitch2 text1;text2*");
+            if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}glitch2 text1;text2*`);
             return await singleText(Void, citel , 'create-a-glitch-text-effect-online-free-1026' , text1 , text2 )
         })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "grafiti",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('*_Example : .grafiti suhail;tech_*');  
+            if (!text) return citel.reply(`*_Example : ${prefix}grafiti Maher;Zubair_*`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
-            if(!text2 || !text1) return await citel.reply("*Uhh Please Provide text. Example: .grafiti text1;text2*");
+            if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}grafiti text1;text2*`);
             return await singleText(Void, citel ,'create-a-cool-graffiti-text-on-the-wall-1010'  , text1 , text2 )
         })
 //================================================================================================================================
     //---------------------------------------------------------------------------
     Module_Exports({ kingcmd: "deepsea", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}deepsea Zubair_*`)
         return await singleText(Void, citel , 'create-3d-deep-sea-metal-text-effect-online-1053' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "horror", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}horror Zubair_*`)
         return await singleText(Void, citel ,'horror-blood-text-effect-online-883'  , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "whitebear", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}whitebear Zubair_*`)
         return await singleText(Void, citel ,'online-black-and-white-bear-mascot-logo-creation-1012', text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "joker", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}joker Zubair_*`)
         return await singleText(Void, citel , 'create-logo-joker-online-934' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "metallic", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}metallic Zubair_*`)
         return await singleText(Void, citel , 'create-a-metallic-text-effect-free-online-1041' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "steel", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}steel Zubair_*`)
         return await singleText(Void, citel , 'steel-text-effect-online-921' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "harrypotter", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}harrypotter Zubair_*`)
         return await singleText(Void, citel , 'create-harry-potter-text-effect-online-1025' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "underwater", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}underwater Zubair_*`)
         return await singleText(Void, citel , '3d-underwater-text-effect-generator-online-1013' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "luxury", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}luxury Zubair_*`)
         return await singleText(Void, citel , '3d-luxury-gold-text-effect-online-1003' , text )
 
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "glue", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}glue Zubair_*`)
         return await singleText(Void, citel , 'create-3d-glue-text-effect-with-realistic-style-986' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "fabric", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}fabric Zubair_*`)
         return await singleText(Void, citel , 'fabric-text-effect-online-964' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "toxic", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}toxic Zubair_*`)
         return await singleText(Void, citel , 'toxic-text-effect-online-901' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "ancient", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}ancient Zubair_*`)
         return await singleText(Void, citel , '3d-golden-ancient-text-effect-online-free-1060' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "cloud", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}cloud Zubair_*`)
             return await singleText(Void, citel , 'create-a-cloud-text-effect-on-the-sky-online-1004' , text )
     })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "transformer", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}transformer Zubair_*`)
             return await singleText(Void, citel , 'create-a-transformer-text-effect-online-1035' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "thunder", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}thunder Zubair_*`)
             return await singleText(Void, citel ,'online-thunder-text-effect-generator-1031'  , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "scifi", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}scifi Zubair_*`)
             return await singleText(Void, citel , 'create-3d-sci-fi-text-effect-online-1050' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({kingcmd: "sand", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}sand Zubair_*`)
             return await singleText(Void, citel ,'write-in-sand-summer-beach-free-online-991'  , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "rainbow", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}rainbow Zubair_*`)
             return await singleText(Void, citel , '3d-rainbow-color-calligraphy-text-effect-1049' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "pencil", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}pencil Zubair_*`)
             return await singleText(Void, citel , 'create-a-sketch-text-effect-online-1044' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "neon", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}neon Zubair_*`)
             return await singleText(Void, citel , 'create-3d-neon-light-text-effect-online-1028' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({kingcmd: "magma", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}magma Zubair_*`)
             return await singleText(Void, citel ,'create-a-magma-hot-text-effect-online-1030'  , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "leaves", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}leaves Zubair_*`)
             return await singleText(Void, citel , 'natural-leaves-text-effect-931' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "glitch", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}glitch Zubair_*`)
             return await singleText(Void, citel , 'create-impressive-glitch-text-effects-online-1027' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "discovery", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}discovery Zubair_*`)
             return await singleText(Void, citel , 'create-space-text-effects-online-free-1042' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "christmas", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}christmas Zubair_*`)
             return await singleText(Void, citel ,'christmas-tree-text-effect-online-free-1057'  , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "candy", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}candy Zubair_*`)
             return await singleText(Void, citel , 'create-christmas-candy-cane-text-effect-1056' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "1917", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply('_Need text._')
+            if (!text) return citel.reply(`*_Example: ${prefix}1917 Zubair_*`)
             return await singleText(Void, citel , '1917-style-text-effect-online-980' , text )
         })
     //---------------------------------------------------------------------------
 Module_Exports({ kingcmd: "blackpink", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-        if (!text) return citel.reply('_Need text._')
+        if (!text) return citel.reply(`*_Example: ${prefix}blackpink Zubair_*`)
         return await singleText(Void, citel , 'create-blackpink-logo-style-online-1001' , text )
     })
+
+
+//  All These Logos Developed By ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ
+//  Whatsapp +923466319114
+//  Usage And CopyRights Are Reserved 
