@@ -74,14 +74,14 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
                 let update = await DB.sync()
                 let buttonMessaged = 
                 {
-                     text:" *> Please Wait Updater Started...!*\n  *───────────────────────────*\n"+update +"\n  *───────────────────────────*",
+                     text:" *♕ Updating Your Bot...!*\n  *★────────────────────────★*\n"+update +"\n  *★────────────────────────★*",
                      footer: 'UPDATER --- sᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo',
                      headerType: 4,
                 };
                 await Void.sendMessage(citel.chat, buttonMessaged);
                 await require("simple-git")().reset("hard",["HEAD"])
                 await require("simple-git")().pull()
-                await citel.reply("*Successfully updated. Now You Have Latest Version Installed!*")
+                await citel.reply(`*_HEY_* ${name.ownername} *_Your Bot Is_*\n*_Running on Latest Version_*`)
                 process.exit(0);
        })
 }

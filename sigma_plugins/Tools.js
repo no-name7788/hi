@@ -23,7 +23,7 @@ async(sigma, person) => {
 //---------------------------------------------------------------------------
 Module_Exports({
         kingcmd: "plugins",
-        shortcut :['plugin',""],
+        shortcut :['plugin',"plist"],
         kingclass: "tools",
         infocmd: "Shows list of all externally installed modules",
         kingpath: __filename
@@ -49,7 +49,7 @@ Module_Exports({
     },
     async(Void, citel, text,{ isCreator}) => {
         if (!isCreator) return citel.reply(tlang().owner)
-        if(!text) return await citel.reply("*Please, Provide Me Plugin Name_*")
+        if(!text) return await citel.reply("*_Please, Provide Me Plugin Name_*")
  
         if(text==='alls') 
         { 
@@ -87,13 +87,14 @@ async(sigma, person, memo, {isCreator}) => {
 Module_Exports(
     {   
      kingcmd: "restart",
+     shortcut: ["res"],
      infocmd: "To restart bot",
      kingclass: "tools",
       kingpath: __filename
      }, async(Void, citel,text,{ isCreator }) => {
           if (!isCreator) return citel.reply(tlang().owner);
             const { exec } = require("child_process");
-             citel.reply(`*_Please Wait While_*\n${name.botname} *_Restarting_*`); exec('pm2 restart all'); });
+             citel.reply(`*Please Wait While*\n${name.botname} *Restarting*`); exec('pm2 restart all'); });
 
 
 
