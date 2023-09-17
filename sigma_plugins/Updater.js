@@ -28,6 +28,7 @@ async function updateHerokuApp() {
 //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "update",
+            shortcut: ["ud"],
             infocmd: "Shows repo\'s refreshed commits.",
             kingclass: "tools",
             kingpath: __filename
@@ -63,6 +64,7 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
         
      Module_Exports({
                  kingcmd: "updatenow",
+                 shortcut: ["unow"],
                  infocmd: "Shows repo\'s refreshed commits.",
                  kingclass: "tools",
                  kingpath: __filename

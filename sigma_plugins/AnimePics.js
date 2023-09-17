@@ -49,7 +49,7 @@ async(Void, man,text) =>
 {
         let res=await axios.get("https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Naruto.json")
         let url =  res.data.result[Math.floor(Math.random() * res.data.result.length)];
-        return await Void.sendMessage(man.chat,{video :{url : url } , caption: Config.caption }, { quoted: man })
+        return await Void.sendMessage(man.chat,{video :{url : url } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
 })
 //-----------------------------------------------------------------------
 Module_Exports({
@@ -89,7 +89,7 @@ Module_Exports({
 async(Void, man, text) => 
 {
     let  waifuddfg = await axios.get(`https://nekos.life/api/v2/img/fox_girl`);
-    await Void.sendMessage(man.chat, {image: { url: waifuddfg.data.url } }, { quoted: man })
+    await Void.sendMessage(man.chat, {image: { url: waifuddfg.data.url },caption:`*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*` }, { quoted: man })
 })
 //-----------------------------------------------------------------------
 Module_Exports({
@@ -146,7 +146,7 @@ async(Void, man, text) => {
         type: 1,
     }, ];
 
-    await Void.sendMessage(man.chat, {image: { url: waifud.data.url }}, {quoted: man})
+    await Void.sendMessage(man.chat, {image: { url: waifud.data.url },caption:`*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`}, {quoted: man})
 }
 )
 //-----------------------------------------------------------------------
