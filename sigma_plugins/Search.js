@@ -87,8 +87,9 @@ Module_Exports({
             if (!text) return citel.reply(`*_Name a Series or movie_*\nEx: ${prefix}imdb kingman`);
             
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
-            try{
+            
             let imdbt = "";
+            try{
             citel.reply(fids.data)
             imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ```     𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
             imdbt += "🎬Title      : " + fids.data.Title + "\n";
