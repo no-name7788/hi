@@ -123,7 +123,7 @@ Module_Exports({
         use: 'Lahore',
     },
     async(sigma, person, text) => {
-        if (!text) return person.reply(`ɢɪᴠᴇ ᴍᴇ ʟᴏᴄᴀᴛɪᴏɴ...!\nᴇxᴀᴍᴘʟᴇ: ${prefix}ᴡᴇᴀᴛʜᴇʀ ʟᴀʜᴏʀᴇ`);
+        if (!text) return person.reply(`*_Give me Location_*...!\nEx: ${prefix}weather lahore`);
      try{
         let wdata = await axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
@@ -161,7 +161,7 @@ Module_Exports({
              {
                 quoted: person,});
      
-            }catch {person.reply(`("*_your given location is invalid_*\n*_please give me a valid location_*")`)}
+            }catch {person.reply("*_your given location is invalid_*\n*_please give me a valid location_*")}
         }
 )
     //---------------------------------------------------------------------------
