@@ -1,7 +1,7 @@
 
 
 const moment = require('moment-timezone')
-const {fetchJson,Module_Exports, tlang, getBuffer, prefix, name } = require('../lib')
+const {fetchJson,Module_Exports, tlang, getBuffer, prefix, name,fancytext } = require('../lib')
 let gis ='' // require("g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
@@ -85,10 +85,11 @@ Module_Exports({
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`*_Name a Series or movie_*\nEx: ${prefix}imdb kingman`);
+            try{
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
             let imdbt = "";
             citel.reply(fids.data)
-            imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ``` 𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
+            imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ```    𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
             imdbt += "🎬Title      : " + fids.data.Title + "\n";
             imdbt += "📅Year       : " + fids.data.Year + "\n";
             imdbt += "⭐Rated      : " + fids.data.Rated + "\n";
@@ -107,7 +108,10 @@ Module_Exports({
             imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n";
             imdbt += "❎imdbVotes  : " + fids.data.imdbVotes + "\n";
             imdbt += name.caption ;
-            Void.sendMessage(citel.chat, {  image: { url: fids.data.Poster, }, caption: imdbt,  }, {   quoted: citel,  });
+            Void.sendMessage(citel.chat, {  image: { url: fids.data.Poster, }, caption: imdbt,  }, {   quoted: citel,  });}
+            catch(e){
+                citel.send("*_Wrong Movie Name_* " +e)}
+
 
         }
     )
@@ -215,7 +219,7 @@ console.log(dat);
 
 for (let i=0 ; i <  dat.data.length; i++) {
 let j = i+1;
-tax +=`\n*✯──────𝐌𝐀𝐓𝐂𝐇 ${i}──────✯*`;
+tax +=`\n*✯───𝐌𝐀𝐓𝐂𝐇 ${i}───✯*`;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙽𝙰𝙼𝙴•* "+ dat.data[i].name;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝚂𝚃𝙰𝚃𝚄𝚂•* "+ dat.data[i].status;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙳𝙰𝚃𝙴•* " + dat.data[i].dateTimeGMT ;
@@ -241,7 +245,7 @@ Module_Exports({
             if (!text) return citel.reply(`give me a query\n*Ex: ${prefix}google Who is KING.*`);
             let google = require('google-it');
             google({ 'query': text}).then(res => {
-                let msg= `Google Search From : ${text} \n\n`;
+                let msg= `*Google Search From:* ${text} \n\n`;
                 for (let g of res) {
                     msg+= `➣ *•𝚃𝙸𝚃𝙻𝙴•* ${g.title}\n`;
                     msg+= `➣ *•𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽•* ${g.snippet}\n`;
@@ -341,6 +345,7 @@ else return citel.reply("*Google Images Not Working, Try it Later*");
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "couplepp",
+            shortcut:["cpp"],
             kingclass: "search",
             infocmd: "Sends two couples pics.",
             kingpath: __filename,
@@ -348,8 +353,8 @@ Module_Exports({
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `*✯────𝙲𝙾𝚄𝙿𝙻𝙴 𝙼𝙰𝙻𝙴───✯*` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `*✯────𝙲𝙾𝚄𝙿𝙻𝙴 𝙵𝙴𝙼𝙰𝙻𝙴───✯*` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `*✯──𝙲𝙾𝚄𝙿𝙻𝙴 𝙼𝙰𝙻𝙴─✯*` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `*✯──𝙲𝙾𝚄𝙿𝙻𝙴 𝙵𝙴𝙼𝙰𝙻𝙴─✯*` }, { quoted: citel })
         }
     ) 
     //---------------------------------------------------------------------------
@@ -397,7 +402,7 @@ Module_Exports({
                   try { var anu1 = await Void.fetchStatus(anu[0].jid); } 
                   catch { var anu1 = '401' ; }
                   if (anu1 == '401' || anu1.status.length == 0) { nobio += `wa.me/${anu[0].jid.split("@")[0]}\n` ; } 
-                  else {  text += `*•𝙽𝚄𝙼𝙱𝙴𝚁•* wa.me/${anu[0].jid.split("@")[0]}\n*•𝙱𝙸𝙾•* ${anu1.status}\n🍁*•𝙻𝙰𝚂𝚃 𝚄𝙿𝙳𝙰𝚃𝙴•* ${moment(anu1.setAt).tz('Asia/karachi').format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
+                  else {  text += `*•𝙽𝚄𝙼𝙱𝙴𝚁•* wa.me/${anu[0].jid.split("@")[0]}\n*•𝙱𝙸𝙾•* ${anu1.status}\n*•𝙻𝙰𝚂𝚃 𝚄𝙿𝙳𝙰𝚃𝙴•* ${moment(anu1.setAt).tz('Asia/karachi').format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
             } catch { nowhatsapp += `${number0}${i}${number1}\n`; }
         }
         return await citel.reply(`${text}${nobio}${nowhatsapp}*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`)
@@ -414,9 +419,9 @@ Module_Exports({
         kingpath: __filename,
     },
     async(Void, citel, text) => {
-if(!text) return await citel.reply(`*_Give Me Number without + sign_*\nEx: ${prefix}iswa 9234663191xx`)
+if(!text) return await citel.reply(`*_Give Me Number without + sign_*\nEx: ${prefix}nowa 9234663191xx`)
 const inputNumber = text.split(" ")[0]
-if (!inputNumber.includes('x')) return citel.reply(`*You did not add x*\nEx: ${prefix}iswa 92346631xxxx`)
+if (!inputNumber.includes('x')) return citel.reply(`*You did not add x*\nEx: ${prefix}nowa 92346631xxxx`)
 citel.reply(`*Searching for WhatsApp account in the given range...*`);
 function countInstances(string, word) { return string.split(word).length - 1; }
 const number0 = inputNumber.split('x')[0];
