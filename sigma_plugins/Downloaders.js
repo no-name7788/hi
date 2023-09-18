@@ -490,22 +490,14 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
     )
     //---------------------------------------------------------------------------
 
-Module_Exports({
-            kingcmd: "song",
-            infocmd: "Downloads audio from youtube.",
-            kingclass: "downloader",
-            kingpath: __filename,
-            use: '<give text>',
-        },
-        async(Void, citel, text) => {
-  
-                if (!text) return await citel.send(`*_PLease, Give Me Song Name_*\nEx: ${prefix}play bella ciao`);
-                let yts = require("secktor-pack")
-                let search = await yts(text);
-                let i = search.all[1] ;
-                let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿ \n┃✗ ┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃✗ ┗➛ *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*\n┃✗ *•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n┃✗ *•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n┃✗ *•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n┃✗ *•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n┃✗ *•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n┃✗ *•𝚄𝚁𝙻•* ` + i.url +`\n┗━━━━━━━━━━⦿\n\n\n\n*_Reply 1 For Video_*\n*_Reply 2 For Audio_*` ;
-                Void.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });
-           
+    Module_Exports({kingcmd: "song", alias: ["audio"],desc: "Downloads audio from youtube.",category: "downloader",filename: __filename,use: '<give text>', },
+    async(Suhail, citel, text) => {
+            if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
+            let yts = require("secktor-pack")
+            let search = await yts(text);
+            let i = search.all[1] ;
+            let cap = "\t *---Yt Song Searched Data---*   \n\nTitle : " + i.title + "\nUrl : " + i.url +"\nDescription : " + i.timestamp +"\nViews : "+i.views +"\nUploaded : " +i.ago +"\nAuthor : "+i.author.name+"\n\n\nReply 1 To Video \nReply 2 To Audio" ;
+            Void.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });           
            
            
            
