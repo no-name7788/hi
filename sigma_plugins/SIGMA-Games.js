@@ -43,7 +43,7 @@ let hcg_Logo = `
 █▄█ ▀ █▀▄ █▀▄ ██▀ █▄ █
 █   █ █ █▄▀ █▄▀ █▄▄ █ ▀█
 █   █`.trim()
-kingcmd
+
  const eco = require('discord-mongoose-economy')
 const { smd, parseJid, getAdmin, tlang,send, prefix } = require("../lib/");
 const sᴜʜᴀɪʟ_ᴍᴅ_numGuess =  {};
