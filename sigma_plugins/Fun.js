@@ -122,9 +122,9 @@ return man.reply(replyf)
         try{
             let { data } = await axios.get(`http://api.urbandictionary.com/v0/define?term=${text}`)
             var textt = `
-            𝚆𝙾𝚁𝙳: ${text}
-            𝙳𝙴𝙵𝙸𝙽𝙸𝚃𝙸𝙾𝙽: ${data.list[0].definition.replace(/\[/g, "").replace(/\]/g, "")}
-            𝙴𝚇𝙰𝙼𝙿𝙻𝙴: ${data.list[0].example.replace(/\[/g, "").replace(/\]/g, "")}`
+            *𝚆𝙾𝚁𝙳:* ${text}
+            *𝙳𝙴𝙵𝙸𝙽𝙸𝚃𝙸𝙾𝙽:* ${data.list[0].definition.replace(/\[/g, "").replace(/\]/g, "")}
+            *𝙴𝚇𝙰𝙼𝙿𝙻𝙴:* ${data.list[0].example.replace(/\[/g, "").replace(/\]/g, "")}`
             return citel.reply(textt)
                     } catch {
                         return citel.reply(`No result for ${text}`)
