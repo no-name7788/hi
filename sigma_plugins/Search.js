@@ -161,8 +161,8 @@ Module_Exports({
              {
                 quoted: person,});
      
-     }catch(e) {console.log(e)}
-    }
+            }catch {person.reply(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`)}
+        }
 )
     //---------------------------------------------------------------------------
 Module_Exports({
