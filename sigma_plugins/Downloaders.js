@@ -401,6 +401,18 @@ Module_Exports({
 		caption : `*${anu[0].title}*`,
 		fileName: anu[0].title + '.mp3',
 		mimetype: 'audio/mpeg',
+        headerType: 4,
+        contextInfo: {
+            externalAdReply: {
+                title: `${name.ownername}`,
+                thumbnail: log0,
+                mediaType: 2,
+
+
+                sourceUrl: `${waUrl}`,
+                
+            },
+        },
 		}
 	return bot.sendMessage(citel.chat,buttonMessage, { quoted: citel } )
 })
