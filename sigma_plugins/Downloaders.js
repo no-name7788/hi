@@ -789,7 +789,7 @@ Module_Exports({kingcmd: "play", alias: ["audio"],desc: "Downloads audio from yo
                 let yts = require("secktor-pack")
                 let search = await yts(text);
                 let i = search.all[1] ;
-                let cap = `\t*sɪɢᴍᴀ ᴹᴰ* *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*   \n\n*•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n*•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n*•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n*•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n*•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\nUrl : ` + i.url +`\n\n\n*_Reply 1 To Video_* \n*_Reply 2 To Audio_*` ;
+                let cap = `\t*sɪɢᴍᴀ ᴹᴰ* *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*   \n\n*•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n*•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n*•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n*•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n*•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n*•𝚄𝚁𝙻•* ` + i.url +`\n\n\n*_Reply 1 To Video_* \n*_Reply 2 To Audio_*` ;
                 bot.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });         
            
            
