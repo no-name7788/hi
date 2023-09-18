@@ -1,7 +1,7 @@
 
 
 const axios = require('axios')
-const { sck1, tiny, fancytext,getBuffer, listall,Module_Exports , TelegraPh , name,prefix} = require('../lib/')
+const { sck1, tiny, fancytext,getBuffer, listall,Module_Exports , TelegraPh , name,prefix} = require('../lib')
 const fs = require('fs-extra');
 const { exec } = require('child_process')
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
