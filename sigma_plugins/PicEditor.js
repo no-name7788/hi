@@ -105,6 +105,6 @@ async(sigma, man, text) => {
 })
 //=============================================================================
 
-//  All These Photo Editors are Developed By ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ
+//  All These Photo Editors are Developed By @Maher-Zubair
 //  Whatsapp +923466319114
 //  Usage And CopyRights Are Reserved 

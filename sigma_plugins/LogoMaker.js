@@ -229,6 +229,6 @@ Module_Exports({ kingcmd: "blackpink", kingclass: "logo", infocmd: "Some text to
     })
 
 
-//  All These Logos are Developed By ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ
+//  All These Logos are Developed By @Maher-Zubair
 //  Whatsapp +923466319114
 //  Usage And CopyRights Are Reserved 

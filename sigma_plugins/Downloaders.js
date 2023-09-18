@@ -780,5 +780,7 @@ Module_Exports({ on: "text" }, async(Void, citel ,text , {isCreator} ) => {
 
 })
 
-
+// These Downloader Commands are Developed By @Maher-Zubair
+// Whatsapp +923466319114
+// Usage And CopyRights Are Reserved
 

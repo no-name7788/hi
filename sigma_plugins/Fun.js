@@ -131,3 +131,6 @@ return man.reply(replyf)
                     }
     }
 )
+// These Fun Commands are Developed By @Maher-Zubair
+// Whatsapp +923466319114
+// Usage And CopyRights Are Reserved
