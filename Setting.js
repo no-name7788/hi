@@ -17,6 +17,7 @@ global.timezone  = process.env.TIME_ZONE || 'Asia/Karachi'
 global.gurl = 'https://youtube.com/c/SuhailTechInfo' ; // add your username
 global.sudo =  process.env.SUDO || "27718060308" ;
 global.devs = "923466319114"; //Dont change it From here
+global.mztit = "🅼♥︎❚❚♥︎🆉",
 global.website = 'https://github.com/SuhailTechInfo/Secktor-Md' ; //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png' ;
 module.exports = {

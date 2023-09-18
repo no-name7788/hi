@@ -72,7 +72,7 @@ Module_Exports({
          fetch('https://v2.jokeapi.dev/joke/Any?type=single')
          .then(response => response.json())
          .then(data => {
-         citel.reply(`*𝒥𝒪𝒦𝐸:* ${data.joke}`); 
+         citel.reply(`*𝙹𝙾𝙺𝙴:* ${data.joke}`); 
   })
   .catch(error => {
      return citel.reply ('Error fetching joke:' + error);
