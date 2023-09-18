@@ -92,10 +92,10 @@ else return person.reply("*_APP not Found, Try Valid App Name_*");
 const apkSize = parseInt(data.size);
 if(apkSize > 150) return person.reply(`*_File size bigger than 200MB._*`);
 const url = data.dllink;
-let  inf  =`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃┗➛ *ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n┃✗ *_•App Name•_* ` +data.name;
- inf +="\n┃✗ *_•App Size•_* "    +data.size;
-inf +="\n┃✗ *_•Version•_* Latest";	
-inf +=`\n┃✗ *_•Requester•_*  ${person.pushName}`;
+let  inf  =`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃┗➛ *ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n┃✗ *•𝙰𝙿𝙿 𝙽𝙰𝙼𝙴•* ` +data.name;
+ inf +="\n┃✗ *•𝙰𝙿𝙿 𝚂𝙸𝚉𝙴•* "    +data.size;
+inf +="\n┃✗ *•𝚅𝙴𝚁𝚂𝙸𝙾𝙽•* Latest";	
+inf +=`\n┃✗ *•𝚁𝙴𝚀𝚄𝙴𝚂𝚃𝙴𝚁•*  ${person.pushName}`;
 inf +=`\n┗━━━━━━━━━━⦿\n*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`
  
 
@@ -119,7 +119,7 @@ let Maher = {
             }
           sigma.sendMessage(person.chat, Maher, { quoted: person })
 
-person.send('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:*' +text);
+person.send('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:*' + text);
 
 
 fs.unlink(filePath, (err) => {
