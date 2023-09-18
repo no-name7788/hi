@@ -110,7 +110,7 @@ Module_Exports({
             imdbt += name.caption ;
             Void.sendMessage(citel.chat, {  image: { url: fids.data.Poster, }, caption: imdbt,  }, {   quoted: citel,  });}
             catch(e){
-                citel.reply("*_Wrong Movie Name_* ")}
+                citel.reply("*_Wrong Movie Name_* "+ e)}
 
 
         }
