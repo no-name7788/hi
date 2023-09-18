@@ -490,7 +490,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
     )
     //---------------------------------------------------------------------------
 
-    Module_Exports({kingcmd: "song", alias: ["audio"],desc: "Downloads audio from youtube.",category: "downloader",filename: __filename,use: '<give text>', },
+    Module_Exports({kingcmd: "play", alias: ["audio"],desc: "Downloads audio from youtube.",category: "downloader",filename: __filename,use: '<give text>', },
     async(Void, citel, text) => {
             if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
             let yts = require("secktor-pack")
