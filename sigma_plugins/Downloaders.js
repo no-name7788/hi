@@ -289,7 +289,7 @@ async(sigma, person, memo) => {
         kingpath: __filename,
         use: 'bella ciao',
     },
-    async(Void, citel, tax) => {
+    async(bot, citel, tax) => {
         let yts = require("secktor-pack");
     if (!tax) return citel.send(`Example: ${prefix}song My Babe i love Your Voice`);
         let search = await yts(tax);
@@ -327,7 +327,7 @@ async(sigma, person, memo) => {
                         body: ``,
                         renderLargerThumbnail: true,
                         thumbnailUrl: search.all[0].thumbnail,
-                        mediaUrl: text,
+                        mediaUrl: tax,
                         mediaType: 1,
                         thumbnail: await getBuffer(search.all[0].thumbnail),
                         sourceUrl: `${waUrl}`,
@@ -335,7 +335,7 @@ async(sigma, person, memo) => {
                     },
                 },
             }
-            await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+            await bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
             return fs.unlinkSync(`./${randomName}`);
         } else {
             citel.reply(`File Size Bigger Then 100MB.`);
@@ -514,7 +514,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
         kingpath: __filename,
         use: 'bella ciao',
     },
-    async(Void, citel, tax) => {
+    async(sigma, citel, tax) => {
         let yts = require("secktor-pack");
     if (!tax) return citel.send(`Example: ${prefix}song My Babe i love Your Voice`);
         let search = await yts(tax);
@@ -552,7 +552,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
                         body: ``,
                         renderLargerThumbnail: true,
                         thumbnailUrl: search.all[0].thumbnail,
-                        mediaUrl: text,
+                        mediaUrl: tax,
                         mediaType: 1,
                         thumbnail: await getBuffer(search.all[0].thumbnail),
                         sourceUrl: `${waUrl}`,
@@ -560,7 +560,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
                     },
                 },
             }
-            await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+            await sigma.sendMessage(citel.chat, buttonMessage, { quoted: citel })
             return fs.unlinkSync(`./${randomName}`);
         } else {
             citel.reply(`File Size Bigger Then 100MB.`);
