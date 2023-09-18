@@ -368,10 +368,12 @@ Module_Exports({
 		fileName: url.toString() ,
 		mimetype: 'audio/mp4',
 		ptt: true ,
+        headerType: 4,
         contextInfo: {
             externalAdReply: {
                 title: `${name.ownername}`,
                 thumbnail: log0,
+                mediaType: 2,
 
 
                 sourceUrl: `${waUrl}`,
