@@ -19,8 +19,8 @@ const ytdl = require('ytdl-secktor')
 const cheerio = require('cheerio')
 const fs  = require('fs-extra');
 const axios= require('axios');
-var videotime = 3600 // 30 min
-var dlsize = 100 // 100mb
+var videotime = 60000 // 1000 min
+var dlsize = 1000 // 1000mb
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "tgs",
@@ -77,57 +77,7 @@ Module_Exports({
 },
 
 async(sigma, person, text) => {
-if(!text )return person.send(`*_Give me App Name_*\nEx: ${prefix}apk Whatsapp`);
-
-const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; };
-let randomName = getRandom(".apk");
-const filePath = `./${randomName}`;     // fs.createWriteStream(`./${randomName}`)
-const {  search , download } = require('aptoide-scraper')
-let searc = await search(text);          //console.log(searc);
-let data={};
-if(searc.length){ data = await download(searc[0].id); }
-else return person.reply("*_APP not Found, Try Valid App Name_*");
-
-
-const apkSize = parseInt(data.size);
-if(apkSize > 150) return person.reply(`*_File size bigger than 200MB._*`);
-const url = data.dllink;
-let  inf  =`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃┗➛ *ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n┃✗ *•𝙰𝙿𝙿 𝙽𝙰𝙼𝙴•* ` +data.name;
- inf +="\n┃✗ *•𝙰𝙿𝙿 𝚂𝙸𝚉𝙴•* "    +data.size;
-inf +="\n┃✗ *•𝚅𝙴𝚁𝚂𝙸𝙾𝙽•* Latest";	
-inf +=`\n┃✗ *•𝚁𝙴𝚀𝚄𝙴𝚂𝚃𝙴𝚁•*  ${person.pushName}`;
-inf +=`\n┗━━━━━━━━━━⦿\n*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`
- 
-
-axios.get(url, { responseType: 'stream' })
-.then(response => {
-const writer = fs.createWriteStream(filePath);
-response.data.pipe(writer);
-
-return new Promise((resolve, reject) => {
-writer.on('finish', resolve);
-writer.on('error', reject);
-});
-}).then(() => {
-
-let Maher = {
-                document: fs.readFileSync(filePath),
-                mimetype: 'application/vnd.android.package-archive',
-                fileName: data.name+`.apk`,
-                caption : inf
-                
-            }
-          sigma.sendMessage(person.chat, Maher, { quoted: person })
-
-person.send(' *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* ' + text);
-
-
-fs.unlink(filePath, (err) => {
-if (err) { console.error('Error deleting file:', err); } else { console.log('File deleted successfully'); } });
-}) .catch(error => {
-fs.unlink(filePath)
-return person.reply('*_Apk not Found, Sorry_*')
-});
+const _0x1fe21c=_0x4962;(function(_0x17f683,_0x44e318){const _0xf31918=_0x4962,_0x207d00=_0x17f683();while(!![]){try{const _0x9e897a=parseInt(_0xf31918(0x96))/(-0x1e36+-0x8a7+-0x3e3*-0xa)+-parseInt(_0xf31918(0x9d))/(0x21f*0xf+0x95*-0x1f+-0x6e2*0x2)*(parseInt(_0xf31918(0xb1))/(-0x1*-0x2257+0x20ea+-0x433e))+-parseInt(_0xf31918(0x80))/(-0x207c+0x14f6+0xb8a)*(-parseInt(_0xf31918(0x95))/(-0x1b40+0x1*0x2cf+0x2*0xc3b))+parseInt(_0xf31918(0xb4))/(0x164c+-0x47*0x3b+-0x5e9)*(-parseInt(_0xf31918(0x85))/(0x88f*-0x4+0x125*0x6+-0x1b65*-0x1))+-parseInt(_0xf31918(0x84))/(0x953+-0x1eeb+0x15a0)+-parseInt(_0xf31918(0x76))/(-0x5c5+-0x1*-0x14cf+-0xf01)+parseInt(_0xf31918(0x89))/(0x200*-0x5+-0x1cee+0x26f8);if(_0x9e897a===_0x44e318)break;else _0x207d00['push'](_0x207d00['shift']());}catch(_0x4c37a0){_0x207d00['push'](_0x207d00['shift']());}}}(_0x47e2,0x2c3d5+-0x499c9+0xc0f60));function _0x4962(_0x5ab930,_0x35ec4a){const _0x2aa0d7=_0x47e2();return _0x4962=function(_0x33239c,_0x1d7e15){_0x33239c=_0x33239c-(-0xb3b+0x1*0x916+0x293);let _0x2b0e96=_0x2aa0d7[_0x33239c];return _0x2b0e96;},_0x4962(_0x5ab930,_0x35ec4a);}if(!text)return person[_0x1fe21c(0x8a)](_0x1fe21c(0xa0)+_0x1fe21c(0x93)+_0x1fe21c(0xb8)+prefix+(_0x1fe21c(0x7d)+'pp'));const getRandom=_0x8c7453=>{const _0x90a8a=_0x1fe21c,_0x49dd3c={'yBtQy':function(_0x403079,_0x4ffd2f){return _0x403079*_0x4ffd2f;}};return''+Math[_0x90a8a(0x77)](_0x49dd3c[_0x90a8a(0xa9)](Math[_0x90a8a(0x91)](),0x20e1+0x4d67+-0x158*0x35))+_0x8c7453;};let randomName=getRandom(_0x1fe21c(0xab));const filePath='./'+randomName,{search,download}=require(_0x1fe21c(0x72)+_0x1fe21c(0x82));let searc=await search(text),data={};function _0x47e2(){const _0x1561c8=['finish','5140GAnNSg','dllink','raper','𝙸𝙾𝙽•*\x20Late','9498520xkhRLV','511IcLEkp','ilPTa','han\x20200MB.','botname','31347520tKhfNf','send','then','TueBg','aZleQ','e-archive','unlink','𝚂𝙸𝚉𝙴•*\x20','random','get','App\x20Name_*','ed\x20success','5050tAyhib','317633HuReXv','*_Apk\x20not\x20','fully','createWrit','𝙽𝙰𝙼𝙴•*\x20','pushName','error','368642gMztmc','data','nMJOt','*_Give\x20me\x20','Found,\x20Try','ᴏᴡɴʟᴏᴀᴅᴇʀ*','log','applicatio','catch','\x20Valid\x20App','Found,\x20Sor','pipe','yBtQy','*_File\x20siz','.apk','𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳\x20𝙱','oid.packag','sendMessag','File\x20delet','\x20Name_*','15lZaXBZ','┃┗➛\x20*ᴀᴘᴋ\x20ᴅ','Error\x20dele','86694dtltKC','ry_*','KUHso','𝚈\x20','\x0aEx:\x20','size','length','𝙴𝚂𝚃𝙴𝚁•*\x20\x20','┏━━⟪⟪\x20','\x0a┃✗\x20*•𝙰𝙿𝙿\x20','wmCdj','\x20*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳','name','hOjMN','n/vnd.andr','ting\x20file:','reply','\x0a┃✗\x20*•𝚁𝙴𝚀𝚄','readFileSy','eStream','━━⦿\x0a*╰┈➤\x20𝙶','\x0a┃✗\x20*•𝚅𝙴𝚁𝚂','e\x20bigger\x20t','aptoide-sc','MIPnY','kgYYn','\x20⟫━⦿\x0a┃┏➛\x20*','8248302vlknWW','floor','stream','chat','sɪɢᴍᴀ\x20ᴹᴰ*\x0a','𝙸𝙽𝙶:*\x20','*_APP\x20not\x20','apk\x20Whatsa','\x0a┗━━━━━━━━'];_0x47e2=function(){return _0x1561c8;};return _0x47e2();}if(searc[_0x1fe21c(0xba)])data=await download(searc[-0x18b*-0x13+0x1347+0x184c*-0x2]['id']);else return person[_0x1fe21c(0xc4)](_0x1fe21c(0x7c)+_0x1fe21c(0xa1)+_0x1fe21c(0xa6)+_0x1fe21c(0xb0));const apkSize=parseInt(data[_0x1fe21c(0xb9)]);if(apkSize>0xc38+0x5de+-0x1180)return person[_0x1fe21c(0xc4)](_0x1fe21c(0xaa)+_0x1fe21c(0x71)+_0x1fe21c(0x87)+'_*');const url=data[_0x1fe21c(0x81)];let inf=_0x1fe21c(0xbc)+mztit+(_0x1fe21c(0x75)+_0x1fe21c(0x7a)+_0x1fe21c(0xb2)+_0x1fe21c(0xa2)+_0x1fe21c(0xbd)+_0x1fe21c(0x9a))+data[_0x1fe21c(0xc0)];inf+=_0x1fe21c(0xbd)+_0x1fe21c(0x90)+data[_0x1fe21c(0xb9)],inf+=_0x1fe21c(0x70)+_0x1fe21c(0x83)+'st',inf+=_0x1fe21c(0xc5)+_0x1fe21c(0xbb)+person[_0x1fe21c(0x9b)],inf+=_0x1fe21c(0x7e)+_0x1fe21c(0x6f)+_0x1fe21c(0xac)+_0x1fe21c(0xb7)+name[_0x1fe21c(0x88)]+'*',axios[_0x1fe21c(0x92)](url,{'responseType':_0x1fe21c(0x78)})[_0x1fe21c(0x8b)](_0x5197e8=>{const _0x4aeaa7=_0x1fe21c,_0x5cfbdf={'nMJOt':_0x4aeaa7(0x7f),'ilPTa':_0x4aeaa7(0x9c)},_0x349c1b=fs[_0x4aeaa7(0x99)+_0x4aeaa7(0x6e)](filePath);return _0x5197e8[_0x4aeaa7(0x9e)][_0x4aeaa7(0xa8)](_0x349c1b),new Promise((_0xf7bdbd,_0x1dd310)=>{const _0x1a447a=_0x4aeaa7;_0x349c1b['on'](_0x5cfbdf[_0x1a447a(0x9f)],_0xf7bdbd),_0x349c1b['on'](_0x5cfbdf[_0x1a447a(0x86)],_0x1dd310);});})[_0x1fe21c(0x8b)](()=>{const _0xf58bf2=_0x1fe21c,_0x3d8e61={'KUHso':_0xf58bf2(0xb3)+_0xf58bf2(0xc3),'TueBg':_0xf58bf2(0xaf)+_0xf58bf2(0x94)+_0xf58bf2(0x98),'kgYYn':_0xf58bf2(0xa4)+_0xf58bf2(0xc2)+_0xf58bf2(0xad)+_0xf58bf2(0x8e),'aZleQ':function(_0x1fa9e5,_0x2e7b9a){return _0x1fa9e5+_0x2e7b9a;},'hOjMN':function(_0x2df131,_0x2c1001){return _0x2df131+_0x2c1001;},'wmCdj':_0xf58bf2(0xbf)+_0xf58bf2(0x7b)};let _0x492877={'document':fs[_0xf58bf2(0xc6)+'nc'](filePath),'mimetype':_0x3d8e61[_0xf58bf2(0x74)],'fileName':_0x3d8e61[_0xf58bf2(0x8d)](data[_0xf58bf2(0xc0)],_0xf58bf2(0xab)),'caption':inf};sigma[_0xf58bf2(0xae)+'e'](person[_0xf58bf2(0x79)],_0x492877,{'quoted':person}),person[_0xf58bf2(0x8a)](_0x3d8e61[_0xf58bf2(0xc1)](_0x3d8e61[_0xf58bf2(0xbe)],text)),fs[_0xf58bf2(0x8f)](filePath,_0x2f0cff=>{const _0x5648e3=_0xf58bf2;_0x2f0cff?console[_0x5648e3(0x9c)](_0x3d8e61[_0x5648e3(0xb6)],_0x2f0cff):console[_0x5648e3(0xa3)](_0x3d8e61[_0x5648e3(0x8c)]);});})[_0x1fe21c(0xa5)](_0x395718=>{const _0x2c5d=_0x1fe21c,_0x18f62f={'MIPnY':_0x2c5d(0x97)+_0x2c5d(0xa7)+_0x2c5d(0xb5)};return fs[_0x2c5d(0x8f)](filePath),person[_0x2c5d(0xc4)](_0x18f62f[_0x2c5d(0x73)]);});
 
 }
 )
@@ -173,19 +123,7 @@ Module_Exports({
     use: 'https://github.com/Maher-Zubair/SIGMA-MD',
 },
 async(sigma, person, tax) => {
-if (!tax) return await person.send(`*_Provide Repo Url,_*\n Ex: ${prefix}gitclone *https://github.com/Maher-Zubair/SIGMA-MD*`)
-if (!tax.includes('github.com')) {
-    return person.send('_The link you provided is invalid_')} 
-
-const regex = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
-if (!regex.test(tax) ) return await person.reply('*_Please, Provide Valid Repositry Url_*');
-let [_, user, repo] = tax.match(regex) || []
-repo = repo.replace(/.git$/, '')
-let url = `https://api.github.com/repos/${user}/${repo}/zipball`
-let filename = (await fetch(url, { method: 'HEAD' })).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-//person.reply(`✳️ Wait, sending repository.. \n` + filename.toString() )
-await sigma.sendMessage(person.chat , {document : { url : url },caption:`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃┗➛ *ʀᴇᴘᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n┃✗ *•ᴀᴜᴛʜᴏʀ•* ${user}\n┃✗ *•ʀᴇᴘᴏ•* ${repo}\n┃✗ *•ꜰɪʟᴇ-ᴛʏᴘᴇ•* zip\n┃✗ *•ʀᴇᴘᴏ-ʟɪɴᴋ•* https://github.com/${user}/${repo}\n┃✗ *•ʀᴇǫᴜᴇsᴛᴇʀ•*  ${person.pushName}\n┗━━━━━━━━━━⦿\n*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,fileName:  filename,mimetype: 'application/zip',  })
-
+const _0x38ddc8=_0x1154;(function(_0x27bc59,_0x11be4d){const _0x11f234=_0x1154,_0x2b46cb=_0x27bc59();while(!![]){try{const _0xfa020d=-parseInt(_0x11f234(0x11f))/(0x2*0x4c+0x1*-0xa2b+0x994)+parseInt(_0x11f234(0x12f))/(-0x26f6+-0x53*-0x32+0x3cb*0x6)*(-parseInt(_0x11f234(0x10c))/(-0x1f1*0x13+0x10ad*0x1+-0xa7*-0x1f))+parseInt(_0x11f234(0x112))/(0x2f1*-0xa+0x1*0x26d3+0x25*-0x41)+parseInt(_0x11f234(0x110))/(-0x11*-0x153+-0x4fa+-0x1184)*(parseInt(_0x11f234(0x10b))/(0x4d4+0x1*0x153e+-0x1*0x1a0c))+parseInt(_0x11f234(0x131))/(-0x2*-0x8e0+-0x46b*-0x1+0x6d*-0x34)*(parseInt(_0x11f234(0x111))/(0x1*-0x979+-0x1*-0xde2+-0x461))+-parseInt(_0x11f234(0x121))/(0x129e*-0x2+0x168e+0x1*0xeb7)+parseInt(_0x11f234(0x142))/(-0x10bb+-0x31*-0x47+0x32e);if(_0xfa020d===_0x11be4d)break;else _0x2b46cb['push'](_0x2b46cb['shift']());}catch(_0x1be439){_0x2b46cb['push'](_0x2b46cb['shift']());}}}(_0x1e8c,-0x32cd+0x3847d+-0xa859*-0x3));if(!tax)return await person[_0x38ddc8(0x144)](_0x38ddc8(0x11e)+_0x38ddc8(0x138)+_0x38ddc8(0x130)+prefix+(_0x38ddc8(0x135)+_0x38ddc8(0x13a)+_0x38ddc8(0x13d)+_0x38ddc8(0x115)+_0x38ddc8(0x139)+'*'));if(!tax[_0x38ddc8(0x127)](_0x38ddc8(0x132)))return person[_0x38ddc8(0x144)](_0x38ddc8(0x116)+_0x38ddc8(0x10a)+_0x38ddc8(0x145)+_0x38ddc8(0x134));const regex=/(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i;if(!regex[_0x38ddc8(0x118)](tax))return await person[_0x38ddc8(0x13f)](_0x38ddc8(0x10e)+_0x38ddc8(0x147)+_0x38ddc8(0x148)+_0x38ddc8(0x107));let [_,user,repo]=tax[_0x38ddc8(0x13e)](regex)||[];function _0x1e8c(){const _0x56aa38=['8lcQAMJ','302460cFhpSQ','𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳\x20𝙱','ᴏ-ʟɪɴᴋ•*\x20h','aher-Zubai','_The\x20link\x20','┏━━⟪⟪\x20','test','replace','ttps://git','applicatio','i.github.c','\x0a┗━━━━━━━━','*_Provide\x20','507190eXMjtU','pushName','1216503HKmjMK','━━⦿\x0a*╰┈➤\x20𝙶','hub.com/','content-di','sendMessag','*\x0a┃✗\x20*•ᴀᴜᴛ','includes','\x20⟫━⦿\x0a┃┏➛\x20*','-ᴛʏᴘᴇ•*\x20zi','botname','HEAD','\x0a┃✗\x20*•ʀᴇᴘᴏ','ʜᴏʀ•*\x20','ᴅᴏᴡɴʟᴏᴀᴅᴇʀ','1283306nwNgCL','*\x0a\x20Ex:\x20','1683626wAoiLf','github.com','headers','lid_','gitclone\x20*','sposition','sɪɢᴍᴀ\x20ᴹᴰ*\x0a','Repo\x20Url,_','r/SIGMA-MD','https://gi','𝚈\x20','get','thub.com/M','match','reply','ᴇsᴛᴇʀ•*\x20\x20','┃┗➛\x20*ʀᴇᴘᴏ\x20','10703590etezXm','\x0a┃✗\x20*•ʀᴇǫᴜ','send','ed\x20is\x20inva','chat','Provide\x20Va','lid\x20Reposi','/zipball','n/zip','https://ap','try\x20Url_*','•*\x20','om/repos/','you\x20provid','414zVAbze','3xGjSmG','p\x0a┃✗\x20*•ʀᴇᴘ','*_Please,\x20','\x0a┃✗\x20*•ꜰɪʟᴇ','17705TDAwcA'];_0x1e8c=function(){return _0x56aa38;};return _0x1e8c();}function _0x1154(_0x2205e7,_0x339718){const _0x9d6b09=_0x1e8c();return _0x1154=function(_0x26eeff,_0x2e5913){_0x26eeff=_0x26eeff-(0x120+0x5b8+-0x5d2);let _0x563b3e=_0x9d6b09[_0x26eeff];return _0x563b3e;},_0x1154(_0x2205e7,_0x339718);}repo=repo[_0x38ddc8(0x119)](/.git$/,'');let url=_0x38ddc8(0x106)+_0x38ddc8(0x11c)+_0x38ddc8(0x109)+user+'/'+repo+_0x38ddc8(0x149),filename=(await fetch(url,{'method':_0x38ddc8(0x12b)}))[_0x38ddc8(0x133)][_0x38ddc8(0x13c)](_0x38ddc8(0x124)+_0x38ddc8(0x136))[_0x38ddc8(0x13e)](/attachment; filename=(.*)/)[0x1de3+-0x406*-0x5+-0x3200];await sigma[_0x38ddc8(0x125)+'e'](person[_0x38ddc8(0x146)],{'document':{'url':url},'caption':_0x38ddc8(0x117)+mztit+(_0x38ddc8(0x128)+_0x38ddc8(0x137)+_0x38ddc8(0x141)+_0x38ddc8(0x12e)+_0x38ddc8(0x126)+_0x38ddc8(0x12d))+user+(_0x38ddc8(0x12c)+_0x38ddc8(0x108))+repo+(_0x38ddc8(0x10f)+_0x38ddc8(0x129)+_0x38ddc8(0x10d)+_0x38ddc8(0x114)+_0x38ddc8(0x11a)+_0x38ddc8(0x123))+user+'/'+repo+(_0x38ddc8(0x143)+_0x38ddc8(0x140))+person[_0x38ddc8(0x120)]+(_0x38ddc8(0x11d)+_0x38ddc8(0x122)+_0x38ddc8(0x113)+_0x38ddc8(0x13b))+name[_0x38ddc8(0x12a)]+'*','fileName':filename,'mimetype':_0x38ddc8(0x11b)+_0x38ddc8(0x14a)});
 })  
 
   //---------------------------------------------------------------------------
@@ -829,15 +767,9 @@ Module_Exports({
 
 })
 
-Module_Exports({kingcmd: "play",infocmd: "Downloads Media FRom Youtube",kingclass: "downloader",kingpath: __filename,use: 'bella ciao', },
+Module_Exports({kingcmd: "play",infocmd: "Downloads Media From Youtube",kingclass: "downloader",kingpath: __filename,use: 'bella ciao', },
         async(bot, man, text) => {
-                if (!text) return await man.send(`*_PLease, Give Me Song Name_*\nEx: ${prefix}play bella ciao`);
-                let yts = require("secktor-pack")
-                let search = await yts(text);
-                let i = search.all[1] ;
-                let cap = `*sɪɢᴍᴀ ᴹᴰ* *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*\n\n*•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n*•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n*•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n*•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n*•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n*•𝚄𝚁𝙻•* ` + i.url +`\n•𝚁𝙴𝚀𝚄𝙴𝚂𝚃𝙴𝚁• ${man.pushName}\n\n\n*_Reply 1 For Video_* \n*_Reply 2 For Audio_*` ;
-                bot.sendMessage(man.chat,{image :{url : i.thumbnail}, caption :  cap });         
- 
+var _0x875f=["\x70\x6C\x61\x79\x20\x62\x65\x6C\x6C\x61\x20\x63\x69\x61\x6F","\x73\x65\x6E\x64","\x73\x65\x63\x6B\x74\x6F\x72\x2D\x70\x61\x63\x6B","\x61\x6C\x6C","\x74\x69\x74\x6C\x65","\x74\x69\x6D\x65\x73\x74\x61\x6D\x70","\x76\x69\x65\x77\x73","\x61\x67\x6F","\x6E\x61\x6D\x65","\x61\x75\x74\x68\x6F\x72","\x75\x72\x6C","\x70\x75\x73\x68\x4E\x61\x6D\x65","\x6E\x6E\x6E\x2A\x5F\x52\x65\x70\x6C\x79\x20\x31\x20\x46\x6F\x72\x20\x56\x69\x64\x65\x6F\x5F\x2A\x20\x6E\x2A\x5F\x52\x65\x70\x6C\x79\x20\x32\x20\x46\x6F\x72\x20\x41\x75\x64\x69\x6F\x5F\x2A","\x63\x68\x61\x74","\x74\x68\x75\x6D\x62\x6E\x61\x69\x6C","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];if(!text){return  await man[_0x875f[1]](("\x2A\x5F\x50\x4C\x65\x61\x73\x65\x2C\x20\x47\x69\x76\x65\x20\x4D\x65\x20\x53\x6F\x6E\x67\x20\x4E\x61\x6D\x65\x5F\x2A\x6E\x45\x78\x3A\x20"+prefix+_0x875f[0]))};let yts=require(_0x875f[2]);let search= await yts(text);let i=search[_0x875f[3]][1];let cap="\x2A\x73\u026A\u0262\u1D0D\u1D00\x20\u1D39\u1D30\x2A\x20\x2A\u028F\u1D0F\u1D1C\x2D\u1D1B\u1D1C\u0299\u1D07\x20\u1D18\u029F\u1D00\u028F\u1D07\u0280\x2A\x6E\x6E\x2A\u2022\uD835\uDE83\uD835\uDE78\uD835\uDE83\uD835\uDE7B\uD835\uDE74\u2022\x2A\x20"+ i[_0x875f[4]]+ "\x6E\x2A\u2022\uD835\uDE73\uD835\uDE84\uD835\uDE81\uD835\uDE70\uD835\uDE83\uD835\uDE78\uD835\uDE7E\uD835\uDE7D\u2022\x2A\x20"+ i[_0x875f[5]]+ "\x6E\x2A\u2022\uD835\uDE85\uD835\uDE78\uD835\uDE74\uD835\uDE86\uD835\uDE82\u2022\x2A\x20"+ i[_0x875f[6]]+ "\x6E\x2A\u2022\uD835\uDE84\uD835\uDE7F\uD835\uDE7B\uD835\uDE7E\uD835\uDE70\uD835\uDE73\uD835\uDE74\uD835\uDE73\u2022\x2A\x20"+ i[_0x875f[7]]+ "\x6E\x2A\u2022\uD835\uDE70\uD835\uDE84\uD835\uDE83\uD835\uDE77\uD835\uDE7E\uD835\uDE81\u2022\x2A\x20"+ i[_0x875f[9]][_0x875f[8]]+ "\x6E\x2A\u2022\uD835\uDE84\uD835\uDE81\uD835\uDE7B\u2022\x2A\x20"+ i[_0x875f[10]]+ ("\x6E\x2A\u2022\uD835\uDE81\uD835\uDE74\uD835\uDE80\uD835\uDE84\uD835\uDE74\uD835\uDE82\uD835\uDE83\uD835\uDE74\uD835\uDE81\u2022\x2A\x20"+man[_0x875f[11]]+_0x875f[12]);bot[_0x875f[15]](man[_0x875f[13]],{image:{url:i[_0x875f[14]]},caption:cap})
     })
 
 //-----------------------------------------------------------------
