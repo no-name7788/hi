@@ -283,7 +283,7 @@ async(sigma, person, memo) => {
 )
     //---------------------------------------------------------------------------
     Module_Exports({
-        kingcmd: "song2",
+        kingcmd: "song",
         infocmd: "Downloads song from youtube.",
         kingclass: "downloader",
         kingpath: __filename,
@@ -351,7 +351,7 @@ async(sigma, person, memo) => {
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "music",
-            infocmd: "Downloads ringtone.",
+            infocmd: "Downloads tiktok music.",
             kingclass: "downloader",
             kingpath: __filename,
             use: '78',
@@ -371,6 +371,7 @@ Module_Exports({
         contextInfo: {
             externalAdReply: {
                 title: `${name.ownername}`,
+                thumbnail: log0,
 
 
                 sourceUrl: `${waUrl}`,
