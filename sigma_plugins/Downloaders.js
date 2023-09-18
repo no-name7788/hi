@@ -119,7 +119,7 @@ let Maher = {
             }
           sigma.sendMessage(person.chat, Maher, { quoted: person })
 
-person.send('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:*' + text);
+person.send(' *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* ' + text);
 
 
 fs.unlink(filePath, (err) => {
