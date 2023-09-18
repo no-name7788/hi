@@ -161,7 +161,7 @@ Module_Exports({
              {
                 quoted: person,});
      
-            }catch {person.reply(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`)}
+            }catch {person.reply(`("*_your given location is invalid_*\n*_please give me a valid location_*")`)}
         }
 )
     //---------------------------------------------------------------------------
