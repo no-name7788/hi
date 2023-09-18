@@ -11,13 +11,13 @@ const fetch = require('node-fetch')
    let yts = require("secktor-pack");
    Module_Exports({
            kingcmd: "find",
-           kingclass: "misc",
+           kingclass: "search",
            infocmd: "Finds info about song",
            kingpath: __filename,
        },
        async(Void, citel, text) => {
             let mime = citel.quoted.mtype
-            if (!citel.quoted) return citel.reply(`Send/Reply audio  ${prefix}find`);
+            if (!citel.quoted) return citel.reply(`Reply to Audio`);
             if (!/audio/.test(mime)) return citel.reply(`Send/Reply audio ${prefix}shazam`);
             let buff = await citel.quoted.download();
             let data = await shazam(buff);
@@ -57,7 +57,7 @@ Module_Exports({
             shortcut :['webss' , 'fullss'],
             kingclass: "search",
             infocmd: "Searches Image on Google",
-            use: '<text>',
+            use: '',
             kingpath: __filename,
         },
         async(Void, citel, text) => {
@@ -80,14 +80,14 @@ Module_Exports({
             kingcmd: "imdb",
             kingclass: "search",
             infocmd: "Sends image of asked Movie/Series.",
-            use: '<text>',
+            use: 'kingsman',
             kingpath: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply(`_Name a Series or movie ${tlang().greet}._`);
+            if (!text) return citel.reply(`*_Name a Series or movie_*\nEx: ${prefix}imdb kingman`);
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
             let imdbt = "";
-            console.log(fids.data)
+            citel.reply(fids.data)
             imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ``` 𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
             imdbt += "🎬Title      : " + fids.data.Title + "\n";
             imdbt += "📅Year       : " + fids.data.Year + "\n";
@@ -112,42 +112,60 @@ Module_Exports({
         }
     )
     //---------------------------------------------------------------------------
-Module_Exports({
-            kingcmd: "weather",
-            kingclass: "search",
-            infocmd: "Sends weather info about asked place.",
-            use: '<location>',
-            kingpath: __filename,
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Give me location.Baka!!`);
-            let wdata = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
-            );
-            let textw = "";
-            textw += `*🌟Weather of  ${text}*\n\n`;
-            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`;
-            textw += `*Description:-* ${wdata.data.weather[0].description}\n`;
-            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`;
-            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`;
-            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`;
-            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`;
-            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`;
-            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`;
-            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`;
-            textw += `*Country:-* ${wdata.data.sys.country}\n`;
-            textw +=name.caption ;
+    Module_Exports({
+        kingcmd: "weather",
+        kingclass: "search",
+        infocmd: "Sends weather info about asked place.",
+        use: 'Lahore',
+    },
+    async(sigma, person, text) => {
+        if (!person) return person.reply(`ɢɪᴠᴇ ᴍᴇ ʟᴏᴄᴀᴛɪᴏɴ...!\nᴇxᴀᴍᴘʟᴇ: ${prefix}ᴡᴇᴀᴛʜᴇʀ ʟᴀʜᴏʀᴇ`);
+     try{
+        let wdata = await axios.get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
+        );
+        let mz = ``;
+        mz += `┏━━⟪⟪ ${mztit} ⟫━⦿\n┃┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃┗➛ *ᴡᴇᴀᴛʜᴇʀ sᴇᴀʀᴄʜ*\n┃✗       ${fancytext("*weather of*",1)} ${text}\n`;
+        mz += `┃✗ ${fancytext("*•country•*",1)} ${wdata.data.sys.country}\n`;
+        mz += `┃✗ ${fancytext("*•condition•*",1)} ${wdata.data.weather[0].main}\n`;
+        mz += `┃✗ ${fancytext("*•description•*",1)} ${wdata.data.weather[0].description}\n`;
+        mz += `┃✗ ${fancytext("*•temperature•*",1)} ${wdata.data.main.temp}\n`;
+        mz += `┃✗ ${fancytext("*•feels-like•*",1)} ${wdata.data.main.feels_like}\n`;
+        mz += `┃✗ ${fancytext("*•pressure•*",1)} ${wdata.data.main.pressure}\n`;
+        mz += `┃✗ ${fancytext("*•humidity•*",1)} ${wdata.data.main.humidity}\n`;
+        mz += `┃✗ ${fancytext("*•wind-speed•*",1)} ${wdata.data.wind.speed}\n`;
+        mz += `┃✗ ${fancytext("*•latitude•*",1)} ${wdata.data.coord.lat}\n`;
+        mz += `┃✗ ${fancytext("*•longitude•*",1)} ${wdata.data.coord.lon}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`;
+        
 
-            Void.sendMessage( citel.chat, {  text: textw }, {  quoted: citel } );
-
-        }
-    )
+        let king = {
+            image: { url: await botpic() },
+            text: mz,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                title: Gname,
+                body: "Easy to Use",
+                thumbnail: log0,
+                mediaType: 4,
+                mediaUrl: '',
+                sourceUrl: waUrl,}}}
+        sigma.sendMessage(
+            person.chat, 
+                 king,
+             {
+                quoted: person,});
+     
+     }catch {person.reply(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`)}
+    }
+)
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "horo",
             kingclass: "search",
             infocmd: "Gives horoscope info of user.",
-            use: '<sign>\n:Example: horo libra',
+            use: 'sign\n:Example: horo libra',
             kingpath: __filename,
         },
         async(Void, citel, text) => {
@@ -181,31 +199,31 @@ Module_Exports({
     //---------------------------------------------------------------------------
 
 Module_Exports({
-            kingcmd: "cric",
-            shortcut :['search','gsearch'],
+            kingcmd: "cricket",
+            shortcut :['cric'],
             kingclass: "search",
-            infocmd: "Sends info of given query from Google Search.",
-            use: '<text>',
+            infocmd: "Sends info of about cricket",
+            use: '',
             kingpath: __filename,
         },
-        async(Void, citel, text) => {
+        async(bot, man, tax) => {
 
-          citel.reply (`*_Please Wait, Getting Cricket Info_*`);
+          man.send (`*_Please Wait, While Getting Cricket Updates_*`);
 const response = await fetch('https://api.cricapi.com/v1/currentMatches?apikey=f68d1cb5-a9c9-47c5-8fcd-fbfe52bace78');
   const dat = await response.json();
 console.log(dat);
 
 for (let i=0 ; i <  dat.data.length; i++) {
 let j = i+1;
-text +=`\n*--------------------- MATCH ${i}-------------------*`;
-text +="\n*Match Name  :* "+ dat.data[i].name;
-text +="\n*Match Status  :* "+ dat.data[i].status;
-text +="\n*Match  Date   :* " + dat.data[i].dateTimeGMT ;
-text +="\n*Match Started :* " + dat.data[i].matchStarted;
-text +="\n*Match Ended:* " + dat.data[i].matchEnded;
+tax +=`\n*✯──────𝐌𝐀𝐓𝐂𝐇 ${i}──────✯*`;
+tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙽𝙰𝙼𝙴•* "+ dat.data[i].name;
+tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝚂𝚃𝙰𝚃𝚄𝚂•* "+ dat.data[i].status;
+tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙳𝙰𝚃𝙴•* " + dat.data[i].dateTimeGMT ;
+tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝚂𝚃𝙰𝚁𝚃𝙴𝙳•* " + dat.data[i].matchStarted;
+tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙴𝙽𝙳𝙴𝙳•* " + dat.data[i].matchEnded;
 
 }
- return await citel.reply( text);
+ return await man.reply( tax);
 
 
 })
@@ -213,21 +231,21 @@ text +="\n*Match Ended:* " + dat.data[i].matchEnded;
 //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "google",
-            shortcut :['search','gsearch'],
+            shortcut :['gsearch'],
             kingclass: "search",
             infocmd: "Sends info of given query from Google Search.",
-            use: '<text>',
+            use: 'who is king',
             kingpath: __filename,
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply(`give me a query\n*Example : .google Who is Suhail Tech.*`);
+            if (!text) return citel.reply(`give me a query\n*Ex: ${prefix}google Who is KING.*`);
             let google = require('google-it');
             google({ 'query': text}).then(res => {
                 let msg= `Google Search From : ${text} \n\n`;
                 for (let g of res) {
-                    msg+= `➣ Title : ${g.title}\n`;
-                    msg+= `➣ Description : ${g.snippet}\n`;
-                    msg+= `➣ Link : ${g.link}\n\n────────────────────────\n\n`;
+                    msg+= `➣ *•𝚃𝙸𝚃𝙻𝙴•* ${g.title}\n`;
+                    msg+= `➣ *•𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽•* ${g.snippet}\n`;
+                    msg+= `➣ *•𝙻𝙸𝙽𝙺•* ${g.link}\n\n✯─────────────────────✯\n\n`;
                 }
              
                 return citel.reply(msg);
@@ -237,15 +255,15 @@ Module_Exports({
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "image",
-            shortcut: ["img" , "pic"],
+            shortcut: ["img"],
             kingclass: "search",
             infocmd: "Searches Image on Google",
-            use: '<text>',
+            use: 'Quran pics',
             kingpath: __filename,
         },
         async(Void, citel, text) => {
 
-   if (!text) return citel.reply(`Provide me a query!\n*Ex : .image luffy |10*`)
+   if (!text) return citel.reply(`Provide me a query!\n*Ex: ${prefix}image crown |10*`)
    let buttonMessage = {}
    let name1 = text.split("|")[0] || `Luffy`
    let name2 = text.split("|")[1] || `5`
@@ -283,7 +301,7 @@ Module_Exports({
 
 for (let url of urlsArray) { Void.sendMessage(citel.chat , {image : {url : url} } )  }
 } 
- catch (error) {   return citel.reply("*Google Images Not Working, Try it Later*"); }
+ catch (error) {   return citel.reply("*_Google Images Not Working, Try it Later_*"); }
 
  
  
@@ -330,24 +348,23 @@ Module_Exports({
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `*✯────𝙲𝙾𝚄𝙿𝙻𝙴 𝙼𝙰𝙻𝙴───✯*` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `*✯────𝙲𝙾𝚄𝙿𝙻𝙴 𝙵𝙴𝙼𝙰𝙻𝙴───✯*` }, { quoted: citel })
         }
     ) 
     //---------------------------------------------------------------------------
 Module_Exports({
         kingcmd: "iswa",
-        shortcut: ["oldwa","bio","onwa"],
         kingclass: "search",
         infocmd: "Searches in given rage about given number.",
         use: '9112345678xx',
         kingpath: __filename,
     },
     async(Void, citel, text) => {
- if(!text) return await citel.reply('Give Me Number without + sign. Example: .iswa 9231844741xx')
+ if(!text) return await citel.reply(`*_Give Me Number without + sign_*\nEx: ${prefix}iswa 9234663191xx`)
         var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return citel.reply(`*You did not add x*\nExample: iswa 9231844741xx  \n ${name.caption}`)
-        citel.reply(`*Searching for WhatsApp account in given range...* \n ${name.caption}`)
+        if (!inputnumber.includes('x')) return citel.reply(`*You did not add x*\nEx: ${prefix}iswa 9234663191xx`)
+        citel.reply(`*Searching WhatsApp accounts in given range...*`)
 
         function countInstances(string, word) {  return string.split(word).length - 1; }
         var number0 = inputnumber.split('x')[0]
@@ -380,10 +397,10 @@ Module_Exports({
                   try { var anu1 = await Void.fetchStatus(anu[0].jid); } 
                   catch { var anu1 = '401' ; }
                   if (anu1 == '401' || anu1.status.length == 0) { nobio += `wa.me/${anu[0].jid.split("@")[0]}\n` ; } 
-                  else {  text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
+                  else {  text += `*•𝙽𝚄𝙼𝙱𝙴𝚁•* wa.me/${anu[0].jid.split("@")[0]}\n*•𝙱𝙸𝙾•* ${anu1.status}\n🍁*•𝙻𝙰𝚂𝚃 𝚄𝙿𝙳𝙰𝚃𝙴•* ${moment(anu1.setAt).tz('Asia/karachi').format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
             } catch { nowhatsapp += `${number0}${i}${number1}\n`; }
         }
-        return await citel.reply(`${text}${nobio}${nowhatsapp}`)
+        return await citel.reply(`${text}${nobio}${nowhatsapp}*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`)
 
     }
 )
@@ -397,18 +414,18 @@ Module_Exports({
         kingpath: __filename,
     },
     async(Void, citel, text) => {
-if(!text) return await citel.reply('Give Me Number without + sign. Example: .nowa 9231844741xx')
+if(!text) return await citel.reply(`*_Give Me Number without + sign_*\nEx: ${prefix}iswa 9234663191xx`)
 const inputNumber = text.split(" ")[0]
-if (!inputNumber.includes('x')) return citel.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 9231844741xx  \n ${name.caption}`)
-citel.reply(`*Searching for WhatsApp account in the given range...*\n${name.caption}`);
+if (!inputNumber.includes('x')) return citel.reply(`*You did not add x*\nEx: ${prefix}iswa 92346631xxxx`)
+citel.reply(`*Searching for WhatsApp account in the given range...*`);
 function countInstances(string, word) { return string.split(word).length - 1; }
 const number0 = inputNumber.split('x')[0];
 const number1 = inputNumber.split('x').slice(-1)[0] || '';
 const randomLength = countInstances(inputNumber, 'x');
 const randomxx = [10, 100, 1000][randomLength - 1] || 0;
-let nobio = `\n*『 WhatsApp Account With No Bio』* \n`;
+let nobio = `\n*『Accounts With No Bio』* \n`;
  let nobios='';
-let nowhatsapp = `*『 Numbers With No WhatsApp Account 』* \n\n`;
+let nowhatsapp = `*『 Numbers With No WhatsApp』* \n\n`;
 for (let i = 0; i < randomxx; i++) 
 {
     const nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -423,6 +440,6 @@ for (let i = 0; i < randomxx; i++)
     } catch { nowhatsapp += `${number0}${i}${number1}\n`;  }
 }
 if(!nobios){ nobio = ''; } else {nobio += nobios+'\n' ;}
-return await citel.reply(`${nobio}${nowhatsapp}${name.caption}`);
+return await citel.reply(`${nobio}${nowhatsapp}*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`);
   
 })
