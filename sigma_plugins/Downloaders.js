@@ -77,7 +77,7 @@ Module_Exports({
 },
 
 async(sigma, person, text) => {
-if(!text )return person.send(`*_Give me App Name_*\nEg: ${prefix}apk Whatsapp`);
+if(!text )return person.send(`*_Give me App Name_*\nEx: ${prefix}apk Whatsapp`);
 
 const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; };
 let randomName = getRandom(".apk");
@@ -168,8 +168,8 @@ Module_Exports({
     kingcmd: "gitclone",
     shortcut: ["gclone","gitc"],
     infocmd: "Downloads github repo",
-    category: "downloader",
-    filename: __filename,
+    kingclass: "downloader",
+    kingpath: __filename,
     use: 'https://github.com/Maher-Zubair/SIGMA-MD',
 },
 async(sigma, person, text) => {
@@ -226,7 +226,7 @@ async(sigma, person, memo) => {
     },
     async(bot, citel, tax) => {
         let yts = require("secktor-pack");
-    if (!tax) return citel.reply(`Example: ${prefix}video Surah Fateh`);
+    if (!tax) return citel.send(`Example: ${prefix}video Surah Fateh`);
         let search = await yts(tax);
         let anu = search.videos[0];
         let urlYt = anu.url
@@ -256,7 +256,7 @@ async(sigma, person, memo) => {
         
                     mimetype: 'video/mp4',
                     caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
-        height: 540,
+        height: 640,
                     width: 780,
                     headerType: 4,
                     contextInfo: {
@@ -289,10 +289,10 @@ async(sigma, person, memo) => {
         kingpath: __filename,
         use: 'bella ciao',
     },
-    async(Void, citel, memo) => {
+    async(sigma, citel, memo) => {
         let yts = require("secktor-pack");
         let search = await yts(memo);
-    if (!memo) return citel.reply(`Give me song name/nExample: ${prefix}song My babe i love your voice`);
+    if (!memo) return citel.send(`Give me song name/nExample: ${prefix}song My babe i love your voice`);
         let anu = search.videos[0];
         const getRandom = (ext) => {
             return `${Math.floor(Math.random() * 10000)}${ext}`;
@@ -301,7 +301,7 @@ async(sigma, person, memo) => {
         if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`Audio file is too big!`);
         let titleYt = infoYt.videoDetails.title;
         let randomName = getRandom(".mp3");
-        citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶* '+memo)
+        citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+memo)
         const stream = ytdl(anu.url, {
                 filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
             })
@@ -327,7 +327,7 @@ async(sigma, person, memo) => {
                         body: ``,
                         renderLargerThumbnail: true,
                         thumbnailUrl: search.all[0].thumbnail,
-                        mediaUrl: text,
+                        mediaUrl: memo,
                         mediaType: 1,
                         thumbnail: await getBuffer(search.all[0].thumbnail),
                         sourceUrl: `${waUrl}`,
@@ -335,7 +335,7 @@ async(sigma, person, memo) => {
                     },
                 },
             }
-            await Void.sendMessage(citel.chat, Maher, { quoted: citel })
+            await sigma.sendMessage(citel.chat, Maher, { quoted: citel })
             return fs.unlinkSync(`./${randomName}`);
         } else {
             citel.reply(`File size bigger then 100MB`);
@@ -387,28 +387,28 @@ Module_Exports({
             infocmd: "Downloads ringtone.",
             kingclass: "downloader",
             kingpath: __filename,
-            use: '<ringtone name>',
+            use: 'apple',
         },
-        async(Void, citel, text) => {
-            if (!text) return citel.send(`Example: ${prefix}ringtone back in black`)
+        async(bot, citel, tax) => {
+            if (!tax) return citel.send(`Example: ${prefix}ringtone bella ciao`)
 	    const {ringtone } = require('../lib/scraper')
-            let anu = await ringtone(text)
+            let anu = await ringtone(tax)
         let buttonMessage = {
 		audio: { url: anu[0].audio },
 		caption : `*${anu[0].title}*`,
 		fileName: anu[0].title + '.mp3',
 		mimetype: 'audio/mpeg',
 		}
-	return Void.sendMessage(citel.chat,buttonMessage, { quoted: citel } )
+	return bot.sendMessage(citel.chat,buttonMessage, { quoted: citel } )
 })
 
     //---------------------------------------------------------------------------
     Module_Exports({
         kingcmd: "pint",
         infocmd: "Downloads image from pinterest.",
-        kingcmd: "downloader",
-        infocmd: __filename,
-        use: '<text|image name>',
+        kingclass: "downloader",
+        kingpath: __filename,
+        use: 'crown',
     },
     async(sigma, citel, text) => {
         if (!text) return citel.reply(`*_What Picture You Are Looking For?_*\nExample: ${prefix}pint crown`) && Void.sendMessage(citel.chat, {
@@ -503,7 +503,7 @@ Module_Exports({
                 let yts = require("secktor-pack")
                 let search = await yts(tax);
                 let i = search.all[1] ;
-                let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿ \n┃✗ ┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃✗ ┗➛ *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*   \n\n┃✗ *•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n┃✗ *•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n┃✗ *•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n┃✗ *•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n┃✗ *•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n┃✗ *•𝚄𝚁𝙻•* ` + i.url +`\n┗━━━━━━━━━━⦿\n\n\n\n*_Reply 1 For Video_*\n*_Reply 2 For Audio_*` ;
+                let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿ \n┃✗ ┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃✗ ┗➛ *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*\n\n┃✗ *•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n┃✗ *•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n┃✗ *•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n┃✗ *•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n┃✗ *•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n┃✗ *•𝚄𝚁𝙻•* ` + i.url +`\n┗━━━━━━━━━━⦿\n\n\n\n*_Reply 1 For Video_*\n*_Reply 2 For Audio_*` ;
                 bot.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });
            
            
@@ -851,7 +851,7 @@ Module_Exports({
 
 
 /*Module_Exports({
-    kingcmd: "song",
+    kingcmd: "play",
     infocmd: "Search Song From youtube",
     kingclass: "downloader",
     kingpath: __filename,
