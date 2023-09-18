@@ -89,7 +89,7 @@ Module_Exports({
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
             let imdbt = "";
             citel.reply(fids.data)
-            imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ```    𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
+            imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ```     𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
             imdbt += "🎬Title      : " + fids.data.Title + "\n";
             imdbt += "📅Year       : " + fids.data.Year + "\n";
             imdbt += "⭐Rated      : " + fids.data.Rated + "\n";
@@ -149,19 +149,19 @@ Module_Exports({
             headerType: 4,
             contextInfo: {
                 externalAdReply: {
-                title: Gname,
+                title: `${Gname}`,
                 body: "Easy to Use",
                 thumbnail: log0,
                 mediaType: 4,
                 mediaUrl: '',
-                sourceUrl: waUrl,}}}
+                sourceUrl: `${waUrl}`,}}}
         sigma.sendMessage(
             person.chat, 
                  king,
              {
                 quoted: person,});
      
-     }catch {person.reply(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`)}
+     }catch {console.log(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`)}
     }
 )
     //---------------------------------------------------------------------------
@@ -224,7 +224,7 @@ tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙽𝙰𝙼𝙴•* "+ dat.data[i].name;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝚂𝚃𝙰𝚃𝚄𝚂•* "+ dat.data[i].status;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙳𝙰𝚃𝙴•* " + dat.data[i].dateTimeGMT ;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝚂𝚃𝙰𝚁𝚃𝙴𝙳•* " + dat.data[i].matchStarted;
-tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙴𝙽𝙳𝙴𝙳•* " + dat.data[i].matchEnded;
+tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙴𝙽𝙳𝙴𝙳•* " + dat.data[i].matchEnded + `\n`;
 
 }
  return await man.reply( tax);
@@ -353,8 +353,8 @@ Module_Exports({
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `*✯──𝙲𝙾𝚄𝙿𝙻𝙴 𝙼𝙰𝙻𝙴─✯*` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `*✯──𝙲𝙾𝚄𝙿𝙻𝙴 𝙵𝙴𝙼𝙰𝙻𝙴─✯*` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `*✯──𝙲𝙾𝚄𝙿𝙻𝙴 𝙼𝙰𝙻𝙴──✯*` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `*✯──𝙲𝙾𝚄𝙿𝙻𝙴 𝙵𝙴𝙼𝙰𝙻𝙴──✯*` }, { quoted: citel })
         }
     ) 
     //---------------------------------------------------------------------------
