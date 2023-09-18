@@ -161,7 +161,7 @@ Module_Exports({
              {
                 quoted: person,});
      
-     }catch {console.log(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`)}
+     }catch {console.log(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`+e)}
     }
 )
     //---------------------------------------------------------------------------
@@ -219,7 +219,7 @@ console.log(dat);
 
 for (let i=0 ; i <  dat.data.length; i++) {
 let j = i+1;
-tax +=`\n*✯───𝐌𝐀𝐓𝐂𝐇 ${i}───✯*`;
+tax +=`\n*✯────𝐌𝐀𝐓𝐂𝐇 ${i}────✯*`;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙽𝙰𝙼𝙴•* "+ dat.data[i].name;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝚂𝚃𝙰𝚃𝚄𝚂•* "+ dat.data[i].status;
 tax +="\n*•𝙼𝙰𝚃𝙲𝙷 𝙳𝙰𝚃𝙴•* " + dat.data[i].dateTimeGMT ;
