@@ -161,7 +161,7 @@ Module_Exports({
              {
                 quoted: person,});
      
-     }catch {console.log(`${fancytext("your given location is invalid\nplease give me a valid location",1)}`+e)}
+     }catch {console.log(e)}
     }
 )
     //---------------------------------------------------------------------------
