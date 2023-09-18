@@ -111,8 +111,8 @@ Module_Exports({
             imdbt += "❎imdbVotes  : " + fids.data.imdbVotes + "\n";
             imdbt += name.caption ;
             Void.sendMessage(citel.chat, {  image: { url: fids.data.Poster, }, caption: imdbt,  }, {   quoted: citel,  });}
-            catch(e){
-                citel.reply("*_Wrong Movie Name_* "+ e)}
+            catch{
+                citel.reply("*_Wrong Movie Name_* ")}
 
 
         }
