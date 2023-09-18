@@ -284,24 +284,24 @@ async(sigma, person, memo) => {
     //---------------------------------------------------------------------------
     Module_Exports({
         kingcmd: "song",
-        infocmd: "Downloads song from youtube.",
+        infocmd: "Downloads audio from youtube.",
         kingclass: "downloader",
         kingpath: __filename,
         use: 'bella ciao',
     },
-    async(sigma, citel, memo) => {
+    async(Void, citel, tax) => {
         let yts = require("secktor-pack");
-        let search = await yts(memo);
-    if (!memo) return citel.send(`Give me song name/nExample: ${prefix}song My babe i love your voice`);
+    if (!tax) return citel.send(`Example: ${prefix}song My Babe i love Your Voice`);
+        let search = await yts(tax);
         let anu = search.videos[0];
         const getRandom = (ext) => {
             return `${Math.floor(Math.random() * 10000)}${ext}`;
         };
         let infoYt = await ytdl.getInfo(anu.url);
-        if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`Audio file is too big!`);
+        if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`Audio File Too Big!`);
         let titleYt = infoYt.videoDetails.title;
         let randomName = getRandom(".mp3");
-        citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+memo)
+        citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+tax)
         const stream = ytdl(anu.url, {
                 filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
             })
@@ -315,7 +315,7 @@ async(sigma, person, memo) => {
         let fileSizeInBytes = stats.size;
         let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
         if (fileSizeInMegabytes <= dlsize) {
-            let Maher = {
+            let buttonMessage = {
                 audio: fs.readFileSync(`./${randomName}`),
                 mimetype: 'audio/mpeg',
                 caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
@@ -327,7 +327,7 @@ async(sigma, person, memo) => {
                         body: ``,
                         renderLargerThumbnail: true,
                         thumbnailUrl: search.all[0].thumbnail,
-                        mediaUrl: memo,
+                        mediaUrl: text,
                         mediaType: 1,
                         thumbnail: await getBuffer(search.all[0].thumbnail),
                         sourceUrl: `${waUrl}`,
@@ -335,10 +335,10 @@ async(sigma, person, memo) => {
                     },
                 },
             }
-            await sigma.sendMessage(citel.chat, Maher, { quoted: citel })
+            await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
             return fs.unlinkSync(`./${randomName}`);
         } else {
-            citel.reply(`File size bigger then 100MB`);
+            citel.reply(`File Size Bigger Then 100MB.`);
         }
         fs.unlinkSync(`./${randomName}`);
         
