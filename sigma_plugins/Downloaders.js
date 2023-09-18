@@ -173,7 +173,7 @@ Module_Exports({
     use: 'https://github.com/Maher-Zubair/SIGMA-MD',
 },
 async(sigma, person, tax) => {
-if (!tax) return await person.send(`*_Provide Repo Url,_*\n Ex: ${prefix} *gitclone https://github.com/Maher-Zubair/SIGMA-MD*`)
+if (!tax) return await person.send(`*_Provide Repo Url,_*\n Ex: ${prefix}gitclone *https://github.com/Maher-Zubair/SIGMA-MD*`)
 if (!tax.includes('github.com')) {
     return person.send('_The link you provided is invalid_')} 
 
@@ -516,7 +516,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
     },
     async(sigma, citel, tax) => {
         let yts = require("secktor-pack");
-    if (!tax) return citel.send(`Example: ${prefix}song My Babe i love Your Voice`);
+    if (!tax) return citel.send(`Example: ${prefix}audio My Babe i love Your Voice`);
         let search = await yts(tax);
         let anu = search.videos[0];
         const getRandom = (ext) => {
@@ -647,6 +647,8 @@ Module_Exports({
                         jpegThumbnail: log0,
                         mimetype: 'video/mp4',
                         caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
+                        height:640,
+                        width:780,
                         fileName: `${titleYt}.mp4`,
                         headerType: 4,
                         contextInfo: {
@@ -698,7 +700,7 @@ Module_Exports({
             let infoYt = await ytdl.getInfo(urlYt);
             //30 MIN
             if (infoYt.videoDetails.lengthSeconds >= videotime) {
-                reply(`_I can't Download That Long Audio_!`);
+                reply(`_I can't Download That Long Audio_`);
                 return;
             }
             let titleYt = infoYt.videoDetails.title;
@@ -770,7 +772,7 @@ Module_Exports({
         try {
             let urlYt = text;
             if (!urlYt.startsWith("http")) {
-                citel.reply(`_Idiot Give YouTube Link_!`);
+                citel.reply(`_Idiot Give YouTube Link_`);
                 return;
             }
             let infoYt = await ytdl.getInfo(urlYt);
@@ -833,7 +835,7 @@ Module_Exports({kingcmd: "play",infocmd: "Downloads Media FRom Youtube",kingclas
                 let yts = require("secktor-pack")
                 let search = await yts(text);
                 let i = search.all[1] ;
-                let cap = `*sɪɢᴍᴀ ᴹᴰ* *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*\n\n*•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n*•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n*•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n*•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n*•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n*•𝚄𝚁𝙻•* ` + i.url +`\n\n\n*_Reply 1 For Video_* \n*_Reply 2 For Audio_*` ;
+                let cap = `*sɪɢᴍᴀ ᴹᴰ* *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*\n\n*•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n*•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n*•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n*•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n*•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n*•𝚄𝚁𝙻•* ` + i.url +`\n•𝚁𝙴𝚀𝚄𝙴𝚂𝚃𝙴𝚁• ${man.pushName}\n\n\n*_Reply 1 For Video_* \n*_Reply 2 For Audio_*` ;
                 bot.sendMessage(man.chat,{image :{url : i.thumbnail}, caption :  cap });         
  
     })
