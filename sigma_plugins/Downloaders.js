@@ -136,7 +136,7 @@ async(sigma, person, tax) => {
     //person.reply(`✳️ Wait, sending repository.. \n` + filename.toString() )
     await sigma.sendMessage(person.chat , {document : { url : url },caption:`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃┗➛ *ʀᴇᴘᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n┃✗ *•ᴀᴜᴛʜᴏʀ•* ${user}\n┃✗ *•ʀᴇᴘᴏ•* ${repo}\n┃✗ *•ꜰɪʟᴇ-ᴛʏᴘᴇ•* zip\n┃✗ *•ʀᴇᴘᴏ-ʟɪɴᴋ•* https://github.com/${user}/${repo}\n┃✗ *•ʀᴇǫᴜᴇsᴛᴇʀ•*  ${person.pushName}\n┗━━━━━━━━━━⦿\n*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,fileName:  filename,mimetype: 'application/zip',  }) }
     catch(e) {
-    console.log(e)}
+    person.send("*_The Repo is Private Or It May Be Temporary Down_*" + e)}
     
 })  
 
