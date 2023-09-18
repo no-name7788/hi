@@ -1,7 +1,7 @@
 
 
 const moment = require('moment-timezone')
-const {fetchJson,Module_Exports, tlang, getBuffer, prefix, name,fancytext } = require('../lib')
+const {fetchJson,Module_Exports, tlang, getBuffer, prefix, name,fancytext,botpic } = require('../lib')
 let gis ='' // require("g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
