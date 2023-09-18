@@ -162,7 +162,7 @@ Module_Exports({
              {
                 quoted: person,});
      
-            }catch {person.reply("*_your given location is invalid_*\n*_please give me a valid location_*")}
+            }catch {person.reply("*_Your Given Location is Invalid_*\n*_Please Give Me a Valid Location_*")}
         }
 )
     //---------------------------------------------------------------------------
