@@ -783,80 +783,16 @@ Module_Exports({
 
 })
 
-Module_Exports({kingcmd: "play", alias: ["audio"],desc: "Downloads audio from youtube.",category: "downloader",filename: __filename,use: '<give text>', },
-        async(bot, citel, text) => {
-                if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
+Module_Exports({kingcmd: "play",infocmd: "Downloads Media FRom Youtube",kingclass: "downloader",kingpath: __filename,use: 'bella ciao', },
+        async(bot, man, text) => {
+                if (!text) return await man.send(`*_PLease, Give Me Song Name_*\nEx: ${prefix}play bella ciao`);
                 let yts = require("secktor-pack")
                 let search = await yts(text);
                 let i = search.all[1] ;
                 let cap = `*sɪɢᴍᴀ ᴹᴰ* *ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ*\n\n*•𝚃𝙸𝚃𝙻𝙴•* ` + i.title + `\n*•𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽•* ` + i.timestamp +`\n*•𝚅𝙸𝙴𝚆𝚂•* `+i.views +`\n*•𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳•* ` +i.ago +`\n*•𝙰𝚄𝚃𝙷𝙾𝚁•* `+i.author.name+`\n*•𝚄𝚁𝙻•* ` + i.url +`\n\n\n*_Reply 1 To Video_* \n*_Reply 2 To Audio_*` ;
-                bot.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });         
-           
-           
-           
-           
-            
-           
-           /*
-    
-    
-            let search = await yts(text)
-            let listSerch = []
-            let teskd = `Result From ${text}.\n_+ ${search.all.length} more results._`
-            for (let i of search.all) {
-                listSerch.push({
-                    title: i.title,
-                    rowId: `${prefix}ytmp3 ${i.url}`,
-                    description: `*SIGMA-MD* / ${i.timestamp}`
-                })
-            }
-            const sections = [
-
-                {
-                    title: "Total Search🔍" + search.all.length,
-                    rows: listSerch
-                }
-
-            ]
-            const listMessage = {
-                text: teskd,
-                footer: tlang().footer,
-                title: ``,
-                buttonText: "Songs",
-                mentions: await Void.parseMention(teskd),
-                sections
-            }
-            return Void.sendMessage(citel.chat, listMessage, {
-                quoted: citel
-            })
-            */
+                bot.sendMessage(man.chat,{image :{url : i.thumbnail}, caption :  cap });         
+ 
     })
-
-/////=======================  REPLY SYSTEM ===================================================
-
-
-
-// By @SuhailTechInfo
-// https://wa.me/923184474176
-// https://www.youtube.com/@suhailtechinfo0
-
-
-
-/*Module_Exports({
-    kingcmd: "play",
-    infocmd: "Search Song From youtube",
-    kingclass: "downloader",
-    kingpath: __filename,
-    use: '<Add Yt Song Query>'
-},
-async(Void, citel, text) => {
-if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
-let search = await yts(text)
-let i = search.all[1] ;
-let cap = "\t *---Yt Song Searched Data---*   \n\nTitle : " + i.title + "\nUrl : " + i.url +"\nDescription : " + i.timestamp +"\nViews : "+i.views +"\nUploaded : " +i.ago +"\nAuthor : "+i.author.name+"\n\n\nReply 1 To Video \nReply 2 To Audio" ;
-Void.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap })
-})
-*/
 
 //-----------------------------------------------------------------
 
