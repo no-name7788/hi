@@ -283,7 +283,7 @@ async(sigma, person, memo) => {
 )
     //---------------------------------------------------------------------------
     Module_Exports({
-        kingcmd: "song",
+        kingcmd: "song2",
         infocmd: "Downloads song from youtube.",
         kingclass: "downloader",
         kingpath: __filename,
@@ -491,7 +491,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
     //---------------------------------------------------------------------------
 
 Module_Exports({
-            kingcmd: "play",
+            kingcmd: "song",
             infocmd: "Downloads audio from youtube.",
             kingclass: "downloader",
             kingpath: __filename,
