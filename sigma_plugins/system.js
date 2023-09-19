@@ -295,30 +295,30 @@ let txt =
  {
              let txt = text.replace("add", "").replace("new", "")
              await addnote(txt)
-            return await citel.reply(`New note "${txt}" added in mongodb.`)
+            return await citel.reply(`New note "${txt}" Added In ${name.botname}`)
  }
  else if(text.split(' ')[0].toLowerCase() === "all")
  {
             const note_store = new Array()
-            let leadtext = `*All Available Notes are:-*\n\n`
+            let leadtext = `*All Available Notes In ${name.botname} Are:*\n\n`
             leadtext += await allnotes()
             return await citel.reply(leadtext)
  }
   else if(text.split(' ')[0].toLowerCase() === "delall")
   {
         await delallnote()
-        return await citel.reply(`All notes deleted from mongodb.`)
+        return await citel.reply(`Deleted All Notes From ${name.botname}`)
   }
  else if(text.split(' ')[0].toLowerCase() === "del")
  {
       try 
       {
             let id = text.split(' ')[1];
-            if (!id || isNaN(id)) { return citel.reply("Uhh Please, Provide a Numeric Note ID. Example: .delnote 1"); }
+            if (!id || isNaN(id)) { return citel.reply(`*_Please, Provide a Numeric Note ID_*\nEx: ${prefix}note del 1`); }
             await delnote(id)
             //return citel.reply(`Id: ${text.split(" ")[0]}\'s note has been deleted from mongodb.`)
-            return await citel.reply(`Note with ID : ${id} has been deleted from MongoDB.`);
-      } catch (error) {return citel.reply("Uhh Please, Provide a Note ID. Example: .notes del 1"); }
+            return await citel.reply(`Note with ID: ${id} Has Been Deleted From ${name.botname}`);
+      } catch (error) {return citel.reply(`*_Please, Provide a Numeric Note ID_*\nEx: ${prefix}note del 1`); }
 
  }
  else { return await citel.reply(txt) ; }
@@ -330,11 +330,11 @@ Module_Exports({
             kingcmd: "alive",
             kingclass: "general",
             kingpath: __filename,
-            infocmd: "is bot alive??"
+            infocmd: "To check Bot is Online"
         },
         async(Void, citel, text, {isCreator}) => {
           let get = text;
-          let alivemessage = `*ι αм σηℓιηє нσω ¢αη ι нєℓρ уσυ* \n\n_ι αм ᴍυℓтι ԃєνιᴄє ωнαтѕαρρ вσт_ \n_Cʀєαtєd вყ : ѕυнαιℓ tєᴄʜ info_\n_If any query : wa.me/923184474176_\n\n\n*_Update Alive Message by adding text with Alive_* \n*Eg: _.alive Your_Alive_Message_*`;
+          let alivemessage = `*ι αм σηℓιηє нσω ¢αη ι нєℓρ уσυ*\n*_To Update ALive Message Use_*\n*Eg: _${prefix}alive Your_Alive_Message_*`;
           let urll = '';     
           let image = false;
           let video = false;
@@ -384,7 +384,7 @@ if(isCreator && text != "")
           urll = aliv.url || await botpic() ;
 
           
-const alivtxt = `${alivemessage}\n\n*Type ${prefix}menu for my command list.*`;
+const alivtxt = `${alivemessage}\n\n*_I am Multi-Device Whatsapp Bot Created By MAHER ZUBAIR_*\n*_For Any Help_*\n*_Whatsapp: wa.me/923466319114_*\n*_Type ${prefix}menu For My Commands list._*`;
  const messageOptions = image ? { image: { url: urll }, caption: alivtxt }
                         : video? { video: { url: urll },gifPlayback: true, caption: alivtxt }
                         : { image: { url: await botpic() }, caption: alivtxt };
