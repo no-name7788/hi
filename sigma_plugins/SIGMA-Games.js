@@ -257,13 +257,13 @@ const countries = {
 
 
 let captions = {
-  waitTime:15,
+  waitTime:30,
   winReward:2000,
-  onStart :`*Capital Finding Game Started*\n*Player:* _@$player_\n*Task :* _Tell the Capital of *$country*_\n\n_Your Time Starts Now, You Have $waitTime seconds to Answer_`,
-  onTimeOut:`*Game Over, run out of time*\n\n*Player:* _@$player_\n*Reason:* _TimeOut!, You're not responed_\n\n*Answer:*\n The Capital of *$country* is *$capital*`,
-  onLimitEnd:`*Game Over, Attempts limit Exceed*\n\n*Player:* _@$player_\n*Reason:* _Not responed right answer in 3 attemps_\n\n*Answer:*\n The Capital of *$country* is *$capital*`,
-  onWrongAns:`*_Uhh dear, Your answer is not correct_*\n\n*Player:* _@$player_\n_You have *$attempt more attempt!*_\n\n*You have $waitTime seconds to answer!*`,
-  onWinGame:`*_Waoww, Your Answer is Correct_*\n*Player:* _@$player_\n\n_Capital of *$country* is *$capital*._\n_You give right answer in *$attempt attepmt*_\n_$amount cash added in your wallet_`
+  onStart :`*Capital Finding Game Started*\n*•𝙿𝙻𝙰𝚈𝙴𝚁•* _@$player_\n*•𝚃𝙰𝚂𝙺•*\n _Tell the Capital of *$country*_\n\n_Your Time Starts Now, You Have $waitTime seconds to Answer_`,
+  onTimeOut:`*Game Over, run out of time*\n\n*•𝙿𝙻𝙰𝚈𝙴𝚁•* _@$player_\n*•𝚁𝙴𝙰𝚂𝙾𝙽•* _TimeOut!, You're didn't respond in Time_\n\n*•𝙰𝙽𝚂𝚆𝙴𝚁•*\n The Capital of *$country* is *$capital*`,
+  onLimitEnd:`*Game Over, Attempts limit Exceeded*\n\n*•𝙿𝙻𝙰𝚈𝙴𝚁•* _@$player_\n*•𝚁𝙴𝙰𝚂𝙾𝙽•* _Not responded right answer in 3 attemps_\n\n*•𝙰𝙽𝚂𝚆𝙴𝚁•*\n The Capital of *$country* is *$capital*`,
+  onWrongAns:`*_Idiot Your answer is not correct_*\n\n*•𝙿𝙻𝙰𝚈𝙴𝚁•* _@$player_\n_You have *$attempt more attempt!*_\n\n*You have $waitTime seconds to answer!*`,
+  onWinGame:`*_Superb, Your Answer is Correct_*\n*•𝙿𝙻𝙰𝚈𝙴𝚁•* _@$player_\n\n_Capital of *$country* is *$capital*._\n_You give right answer in *$attempt Attepmt*_\n_$amount cash added in your wallet_`
   
   }
 
