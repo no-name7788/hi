@@ -247,7 +247,7 @@ Module_Exports({
 //---------------------------------------------------------------------------
 //                  BOT STATUS COMMAND
 //---------------------------------------------------------------------------
-Function({
+Module_Exports({
   kingcmd: "status",
   shortcut: ["about","sts"],
   infocmd: "To check bot status",
