@@ -11,7 +11,7 @@ const fetch = require('node-fetch');
 
 Module_Exports({
             kingcmd: "qr",
-            kingclass: "user",
+            kingclass: "misc",
             kingpath: __filename,
             infocmd: "Sends Qr code to scan and get your session id."
         },
@@ -55,7 +55,7 @@ Module_Exports({
 Module_Exports({
     kingcmd: "rmbg",
     shortcut : ['removebg'],
-    kingclass: "misc",
+    kingclass: "converter",
     kingpath: __filename,
     infocmd: "Remove image Background."
 },
@@ -70,7 +70,7 @@ async(Void, citel, text) => {
 Module_Exports({
             kingcmd: "url",
             shortcut : ['createurl',"tourl"],
-            kingclass: "misc",
+            kingclass: "converter",
             kingpath: __filename,
             infocmd: "image to url."
         },
@@ -88,7 +88,7 @@ Module_Exports({
 Module_Exports({
             kingcmd: "trt",
             shortcut :['translate'],
-            kingclass: "misc",
+            kingclass: "converter",
             kingpath: __filename,
             infocmd: "Translate\'s given text in desird language."
         },
@@ -192,45 +192,45 @@ Module_Exports({
             try 
             {
                 let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
-                if (!users) return citel.reply(`❌ Please mention any user ${tlang().greet}.`)
+                if (!users) return citel.reply(`*_Please Mention A User_*`)
                 let pushnamer = Void.getName(users);
                 sck1.findOne({ id: users }).then(async(usr) => 
                 {
                     if (!usr) 
                     {
                         await new sck1({ id: users, ban: "true" }).save()
-                        return citel.reply(`_Banned ${usr.name} from Using Commands._`)
+                        return citel.reply(`*_Banned ${usr.name} from Using Commands._*`)
                     } 
-                    if (usr.ban == "true") return citel.reply(`${pushnamer} is already Banned from Using Commands`)
+                    if (usr.ban == "true") return citel.reply(`${pushnamer} *_is already Banned from Using Commands_*`)
                     await sck1.updateOne({ id: users }, { ban: "true" })
-                    return citel.reply(`_Successfully Banned ${usr.name} from Using Commands._`)
+                    return citel.reply(`*_Successfully Banned ${usr.name} from Using Commands._*`)
                 })
-            } catch (e) {  return citel.reply("*Please Reply/Mention Any User.❌*")  }
+            } catch (e) {  return citel.reply("*_Please Reply/Mention Any User_*")  }
 
 
        })
      //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "unban",
-            kingclass: "misc",
+            kingclass: "owner",
             kingpath: __filename,
             infocmd: "Unbans banned user (from using bot)."
         },
         async(Void, citel, text,{ isCreator }) => {
-            if (!isCreator) return citel.reply(`This command is only for my Owner`)
+            if (!isCreator) return citel.reply(tlang().owner)
             try 
             {
                 let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
-                if (!users) return citel.reply("Please mention any user.❌")
+                if (!users) return citel.reply("*_Please mention any user_*")
                 let pushnamer = Void.getName(users);
                 sck1.findOne({ id: users }).then(async(usr) =>
                 { // console.log(usr.ban);
-                    if (!usr) { return citel.reply(`${pushnamer} is unbanned.`);}
-                    if (usr.ban !== "true") return await citel.reply(`${usr.name} is already unbanned.`);
+                    if (!usr) { return citel.reply(`${pushnamer} *_Is Unbanned From Using Commands._*`);}
+                    if (usr.ban !== "true") return await citel.reply(`${usr.name} *_Is Already Unbanned._*`);
                     await sck1.updateOne({ id: users }, { ban: "false" })
-                    return await citel.reply(`${usr.name} is free as a bird now`);
+                    return await citel.reply(`*_User_* ${usr.name} *_Unbanned SuccessFully_*`);
                 })
-            } catch {  return citel.reply("Please mention any user.❌");  }
+            } catch {  return citel.reply("*_Unknown Error Occured_*");  }
         })
 }
     //---------------------------------------------------------------------------
@@ -328,7 +328,7 @@ let txt =
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "alive",
-            kingclass: "general",
+            kingclass: "tools",
             kingpath: __filename,
             infocmd: "To check Bot is Online"
         },
@@ -392,3 +392,8 @@ const alivtxt = `${alivemessage}\n\n*_I am Multi-Device Whatsapp Bot Created By 
   return Void.sendMessage(citel.chat, messageOptions,{quoted : citel });
         }
     )
+
+
+// All These System Commands Are Developed By @Maher-Zubair
+// Whatsapp +923466319114
+// Usage And CopyRights Are Reserved
