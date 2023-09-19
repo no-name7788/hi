@@ -293,13 +293,15 @@ async(sigma, person) => {
 )
 //========================================================================
 
-Module_Exports({
+Function({
   kingcmd: "cpu",
   infocmd: "To check bot status",
   kingclass: "general",
   kingpath: __filename,
+  use: ""
 },
-async(Void, citel) => {
+async(sigma, person,{isCreator}) => {
+const { formatp, runtime } = require("../lib");
   const os = require('os')
   const speed = require('performance-now')
       const used = process.memoryUsage()
@@ -326,16 +328,16 @@ async(Void, citel) => {
                   
     respon = `
   Response Speed ${latensi.toFixed(1)}Sec / ${(oldd - neww).toFixed(1)}ms
-  Runtime : ${runtime(process.uptime())}`
+  Run-time of ${name.botname}: ${runtime(process.uptime())}`
   
 
-  let resp2 = `💻 Info Server
+  let resp2 = ` Info Server
   RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
   
-  NodeJS Memory Usaage
+*Memory Usage*
   ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
   
-  ${cpus[0] ? `Total CPU Usage
+  ${cpus[0] ? `*Total CPU Usage*
   ${cpus[0].model.trim()} (${cpu.speed} MHZ)
   ${Object.keys(cpu.times).map(type => `- ${(type + '').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
   CPU Core(s) Usage (${cpus.length} Core CPU)
@@ -343,7 +345,7 @@ async(Void, citel) => {
   ${Object.keys(cpu.times).map(type => `- ${(type + '').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
       `.trim()
 
-      return await citel.reply(respon+resp2 )
+      return await person.reply(respon+resp2 )
 })
  
 //-------------------------------------------------------------------------
