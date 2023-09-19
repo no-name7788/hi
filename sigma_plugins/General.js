@@ -301,3 +301,6 @@ const sigma_male_zubair = require('performance-now')
    let Zubair = `_ʀᴇsᴘᴏɴᴅ ʀᴀᴛᴇ ᴏꜰ_ _${name.botname}_ ɪs:\n ${latensie.toFixed(4)} ᴍs`
        return person.reply(Zubair)
 })
+// All These General Commands Are Developed By @Maher-Zubair
+// Whatsapp +923466319114
+// Usage And CopyRights Are Reserved
