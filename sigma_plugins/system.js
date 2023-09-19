@@ -266,29 +266,29 @@ Module_Exports({
 if (!isCreator) return citel.reply(tlang().owner)
 let txt = 
 `
-┏━━『 sɪɢᴍᴀ ɴᴏᴛᴇs』━━⦿
+┏━━*『•𝙽𝙾𝚃𝙴𝚂•』*━━⦿
 ┃ _Here You Can Store_\n┃ _Notes For Later Use_
 ┃ *✯──────────✯*
-┃     *✯ᴀᴅᴅ ɴᴇᴡ ɴᴏᴛᴇs✯*
-┃ *Cmd :* ${prefix}notes add 'Your Text'
-┃ *Usage :* Save Text in MongoDb Server
+┃     *✯𝙰𝙳𝙳 𝙽𝙴𝚆 𝙽𝙾𝚃𝙴✯*
+┃ *ᵁˢᴱ•* ${prefix}notes add 'Your Text'
+┃ *ᴵᴺᶠᴼ•* Save Notes in Bot
 ┃ *✯──────────✯*
 ┃
-┃  *✯ɢᴇᴛ ɴᴇᴡ ɴᴏᴛᴇs✯*
-┃ *Cmd :* ${prefix}notes all
-┃ *Usage :* Read/Get All Saved Notes 
+┃  *✯𝙶𝙴𝚃 𝙰𝙻𝙻 𝙽𝙾𝚃𝙴𝚂✯*
+┃ *ᵁˢᴱ•* ${prefix}notes all
+┃ *ᴵᴺᶠᴼ•* Get All Saved Notes
 ┃ *✯──────────✯*
 ┃
-┃  *✯ᴅᴇʟᴇᴛᴇ ᴀ ɴᴏᴛᴇ✯*
-┃ *Cmd :* ${prefix}notes del 'note id'
-┃ *Usage :* Delete A Single Note By ID Number 
+┃  *✯𝙳𝙴𝙻𝙴𝚃𝙴 𝙰 𝙽𝙾𝚃𝙴✯*
+┃ *ᵁˢᴱ•* ${prefix}notes del 'note id'
+┃ *ᴵᴺᶠᴼ•* Delete A Single Note
 ┃ *✯──────────✯*
 ┃
-┃  *✯ᴅᴇʟᴇᴛᴇ ᴀʟʟ ɴᴏᴛᴇs✯*
-┃  *Cmd :* ${prefix}notes delall
-┃  *Usage :* Delete All Saved Notes 
+┃  *✯𝙳𝙴𝙻𝙴𝚃𝙴 𝙰𝙻𝙻 𝙽𝙾𝚃𝙴𝚂✯*
+┃  *ᵁˢᴱ•* ${prefix}notes delall
+┃  *ᴵᴺᶠᴼ•* Delete All Notes
 ┃  *✯──────────✯*
-┗━━━━━━━━━━⦿` ; 
+┗━━━━━━━━━━⦿`;
  
  
  if (!text) return await citel.reply(txt);
