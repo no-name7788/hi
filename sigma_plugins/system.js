@@ -70,7 +70,7 @@ Module_Exports({
     axios.post("https://api.remove.bg/v1.0/removebg", formData, { headers: { 'X-Api-Key': name.REMOVE_BG_KEY,  }, responseType: 'arraybuffer',})
       .then(response => { const imageData = Buffer.from(response.data, 'binary');   return person.reply(imageData, {caption:`*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`},"image")              
       })
-      .catch(error => {   return person.reply(`*_Please provide Valid RemoveBg Key_*\n*_Get RemoveBg api key from remove.bg_*`);  });
+      .catch(error => {  console.log(error)});
 
 })
 
