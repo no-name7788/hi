@@ -1,4 +1,4 @@
-const { Module_Exports, parseJid, getAdmin, tlang, prefix } = require("../lib");
+const { Module_Exports, parseJid, getAdmin, tlang, prefix,cmd } = require("../lib");
 const Maher_Zubair_NumGuess_Game =  {};
 
 
