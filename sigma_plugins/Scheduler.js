@@ -4,12 +4,12 @@
  Module_Exports({
      kingcmd: "amute",
      infocmd: "sets auto mute time in group.",
-     kingclass: "moderation",
+     kingclass: "group",
  },
  async(Void, citel, text,{ isCreator }) => {
      if (!isCreator) return citel.reply(tlang().owner)
      if(!citel.isGroup) return citel.reply(tlang().group)
-     if(!text.split(':')[1]) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
+     if(!text.split(':')[1]) return citel.reply(`Please provide correct form.\nEx: ${prefix}amute 22:00`)
      //if(!Number.isInteger(text.split(':')[0])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`);
      //if(!Number.isInteger(text.split(':')[1])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
            let Group = await sck.findOne({ id: citel.chat })
@@ -27,12 +27,12 @@
  Module_Exports({
     kingcmd: "aunmute",
     infocmd: "sets unmute time in group.",
-    kingclass: "moderation",
+    kingclass: "group",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
     if(!citel.isGroup) return citel.reply(tlang().group)
-    if(!text.split(':')[0]) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
+    if(!text.split(':')[0]) return citel.reply(`Please provide correct form.\nEx: ${prefix}aunmute 22:00`)
    // if(!Number.isInteger(text.split(':')[0])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`);
    // if(!Number.isInteger(text.split(':')[1])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
           let Group = await sck.findOne({ id: citel.chat })
@@ -50,7 +50,7 @@ async(Void, citel, text,{ isCreator }) => {
  Module_Exports({
     kingcmd: "dunmute",
     infocmd: "Delete unmute from group.",
-    kingclass: "moderation",
+    kingclass: "group",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
@@ -69,7 +69,7 @@ async(Void, citel, text,{ isCreator }) => {
  Module_Exports({
     kingcmd: "dmute",
     infocmd: "Delete mute from group.",
-    kingclass: "moderation",
+    kingclass: "group",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)

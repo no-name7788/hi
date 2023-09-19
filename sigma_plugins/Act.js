@@ -27,10 +27,10 @@ Module_Exports({
        //const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
         const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) :false;
         //-----------------------------------------
-        if (!citel.isGroup) return citel.reply("This command is only for group")
-        if (!text) return citel.reply(`❌ Please provide me term like like\n1-events\n2-antilink\n3-nsfw\n4-bot`)
+        if (!citel.isGroup) return citel.reply(tlang().group)
+        if (!text) return citel.reply(`*_Please provide me term like like_*\n1-events\n2-antilink\n3-nsfw\n4-bot`)
         if (isCreator){console.log("this is a Bot Number in Act Functions")}
-        else if (!isAdmins) return citel.reply("❌ This command is only for admin")
+        else if (!isAdmins) return citel.reply(tlang().admin)
         switch (text.split(" ")[0]) {
             case 'antilink':
                 {
@@ -38,11 +38,11 @@ Module_Exports({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, antilink: "true" })
                             .save()
-                        return citel.reply(' Antilink Enabled Successfully')
+                        return citel.reply('*_Antilink Enabled Successfully_*')
                     } else {
-                        if (checkgroup.antilink == "true") return citel.reply("Antilink was alredy enabled here.")
+                        if (checkgroup.antilink == "true") return citel.reply("*_Antilink Was Already Enabled Here._*")
                         await sck.updateOne({ id: citel.chat }, { antilink: "true" })
-                        citel.reply('Enabled antilink in current chat.')
+                        citel.reply('*_Enabled antilink in current chat._*')
                         return
                     }
                 }
@@ -54,11 +54,11 @@ Module_Exports({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, economy: "true" })
                             .save()
-                        return citel.reply(' Economy Enabled Successfully')
+                        return citel.reply(' *_Economy Enabled Successfully_*')
                     } else {
-                        if (checkgroup.economy == "true") return citel.reply("Economy was alredy enabled.")
+                        if (checkgroup.economy == "true") return citel.reply("*_Economy Was Already Enabled._*")
                         await sck.updateOne({ id: citel.chat }, { economy: "true" })
-                        citel.reply('Economy enabled in current chat.')
+                        citel.reply('_Economy enabled in current chat._')
                         return
                     }
                 }
@@ -71,7 +71,7 @@ Module_Exports({
                             .save()
                         return citel.reply("Successfully Enabled *Events*")
                     } else {
-                        if (checkgroup.events == "true") return citel.reply("*Events* are already enabled")
+                        if (checkgroup.events == "true") return citel.reply("_*Events are Already Enabled_*")
                         await sck.updateOne({ id: citel.chat }, { events: "true" })
                         return citel.reply("Successfully Enabled *Events*")
                     }
@@ -97,7 +97,7 @@ Module_Exports({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, nsfw: "true" })
                             .save()
-                        return citel.reply("Successfully Enabled *NSFW*")
+                        return citel.reply("*_Successfully Enabled NSFW_*")
                     } else {
                         if (checkgroup.nsfw == "true") return citel.reply("*NSFW* is already enabled")
                         await sck.updateOne({ id: citel.chat }, { nsfw: "true" })
