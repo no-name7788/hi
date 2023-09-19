@@ -293,7 +293,7 @@ async(sigma, person) => {
 )
 //========================================================================
 
-Function({
+Module_Exports({
   kingcmd: "cpu",
   infocmd: "To check bot status",
   kingclass: "general",
