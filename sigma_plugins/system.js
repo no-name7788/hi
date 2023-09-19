@@ -69,15 +69,15 @@ async(Void, citel, text) => {
 
 Module_Exports({
             kingcmd: "url",
-            shortcut : ['createurl'],
+            shortcut : ['createurl',"tourl"],
             kingclass: "misc",
             kingpath: __filename,
             infocmd: "image to url."
         },
         async(Void, citel, text) => {
-            if (!citel.quoted) return await citel.reply(`*Reply To Any Image/Video To Get Url*`)
+            if (!citel.quoted) return await citel.send(`*_Reply To Any Image/Video To Get Url_*`)
             let mime = citel.quoted.mtype
-            if(mime !='videoMessage' && mime !='imageMessage' ) return await citel.reply("Uhh Please, Reply To An Image/Video")
+            if(mime !='videoMessage' && mime !='imageMessage' ) return await citel.reply("*_Please, Reply To An Image/Video_*")
             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
             let anu = await TelegraPh(media);
             await citel.reply(util.format(anu));
@@ -93,7 +93,7 @@ Module_Exports({
             infocmd: "Translate\'s given text in desird language."
         },
         async(Void, citel, text) => {
-            if(!text && !citel.quoted) return await citel.reply(`*Please Give Me Text. Example: _${prefix}trt en Who are you_*`);
+            if(!text && !citel.quoted) return await citel.reply(`*_Please Give Me Text. Ex: ${prefix}trt urdu Who are you_*`);
             const translatte = require("translatte");
             let lang = text ? text.split(" ")[0].toLowerCase() : 'en';
             if (!citel.quoted)  { text = text.replace( lang , "");  }
@@ -114,7 +114,7 @@ Module_Exports({
         },
         async(Void, citel, text,{ isCreator }) => {
              if (!isCreator) return citel.reply(tlang().owner)
-             if(!text) return citel.reply("*Uhh PLease, Provide A Command to Run Heroku*")
+             if(!text) return citel.reply("*PLease, Provide A Command to Run on Heroku*")
              const { exec } = require("child_process")
              exec(text, (err, stdout) => {
                      if (err) return citel.reply(`----${tlang().title}----\n\n` + err)
@@ -134,7 +134,7 @@ Module_Exports({
         },
         async(Void, citel, text,{ isCreator }) => {
                if (!isCreator)  return citel.reply(tlang().owner)
-               if(!text) return citel.reply("*Uhh PLease, Provide A Query To Run Master*")
+               if(!text) return citel.reply("*PLease, Provide A Query To Run Master*")
                try {
                    let resultTest = eval('const a = async()=>{\n' + text + '\n}\na()');
                    if (typeof resultTest === "object") await citel.reply(JSON.stringify(resultTest));
@@ -264,29 +264,31 @@ Module_Exports({
     async(Void, citel, text,{ isCreator }) => {
   const { tlang } = require('../lib')
 if (!isCreator) return citel.reply(tlang().owner)
-let txt = `╭───── *『 MONGODB NOTES 』* ───◆
-┃ Here You Can Store Notes For Later Use
-┃ *------------------------------------------*
-┃  ┌┤  *✯---- ADD NEW NOTE ----⦿*
-┃  │✭ *Cmd :* ${prefix}notes add 'Your Text'
-┃  │✭ *Usage :* Save Text in MongoDb Server
-┃  ╰───────────────────◆
+let txt = 
+`
+┏━━ *『 sɪɢᴍᴀ ᴹᴰ 』* ━⦿
+┃ Here You Can Store\n┃ Notes For Later Use
+┃ *✯──────────✯*
+┃     *✯-ADD NEW NOTE -⦿*
+┃ *Cmd :* ${prefix}notes add 'Your Text'
+┃ *Usage :* Save Text in MongoDb Server
+┃ *✯──────────✯*
 ┃
-┃  ┌┤  *✯---- GET ALL NOTES ----⦿*
-┃  │✭ *Cmd :* ${prefix}notes all
-┃  │✭ *Usage :* Read/Get All Saved Notes 
-┃  ╰───────────────────◆
+┃  *✯-- GET ALL NOTES -⦿*
+┃ *Cmd :* ${prefix}notes all
+┃ *Usage :* Read/Get All Saved Notes 
+┃ *✯──────────✯*
 ┃
-┃  ┌┤  *✯---- DELETE A NOTE ----⦿*
-┃  │✭ *Cmd :* ${prefix}notes del 'note id'
-┃  │✭ *Usage :* Delete A Single Note By ID Number 
-┃  ╰───────────────────◆
+┃  *✯- DELETE A NOTE -⦿*
+┃ *Cmd :* ${prefix}notes del 'note id'
+┃ *Usage :* Delete A Single Note By ID Number 
+┃ *✯──────────✯*
 ┃
-┃  ┌┤  *✯---- DELETE ALL NOTES ----⦿*
-┃  │✭ *Cmd :* ${prefix}notes delall
-┃  │✭ *Usage :* Delete All Saved Notes 
-┃  ╰───────────────────◆
-╰━━━━━━━━━━━━━━━━━━━━━━──⊷` ; 
+┃  *✯-DELETE ALL NOTES-⦿*
+┃  *Cmd :* ${prefix}notes delall
+┃  *Usage :* Delete All Saved Notes 
+┃  *✯──────────✯*
+┗━━━━━━━━━━⦿` ; 
  
  
  if (!text) return await citel.reply(txt);
