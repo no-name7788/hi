@@ -266,25 +266,25 @@ Module_Exports({
 if (!isCreator) return citel.reply(tlang().owner)
 let txt = 
 `
-┏━━ *『 sɪɢᴍᴀ ᴹᴰ 』* ━⦿
-┃ Here You Can Store\n┃ Notes For Later Use
+┏━━『 sɪɢᴍᴀ ɴᴏᴛᴇs』━━⦿
+┃ _Here You Can Store_\n┃ _Notes For Later Use_
 ┃ *✯──────────✯*
-┃     *✯-ADD NEW NOTE -⦿*
+┃     *✯ᴀᴅᴅ ɴᴇᴡ ɴᴏᴛᴇs✯*
 ┃ *Cmd :* ${prefix}notes add 'Your Text'
 ┃ *Usage :* Save Text in MongoDb Server
 ┃ *✯──────────✯*
 ┃
-┃  *✯-- GET ALL NOTES -⦿*
+┃  *✯ɢᴇᴛ ɴᴇᴡ ɴᴏᴛᴇs✯*
 ┃ *Cmd :* ${prefix}notes all
 ┃ *Usage :* Read/Get All Saved Notes 
 ┃ *✯──────────✯*
 ┃
-┃  *✯- DELETE A NOTE -⦿*
+┃  *✯ᴅᴇʟᴇᴛᴇ ᴀ ɴᴏᴛᴇ✯*
 ┃ *Cmd :* ${prefix}notes del 'note id'
 ┃ *Usage :* Delete A Single Note By ID Number 
 ┃ *✯──────────✯*
 ┃
-┃  *✯-DELETE ALL NOTES-⦿*
+┃  *✯ᴅᴇʟᴇᴛᴇ ᴀʟʟ ɴᴏᴛᴇs✯*
 ┃  *Cmd :* ${prefix}notes delall
 ┃  *Usage :* Delete All Saved Notes 
 ┃  *✯──────────✯*
