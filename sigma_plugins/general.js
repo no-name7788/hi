@@ -52,31 +52,7 @@ Module_Exports({
         //if (zx < 300) {
             let {data} = await axios.get(`http://api.brainshop.ai/get?bid=177396&key=5sivBl67scSVFCyo&uid=[${citel.sender.split("@")[0]}]&msg=[${text}]`);
             return citel.reply(data.cnt);  
-   // }
-	
-        /*
-	if (!text) return citel.reply(`Hey there! ${citel.pushName}. How are you doing these days?`); // for null text 
-	
-        const { Configuration, OpenAIApi } = require("openai");
-        const configuration = new Configuration
-				({
-           				apiKey:name.OPENAI_API_KEY ,
-				});
-	
-        const openai = new OpenAIApi(configuration);
-        const completion = await openai.createCompletion({
-            model: "text-davinci-002",
-            prompt: text,
-            temperature: 0.5,
-            max_tokens: 200,
-            top_p: 1.0,
-            frequency_penalty: 0.5,
-            presence_penalty: 0.0,
-            stop: ['"""'],
-        });
-        citel.reply(completion.data.choices[0].text);
-	
-	*/
+  
     }
 )
 
@@ -167,7 +143,7 @@ async(bot, citel, {isCreator}) => {
 timestampe = speed();
   latensie = speed() - timestampe;
   try{
-  let { data } = await axios.get('https://api.github.com/repos/Maher-Zubair/SIGMA-MD')
+  let { data } = await axios.get('https://api.github.com/repos/ali-khan77/same-md')
   let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿
 ┃✗ *_•sᴛᴀʀs•_* ${data.stargazers_count} sᴛᴀʀs
 ┃✗ *_•ꜰᴏʀᴋs•_* ${data.forks_count} ꜰᴏʀᴋs
