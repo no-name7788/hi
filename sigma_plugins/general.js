@@ -296,11 +296,12 @@ async(sigma, person) => {
 Module_Exports({
   kingcmd: "cpu",
   infocmd: "To check bot status",
-  kingclass: "general",
+  kingclass: "misc",
   kingpath: __filename,
   use: ""
 },
 async(sigma, person,{isCreator}) => {
+  try{
 const { formatp, runtime } = require("../lib");
   const os = require('os')
   const speed = require('performance-now')
@@ -345,7 +346,9 @@ const { formatp, runtime } = require("../lib");
   ${Object.keys(cpu.times).map(type => `- ${(type + '').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
       `.trim()
 
-      return await person.reply(respon+resp2 )
+      return await person.reply(respon+resp2 ) }
+      catch(e){
+        person.send("*_Unknown Error Occured_*")}
 })
  
 //-------------------------------------------------------------------------
