@@ -183,8 +183,8 @@ Module_Exports({ kingcmd: "pencil", kingclass: "logo", infocmd: "Some text to im
             return await singleText(Void, citel , 'create-a-sketch-text-effect-online-1044' , text )
         })
     //---------------------------------------------------------------------------
-Module_Exports({ kingcmd: "neon", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply(`*_Example: ${prefix}neon Zubair_*`)
+Module_Exports({ kingcmd: "neon2", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
+            if (!text) return citel.reply(`*_Example: ${prefix}neon2 Zubair_*`)
             return await singleText(Void, citel , 'create-3d-neon-light-text-effect-online-1028' , text )
         })
     //---------------------------------------------------------------------------
@@ -227,6 +227,11 @@ Module_Exports({ kingcmd: "blackpink", kingclass: "logo", infocmd: "Some text to
         if (!text) return citel.reply(`*_Example: ${prefix}blackpink Zubair_*`)
         return await singleText(Void, citel , 'create-blackpink-logo-style-online-1001' , text )
     })
+//-------------------------------------------------------------------------------
+Module_Exports({ kingcmd: "neon", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
+    if (!text) return citel.reply(`*_Example: ${prefix}neon Zubair_*`)
+    return await singleText(Void, citel , 'neon-light-style-3d-text-effect-online-1132' , text )
+})
 
 
 //  All These Logos are Developed By @Maher-Zubair
