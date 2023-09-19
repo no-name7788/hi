@@ -265,7 +265,7 @@ Module_Exports({
   const { tlang } = require('../lib')
 if (!isCreator) return citel.reply(tlang().owner)
 let txt = 
-`┏━━『 *•𝙽𝙾𝚃𝙴𝚂•* 』━━⦿     
+`┏━━━『 *•𝙽𝙾𝚃𝙴𝚂•* 』━━⦿     
 ┃ _Here You Can Store_\n┃ _Notes For Later Use_
 ┃ *✯──────────✯*
 ┃     *✯𝙰𝙳𝙳 𝙽𝙴𝚆 𝙽𝙾𝚃𝙴✯*
@@ -287,7 +287,7 @@ let txt =
 ┃  *•ᵁˢᴱ•* ${prefix}notes delall
 ┃  *•ᴵᴺᶠᴼ•* Delete All Notes
 ┃  *✯──────────✯*
-┗━━━━━━━━━━⦿    `;
+┗━━━━━━━━━━━⦿    `;
  
  
  if (!text) return await citel.reply(txt);
