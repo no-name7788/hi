@@ -163,10 +163,10 @@ Module_Exports({
   use:""
 },
 async(bot, citel, {isCreator}) => {
-  try{
+ 
 timestampe = speed();
   latensie = speed() - timestampe;
-
+  try{
   let { data } = await axios.get('https://api.github.com/repos/Maher-Zubair/SIGMA-MD')
   let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿
 ┃✗ *_•sᴛᴀʀs•_* ${data.stargazers_count} sᴛᴀʀs
@@ -195,11 +195,11 @@ let Maher_Zubair_repo = {
       },
   },
 }
-  return await bot.sendMessage(citel.chat, Maher_Zubair_repo, {
+  await bot.sendMessage(citel.chat, Maher_Zubair_repo, {
       quoted: citel,
   })}
   catch(e){
-    citel.send(e)}
+    citel.send("*_The Repo is Private or It is Not Available at The Moment_*")}
 
 
 
