@@ -365,7 +365,7 @@ const vcard = 'BEGIN:VCARD\n' +
      //---------------------------------------------------------------------------
  Module_Exports({
              kingcmd: "pick",
-             infocmd: "Pics random user from Group",
+             infocmd: "Pick random user from Group",
              kingclass: "group",
              kingpath: __filename
          },
@@ -387,7 +387,7 @@ const vcard = 'BEGIN:VCARD\n' +
      )
      //---------------------------------------------------------------------------
  Module_Exports({
-             kingcmd: "nsfw",
+             kingcmd: "chk nsfw",
              infocmd: "activates and deactivates nsfw.\nuse buttons to toggle.",
              kingclass: "misc",
              kingpath: __filename
@@ -437,7 +437,7 @@ const vcard = 'BEGIN:VCARD\n' +
     async(sigma, person, memo) => {
         if (!memo) return person.reply(`*_Ex: ${prefix}fliptext I am SIGMA Male_*`)
         flipe = memo.split('').reverse().join('')
-        person.reply(`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ \`\`\`  *•ᴛᴇxᴛ ғʟɪᴘᴘᴇʀ ᴛᴏᴏʟ•*   \`\`\`\n┃✗ *•ɢɪᴠᴇɴ ᴛᴇxᴛ•*\n┃✗ ${memo}\n┃✗ *•ғʟɪᴘᴇᴅ ᴛᴇxᴛ•*\n┃✗ ${flipe}\n┗━━━━━━━━━━⦿`)
+        person.reply(`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ \`\`\`  •ᴛᴇxᴛ ғʟɪᴘᴘᴇʀ ᴛᴏᴏʟ•   \`\`\`\n┃✗ *•ɢɪᴠᴇɴ ᴛᴇxᴛ•*\n┃✗ ${memo}\n┃✗ *•ғʟɪᴘᴇᴅ ᴛᴇxᴛ•*\n┃✗ ${flipe}\n┗━━━━━━━━━━⦿`)
     
     }
     )
@@ -537,7 +537,7 @@ const buffer = await sticker.toBuffer();
  
 
  Module_Exports({
-             kingcmd: "sigma bot",
+             kingcmd: "sigmabot",
              shortcut : ["chatbot","sbot","sigmachatbot"],
              infocmd: "activates and deactivates chatbot.\nuse buttons to toggle.",
              kingclass: "misc",
@@ -679,7 +679,7 @@ async(Void, citel, text,{isCreator}) => {
 })   
 } // if Statements
      //---------------------------------------------------------------------------
- 
+ /*
  Module_Exports({
              kingcmd: "antispam",
              infocmd: "Kick Spamers From Group.\nuse buttons to toggle.",
@@ -713,7 +713,7 @@ if (checkgroup.antispam == "true") return citel.reply(`Antispam : kick Users Who
 else return citel.reply(`Antispam : kick Users Who Spamming in Groupn\n\nAntispam is Disabled in this Group \n *_For Enablling Antispam : ${prefix}antispam on_*`);
          
  })
- 
+ */
      //---------------------------------------------------------------------------
      Module_Exports({
         kingcmd: "antilink",
