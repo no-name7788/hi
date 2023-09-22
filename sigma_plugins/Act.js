@@ -16,7 +16,7 @@ Module_Exports({
         kingcmd: "act",
         shortcut:['activate','active'],
         infocmd: "Switches for varios works.",
-        kingclass: "group",
+        kingclass: "misc",
         kingpath: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
