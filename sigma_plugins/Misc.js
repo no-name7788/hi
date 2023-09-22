@@ -752,3 +752,7 @@ else return citel.reply(`Antispam : kick Users Who Spamming in Groupn\n\nAntispa
      }
  
  })
+
+ // All These Misc Commamnds Are Developed By @Maher-Zubair
+ // Whatsapp +923466319114
+ // Usage And CopyRights Are Reserved
