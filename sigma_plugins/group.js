@@ -23,6 +23,68 @@ const sɪɢᴍᴀ_ᴍᴅ = require('../lib/sigma_plugins')
 
 //---------------------------------------------------------------------------
 Module_Exports({
+    kingcmd: "devwarn",
+    shortcut: ['dwarn'],
+    infocmd: "sends warning from developer",
+    kingclass: "developer",
+    use: 'reply to any person',
+},
+async(sigma, person, memo,{isCreator}) => {
+    if (!isCreator) return person.reply(tlang().owner)
+    if (!person.isGroup) return person.reply(tlang().group);
+    if (!person.quoted) return person.reply(`Please reply to a Person`);
+    var bio = await sigma.fetchStatus(person.quoted.sender);
+    var bioo = bio.status;
+    var setAt = bio.setAt.toString();
+    
+    var words = setAt.split(" ");
+    if(words.length > 3){ setAt= words.slice(0, 5).join(' ') ; }
+     
+    var num = person.quoted.sender.split('@')[0];
+    let pfp;
+     
+
+    try  {  pfp = await sigma.profilePictureUrl(person.quoted.sender, "image"); } 
+    catch (e) { pfp = await sigma.profilePictureUrl(person.sender, "image") ||  'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ; }    //|| 'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ;  }
+    
+    let username = await sck1.findOne({ id: person.quoted.sender });
+    var tname = username.name;
+
+let Maher = `
+┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ's ᴡᴀʀɴɪɴɢ•*
+┃✗ *•ɴᴀᴍᴇ•* ${tname}
+┃✗ *•ɴᴜᴍ•* ${num}
+┃✗   *•ᴋᴇᴇᴘ ᴄᴀʟᴍ ᴅᴜᴅᴇ•*
+┃✗ *•ᴅᴏɴ'ᴛ ᴀʙᴜsᴇ•*
+┃✗ *•ᴅᴏɴ'ᴛ sᴘᴀᴍ•*
+┃✗ *•ᴅᴏɴ'ᴛ ᴜsᴇ ʙᴏᴛ•*
+┃✗ *•ᴅᴏɴ'ᴛ sᴇɴᴅ ʟɪɴᴋs•*
+┃✗ *•ᴏᴛʜᴇʀ ᴡɪsᴇ•*
+┃✗ *•ʏᴏᴜ ᴡɪʟʟ•*
+┃✗ *•ʙᴇ ᴋɪᴄᴋᴇᴅ•*
+┗━━━━━━━━━━⦿`
+
+
+let king = {
+    image: { url: pfp},
+    caption: Maher,
+    footer: tlang().footer,
+    headerType: 4,
+    conmemoInfo: {
+        externalAdReply: {
+            title: `${name.ownername}`,
+            body: `${name.botname}`,
+            thumbnail: log0,
+            mediaType: 4,
+            mediaUrl: '',
+            sourceUrl: ``,}}}
+   
+return await sigma.sendMessage(person.chat, king, {   quoted: person, });
+}
+)
+//---------------------------------------------------------------------------
+Module_Exports({
     kingcmd: "antibot",
     infocmd: "kick Bot Users from Group!",
     kingclass: "group",
