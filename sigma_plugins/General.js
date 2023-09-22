@@ -1,7 +1,7 @@
 
 
 
-const { formatp , formatDate , tlang, botpic,Module_Exports, prefix, runtime,name , parsedJid ,sleep } = require('../lib')
+const { formatp , formatDate , tlang, botpic,Module_Exports, prefix, runtime,name , parsedJid ,sleep,performance } = require('../lib')
 const axios = require('axios')
 const fetch = require('node-fetch');
 const speed = require('performance-now')
@@ -132,8 +132,8 @@ Module_Exports({
 
 //---------------------------------------------------------------------------
 Module_Exports({
-  kingcmd: "repo",
-  shortcut: ["git", "sc", "script"],
+  kingcmd: "script",
+  shortcut: ["git", "sc", "repo"],
   infocmd: "Sends info about repo.",
   kingclass: "developer",
   use:""
