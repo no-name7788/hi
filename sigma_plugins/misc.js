@@ -183,7 +183,7 @@ if (!citel.quoted) return citel.reply (`*_Please Reply To A User To Get Profile 
                             //quoted: "923184474176@s.whatsapp.net", 
                             //contextInfo: { forwardingScore: 1999999, isForwarded: false },
                             image: { url: pfp },
-                            caption: '  *★─Profile Picture is Here─★*',
+                            caption: '  *★Profile Picture is Here★*',
                             footer: tlang().footer,
                             headerType: 4,
                    
@@ -215,8 +215,8 @@ if (!citel.quoted) return citel.reply (`*_Please Reply To A User To Get Profile 
     use: 'reply to any person',
 
 },
-async(sigma, person, memo,{isCreator}) => { 
-    if (isCreator) return person.send(tlang().owner)
+async(sigma, person, memo) => { 
+
    if (!person.quoted) return person.reply(`*_Please reply any User_*`);
     var bio = await sigma.fetchStatus(person.quoted.sender);
     var bioo = bio.status;
