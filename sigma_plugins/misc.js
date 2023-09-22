@@ -336,7 +336,7 @@ const vcard = 'BEGIN:VCARD\n' +
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
-             citel.reply(`*_Uptime of ${name.botname} is:\n${upt}_*`)
+             citel.reply(`*_Uptime of ${name.botname} is:_*\n${upt}`)
          }
      )
      //---------------------------------------------------------------------------
