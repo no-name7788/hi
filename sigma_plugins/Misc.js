@@ -545,7 +545,7 @@ const buffer = await sticker.toBuffer();
          },
          async(Void, citel, text,{ isCreator }) => {
              if (!isCreator) return citel.reply(tlang().owner)
-             const { chatbot } = require('../lib/');
+             const { chatbot } = require('../lib');
              let chatbott= await chatbot.findOne({ id: 'chatbot' }) ||  await new chatbot({ id: 'chatbot', worktype: "true" }).save()
              switch (text.split(" ")[0])
              {
