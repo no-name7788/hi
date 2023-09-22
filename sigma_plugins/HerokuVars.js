@@ -51,6 +51,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
 //--------------------------------------------------------------------
  Module_Exports({
              kingcmd: "getsudo",
+             shortcut:["gsudo"],
              infocmd: "Get all sudo numbers",
              kingclass: "tools",
              kingpath: __filename
@@ -60,6 +61,7 @@ async(Void, citel, text) => {  return await  citel.reply(`*_Here's All your Sudo
 
  Module_Exports({
              kingcmd: "delsudo",
+             shortcut:["dsudo"],
              infocmd: "del some one from sudo",
              kingclass: "tools",
              kingpath: __filename
@@ -121,7 +123,7 @@ const headers = {
 fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
   .then(response => response.json())
   .then(data => {
-    let allVars = `*_Here's All Your ${appName} Vars_*\n*✯───────────────✯*\n`;
+    let allVars = `*_Here's All Your ${appName} Vars_*\n*✯─────────────✯*\n`;
     Object.keys(data).forEach(key => {
                                          allVars += `*${key} :*  ${data[key]}\n` ;
                                      });
