@@ -677,15 +677,15 @@ Module_Exports({
                 pfp = await botpic();
             }
             const profile = `
-            ┏━━⟪⟪ ${mztit} ⟫━⦿	    
-            ┃✗ *_•ᴘʀᴏғɪʟᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ•_* 
-            ┃✗ *_•ᴜsᴇʀɴᴀᴍᴇ•_* ${citel.pushName}
-            ┃✗ *_•ʙɪᴏ•_* ${bioo}
-            ┃✗ *_•ʀᴏʟᴇ•_* ${role}
-            ┃✗ *_•ʟᴇᴠᴇʟ•_* ${userq.level}
-            ┃✗ *_•ᴛᴏᴛᴀʟ ᴍᴇssᴀɢᴇ•_* ${ttms}
-            ┃✗ *_•ᴘᴏᴡᴇʀᴇᴅ ʙʏ• sɪɢᴍᴀ ᴹᴰ_*
-            ┗━━━━━━━━━━⦿
+┏━━⟪⟪ ${mztit} ⟫━⦿	    
+┃✗ *_•ᴘʀᴏғɪʟᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ•_* 
+┃✗ *_•ᴜsᴇʀɴᴀᴍᴇ•_* ${citel.pushName}
+┃✗ *_•ʙɪᴏ•_* ${bioo}
+┃✗ *_•ʀᴏʟᴇ•_* ${role}
+┃✗ *_•ʟᴇᴠᴇʟ•_* ${userq.level}
+┃✗ *_•ᴛᴏᴛᴀʟ ᴍᴇssᴀɢᴇ•_* ${ttms}
+┃✗ *_•ᴘᴏᴡᴇʀᴇᴅ ʙʏ• sɪɢᴍᴀ ᴹᴰ_*
+┗━━━━━━━━━━⦿
 `;
             
             let buttonMessage = {
@@ -789,9 +789,9 @@ Module_Exports({
         async(Void, citel) => {
             const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
             let leadtext = `
-*✯───────────────✯*
-*─● LeaderBoard ●─*
-*✯───────────────✯*
+*✯──────────────✯*
+*✯──● LeaderBoard ●──✯*
+*✯──────────────✯*
 \n\n`
             for (let i = 0; i < fetchlb.length; i++) {
                 const lvpoints = fetchlb[i].level
@@ -848,7 +848,7 @@ Module_Exports({
                 let data = await sck1.findOne({ id: fetchlb[i].userID })
                 let namew = fetchlb[i].userID
                 let ttms = fetchlb[i].xp / 8
-                leadtext += `*${i + 1}*\n*•𝙽𝙰𝙼𝙴•* ${data.name}\n*•𝙻𝙴𝚅𝙴𝙻•* ${fetchlb[i].level}\n*•𝙿𝙾𝙸𝙽𝚃𝚂•* ${fetchlb[i].xp}\n*•𝚁𝙾𝙻𝙴•* ${role}\n*•𝙼𝙴𝚂𝚂𝙰𝙶𝙴𝚂•* ${ttms}\n✯────────────────────✯`;
+                leadtext += `*${i + 1}*\n*•𝙽𝙰𝙼𝙴•* ${data.name}\n*•𝙻𝙴𝚅𝙴𝙻•* ${fetchlb[i].level}\n*•𝙿𝙾𝙸𝙽𝚃𝚂•* ${fetchlb[i].xp}\n*•𝚁𝙾𝙻𝙴•* ${role}\n*•𝙼𝙴𝚂𝚂𝙰𝙶𝙴𝚂•* ${ttms}\n✯────────────────────✯\n`;
             }
             return citel.reply(leadtext)
         }
@@ -952,74 +952,7 @@ Module_Exports({
     //---------------------------------------------------------------------------
 
     //---------------------------------------------------------------------------
-    Module_Exports({
-        kingcmd: "gmode",
-        infocmd: "mute and unmute group.",
-        kingclass: "group",
-        kingpath: __filename,
-    },
-    async(bot, man, text) => {
-        if (!man.isGroup) return man.reply(tlang().group);
-        const groupAdmins = await getAdmin(bot, man)
-        const botNumber = await bot.decodeJid(bot.user.id)
-        const isBotAdmins =  groupAdmins.includes(botNumber) || false;
-        const isAdmins =  groupAdmins.includes(man.sender) ||  false;
-        if (!isBotAdmins) return man.reply(tlang().botAdmin);
-        if (!isAdmins ) return man.reply(tlang().admin);
-        let action = text.toLowerCase();
 
-        if (action.startsWith("close") || action.startsWith("mute") ) {
-            await bot.groupSettingUpdate(man.chat, "announcement").then((res) => man.reply(`*_Group Chat Muted!!!_*`)).catch((err) => man.error(err));
-        } else if (text.toLowerCase().startsWith("open")||text.toLowerCase().startsWith("unmute") ){
-            await bot.groupSettingUpdate(man.chat, "not_announcement").then((res) => man.reply(`*_Group Chat Unmuted!!!_*`)).catch((err) => man.error(err));
-        }
-else if( action.startsWith("detail") || action.startsWith("info") ){
-try{
-const pp = await bot.profilePictureUrl(man.chat, 'image').catch(_ => THUMB_IMAGE) || THUMB_IMAGE;
-  
-//groupAdmins = participants.filter(p => p.admin)
-const listAdmin = groupAdmins.map((v, i) => `  ${i + 1}. wa.me/${v.split('@')[0]}`).join('\n')
-        console.log("listAdmin , " ,listAdmin )
-const gcowner =  groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || man.chat.split`-`[0] + '@s.whatsapp.net'
-
-let ginfos = `
-  *「 INFO GROUP 」*
-*▢ ID :*
-• ${groupMetadata.id}
-*▢ NAME :* 
-• ${groupMetadata.subject}
-*▢ Members :*
-• ${participants.length}
-*▢ Group Owner :*
-• wa.me/${gcowner.split('@')[0]}
-*▢ Admins :*
-${listAdmin}
-*▢ Description :*
-• ${groupMetadata.desc?.toString() || 'unknown'}
-`
-let Group = isMongodb ?  await sck.findOne({ id: man.chat }) :false;
-if(Group){
-ginfos += `*▢ 🪢 Extra Group Configuration :*";
-• Group Nsfw :    ${Group.nsfw=='true'? '✅' : '❎'} 
-• Antilink        :    ${Group.antilink=='true'? '✅' : '❎'}
-• Economy      :    ${Group.economy=='true'? '✅' : '❎'}
-• Events         :     ${Group.events=='true'? '✅' : '❎'}
-`.trim()
-if(Group.events=='true'){
-    ginfos +="\n*▢ Wellcome Message :* \n  • "+Group.welcome;
-    ginfos +="\n\n*▢ Goodbye Message :* \n  • "+Group.goodbye; 
-}
-}
-try{ await bot.sendMessage(man.chat,{image:{url : pp ? pp : THUMB_IMAGE } , caption: ginfos } , {quoted:man }) }catch(e){ return await man.send(ginfos,{},"",man),console.log("error in group info,\n"  , e)   }
-
-}catch(e){return await man.error(`${e}\ncmdName: Group info`),console.log("error in group info,\n"  , e) }
-
-}else return await man.send(`*_Uhh Dear Give me Query From Bellow Options_*\n_1:- .group Mute_\n_2:- .group Unmute_\n_3:- .group Info_`)
-//  let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Suhail.bot.sendButtonText(msg.chat,buttons,`Group Mode`, Suhail.bot.user.name, msg);
-       
-
-    }
-)
     //---------------------------------------------------------------------------
      
     Module_Exports({
@@ -1376,14 +1309,14 @@ Module_Exports({
 		    {
 			    await Void.sendMessage(citel.chat, { image: {  url: await botpic() },
 			caption: `
-            ┏━━⟪⟪ ${mztit} ⟫━⦿
-            ┃✗ •ᴡᴏᴡ,sᴏᴍᴇᴏɴᴇ ᴊᴜsᴛ•
-            ┃✗ •ʟᴇᴠᴇʟᴇᴅ ᴜᴘ ʜᴜʜ•
-            ┃✗ •ɴᴀᴍᴇ• ${man.pushName}
-            ┃✗ •ʟᴇᴠᴇʟ• ${sck1.level}🍭
-            ┃✗ •ᴇxᴘ• ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-            ┃✗ •ʀᴏʟᴇ• *${role}*
-            ┗━━━━━━━━━━⦿ `   }, { quoted: citel });
+┏━━⟪⟪ ${mztit} ⟫━⦿
+┃✗ •ᴡᴏᴡ,sᴏᴍᴇᴏɴᴇ ᴊᴜsᴛ•
+┃✗ •ʟᴇᴠᴇʟᴇᴅ ᴜᴘ ʜᴜʜ•
+┃✗ •ɴᴀᴍᴇ• ${man.pushName}
+┃✗ •ʟᴇᴠᴇʟ• ${sck1.level}🍭
+┃✗ •ᴇxᴘ• ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
+┃✗ •ʀᴏʟᴇ• *${role}*
+┗━━━━━━━━━━⦿ `   }, { quoted: citel });
 		    }
 	    }
 	})
