@@ -266,3 +266,16 @@ const data = await response.json();
 }
    )
 
+//------------------------------------------------------------------------
+Module_Exports({
+    kingcmd: "husbu",
+    infocmd: "To get husbo pics",
+    kingclass: "anime pics",
+    kingpath: __filename
+},
+async(Void, man,text) =>
+{
+    let res=await axios.get("https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Naruto.json")
+    let url =  res.data.result[Math.floor(Math.random() * res.data.result.length)];
+    return await Void.sendMessage(man.chat,{video :{url : random } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
+})
