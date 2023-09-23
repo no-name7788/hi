@@ -567,7 +567,7 @@ person.sender.split("@")[0]
 }\n*_𝚁𝙴𝚀𝚄𝙴𝚂𝚃_* : ${text}`;
     teks2 = `\n\n*_Hi Dear_*, ${person.pushName}.*_Your Request Has Been Forwarded To My Developer_*.`;
     for (let i of owner) {
-        bot.sendMessage(i + "9234466319114@s.whatsapp.net", {
+        bot.sendMessage(i + "@s.whatsapp.net", {
             text: textt + teks1,
             mentions: [person.sender],
         }, {
@@ -781,7 +781,7 @@ Module_Exports({
             const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
             let leadtext = ` 
 *✯─────────────✯*
-  *✯──● LeaderBoard ●──✯*
+ *✯──● LeaderBoard ●──✯*
 *✯─────────────✯*
 \n\n`
             for (let i = 0; i < fetchlb.length; i++) {
