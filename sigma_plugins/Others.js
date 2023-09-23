@@ -68,7 +68,7 @@ return await Void.sendMessage(citel.chat, { text:Maher }, { quoted : king } )
 
 var surl = 'https://github.com/Mehar-Zubi' // Source URL
 const number = '923466319114'
-var name = 'ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ'
+var name = 'ᴍᴀʜᴇʀ ᴢᴜʙɪ'
 var body = 'sɪɢᴍᴀ ᴹᴰ'
 
 var image = 'https://telegra.ph/file/8fe2aa30663af71b2efd6.jpg'
