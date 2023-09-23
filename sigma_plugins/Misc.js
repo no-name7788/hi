@@ -387,7 +387,7 @@ const vcard = 'BEGIN:VCARD\n' +
      )
      //---------------------------------------------------------------------------
  Module_Exports({
-             kingcmd: "chk nsfw",
+             kingcmd: "cnsfw",
              infocmd: "activates and deactivates nsfw.\nuse buttons to toggle.",
              kingclass: "misc",
              kingpath: __filename
