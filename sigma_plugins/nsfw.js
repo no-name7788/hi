@@ -29,7 +29,7 @@ async(sigma, person, memo,{isCreator}) => {
     let anu = await fetchJson('https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/SIGMA-MD%20NSFW/Porn_Gif.json')
     let random = anu[Math.floor(Math.random() * anu.length)]
     let Maher_Zubair = {
-        video: {
+        gif: {
             url: random.SIGMS_NSFW,
         },
         caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
