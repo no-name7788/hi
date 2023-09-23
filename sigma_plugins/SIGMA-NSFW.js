@@ -26,7 +26,7 @@ async(sigma, person, memo,{isCreator}) => {
         .save());
     let mongoschemas = zerogroup.nsfw || "false";
     if (mongoschemas == "false") return person.reply("*_NSFW is not Active_*");
-    let anu = await fetchJson('https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/SIGMA-MD%20NSFW/ass.json')
+    let anu = await fetchJson('https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/SIGMA-MD%20NSFW/cum.json')
     let random = anu[Math.floor(Math.random() * anu.length)]
     let Maher_Zubair = {
         image: {
