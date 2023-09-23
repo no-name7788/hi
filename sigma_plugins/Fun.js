@@ -9,9 +9,9 @@
  * @version 0.0.6
  **/
 
-const { dare, truth, random_question ,name ,sleep} = require('../lib/truth-dare.js')
+const { dare, truth, random_question ,name } = require('../lib/truth-dare.js')
 const axios = require('axios')
-const { Module_Exports } = require('../lib/index.js')
+const { Module_Exports,sleep } = require('../lib')
 const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
 Module_Exports({
@@ -233,3 +233,4 @@ await sleep(1000)
 // These Fun Commands are Developed By @Maher-Zubair
 // Whatsapp +923466319114
 // Usage And CopyRights Are Reserved
+
