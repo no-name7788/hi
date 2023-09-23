@@ -276,6 +276,6 @@ Module_Exports({
 async(Void, man,text) =>
 {
     let res=await axios.get("https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/WallPapers/husbu.json")
-    let url =  res.data.result[Math.floor(Math.random() * res.data.result.length)];
+    let random = anu[Math.floor(Math.random() * anu.length)]
     return await Void.sendMessage(man.chat,{image :{url : random } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
 })
