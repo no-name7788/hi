@@ -1,10 +1,4 @@
-const { sck, sck1,Module_Exports, jsonformat, botpic, TelegraPh, RandomXP,fancytext, name, tlang, warndb, sleep,getAdmin,getBuffer, prefix,parsedJid } = require('../lib')
-const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
-const moment = require("moment-timezone");
-const Levels = require("discord-xp");
-const fs = require('fs-extra')
-const Jimp = require("jimp");
-const sɪɢᴍᴀ_ᴍᴅ = require('../lib/sigma_plugins')
+const {Module_Exports,name } = require('../lib')
 const hrs = new Date().getHours({ timeZone: 'Asia/Karachi' })
 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -37,7 +31,7 @@ async(Void, citel, text,) => {
         infocmd: "Show Live Time Of Pakistan",
         kingclass: "general",
           kingpath: __filename,
-        use: '<group link.>',
+        use: '',
     },
     async(Void, citel, text) => {
 var sigma_time = new Date().toLocaleString('HI', { timeZone: 'Asia/Karachi' }).split(' ')[1]
@@ -50,7 +44,7 @@ if (hrs >= 20 && hrs <= 24) sigma_wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
 var am_pm = ''
 if (hrs < 12) am_pm = 'ᴀᴍ'
 if (hrs >= 12 && hrs <= 24) am_pm = 'ᴘᴍ'
-const Zubair= [`ᴋɪɴɢ,ᴢᴜʙɪ,ᴍᴢ,ᴍᴋ,ᴅᴇᴠ,ᴍᴀʜᴇʀ,ᴍᴜsʟɪᴍ`]
+const Zubair= [99,81,2023,2005,78,5000]
 const king = {
 key: {
 fromMe: false,
