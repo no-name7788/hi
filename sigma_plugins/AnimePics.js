@@ -302,7 +302,7 @@ Module_Exports({
 },
 async(Void, man,text) =>
 {
-    let res=await axios.get("https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/Videos/Tik_Videos.json")
-    let SIGMA_MD =  res[Math.floor(Math.random() * res.length)];
-    return await Void.sendMessage(man.chat,{videoh :{url : SIGMA_MD } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
+    let anu = await fetchJson('https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/WallPapers/shota.json')
+    let random = anu[Math.floor(Math.random() * anu.length)]
+    return await Void.sendMessage(man.chat,{video :{url : random.SIGMA_MD } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
 })
