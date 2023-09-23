@@ -465,7 +465,7 @@ return citel.reply("*_Group Link Revoked SuccesFully_*");
 ┃✗ *_•${fancytext("TAGGED BY" ,35)}•_* ${name.ownername}
 `
         for (let mem of participants) {
-            sigma += `┃✗ @${mem.id.split("@")[0]}\n ┗━━━━━━━━━━⦿
+            sigma += `┃✗ @${mem.id.split("@")[0]}\n┗━━━━━━━━━━⦿
 `;
         }
         let Maher = {
@@ -555,32 +555,30 @@ Module_Exports({
 Module_Exports({
     kingcmd: "request",
     infocmd: "Sends requst to main Bot developer.",
-    kingclass: "group",
-    kingpath: __filename,
-    use: '<text>',
+    kingclass: "developer",
+    use: 'add new feature',
 },
-async(Void, citel, text) => {
-    if (!text) return reply(`Example : ${
-prefix
-} hello dev please add a downloader feature`);
-    textt = `*| REQUEST |*`;
-    teks1 = `\n\n*User* : @${
-citel.sender.split("@")[0]
-}\n*Request* : ${text}`;
-    teks2 = `\n\n*Hii ${citel.pushname},You request has been forwarded to my Owners*.\n*Please wait.......*`;
+async(bot, person, text,{isCreator}) => {
+    if (!isCreator) return person.reply(tlang().admin)
+    if (!text) return person.reply(`*_Example : ${prefix}request hello dev please add a downloader feature_*`);
+    textt = `*sɪɢᴍᴀ ᴹᴰ* *_𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙲𝙴𝙽𝚃𝙴𝚁_*`;
+    teks1 = `\n\n*_𝚄𝚂𝙴𝚁_* : @${
+person.sender.split("@")[0]
+}\n*_𝚁𝙴𝚀𝚄𝙴𝚂𝚃_* : ${text}`;
+    teks2 = `\n\n*_Hi Dear_*, ${person.pushName}.*_Your Request Has Been Forwarded To My Developer_*.`;
     for (let i of owner) {
-        Void.sendMessage(i + "@s.whatsapp.net", {
+        bot.sendMessage(i + "@s.whatsapp.net", {
             text: textt + teks1,
-            mentions: [citel.sender],
+            mentions: [person.sender],
         }, {
-            quoted: citel,
+            quoted: person,
         });
     }
-    Void.sendMessage(citel.chat, {
-        text: textt + teks2 + teks1,
-        mentions: [citel.sender],
+    bot.sendMessage(person.chat, {
+        text: textt + teks2,
+        mentions: [person.sender],
     }, {
-        quoted: citel,
+        quoted: person,
     });
 
 }
@@ -781,7 +779,7 @@ Module_Exports({
         },
         async(Void, citel) => {
             const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
-            let leadtext = `
+            let leadtext = ` 
 *✯──────────────✯*
   *✯──● LeaderBoard ●──✯*
 *✯──────────────✯*
@@ -1220,7 +1218,6 @@ Module_Exports({
 Module_Exports({
         kingcmd: "broadcast",
         infocmd: "Bot makes a broadcast in all groups",
-        fromMe: true,
         kingclass: "group",
         kingpath: __filename,
         use: '<text for broadcast.>',
