@@ -7,10 +7,13 @@ kingclass:"no",
 
 
 
+
+
+//---------------------------------------------
 Function({
-    kingcmd: "ass",
+    kingcmd: "cum",
     kingclass: "18+",
-    infocmd: "Sends ass porn pics.",
+    infocmd: "Sends cum pics.",
     use: " ",
 },
 async(sigma, person, memo,{isCreator}) => {
@@ -22,7 +25,7 @@ async(sigma, person, memo,{isCreator}) => {
         })
         .save());
     let mongoschemas = zerogroup.nsfw || "false";
-    if (mongoschemas == "false") return person.reply("_NSFW is not Active_");
+    if (mongoschemas == "false") return person.reply("*_NSFW is not Active_*");
     let anu = await fetchJson('https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/SIGMA-MD%20NSFW/ass.json')
     let random = anu[Math.floor(Math.random() * anu.length)]
     let Maher_Zubair = {
@@ -34,7 +37,7 @@ async(sigma, person, memo,{isCreator}) => {
         headerType: 4,
         contextInfo: {
             externalAdReply: {
-                title: `Ass ᴘᴏʀɴ ᴘɪᴄᴛᴜʀᴇ`,
+                title: `cum ᴘᴏʀɴ ᴘɪᴄᴛᴜʀᴇ`,
                 body: `sɪɢᴍᴀ ᴹᴰ-ɴsғᴡ`,
                 thumbnail: log0,
                 mediaType: 2,
