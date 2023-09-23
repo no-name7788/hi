@@ -1,12 +1,6 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Suhail-Md
- * @author : @SuhailTechInfo <https://github.com/SuhailTechInfo>
- * @description : Suhail-Md, A Multi-functional whatsapp bot.
- **/
+/*
+
+These Commands Are Still Underdevelopment
 
 const { tlang,Module_Exports } = require('../lib')
 const fs = require('fs')
@@ -177,3 +171,4 @@ Module_Exports({
         } else  citel.send(`Reply to the audio you want to change with.*`);
     }
 )
+*/

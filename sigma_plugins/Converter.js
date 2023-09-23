@@ -495,3 +495,4 @@ let { data } = await axios.get(`https://api.telegra.ph/createPage?access_token=d
 return citel.reply(`*Paste created on telegraph*\nName:${util.format(data.result.title)} \nUrl: ${util.format(data.result.url)}`)
 }
 );
+
