@@ -5,6 +5,8 @@ const Levels = require("discord-xp");
 const fs = require('fs-extra')
 const Jimp = require("jimp");
 const sɪɢᴍᴀ_ᴍᴅ = require('../lib/sigma_plugins')
+const hrs = new Date().getHours({ timeZone: 'Asia/Karachi' })
+const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 Module_Exports({
     kingcmd: "devnum",
@@ -17,7 +19,7 @@ async(Void, citel, text,) => {
 
     await Void.sendMessage(citel.chat, {
        // image: `${devp}`,
-        text: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ ɴᴀᴍᴇ•* \n┃✗ *•ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ•* \n┃✗ *•ɴᴜᴍʙᴇʀ•* https://wa.me/923466319114\n┃✗ *•sᴀᴠᴇ ᴍʏ ɴᴜᴍʙᴇʀ•*\n┃✗ *•ʙᴇғᴏʀᴇ ᴍᴇssᴀɢᴇ•*\n┗━━━━━━━━━━⦿\n        *•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`,
+        text: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ ɴᴀᴍᴇ•* \n┃✗ *•ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ•* \n┃✗ *•ɴᴜᴍʙᴇʀ•* https://wa.me/923466319114\n┃✗ *•sᴀᴠᴇ ᴍʏ ɴᴜᴍʙᴇʀ•*\n┃✗ *•ʙᴇғᴏʀᴇ ᴍᴇssᴀɢᴇ•*\n┗━━━━━━━━━━⦿\n*⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ*`,
     contextInfo: {
         externalAdReply: {
             title: `ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ`,
