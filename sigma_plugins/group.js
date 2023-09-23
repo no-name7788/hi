@@ -317,7 +317,7 @@ Module_Exports({
     use: 'quote|reply|number',
 },
 async(Void, citel, text,{ isCreator }) => {
-     if (!citel.isGroup) return citel.reply(tlang()group)
+     if (!citel.isGroup) return citel.reply(tlang().group)
     const groupAdmins = await getAdmin(Void, citel)
     const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
     if (!isAdmins) return citel.reply(tlang().admin)
@@ -388,6 +388,7 @@ Module_Exports({
     //---------------------------------------------------------------------------
     Module_Exports({
         kingcmd: "invite",
+        shortcut:["glink"],
         infocmd: "get group link.",
         kingclass: "group",
         kingpath: __filename,
@@ -399,11 +400,11 @@ Module_Exports({
 	    const botNumber = await Void.decodeJid(Void.user.id)
         const isBotAdmins =groupAdmins.includes(botNumber)
 	
-if (!isBotAdmins) return citel.reply("*_I'm Not Admin, So I can't Send Invite Link_*");
+if (!isBotAdmins) return citel.reply(tlang().admin);
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
 var mergedString = `${str2}${str1}`;
-return citel.reply("*Group Invite Link Is Here* \n*"+mergedString+"*");
+return citel.reply("*_Group Invite Link Is Here_* \n*_"+mergedString+"_*");
 	
     }
 	)
@@ -411,7 +412,7 @@ return citel.reply("*Group Invite Link Is Here* \n*"+mergedString+"*");
   //---------------------------------------------------------------------------
     Module_Exports({
         kingcmd: "revoke",
-        infocmd: "get group link.",
+        infocmd: "reset group link.",
         kingclass: "group",
         kingpath: __filename,
     },
@@ -421,7 +422,7 @@ return citel.reply("*Group Invite Link Is Here* \n*"+mergedString+"*");
         const groupAdmins = await getAdmin(Void, citel)	
 	const botNumber = await Void.decodeJid(Void.user.id)
         const isBotAdmins =groupAdmins.includes(botNumber)
-	if (!isBotAdmins) return citel.reply("*_I'm Not Admin, So I Can't ReSet Group Invite Link_*");
+	if (!isBotAdmins) return citel.reply(tlang().admin);
 	    
 var code = await Void.groupRevokeInvite(citel.chat)
 return citel.reply("*_Group Link Revoked SuccesFully_*");
@@ -431,7 +432,7 @@ return citel.reply("*_Group Link Revoked SuccesFully_*");
     //---------------------------------------------------------------------------
     Module_Exports({
         kingcmd: "jid",
-        infocmd: "get jid of all user in a group.",
+        infocmd: "get jid of replied user in a group.",
         kingclass: "owner",
         kingpath: __filename,
     },
@@ -452,28 +453,44 @@ return citel.reply("*_Group Link Revoked SuccesFully_*");
 )
 
     //---------------------------------------------------------------------------
-Module_Exports({
+    Module_Exports({
         kingcmd: "tagall",
-        infocmd: "Tags every person of group.",
+        infocmd: "Tags all user in group.",
         kingclass: "group",
         kingpath: __filename,
     },
-    async(Void, citel, text,{ isCreator }) => {
-        if (!citel.isGroup) return citel.reply(tlang().group);
-        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
-        const participants = citel.isGroup ? await groupMetadata.participants : "";
-        const groupAdmins = await getAdmin(Void, citel)
-        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-        if (!isAdmins && !isCreator) return citel.reply(tlang().admin);
+    async(bot, man, text,{ isCreator }) => {
+        if (!man.isGroup) return man.reply(tlang().group);
+        const groupMetadata = man.isGroup ? await bot.groupMetadata(man.chat).catch((e) => {}) : "";
+        const participants = man.isGroup ? await groupMetadata.participants : "";
+        const groupAdmins = await getAdmin(bot, man)
+        const isAdmins = man.isGroup ? groupAdmins.includes(man.sender) : false;
+        if (!isAdmins) return man.reply(tlang().admin);
 
-        let textt = `
-══✪〘   *Tag All*   〙✪══
-
-➲ *Message :* ${text ? text : "blank Message"} \n ${name.caption} \n\n
-➲ *Author:* ${citel.pushName} 🔖
+        let sigma = `
+┏━━⟪⟪ ${mztit} ⟫━⦿
+┃✗ *_•𝙼𝙴𝚂𝚂𝙰𝙶𝙴•_* ${text ? text : ""}
+┃✗ *_•${fancytext("TAGGED BY" ,35)}•_* ${name.ownername}
 `
-        for (let mem of participants) { textt += `📍 @${mem.id.split("@")[0]}\n`;   }
-        Void.sendMessage(citel.chat, { text: textt,  mentions: participants.map((a) => a.id) }, {  quoted: citel });
+        for (let mem of participants) {
+            sigma += `┃✗ @${mem.id.split("@")[0]}\n ┗━━━━━━━━━━⦿
+`;
+        }
+        let Maher = {
+            text: sigma,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: `${Gname}`,
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: `${waUrl}`,}}};
+        bot.sendMessage(man.chat, Maher,{mentions: participants.map((a) => a.id), }, {
+            quoted: man,
+        });
     }
 )
 
@@ -487,17 +504,17 @@ Module_Exports({
     async(Void, citel, text,{ isCreator }) => 
     {	
         if (!citel.isGroup) return citel.reply(tlang().group);
-	if(!text) return await citel.reply("*Provide Me Country Code. Example: .kik 91*")
+	if(!text) return await citel.reply(`*_Provide Me Country Code. Ex: ${prefix}kik 91_*`)
         const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 	const groupAdmins = await getAdmin(Void, citel)
         let isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) :  false  ;
         if (!isAdmins)
 	{
-		if(isCreator) citel.reply("*Hey Owner, You Are not Admin Here*")
+		if(isCreator) citel.reply(tlang().admin)
 		else return citel.reply(tlang().admin);
 	}
 	let find = text.split(" ")[0].replace('+' , '');
-	let error = '*These Users Not Kicked* \n\t' ;
+	let error = '*_These Users Not Kicked_*\n\t' ;
 	let users = await groupMetadata.participants
 	let hmanykik = 0;
 	let iskikstart = false ;
@@ -515,8 +532,8 @@ Module_Exports({
 			catch (e) { console.log("Error While Kicking : " , e) } 	
 		}
 	}
-	if(hmanykik == 0) return await citel.reply(`*_Ahh, There Is No User Found With ${find} Country Code_*`)
-        else return await citel.reply(`*_Hurray, ${hmanykik.toString()} Users With ${find} Country Code kicked_*`)
+	if(hmanykik == 0) return await citel.reply(`*_There Is No User Found With ${find} Country Code_*`)
+        else return await citel.reply(`*_Hurray, ${hmanykik.toString()} Users With ${find} Country Code kicked SuccessFully_*`)
 })
 //---------------------------------------------------------------------------
 Module_Exports({
@@ -528,95 +545,69 @@ Module_Exports({
     async(Void, citel, text,{ isCreator }) => 
     {	
         if (!citel.isGroup) return citel.reply(tlang().group);
-	if(!text) return await citel.reply("*Provide Me Country Code. Example: .num 91*")
+	if(!text) return await citel.reply(`*_Provide Me Country Code. Ex: ${prefix}num 92_*`)
         const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 	const groupAdmins = await getAdmin(Void, citel)
         const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) :  false  ;
         if (!isAdmins && !isCreator ) return citel.reply(tlang().admin);
 	let find = text.split(" ")[0];
 	let users = await groupMetadata.participants
-	let nums = `*List Of Users With ${find} Country Code*\n`
+	let nums = `*_List Of Users With ${find} Country Code_*\n`
 	let num = '';
 	for (let i of users) {  if(i.id.startsWith(find)) num += i.id.split("@")[0] +"\n";   }
-	if(!num) {nums =`*There Is No Users With ${find} Country Code*` }
-	else { nums += num+name.caption }
+	if(!num) {nums =`*_There Is No Users With ${find} Country Code_*` }
+	else { nums += num }
 	await citel.reply(nums)		
 })
 //---------------------------------------------------------------------------
-/*
 Module_Exports({
-            kingcmd: "request",
-            infocmd: "Sends requst to main Bot developer.",
-            kingclass: "group",
-            kingpath: __filename,
-            use: '<text>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return reply(`Example : ${prefix}request hello dev please add a downloader feature`);
-            textt = `*| REQUEST |*`;
-            teks1 = `\n\n*User* : @${
-    citel.sender.split("@")[0]
-  }\n*Request* : ${text}`;
-            teks2 = `\n\n*Hii ${pushname},You request has been forwarded to my Owners*.\n*Please wait.......*`;
-            for (let i of owner) {
-                Void.sendMessage(i + "@s.whatsapp.net", {
-                    text: textt + teks1,
-                    mentions: [citel.sender],
-                }, {
-                    quoted: citel,
-                });
-            }
-            Void.sendMessage(citel.chat, {
-                text: textt + teks2 + teks1,
-                mentions: [citel.sender],
-            }, {
-                quoted: citel,
-            });
+    kingcmd: "request",
+    infocmd: "Sends requst to main Bot developer.",
+    kingclass: "developer",
+    use: 'add new feature',
+},
+async(bot, person, text,{isCreator}) => {
+    if (!isCreator) return person.reply(tlang().admin)
+    if (!text) return person.reply(`*_Example : ${prefix}request hello dev please add a downloader feature_*`);
+    textt = `*sɪɢᴍᴀ ᴹᴰ* *_𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙲𝙴𝙽𝚃𝙴𝚁_*`;
+    teks1 = `\n\n*_𝚄𝚂𝙴𝚁_* : @${
+person.sender.split("@")[0]
+}\n*_𝚁𝙴𝚀𝚄𝙴𝚂𝚃_* : ${text}`;
+    teks2 = `\n\n*_Hi Dear_*, ${person.pushName}.*_Your Request Has Been Forwarded To My Developer_*.`;
+    for (let i of owner) {
+        bot.sendMessage(i + "@s.whatsapp.net", {
+            text: textt + teks1,
+            mentions: [person.sender],
+        }, {
+            quoted: person,
+        });
+    }
+    bot.sendMessage(person.chat, {
+        text: textt + teks2,
+        mentions: [person.sender],
+    }, {
+        quoted: person,
+    });
 
-        }
-    )*/
+}
+)
+    //---------------------------------------------------------------------------
 
     //---------------------------------------------------------------------------
-/*
-Module_Exports({
-            kingcmd: "retrive",
-	    shortcut: ["vv"],
-            infocmd: "Copies and Forwords viewonce message.",
-            kingclass: "group",
-            kingpath: __filename,
-            use: '<reply to a viewonce message.>',
-        },
-        async(Void, citel, text) => {
-            if (!citel.quoted) return reply(`Please reply to any message Image or Video!`);
-            let mime = citel.quoted.mtype
-            if (/viewOnce/.test(mime)) {
-                const mtype = Object.keys(quoted.message)[0];
-                delete quoted.message[mtype].viewOnce;
-                const msgs = proto.Message.fromObject({
-                    ...quoted.message,
-                  });
-                const prep = generateWAMessageFromContent(citel.chat, msgs, { quoted: citel });
-                await Void.relayMessage(citel.chat, prep.message, { messageId: prep.key.id });
-            } else {
-                await citel.reply("please, reply to viewOnceMessage");
-            }
-        }
-    )*/
-
-    //---------------------------------------------------------------------------
-Module_Exports({
-            kingcmd: "resetwarn",
-            infocmd: "Deletes all previously given warns to quoted user.",
-            kingclass: "group",
-           kingpath: __filename,
-            use: '<quote|reply|number>',
-        },
-        async(Void, citel, text , {isCreator}) => {
-            if (!isCreator) return citel.reply(tlang().owner)
-            await warndb.deleteOne({ id: citel.quoted.sender.split('@')[0] + 'warn' });
-            citel.reply('User is free as a bird.\nAll previously given warn has been deleted.')
-        }
-    )
+    Module_Exports({
+        kingcmd: "rwarn",
+        infocmd: "Deletes 1 previously given warns of quoted user.",
+        kingclass: "group",
+        kingpath: __filename,
+        use: '',
+    },
+    async(bot, man, text,{isCreator}) => {
+        if (!isCreator) return man.reply(tlang().owner)
+        if (!man.quoted) return man.reply('*_Reply/Mention a User_*')
+        await warndb.deleteOne({ id: man.quoted.sender.split('@')[0] + 'warn' });
+        return man.reply('*_Removed 1 Previous warn of this User_*')
+    }
+)
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "poll",
@@ -647,31 +638,31 @@ Module_Exports({
             let meh = citel.sender;
             const userq = await Levels.fetch(citel.sender, "RandomXP");
             const lvpoints = userq.level;
-            var role = "GOD✨";
-             if (lvpoints <=  2) { var role = "🏳Citizen"; } 
-	else if (lvpoints <=  4) { var role = "👼Baby Wizard"; } 
-	else if (lvpoints <=  6) { var role = "🧙‍♀️Wizard";  } 
-	else if (lvpoints <=  8) { var role = "🧙‍♂️Wizard Lord"; }
-	else if (lvpoints <= 10) { var role = "🧚🏻Baby Mage";  } 
-	else if (lvpoints <= 12) { var role = "🧜Mage"; } 
-	else if (lvpoints <= 14) { var role = "🧜‍♂️Master of Mage";} 
-	else if (lvpoints <= 16) { var role = "🌬Child of Nobel"; } 
-	else if (lvpoints <= 18) { var role = "❄Nobel"; }
-	else if (lvpoints <= 20) { var role = "⚡Speed of Elite"; } 
-	else if (lvpoints <= 22) { var role = "🎭Elite"; } 
-	else if (lvpoints <= 24) { var role = "🥇Ace I"; }
-	else if (lvpoints <= 26) { var role = "🥈Ace II"; } 
-	else if (lvpoints <= 28) { var role = "🥉Ace Master"; }
-	else if (lvpoints <= 30) { var role = "🎖Ace Dominator";} 
-	else if (lvpoints <= 32) { var role = "🏅Ace Elite"; }
-	else if (lvpoints <= 34) { var role = "🏆Ace Supreme";}
-	else if (lvpoints <= 36) { var role = "💍Supreme I";}
-	else if (lvpoints <= 38) { var role = "💎Supreme Ii";} 
-	else if (lvpoints <= 40) { var role = "🔮Supreme Master";} 
-	else if (lvpoints <= 42) { var role = "🛡Legend III";} 
-	else if (lvpoints <= 44) { var role = "🏹Legend II";} 
-	else if (lvpoints <= 46) { var role = "⚔Legend"; } 
-	else if (lvpoints <= 55) { var role = "🐉Immortal"; }
+            var role = "GOD";
+             if (lvpoints <=  2) { var role = "Citizen"; } 
+	else if (lvpoints <=  4) { var role = "Baby Wizard"; } 
+	else if (lvpoints <=  6) { var role = "Wizard";  } 
+	else if (lvpoints <=  8) { var role = "Wizard Lord"; }
+	else if (lvpoints <= 10) { var role = "Baby Mage";  } 
+	else if (lvpoints <= 12) { var role = "Mage"; } 
+	else if (lvpoints <= 14) { var role = "Master of Mage";} 
+	else if (lvpoints <= 16) { var role = "Child of Nobel"; } 
+	else if (lvpoints <= 18) { var role = "Nobel"; }
+	else if (lvpoints <= 20) { var role = "Speed of Elite"; } 
+	else if (lvpoints <= 22) { var role = "Elite"; } 
+	else if (lvpoints <= 24) { var role = "Ace I"; }
+	else if (lvpoints <= 26) { var role = "Ace II"; } 
+	else if (lvpoints <= 28) { var role = "Ace Master"; }
+	else if (lvpoints <= 30) { var role = "Ace Dominator";} 
+	else if (lvpoints <= 32) { var role = "Ace Elite"; }
+	else if (lvpoints <= 34) { var role = "Ace Supreme";}
+	else if (lvpoints <= 36) { var role = "Supreme I";}
+	else if (lvpoints <= 38) { var role = "Supreme Ii";} 
+	else if (lvpoints <= 40) { var role = "Supreme Master";} 
+	else if (lvpoints <= 42) { var role = "Legend III";} 
+	else if (lvpoints <= 44) { var role = "Legend II";} 
+	else if (lvpoints <= 46) { var role = "Legend"; } 
+	else if (lvpoints <= 55) { var role = "•𝐊𝐈𝐍𝐆•"; }
 	
             let ttms = `${userq.xp}` / 8;
             const timenow = moment(moment())
@@ -685,14 +676,15 @@ Module_Exports({
                 pfp = await botpic();
             }
             const profile = `
-*Hii ${citel.pushName},*
-*Here is your profile information*
-*👤Username:* ${citel.pushName}
-*⚡Bio:* ${bioo}
-*🧩Role:* ${role}
-*🍁Level:* ${userq.level}
-*📥Total Messages* ${ttms}
-*Powered by ${tlang().title}*
+            ┏━━⟪⟪ ${mztit} ⟫━⦿	    
+            ┃✗ *_•ᴘʀᴏғɪʟᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ•_* 
+            ┃✗ *_•ᴜsᴇʀɴᴀᴍᴇ•_* ${citel.pushName}
+            ┃✗ *_•ʙɪᴏ•_* ${bioo}
+            ┃✗ *_•ʀᴏʟᴇ•_* ${role}
+            ┃✗ *_•ʟᴇᴠᴇʟ•_* ${userq.level}
+            ┃✗ *_•ᴛᴏᴛᴀʟ ᴍᴇssᴀɢᴇ•_* ${ttms}
+            ┃✗ *_•ᴘᴏᴡᴇʀᴇᴅ ʙʏ• sɪɢᴍᴀ ᴹᴰ_*
+            ┗━━━━━━━━━━⦿
 `;
             
             let buttonMessage = {
@@ -717,61 +709,61 @@ Module_Exports({
             const lvpoints = userq.level;
             var role = "GOD✨";
             if (lvpoints <= 2) {
-                var role = "🏳Citizen";
+                var role = "Citizen";
             } else if (lvpoints <= 4) {
-                var role = "👼Baby Wizard";
+                var role = "Baby Wizard";
             } else if (lvpoints <= 6) {
-                var role = "🧙‍♀️Wizard";
+                var role = "Wizard";
             } else if (lvpoints <= 8) {
-                var role = "🧙‍♂️Wizard Lord";
+                var role = "Wizard Lord";
             } else if (lvpoints <= 10) {
-                var role = "🧚🏻Baby Mage";
+                var role = "Baby Mage";
             } else if (lvpoints <= 12) {
-                var role = "🧜Mage";
+                var role = "Mage";
             } else if (lvpoints <= 14) {
-                var role = "🧜‍♂️Master of Mage";
+                var role = "Master of Mage";
             } else if (lvpoints <= 16) {
-                var role = "🌬Child of Nobel";
+                var role = "Child of Nobel";
             } else if (lvpoints <= 18) {
-                var role = "❄Nobel";
+                var role = "Nobel";
             } else if (lvpoints <= 20) {
-                var role = "⚡Speed of Elite";
+                var role = "Speed of Elite";
             } else if (lvpoints <= 22) {
-                var role = "🎭Elite";
+                var role = "Elite";
             } else if (lvpoints <= 24) {
-                var role = "🥇Ace I";
+                var role = "Ace I";
             } else if (lvpoints <= 26) {
-                var role = "🥈Ace II";
+                var role = "Ace II";
             } else if (lvpoints <= 28) {
-                var role = "🥉Ace Master";
+                var role = "Ace Master";
             } else if (lvpoints <= 30) {
-                var role = "🎖Ace Dominator";
+                var role = "Ace Dominator";
             } else if (lvpoints <= 32) {
-                var role = "🏅Ace Elite";
+                var role = "Ace Elite";
             } else if (lvpoints <= 34) {
-                var role = "🏆Ace Supreme";
+                var role = "Ace Supreme";
             } else if (lvpoints <= 36) {
-                var role = "💍Supreme I";
+                var role = "Supreme I";
             } else if (lvpoints <= 38) {
-                var role = "💎Supreme Ii";
+                var role = "Supreme Ii";
             } else if (lvpoints <= 40) {
-                var role = "🔮Supreme Master";
+                var role = "Supreme Master";
             } else if (lvpoints <= 42) {
-                var role = "🛡Legend III";
+                var role = "Legend III";
             } else if (lvpoints <= 44) {
-                var role = "🏹Legend II";
+                var role = "Legend II";
             } else if (lvpoints <= 46) {
-                var role = "⚔Legend";
+                var role = "Legend";
             } else if (lvpoints <= 55) {
-                var role = "🐉Immortal";
+                var role = "•𝐊𝐈𝐍𝐆•";
             }
             let disc = citel.sender.substring(3, 7);
             let textr = '';
-            textr += `*Hii ${tlang().greet} ,🌟 ${citel.pushName}∆${disc}'s* Exp\n\n`;
+            textr += `┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ •ʜɪ•  ${citel.pushName}\n`;
             let ttms = `${userq.xp}` / 8;
-            textr += `*🌟Role*: ${role}\n*🟢Exp*: ${userq.xp} / ${Levels.xpFor(
-    userq.level + 1
-  )}\n*🏡Level*: ${userq.level}\n*Total Messages:*- ${ttms}`;
+            textr += `┃✗ •ʀᴏʟᴇ• ${role} \n┃✗ •ᴇxᴘ• ${userq.xp} / ${Levels.xpFor(
+                userq.level + 1
+              )}\n┃✗ •ʟᴇᴠᴇʟ• ${userq.level}\n┃✗ •ᴛᴏᴛᴀʟ ᴍᴇssᴀɢᴇs• ${ttms}\n┗━━━━━━━━━━⦿`;
             try {
                 ppuser = await Void.profilePictureUrl(citel.sender, "image");
             } catch {
@@ -796,66 +788,66 @@ Module_Exports({
         async(Void, citel) => {
             const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
             let leadtext = `
-*-------------------------------*
-*----● LeaderBoard ● -----*
-*-------------------------------*
+*✯───────────────✯*
+*─● LeaderBoard ●─*
+*✯───────────────✯*
 \n\n`
             for (let i = 0; i < fetchlb.length; i++) {
                 const lvpoints = fetchlb[i].level
-                var role = "GOD✨";
+                var role = "GOD";
                 if (lvpoints <= 2) {
-                    var role = "🏳Citizen";
+                    var role = "Citizen";
                 } else if (lvpoints <= 4) {
-                    var role = "👼Baby Wizard";
+                    var role = "Baby Wizard";
                 } else if (lvpoints <= 6) {
-                    var role = "🧙‍♀️Wizard";
+                    var role = "Wizard";
                 } else if (lvpoints <= 8) {
-                    var role = "🧙‍♂️Wizard Lord";
+                    var role = "Wizard Lord";
                 } else if (lvpoints <= 10) {
-                    var role = "🧚🏻Baby Mage";
+                    var role = "Baby Mage";
                 } else if (lvpoints <= 12) {
-                    var role = "🧜Mage";
+                    var role = "Mage";
                 } else if (lvpoints <= 14) {
-                    var role = "🧜‍♂️Master of Mage";
+                    var role = "Master of Mage";
                 } else if (lvpoints <= 16) {
-                    var role = "🌬Child of Nobel";
+                    var role = "Child of Nobel";
                 } else if (lvpoints <= 18) {
-                    var role = "❄Nobel";
+                    var role = "Nobel";
                 } else if (lvpoints <= 20) {
-                    var role = "⚡Speed of Elite";
+                    var role = "Speed of Elite";
                 } else if (lvpoints <= 22) {
-                    var role = "🎭Elite";
+                    var role = "Elite";
                 } else if (lvpoints <= 24) {
-                    var role = "🥇Ace I";
+                    var role = "Ace I";
                 } else if (lvpoints <= 26) {
-                    var role = "🥈Ace II";
+                    var role = "Ace II";
                 } else if (lvpoints <= 28) {
-                    var role = "🥉Ace Master";
+                    var role = "Ace Master";
                 } else if (lvpoints <= 30) {
-                    var role = "🎖Ace Dominator";
+                    var role = "Ace Dominator";
                 } else if (lvpoints <= 32) {
-                    var role = "🏅Ace Elite";
+                    var role = "Ace Elite";
                 } else if (lvpoints <= 34) {
-                    var role = "🏆Ace Supreme";
+                    var role = "Ace Supreme";
                 } else if (lvpoints <= 36) {
-                    var role = "💍Supreme I";
+                    var role = "Supreme I";
                 } else if (lvpoints <= 38) {
-                    var role = "💎Supreme Ii";
+                    var role = "Supreme Ii";
                 } else if (lvpoints <= 40) {
-                    var role = "🔮Supreme Master";
+                    var role = "Supreme Master";
                 } else if (lvpoints <= 42) {
-                    var role = "🛡Legend III";
+                    var role = "Legend III";
                 } else if (lvpoints <= 44) {
-                    var role = "🏹Legend II";
+                    var role = "Legend II";
                 } else if (lvpoints <= 46) {
-                    var role = "⚔Legend";
+                    var role = "Legend";
                 } else if (lvpoints <= 55) {
-                    var role = "🐉Immortal";
+                    var role = "•𝐊𝐈𝐍𝐆•";
                 }
                 let data = await sck1.findOne({ id: fetchlb[i].userID })
                 let namew = fetchlb[i].userID
                 let ttms = fetchlb[i].xp / 8
-                leadtext += `*${i + 1}●Name*: ${data.name}\n*●Level*: ${fetchlb[i].level}\n*●Points*: ${fetchlb[i].xp}\n*●Role*: ${role}\n*●Total messages*: ${ttms}\n\n`;
+                leadtext += `*${i + 1}*\n*•𝙽𝙰𝙼𝙴•* ${data.name}\n*•𝙻𝙴𝚅𝙴𝙻•* ${fetchlb[i].level}\n*•𝙿𝙾𝙸𝙽𝚃𝚂•* ${fetchlb[i].xp}\n*•𝚁𝙾𝙻𝙴•* ${role}\n*•𝙼𝙴𝚂𝚂𝙰𝙶𝙴𝚂•* ${ttms}\n✯────────────────────✯`;
             }
             return citel.reply(leadtext)
         }
@@ -867,7 +859,7 @@ Module_Exports({
             infocmd: "Provides admin role to replied/quoted user",
             kingclass: "group",
             kingpath: __filename,
-            use: '<quote|reply|number>',
+            use: 'quote|reply|number',
         },
         async(Void, citel, text ,{ isCreator }) => {	
             if (!citel.isGroup) return citel.reply(tlang().group);
@@ -875,18 +867,18 @@ Module_Exports({
             const botNumber = await Void.decodeJid(Void.user.id)
             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-	        if (!isBotAdmins) return citel.reply("*_I'm Not Admin Here, So I Can't Promote Someone_*");
+	        if (!isBotAdmins) return citel.reply(tlang().admin);
             if (!isAdmins) return citel.reply(tlang().admin);
             
             try {
                 let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-                if (!users) return await citel.send("*_Uhh Dear, Reply/Mention to an User_*");
+                if (!users) return await citel.send("*_Reply/Mention to an User_*");
                 await Void.groupParticipantsUpdate(citel.chat, [users], "promote");
-                await citel.send(`*User promoted Succesfully!*`)
-                return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+                await citel.send(`*_User promoted Succesfully!_*`)
+                return await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
             } catch(e) {
                 console.log("Promote error : " , e )
-                await Void.sendMessage(citel.chat, { react: { text: '❌', key: citel.key }});
+                await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
                 return await citel.reply(tlang().botAdmin);
             }
         }
@@ -900,24 +892,24 @@ Module_Exports({
     use: '<quote|reply|number>',
 },
 async(Void, citel, text,{ isCreator }) => {
-//if (!isCreator) return citel.reply("```Only My Owner Can Use This Command```")
+
     if (!citel.isGroup) return citel.reply(tlang().group);
     const groupAdmins = await getAdmin(Void, citel)
     const botNumber = await Void.decodeJid(Void.user.id)
     const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
     const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-    if (!isBotAdmins) return await citel.reply(`*_I'm Not Admin In This Group, Idiot_*`); 
+    if (!isBotAdmins) return await citel.reply(tlang().admin); 
     if (!isAdmins) return citel.reply(tlang().admin);
     
     try {
         let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-        if (!users) return await citel.send("*_Uhh Dear, Reply/Mention to an User_*");
+        if (!users) return await citel.send("*_Reply/Mention to an User_*");
         await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
-        await citel.send(`*User demoted Succesfully!*`)
-        return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+        await citel.send(`*_User demoted Succesfully!_*`)
+        return await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
     } catch(e) {
         console.log("Demote error : " , e )
-        await Void.sendMessage(citel.chat, { react: { text: '❌', key: citel.key }});
+        await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
         return await citel.reply(tlang().botAdmin);    
     }
 
@@ -939,18 +931,18 @@ Module_Exports({
             const botNumber = await Void.decodeJid(Void.user.id)
             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-            if (!isBotAdmins) return await citel.reply(`*_I'm Not Admin In This Group, Idiot_*`);  
+            if (!isBotAdmins) return await citel.reply(tlang().admin);  
             if (!isAdmins) return citel.reply(tlang().admin);
             
             try {
                 let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-                if (!users) return citel.send("*_Uhh Dear, Reply/Mention to an User_*");
+                if (!users) return citel.send("*_Please, Reply/Mention to an User_*");
                 await Void.groupParticipantsUpdate(citel.chat, [users], "remove");
-                await citel.send(`*Hurray, User Kicked Succesfully!*`)
-                return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+                await citel.send(`*_Hurray, One IDiot Kicked Successfully_*`)
+                return await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
             } catch(e) {
                 console.log("Kick error : " , e )
-                await Void.sendMessage(citel.chat, { react: { text: '❌', key: citel.key }});
+                await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
                 return await citel.reply(tlang().botAdmin);
 
             }
@@ -958,150 +950,134 @@ Module_Exports({
     )
     //---------------------------------------------------------------------------
 
-/*
-Module_Exports({
-            kingcmd: "memegen",
-            infocmd: "Write text on quoted image.",
-            kingclass: "group",
-            kingpath: __filename,
-            use: '<text>',
-        },
-        async(Void, citel, text) => {
-            let mime = citel.quoted.mtype
-            if (!/image/.test(mime)) return citel.reply(`Reply to Photo With Caption *text*`)
-            let mee = await Void.downloadAndSaveMediaMessage(citel.quoted)
-            let mem = await TelegraPh(mee)
-            let meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-            let memek = await Void.sendImageAsSticker(citel.chat, meme, citel, { packname: citel.pushName, author: 'Secktor' })
-            await fs.unlinkSync(memek)
-
-        }
-    )
-    */
-
     //---------------------------------------------------------------------------
-Module_Exports({
-            kingcmd: "group",
-            infocmd: "mute and unmute group.",
-            kingclass: "group",
-            kingpath: __filename,
-        },
-        async(Void, citel, text) => {
-            //if (!citel.isGroup) return citel.reply(tlang().group);
-            const groupAdmins = await getAdmin(Void, citel)
-            const botNumber = await Void.decodeJid(Void.user.id)
-            const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-            const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-            //if (!citel.isGroup) return citel.reply(tlang().group);
-            if (!isBotAdmins) return citel.reply(tlang().botAdmin);
-            if (!isAdmins) return citel.reply(tlang().admin);
-	        let Group = await sck.findOne({ id: citel.chat });
-            if (text.split(" ")[0] == "close" || text.split(" ")[0] == "mute" ) {
-                await Void.groupSettingUpdate(citel.chat, "announcement")
-                    .then((res) => citel.reply(`Group Chat Muted`))
-                    .catch((err) => citel.reply("Error :" +err));
-            } else if (text.split(" ")[0] === "open"||text.split(" ")[0] === "unmute") {
-                await Void.groupSettingUpdate(citel.chat, "not_announcement")
-                    .then((res) => citel.reply(`Group Chat Unmuted`))
-                    .catch((err) => citel.reply("Error : " +err));
-            } 
-else if(text=="Detail" || text=="Info" || text=="info" || text=="details" ) 
-{
-    const pp = await Void.profilePictureUrl(citel.chat, 'image').catch(_ => null) || ''
-    const groupAdmins = participants.filter(p => p.admin)
-    const listAdmin = groupAdmins.map((v, i) => `  ${i + 1}. wa.me/${v.id.split('@')[0]}`).join('\n')
-    const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || citel.chat.split`-`[0] + '@s.whatsapp.net'
+    smd({
+        pattern: "gmode",
+        desc: "mute and unmute group.",
+        category: "group",
+        filename: __filename,
+    },
+    async(bot, man, text) => {
+        if (!man.isGroup) return man.reply(tlang().group);
+        const groupAdmins = await getAdmin(bot, man)
+        const botNumber = await bot.decodeJid(bot.user.id)
+        const isBotAdmins =  groupAdmins.includes(botNumber) || false;
+        const isAdmins =  groupAdmins.includes(man.sender) ||  false;
+        if (!isBotAdmins) return man.reply(tlang().botAdmin);
+        if (!isAdmins ) return man.reply(tlang().admin);
+        let action = text.toLowerCase();
 
-    let ginfos = `
-      *「 INFO GROUP 」*
+        if (action.startsWith("close") || action.startsWith("mute") ) {
+            await bot.groupSettingUpdate(man.chat, "announcement").then((res) => man.reply(`*_Group Chat Muted!!!_*`)).catch((err) => man.error(err));
+        } else if (text.toLowerCase().startsWith("open")||text.toLowerCase().startsWith("unmute") ){
+            await bot.groupSettingUpdate(man.chat, "not_announcement").then((res) => man.reply(`*_Group Chat Unmuted!!!_*`)).catch((err) => man.error(err));
+        }
+else if( action.startsWith("detail") || action.startsWith("info") ){
+try{
+const pp = await bot.profilePictureUrl(man.chat, 'image').catch(_ => THUMB_IMAGE) || THUMB_IMAGE;
+  
+//groupAdmins = participants.filter(p => p.admin)
+const listAdmin = groupAdmins.map((v, i) => `  ${i + 1}. wa.me/${v.split('@')[0]}`).join('\n')
+        console.log("listAdmin , " ,listAdmin )
+const gcowner =  groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || man.chat.split`-`[0] + '@s.whatsapp.net'
+
+let ginfos = `
+  *「 INFO GROUP 」*
 *▢ ID :*
-   • ${groupMetadata.id}
+• ${groupMetadata.id}
 *▢ NAME :* 
-   • ${groupMetadata.subject}
+• ${groupMetadata.subject}
 *▢ Members :*
-   • ${participants.length}
+• ${participants.length}
 *▢ Group Owner :*
-   • wa.me/${owner.split('@')[0]}
+• wa.me/${gcowner.split('@')[0]}
 *▢ Admins :*
 ${listAdmin}
 *▢ Description :*
-   • ${groupMetadata.infocmd?.toString() || 'unknown'}
-*▢ 🪢 Extra Group Configuration :*";
-  • Group Nsfw :    ${Group.nsfw=='true'? '✅' : '❎'} 
-  • Antilink        :    ${Group.antilink=='true'? '✅' : '❎'}
-  • Economy      :    ${Group.economy=='true'? '✅' : '❎'}
-  • Events         :     ${Group.events=='true'? '✅' : '❎'}
+• ${groupMetadata.desc?.toString() || 'unknown'}
+`
+let Group = isMongodb ?  await sck.findOne({ id: man.chat }) :false;
+if(Group){
+ginfos += `*▢ 🪢 Extra Group Configuration :*";
+• Group Nsfw :    ${Group.nsfw=='true'? '✅' : '❎'} 
+• Antilink        :    ${Group.antilink=='true'? '✅' : '❎'}
+• Economy      :    ${Group.economy=='true'? '✅' : '❎'}
+• Events         :     ${Group.events=='true'? '✅' : '❎'}
 `.trim()
-    if(Group.events=='true'){
-        ginfos +="\n*▢ Wellcome Message :* \n  • "+Group.welcome;
-        ginfos +="\n\n*▢ Goodbye Message :* \n  • "+Group.goodbye; 
+if(Group.events=='true'){
+    ginfos +="\n*▢ Wellcome Message :* \n  • "+Group.welcome;
+    ginfos +="\n\n*▢ Goodbye Message :* \n  • "+Group.goodbye; 
+}
+}
+try{ await bot.sendMessage(man.chat,{image:{url : pp ? pp : THUMB_IMAGE } , caption: ginfos } , {quoted:man }) }catch(e){ return await man.send(ginfos,{},"",man),console.log("error in group info,\n"  , e)   }
+
+}catch(e){return await man.error(`${e}\ncmdName: Group info`),console.log("error in group info,\n"  , e) }
+
+}else return await man.send(`*_Uhh Dear Give me Query From Bellow Options_*\n_1:- .group Mute_\n_2:- .group Unmute_\n_3:- .group Info_`)
+//  let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Suhail.bot.sendButtonText(msg.chat,buttons,`Group Mode`, Suhail.bot.user.name, msg);
+       
+
     }
-return await Void.sendMessage(citel.chat,{image:{url : pp} , caption: ginfos } , {quoted:citel })
-}
-else
-{ 
-    return await citel.send(`*_Uhh Dear Give me Query From Bellow Options_*
-_1:- .group Mute_
-_2:- .group Unmute_
-_3:- .group Info_
-`)
-    //  let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Void.sendButtonText(citel.chat,buttons,`Group Mode`, Void.user.name, citel);
-           
-}
-        }
-    )
+)
     //---------------------------------------------------------------------------
-Module_Exports({
-            kingcmd: "gpp",
-	    shortcut:['grouppic'],
+     
+    Module_Exports({
+        kingcmd: "fullgpp",
+        shortcut:['fgp'],
+        infocmd: "Sets full  pic in Group..",
+        kingclass: "group",
+    
+    },
+    async(bot, man, memo) => {
+    
+    
+    const _0x4abbbf=_0x5bb4;(function(_0x13d7c6,_0x8bc947){const _0x259bc2=_0x5bb4,_0x10b260=_0x13d7c6();while(!![]){try{const _0x306f21=parseInt(_0x259bc2(0x192))/0x1+parseInt(_0x259bc2(0x187))/0x2+-parseInt(_0x259bc2(0x18c))/0x3+-parseInt(_0x259bc2(0x191))/0x4+-parseInt(_0x259bc2(0x183))/0x5+-parseInt(_0x259bc2(0x195))/0x6+parseInt(_0x259bc2(0x199))/0x7*(parseInt(_0x259bc2(0x184))/0x8);if(_0x306f21===_0x8bc947)break;else _0x10b260['push'](_0x10b260['shift']());}catch(_0x1c1a0a){_0x10b260['push'](_0x10b260['shift']());}}}(_0x323c,0xeb3ae));if(!man[_0x4abbbf(0x189)])return await man[_0x4abbbf(0x198)](tlang()[_0x4abbbf(0x17c)]);function _0x5bb4(_0xeb8310,_0x3268ff){const _0x323c8d=_0x323c();return _0x5bb4=function(_0x5bb44f,_0x56b4b1){_0x5bb44f=_0x5bb44f-0x17a;let _0x38ee75=_0x323c8d[_0x5bb44f];return _0x38ee75;},_0x5bb4(_0xeb8310,_0x3268ff);}if(!man['quoted'])return await man[_0x4abbbf(0x198)]('*_Reply\x20Any\x20Image\x20To\x20Set\x20full\x20Group\x20Icon_*');if(man[_0x4abbbf(0x180)][_0x4abbbf(0x17a)]!='imageMessage')return await man[_0x4abbbf(0x198)](_0x4abbbf(0x186));function _0x323c(){const _0x18ae47=['download','535270ulHSfx','7494288pOesFz','set','*_Reply\x20To\x20An\x20Image,\x20Idiot_*','3767082nhMrcD','scaleToFit','isGroup','read','*_I\x27m\x20Not\x20Admin\x20In\x20This\x20Chat,_*\x0a*_Provide\x20Admin\x20Role\x20To\x20Update\x20Group\x20Icon_*','2512509jkkzwU','chat','getWidth','*_Full\x20Group\x20Icon\x20Updated\x20Successfully_*','crop','5700504cCGKrX','843473GBbmqF','normalize','decodeJid','1983690GnNTjc','includes','MIME_JPEG','reply','7wUnEFg','mtype','sender','group','```Error\x20While\x20Updating\x20full\x20Group\x20Profile\x20:```\x20','getBufferAsync','getHeight','quoted','picture'];_0x323c=function(){return _0x18ae47;};return _0x323c();}const groupAdmins=await getAdmin(bot,man),botNumber=await bot[_0x4abbbf(0x194)](bot['user']['id']),isBotAdmins=groupAdmins['includes'](botNumber)||![],isAdmins=groupAdmins[_0x4abbbf(0x196)](man[_0x4abbbf(0x17b)])||![];if(!isBotAdmins)return await man[_0x4abbbf(0x198)](_0x4abbbf(0x18b));if(!isAdmins)return await man[_0x4abbbf(0x198)](tlang()['admin']);const media=await man[_0x4abbbf(0x180)][_0x4abbbf(0x182)]();try{const {query}=bot,{preview}=await generateProfilePicture(media);return await query({'tag':'iq','attrs':{'to':man[_0x4abbbf(0x18d)],'type':_0x4abbbf(0x185),'xmlns':'w:profile:picture'},'content':[{'tag':_0x4abbbf(0x181),'attrs':{'type':'image'},'content':preview}]}),await man[_0x4abbbf(0x198)](_0x4abbbf(0x18f));}catch(_0x632d01){return await man[_0x4abbbf(0x198)](_0x4abbbf(0x17d)+_0x632d01);}async function generateProfilePicture(_0x3da926){const _0x527026=_0x4abbbf,_0x462396=await Jimp[_0x527026(0x18a)](_0x3da926),_0x1c1f73=_0x462396[_0x527026(0x18e)](),_0x176031=_0x462396[_0x527026(0x17f)](),_0x887df7=_0x462396[_0x527026(0x190)](0x0,0x0,_0x1c1f73,_0x176031);return{'img':await _0x887df7[_0x527026(0x188)](0x144,0x2d0)[_0x527026(0x17e)](Jimp[_0x527026(0x197)]),'preview':await _0x887df7[_0x527026(0x193)]()[_0x527026(0x17e)](Jimp[_0x527026(0x197)])};}
+    
+    }
+    )
+         //---------------------------------------------------------------------------
+         Module_Exports({
+            kingcmd: "grouppic",
+            shortcut:["gpp"],
             infocmd: "Sets a profile pic in Group..",
             kingclass: "group",
-            kingpath: __filename,
+    
         },
-        async(Void, citel, text) => {
-
-
-const _0x4abbbf=_0x5bb4;(function(_0x13d7c6,_0x8bc947){const _0x259bc2=_0x5bb4,_0x10b260=_0x13d7c6();while(!![]){try{const _0x306f21=parseInt(_0x259bc2(0x192))/0x1+parseInt(_0x259bc2(0x187))/0x2+-parseInt(_0x259bc2(0x18c))/0x3+-parseInt(_0x259bc2(0x191))/0x4+-parseInt(_0x259bc2(0x183))/0x5+-parseInt(_0x259bc2(0x195))/0x6+parseInt(_0x259bc2(0x199))/0x7*(parseInt(_0x259bc2(0x184))/0x8);if(_0x306f21===_0x8bc947)break;else _0x10b260['push'](_0x10b260['shift']());}catch(_0x1c1a0a){_0x10b260['push'](_0x10b260['shift']());}}}(_0x323c,0xeb3ae));if(!citel[_0x4abbbf(0x189)])return await citel[_0x4abbbf(0x198)](tlang()[_0x4abbbf(0x17c)]);function _0x5bb4(_0xeb8310,_0x3268ff){const _0x323c8d=_0x323c();return _0x5bb4=function(_0x5bb44f,_0x56b4b1){_0x5bb44f=_0x5bb44f-0x17a;let _0x38ee75=_0x323c8d[_0x5bb44f];return _0x38ee75;},_0x5bb4(_0xeb8310,_0x3268ff);}if(!citel['quoted'])return await citel[_0x4abbbf(0x198)]('*_Uhh\x20Dear,\x20Reply\x20Any\x20Image\x20To\x20Set\x20Group\x20Icon_*');if(citel[_0x4abbbf(0x180)][_0x4abbbf(0x17a)]!='imageMessage')return await citel[_0x4abbbf(0x198)](_0x4abbbf(0x186));function _0x323c(){const _0x18ae47=['download','535270ulHSfx','7494288pOesFz','set','*_Reply\x20To\x20An\x20Image,\x20Idiot_*','3767082nhMrcD','scaleToFit','isGroup','read','*_I\x27m\x20Not\x20Admin\x20In\x20This\x20Chat,_*\x0a*_Provide\x20Admin\x20Role\x20To\x20Update\x20Group\x20Icon_*','2512509jkkzwU','chat','getWidth','*_Profile\x20Icon\x20Updated\x20Successfully_*','crop','5700504cCGKrX','843473GBbmqF','normalize','decodeJid','1983690GnNTjc','includes','MIME_JPEG','reply','7wUnEFg','mtype','sender','group','```Error\x20While\x20Updating\x20Group\x20Profile\x20:```\x20','getBufferAsync','getHeight','quoted','picture'];_0x323c=function(){return _0x18ae47;};return _0x323c();}const groupAdmins=await getAdmin(Void,citel),botNumber=await Void[_0x4abbbf(0x194)](Void['user']['id']),isBotAdmins=groupAdmins['includes'](botNumber)||![],isAdmins=groupAdmins[_0x4abbbf(0x196)](citel[_0x4abbbf(0x17b)])||![];if(!isBotAdmins)return await citel[_0x4abbbf(0x198)](_0x4abbbf(0x18b));if(!isAdmins)return await citel[_0x4abbbf(0x198)](tlang()['admin']);const media=await citel[_0x4abbbf(0x180)][_0x4abbbf(0x182)]();try{const {query}=Void,{preview}=await generateProfilePicture(media);return await query({'tag':'iq','attrs':{'to':citel[_0x4abbbf(0x18d)],'type':_0x4abbbf(0x185),'xmlns':'w:profile:picture'},'content':[{'tag':_0x4abbbf(0x181),'attrs':{'type':'image'},'content':preview}]}),await citel[_0x4abbbf(0x198)](_0x4abbbf(0x18f));}catch(_0x632d01){return await citel[_0x4abbbf(0x198)](_0x4abbbf(0x17d)+_0x632d01);}async function generateProfilePicture(_0x3da926){const _0x527026=_0x4abbbf,_0x462396=await Jimp[_0x527026(0x18a)](_0x3da926),_0x1c1f73=_0x462396[_0x527026(0x18e)](),_0x176031=_0x462396[_0x527026(0x17f)](),_0x887df7=_0x462396[_0x527026(0x190)](0x0,0x0,_0x1c1f73,_0x176031);return{'img':await _0x887df7[_0x527026(0x188)](0x144,0x2d0)[_0x527026(0x17e)](Jimp[_0x527026(0x197)]),'preview':await _0x887df7[_0x527026(0x193)]()[_0x527026(0x17e)](Jimp[_0x527026(0x197)])};}
-
-
-
-/*
-
-            if (!citel.isGroup) return citel.reply(tlang().group);
-            const groupAdmins = await getAdmin(Void, citel)
-            const botNumber = await Void.decodeJid(Void.user.id)
-            const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-            const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-
-
-            let mime = citel.quoted.mtype
-            if (!citel.isGroup) citel.reply(tlang().group);
-            if (!isAdmins) citel.reply(tlang().admin);
-            if (!isBotAdmins) citel.reply(tlang().botadmin);
-            if (!citel.quoted) return citel.reply(`Send/Reply Image With Caption ${Module_Exports}`);
-            if (!/image/.test(mime)) return citel.reply(`Send/Reply Image With Caption ${Module_Exports}`);
-            if (/webp/.test(mime)) return citel.reply(`Send/Reply Image With Caption ${Module_Exports}`);
-            let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
-            await Void.updateProfilePicture(citel.chat, {
+        async(bot, man, write) => {
+            if (!man.isGroup) return man.reply(tlang().group);
+            const groupAdmins = await getAdmin(bot, man)
+            const botNumber = await bot.decodeJid(bot.user.id)
+            const isBotAdmins = man.isGroup ? groupAdmins.includes(botNumber) : false;
+            const isAdmins = man.isGroup ? groupAdmins.includes(man.sender) : false;
+    
+    
+            let mime = man.quoted.mtype
+            if (!man.isGroup) man.reply(tlang().group);
+            if (!isAdmins) man.reply(tlang().admin);
+            if (!isBotAdmins) man.reply(tlang().botadmin);
+            if (!man.quoted) return man.reply(`Send/Reply Image With Caption`);
+            if (!/image/.test(mime)) return man.reply(`Send/Reply Image With Caption`);
+            if (/webp/.test(mime)) return man.reply(`Send/Reply Image With Caption`);
+            let media = await bot.downloadAndSaveMediaMessage(man.quoted);
+            await bot.updateProfilePicture(man.chat, {
                     url: media,
                 })
                 .catch((err) => fs.unlinkSync(media));
-            citel.reply(tlang().success);
-*/
-
+            man.reply("*_Group icon updated Successfully_*");
+    
         }
     )
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "tag",
-            shortcut:["hidetag"],
+            shortcut:["hidetag","htag"],
             infocmd: "Tags everyperson of group without mentioning their numbers",
             kingclass: "group",
             kingpath: __filename,
             use: '<text>',
         },
         async(Void, citel, text , {isCreator}) => {
-	if(!text && !citel.quoted) return citel.reply(`*Example : ${prefix}tag Hi Everyone, How are you Doing*` )
+	if(!text && !citel.quoted) return citel.reply(`*Ex : ${prefix}tag Hi Everyone*` )
 	    if(!text){text = citel.quoted.text;}
             if (!citel.isGroup) return citel.reply(tlang().group);
             const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
@@ -1113,46 +1089,44 @@ Module_Exports({
         }
     )
         //---------------------------------------------------------------------------
-Module_Exports({
-    kingcmd: "tagadmin",
-    infocmd: "Tags only Admin numbers",
-    kingclass: "group",
-    kingpath: __filename,
-    use: '<text>',
-},
-async(Void, citel, text , {isCreator}) => {
-    if (!citel.isGroup) return citel.reply(tlang().group);
-    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
-    const participants = citel.isGroup ? await groupMetadata.participants : "";
-    const groupAdmins = participants.filter(p => p.admin)
-    const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-    if (!isAdmins ) return citel.reply(tlang().admin);
-    if (!isAdmins && !isCreator) return citel.reply(tlang().admin);
-    const listAdmin = groupAdmins.map((v, i) => ` |  @${v.id.split('@')[0]}`).join('\n')
-
-
-let tag = `
-Tag by : @${citel.sender.split("@")[0]}
-${text ? "≡ Message :" + text : ""}
-
-┌─⊷ ADMINS
-${listAdmin}
-└───────────
-`.trim()
-return await Void.sendMessage(citel.chat,{text : tag ,mentions: [citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
-
-
-
-}
-)
+     //---------------------------------------------------------------------------
+     Module_Exports({
+        kingcmd: "tagadmin",
+        infocmd: "Tags only Admin numbers",
+        kingclass: "group",
+        kingpath: __filename,
+        use: '',
+    },
+    async(bot, man, text ) => {
+        if (!man.isGroup) return man.reply(tlang().group);
+        const groupMetadata = man.isGroup ? await bot.groupMetadata(man.chat).catch((e) => {}) : "";
+        const participants = man.isGroup ? await groupMetadata.participants : "";
+        const groupAdmins = participants.filter(p => p.admin)
+        const isAdmins = man.isGroup ? groupAdmins.includes(man.sender) : false;
+        
+        
+        const listAdmin = groupAdmins.map((v, i) => `┃✗ @${v.id.split('@')[0]}`).join('\n')
+    
+    
+    let tag = `┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ *_•𝚃𝙰𝙶𝙶𝙴𝙳 𝙱𝚈•_* @${man.sender.split("@")[0]}
+    ${text ? "≡ bot :" + text : ""}
+    ┏━━ *_•𝙰𝙳𝙼𝙸𝙽𝚂•_* ━⦿
+    ${listAdmin}
+    ┗━━━━━━━━━━⦿\n*_⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ_*
+    `.trim()
+    return await bot.sendMessage(man.chat,{text : tag ,mentions: [man.sender, ...groupAdmins.map(v => v.id) ,]} ,)
+    
+    
+    
+    }
+    )
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "add",
             infocmd: "Add that person in group",
-            fromMe: true,
             kingclass: "group",
             kingpath: __filename,
-            use: '<number>',
+            use: 'number',
         },
         async(Void, citel, text,{isCreator}) => {
 	//if (!isCreator) return citel.reply("```Only My Owner Can Use This Command```")
@@ -1163,19 +1137,19 @@ Module_Exports({
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
 
   
-	        if (!isBotAdmins) return await citel.reply(`*_I'm Not Admin In This Group, Idiot_*`);  
+	        if (!isBotAdmins) return await citel.reply(tlang().admin);  
             if (!isAdmins) return citel.reply(tlang().admin)
             
             let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-            if (!users) return await citel.reply("*_Uhh Dear, Please Provide An User._*");
+            if (!users) return await citel.reply("*_Please Provide An User._*");
             if(citel.sender == botNumber ){
                 await Void.groupParticipantsUpdate(citel.chat, [users], "add");
                 await citel.send(`*User Added Succesfully!*`)
-                return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+                return await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
             }else {
-                await Void.sendMessage(citel.chat, { react: { text: '❌', key: citel.key }});
-                await Void.sendMessage(users , {text : `Here's The Group Invite Link\n User @${citel.sender.split("@")[0]} Wants To Add You in bellow Group\n https://chat.whatsapp.com/${await Void.groupInviteCode(citel.chat)} _ \n ------------ Join If YOu Feel Free?` ,mentions:[citel.sender,]} , {quoted : citel })
-                return await citel.reply(`_Can't Add User, Invite Sent_`)
+                await Void.sendMessage(citel.chat, { react: { text: '', key: citel.key }});
+                await Void.sendMessage(users , {text : `Here's The Group Invite Link\n User @${citel.sender.split("@")[0]} *_Wants To Add You in bellow Group_*\n https://chat.whatsapp.com/${await Void.groupInviteCode(citel.chat)} _ \n*_Join If YOu Feel Free_*?` ,mentions:[citel.sender,]} , {quoted : citel })
+                return await citel.reply(`_Unable To Add User, Invite Sent_`)
             }
         }
     )
@@ -1196,12 +1170,12 @@ Module_Exports({
             let onlyNames = false ; 
             if(text.includes("jid")) {  onlyJids = true ; }
             else if(text.includes("name")) {  onlyNames = true ; }
-            await citel.reply(`Fetching ${onlyJids ? "Only jids" : ( onlyNames ? "Only Names" : "Names and Jids") } from ${c.length} Groups`);
+            await citel.reply(`*_Fetching ${onlyJids ? "Only jids" : ( onlyNames ? "Only Names" : "Names and Jids") } from ${c.length} Groups_*`);
             await sleep(2000); 
             for(var i of c.map(t=>t.id))
             {
-                a+= onlyJids ? "" : `\n*Group:* ${n[i].subject} `;
-                a+= onlyNames ? "" :`\n*JID:* ${i}\n`;
+                a+= onlyJids ? "" : `\n*•𝙶𝚁𝙾𝚄𝙿•* ${n[i].subject} `;
+                a+= onlyNames ? "" :`\n*•𝙹𝙸𝙳•* ${i}\n`;
             }
             return await citel.send(a)
 
@@ -1274,8 +1248,8 @@ Module_Exports({
                 const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
                 const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
                 if (!isAdmins) return citel.reply(tlang().admin)
-                if (!isBotAdmins) return citel.reply('I can\'t delete anyones message without getting Admin Role.')
-                if (!citel.quoted) return citel.reply(`Please reply to any message. ${tlang().greet}`);
+                if (!isBotAdmins) return citel.reply(tlang().admin)
+                if (!citel.quoted) return citel.reply(`*_Please reply to any message._*`);
                 let { chat, fromMe, id } = citel.quoted;
                 
 		    const key = {
@@ -1289,30 +1263,32 @@ Module_Exports({
         }
     )
     //---------------------------------------------------------------------------
-Module_Exports({
-            kingcmd: "checkwarn",
-            infocmd: "Check warns",
-            kingclass: "group",
-            kingpath: __filename,
-            use: '<quoted/reply user.>',
-        },
-        async(Void, citel, text) => {
-            if (!citel.isGroup) return citel.reply('This command is only for Group.')
-            if (!citel.quoted) return citel.reply('Quote a user master.')
-            teskd = `*All Warnings.*\n\n`
-            let h = await warndb.find({ id: citel.quoted.sender.split('@')[0] + 'warn' })
-            console.log(h)
-            teskd += `*There are total ${h.length}  warnings.*\n`
-            for (let i = 0; i < h.length; i++) {
-                teskd += `*${i+1}*\n╭─────────────◆\n│ *🍁In Group:-* ${h[i].group}\n`
-                teskd += `│ *🔰Time:-* ${h[i].date}\n`
-                teskd += `│ *⚠️Warned by:-* ${h[i].warnedby}\n`
-                teskd += `│ _📍Reason: ${h[i].reason}_\n╰─────────────◆\n\n`
-            }
-            citel.reply(teskd)
+    Module_Exports({
+        kingcmd: "checkwarn",
+        infocmd: "Check warns",
+        shortcut: ["cwarn"],
+        kingclass: "group",
+        kingpath: __filename,
+        use: '<quoted/reply user.>',
+    },
+    async(bot, man, text, {isCreator}) => {
+    if (!isCreator) return man.reply(tlang().owner)
+        if (!man.isGroup) return man.reply(tlang().group)
+        if (!man.quoted) return man.reply('*_Reply/Mention a User_*')
+        teskd = `*_All Warnings._*\n\n`
+        let h = await warndb.find({ id: man.quoted.sender.split('@')[0] + 'warn' })
+        console.log(h)
+        teskd += `*_There are Total ${h.length}  warnings_*\n`
+        for (let i = 0; i < h.length; i++) {
+            teskd += `*${i+1}*\n┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ *_•𝙸𝙽 𝙶𝚁𝙾𝚄𝙿•_* ${h[i].group}\n`
+            teskd += `┃✗ *_•𝚃𝙸𝙼𝙴•_* ${h[i].date}\n`
+            teskd += `┃✗ *_•𝚆𝙰𝚁𝙽𝙴𝙳 𝙱𝚈•_* ${h[i].warnedby}\n`
+            teskd += `┃✗ *_•𝚁𝙴𝙰𝚂𝙾𝙽•_* ${h[i].reason}\n┗━━━━━━━━━━⦿\n`
         }
+        man.reply(teskd)
+    }
 
-    )
+)
     //---------------------------------------------------------------------------
 Module_Exports({
         kingcmd: "broadcast",
@@ -1369,45 +1345,44 @@ Module_Exports({
 		    const sck1 = await Levels.fetch(citel.sender, "RandomXP");
 		    const lvpoints = sck1.level;
 		    var role = "GOD";
-			 if (lvpoints <=  2) { var role = "🏳Citizen";  } 
-		    else if (lvpoints <=  4) { var role = "👼Baby Wizard"; } 
-		    else if (lvpoints <=  6) { var role = "🧙‍♀️Wizard"; } 
-		    else if (lvpoints <=  8) { var role = "🧙‍♂️Wizard Lord"; } 
-		    else if (lvpoints <= 10) { var role = "🧚🏻Baby Mage"; } 
-		    else if (lvpoints <= 12) { var role = "🧜Mage"; } 
-		    else if (lvpoints <= 14) { var role = "🧜‍♂️Master of Mage";} 
-		    else if (lvpoints <= 16) { var role = "🌬Child of Nobel";  } 
-		    else if (lvpoints <= 18) { var role = "❄Nobel";} 
-		    else if (lvpoints <= 20) { var role = "⚡Speed of Elite"; }
-		    else if (lvpoints <= 22) { var role = "🎭Elite"; } 
-		    else if (lvpoints <= 24) { var role = "🥇Ace I"; } 
-		    else if (lvpoints <= 26) { var role = "🥈Ace II"; } 
-		    else if (lvpoints <= 28) { var role = "🥉Ace Master"; }
-		    else if (lvpoints <= 30) { var role = "🎖Ace Dominator"; }
-		    else if (lvpoints <= 32) { var role = "🏅Ace Elite"; }
-		    else if (lvpoints <= 34) { var role = "🏆Ace Supreme";} 
-		    else if (lvpoints <= 36) { var role = "💍Supreme I"; }
-		    else if (lvpoints <= 38) { var role = "💎Supreme Ii"; } 
-		    else if (lvpoints <= 40) { var role = "🔮Supreme Master"; } 
-		    else if (lvpoints <= 42) { var role = "🛡Legend III"; } 
-		    else if (lvpoints <= 44) { var role = "🏹Legend II"; } 
-		    else if (lvpoints <= 46) { var role = "⚔Legend"; } 
-		    else if (lvpoints <= 55) { var role = "🐉Immortal"; } 
+			 if (lvpoints <=  2) { var role = "Citizen";  } 
+		    else if (lvpoints <=  4) { var role = "Baby Wizard"; } 
+		    else if (lvpoints <=  6) { var role = "Wizard"; } 
+		    else if (lvpoints <=  8) { var role = "Wizard Lord"; } 
+		    else if (lvpoints <= 10) { var role = "Baby Mage"; } 
+		    else if (lvpoints <= 12) { var role = "Mage"; } 
+		    else if (lvpoints <= 14) { var role = "Master of Mage";} 
+		    else if (lvpoints <= 16) { var role = "Child of Nobel";  } 
+		    else if (lvpoints <= 18) { var role = "Nobel";} 
+		    else if (lvpoints <= 20) { var role = "Speed of Elite"; }
+		    else if (lvpoints <= 22) { var role = "Elite"; } 
+		    else if (lvpoints <= 24) { var role = "Ace I"; } 
+		    else if (lvpoints <= 26) { var role = "Ace II"; } 
+		    else if (lvpoints <= 28) { var role = "Ace Master"; }
+		    else if (lvpoints <= 30) { var role = "Ace Dominator"; }
+		    else if (lvpoints <= 32) { var role = "Ace Elite"; }
+		    else if (lvpoints <= 34) { var role = "Ace Supreme";} 
+		    else if (lvpoints <= 36) { var role = "Supreme I"; }
+		    else if (lvpoints <= 38) { var role = "Supreme Ii"; } 
+		    else if (lvpoints <= 40) { var role = "Supreme Master"; } 
+		    else if (lvpoints <= 42) { var role = "Legend III"; } 
+		    else if (lvpoints <= 44) { var role = "Legend II"; } 
+		    else if (lvpoints <= 46) { var role = "Legend"; } 
+		    else if (lvpoints <= 55) { var role = "•𝐊𝐈𝐍𝐆•"; } 
 		    else {  var role = "Kiddo";   }
 
 		    if(name.levelupmessage !== 'false')
 		    {
 			    await Void.sendMessage(citel.chat, { image: {  url: await botpic() },
 			caption: `
-╔════◇
-║ *Wow,Someone just*
-║ *leveled Up huh⭐*
-║ *👤Name*: ${citel.pushName}
-║ *🎐Level*: ${sck1.level}🍭
-║ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-║ *📍Role*: *${role}*
-║ *Enjoy🥳*
-╚════════════╝ `   }, { quoted: citel });
+            ┏━━⟪⟪ ${mztit} ⟫━⦿
+            ┃✗ •ᴡᴏᴡ,sᴏᴍᴇᴏɴᴇ ᴊᴜsᴛ•
+            ┃✗ •ʟᴇᴠᴇʟᴇᴅ ᴜᴘ ʜᴜʜ•
+            ┃✗ •ɴᴀᴍᴇ• ${man.pushName}
+            ┃✗ •ʟᴇᴠᴇʟ• ${sck1.level}🍭
+            ┃✗ •ᴇxᴘ• ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
+            ┃✗ •ʀᴏʟᴇ• *${role}*
+            ┗━━━━━━━━━━⦿ `   }, { quoted: citel });
 		    }
 	    }
 	})
