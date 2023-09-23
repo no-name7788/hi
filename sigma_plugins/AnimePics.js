@@ -293,3 +293,16 @@ async(Void, man,text) =>
     let random = anu[Math.floor(Math.random() * anu.length)]
     return await Void.sendMessage(man.chat,{image :{url : random } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
 })
+//-------------------------------------------------------------------------
+Module_Exports({
+    kingcmd: "asthetic",
+    infocmd: "To get Naruto Random Videos",
+    kingclass: "anime pics",
+    kingpath: __filename
+},
+async(Void, man,text) =>
+{
+    let res=await axios.get("https://raw.githubusercontent.com/Ali-Ahmad77/hi/main/Media/WallPapers/Aesthetic.json")
+    let url =  res.data.result[Math.floor(Math.random() * res.data.result.length)];
+    return await Void.sendMessage(man.chat,{image :{url : SIGMA_MD } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
+})
