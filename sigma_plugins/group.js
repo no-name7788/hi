@@ -953,10 +953,10 @@ Module_Exports({
 
     //---------------------------------------------------------------------------
     Module_Exports({
-        pattern: "gmode",
-        desc: "mute and unmute group.",
-        category: "group",
-        filename: __filename,
+        kingcmd: "gmode",
+        infocmd: "mute and unmute group.",
+        kingclass: "group",
+        kingpath: __filename,
     },
     async(bot, man, text) => {
         if (!man.isGroup) return man.reply(tlang().group);
