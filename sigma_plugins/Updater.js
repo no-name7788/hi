@@ -20,7 +20,7 @@ async function updateHerokuApp() {
       const gitUrl = app.git_url.replace('https://', `https://api:${process.env.HEROKU_API_KEY}@`);
       try { await git.addRemote('heroku', gitUrl); } catch(e) { console.log('Heroku remote adding error');  }
       await git.push('heroku', 'main');
-      return 'Bot updated. Restarting.';
+      return "*_Bot Updated SuccessFully_*\n*_Wait While Restarting_*";
     }
   }
 
