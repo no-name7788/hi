@@ -93,40 +93,39 @@
       ctgry_end = '┬│▸\n│╰────────────···▸\n└──────────────◉';
     }
   
-    const cmds = {};
-    const commands = require('../lib')
-    commands.map(async (command, index) => {
-      if (command.dontAddCommandList !== true && command.kingcmd !== undefined) {
-        if (!cmds[command.kingclass]) cmds[command.kingclass] = [];
-        cmds[command.kingclass].push(command.kingcmd);
-      }
-    })
+          const cmds = {}
+                  commands.map(async(command, index) => 
+                  {
+                       if (command.dontAddCommandList === false && command.pattern !== undefined)
+                       {
+                            if (!cmds[command.category]) cmds[command.category] = []
+                            cmds[command.category].push(command.pattern)
+                       }
+                  })
+                  const time = moment(moment()).format('HH:mm:ss')
+                  moment.tz.setDefault('Asia/karachi').locale('id')
+                  const date = moment.tz('asia/karachi').format('DD/MM/YYYY')
+ let str = `${up_up}
+  ${up_mid} Theme:- ${tlang().title}
+  ${up_mid} Owner:- ${Config.ownername}
+  ${up_mid} Plugins:- ${commands.length}
+  ${up_mid} Uptime:- ${runtime(process.uptime())}
+  ${up_mid} Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+  ${up_mid} Time:- ${time}\n${up_mid} Date:- ${date}\n${up_btm}\n\n` ;
   
-    const time = moment(moment()).tz('Asia/Karachi').format('HH:mm:ss')
-    moment.tz.setDefault("Asia/Karachi")['locale']('id');
-    const date = moment.tz('Asia/karachi').format('DD/MM/YYYY')
+                for (const category in cmds) 
+                {
+                   str += `${ctgry_L} ${tiny(category)} ${ctgry_R}\n` ;
+                   if(text.toLowerCase() == category.toLowerCase()){ str = `${ctgry_L} ${tiny(category)} ${ctgry_R}\n` ;      
+                        for (const plugins of cmds[category])  { str += `${cmd_L} ${fancytext(plugins,1)}\n` ; }
+                        str += `${ctgry_end}\n`  ;
+                        break ;
+                   }
+                   else { for (const plugins of cmds[category]) { str += `${cmd_L} ${fancytext(plugins,1)}\n` ; }
+                         str += `${ctgry_end}\n`  ; 
+                   }
   
-    let total = await sck1.countDocuments(),
-    str = `${up_up}\n${up_mid} Language: ${tlang().title}\n${up_mid} Owner: ${name.ownername}\n${up_mid}  Plugins: ${commands.size}\n${up_mid} Uptime: ${runtime(process.uptime())}\n${up_mid} Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}\n${up_mid} Time: ${time}\n${up_mid} Date: ${date}\n${up_btm}\n\n`;
-  
-    for (const kingclass in cmds) {
-      str += `${ctgry_L} *${tiny(kingclass)}* ${ctgry_R}\n`;
-      
-      if (text.toLowerCase() == kingclass.toLowerCase()) {
-        str = `${ctgry_L} *${tiny(kingclass)}* ${ctgry_R}\n`;
-        for (const plugins of cmds[kingclass]) {
-          str += `${cmd_L} ${fancytext(plugins, 1)}\n`;
-        }
-        str += `${ctgry_end}\n`;
-        break;
-      } else {
-        for (const plugins of cmds[kingclass]) {
-          str += `${cmd_L} ${fancytext(plugins, 1)}\n`;
-        }
-        str += `${ctgry_end}\n`;
-      }
-  
-    }
+                }
   
     str += name.footer;
   
