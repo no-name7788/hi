@@ -35,7 +35,7 @@
     })
  
   //------------------------------------------------------------------------------------
-  sigma_md.Module_Exports({
+  sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
     kingcmd: "help",
     shortcut: ["menu"],
     infocmd: "Help list",
