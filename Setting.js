@@ -17,9 +17,9 @@ global.timezone  = process.env.TIME_ZONE || 'Asia/Karachi'
 global.gurl = 'https://youtube.com/c/SuhailTechInfo' ; // add your username
 global.sudo =  process.env.SUDO || "27718060308" ;
 global.devs = "923466319114"; //Dont change it From here
-global.mztit = "🅼♥︎❚❚♥︎🆉",
-global.Gname = "xxx",
-global.waUrl = "https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK",
+global.mztit = process.env.MZTIT ||"🅼♥︎❚❚♥︎🆉",
+global.Gname = process.env.GNAME ||"xxx",
+global.waUrl = process.env.WAURL ||"https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK",
 global.website = 'https://github.com/SuhailTechInfo/Secktor-Md' ; //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png' ;
 module.exports = {
@@ -51,7 +51,7 @@ module.exports = {
   OPENAI_API_KEY: process.env.OPENAI_API_KEY ||'' ,
   VERSION: process.env.VERSION || 'v.0.0.3',
   LANG: process.env.THEME|| 'SHELBY',
-  menu : process.env.MENU || '', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Suhail-Md Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
+  menu : process.env.MENU || 'Suhail-Md', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Suhail-Md Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
   WORKTYPE: process.env.WORKTYPE || 'private'
 };
 

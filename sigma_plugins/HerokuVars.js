@@ -143,7 +143,7 @@ Module_Exports({
 async(Void, citel , text,{ isCreator }) => {
 
      if (!isCreator) return citel.reply(tlang().owner);
-if (!text) return citel.reply (`*_Give me Var Name_*\n*Ex : ${prefix}setvar CAPTION: Powered By Maher Zubair*`);
+if (!text) return citel.reply (`*_Give me Var Name_*\n*Ex : ${prefix}addvar CAPTION: Powered By Maher Zubair*`);
 const headers = 
         {
                  'Accept': 'application/vnd.heroku+json; version=3',
