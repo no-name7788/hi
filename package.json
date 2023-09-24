@@ -1,15 +1,15 @@
 {
-          "name": "Suhail-MD",
-          "version": "1.0.1",
-          "description": "Multi device whatsapp bot by SuhailTechInfo.",
+          "name": "SIGMA-MD",
+          "version": "1.0.0",
+          "description": "SIGMA_MD A Whatsapp Bot By Maher Zubair",
           "main": "lib/client.js",
           "type": "commonjs",
           "license": "GPL-3.0",
           "scripts": {
-                    "start": "pm2 start lib/client.js --deep-monitoring --attach --name Suhail_Md",
-                    "stop": "pm2 stop Suhail_Md"
+                    "start": "pm2 start lib/client.js --deep-monitoring --attach --name SIGMA_MD",
+                    "stop": "pm2 stop SIGMA_MD"
           },
-          "author": "SuhailTechInfo",
+          "author": "Maher Zubair",
           "dependencies": {
                     "@adiwajshing/keyed-db": "^0.2.4",
                     "@hapi/boom": "^9.1.4",
