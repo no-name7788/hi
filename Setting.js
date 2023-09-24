@@ -50,7 +50,7 @@ module.exports = {
   promote_demote_messages : process.env.PROMOTE_DEMOTE_MESSAGES || 'false' ,
   OPENAI_API_KEY: process.env.OPENAI_API_KEY ||'' ,
   VERSION: process.env.VERSION || 'v.0.0.3',
-  LANG: process.env.THEME|| 'SHELBY',
+  LANG: process.env.THEME|| 'PATRICK',
   menu : process.env.MENU || '', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Suhail-Md Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
   WORKTYPE: process.env.WORKTYPE || 'private'
 };
