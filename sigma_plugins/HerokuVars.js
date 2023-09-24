@@ -233,7 +233,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`, {
         }  else { throw new Error('Variable not found in app'); }
   }) 
   .then(response => { if (response.ok) return citel.reply(`*_${varName} updated successfully._*\n*_${varName}: ${newVarValue}_*`);  })
-  .catch(error => {   return citel.reply("```Uhh Please, Give me Valid Variable Name```") });
+  .catch(error => {   return citel.reply("```Please, Give me Valid Variable Name```") });
     
     
         
