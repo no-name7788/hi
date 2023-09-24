@@ -95,7 +95,7 @@
   
     const cmds = {};
 
-    sigma_plugins.map(async (command, index) => {
+    commands.map(async (command, index) => {
       if (command.dontAddCommandList !== true && command.kingcmd !== undefined) {
         if (!cmds[command.kingclass]) cmds[command.kingclass] = [];
         cmds[command.kingclass].push(command.kingcmd);
