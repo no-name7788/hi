@@ -210,7 +210,7 @@ const headers = {
 };
 const varName = text.split(":")[0].toUpperCase();
 const newVarValue = text.split(":")[1]; 
-if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*Example : ${prefix}setvar AUTO_READ_STATUS:true*`);       
+if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*_Ex : ${prefix}setvar AUTO_READ_STATUS:true_*`);       
 fetch(`https://api.heroku.com/apps/${appName}/config-vars`, {
   method: 'GET',
   headers 
@@ -232,7 +232,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`, {
                         });
         }  else { throw new Error('Variable not found in app'); }
   }) 
-  .then(response => { if (response.ok) return citel.reply(`*_${varName} updated successfully._*\n*_${varName}: ${newVarValue}_*`);  })
+  .then(response => { if (response.ok) return citel.reply(`*_${varName} Updated SuccessFully._*\n*_New ${varName}➪ ${newVarValue}_*`);  })
   .catch(error => {   return citel.reply("```Please, Give me Valid Variable Name```") });
     
     
