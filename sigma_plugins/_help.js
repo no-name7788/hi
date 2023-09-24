@@ -95,10 +95,10 @@
   
     const cmds = {};
   
-    commands.map(async (c, i) => {
-      if (c.dontAddCommandList !== true && c.kingcmd !== undefined) {
-        if (!cmds[c.kingclass]) cmds[c.kingclass] = [];
-        cmds[c.kingclass].push(c.kingcmd);
+    commands.map(async (command, index) => {
+      if (command.dontAddCommandList !== true && command.kingcmd !== undefined) {
+        if (!cmds[command.kingclass]) cmds[command.kingclass] = [];
+        cmds[command.kingclass].push(command.kingcmd);
       }
     })
   
