@@ -36,14 +36,14 @@ Module_Exports({
         async(Void, citel, text,{ isCreator }) => {
             if (!isCreator) return citel.reply(tlang().owner)
             let commits = await DB.syncgit()
-            if (commits.total === 0) return await citel.reply(`*HEY* *${name.ownername}* *Your Bot Is*\n*Running on Latest Version*`) 
+            if (commits.total === 0) return await citel.reply(`*_HEY_* *_${name.ownername}_* *_Your Bot Is_*\n*_Running on Latest Version_*`) 
             let update = await DB.sync()
             await Void.sendMessage(citel.chat, { text: update, },{ quoted : citel });
 
 
 if(text == 'all')
 {
-          citel.reply(`Started Updating You Bot...\nPlease Wait...`);
+          citel.reply(`*_Started Updating You Bot..._*\n*_Please Wait..._*`);
           const update = await updateHerokuApp();
           return await citel.reply(update);
 }
@@ -72,7 +72,7 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
         async(Void, citel, text,{ isCreator }) => {
                 if(!isCreator) return await citel.reply(tlang().owner)
                 let commits = await DB.syncgit()
-                if (commits.total === 0) return await citel.reply(`*HEY* *${name.ownername}* *Your Bot Is*\n*Running on Latest Version*`)
+                if (commits.total === 0) return await citel.reply(`*_HEY_* *_${name.ownername}_* *_Your Bot Is_*\n*_Running on Latest Version_*`)
                 let update = await DB.sync()
                 let buttonMessaged = 
                 {
@@ -83,7 +83,7 @@ if(name.HEROKU_APP_NAME && name.HEROKU_API_KEY )
                 await Void.sendMessage(citel.chat, buttonMessaged);
                 await require("simple-git")().reset("hard",["HEAD"])
                 await require("simple-git")().pull()
-                await citel.reply(`*_Bot SuccessFully Updated_*`)
+                await citel.send(`*_Bot SuccessFully Updated_*`)
                 process.exit(0);
        })
 }
