@@ -153,9 +153,9 @@ Module_Exports({
 })
 //----------------------------------------------------------------------------
 Module_Exports({
-  kingcmd: "impnote",
-  shortcut:["inote"],
-  infocmd: "How TO Update Vars in Sigma Md",
+  kingcmd: "gitvar",
+  shortcut:["gvar"],
+  infocmd: "Give GitHub Vars So User Can Change Them",
   kingclass: "general",
 },
     async(bot,man,text) =>{
