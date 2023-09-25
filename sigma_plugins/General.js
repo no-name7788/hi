@@ -169,7 +169,7 @@ TIME_ZONE © ${name.timezone}
 WAURL © ${name.waUrl}
 GNAME © ${name.Gname}
 MZTIT © ${name.mztit}
-ANTI_BAD_WORD © ${name.antibadword}
+ANTI_BAD_WORD © change it
 BOT_NAME © ${name.botname}
 CAPTION © ${name.caption}\n
 *_To Update A Var Use:_*
