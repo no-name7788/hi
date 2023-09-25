@@ -104,7 +104,7 @@
      "required": false 
   },
 "TIME_ZONE": {
-  "description": "Add Your TimeZone \n make sure the timzone is correct",
+  "description": "Add Your TimeZone. make sure the timzone is correct",
    "value": "Asia/Karachi",
     "required": false
 },
@@ -112,7 +112,41 @@
   "description": "Add Your Title",
    "value": "🅼♥︎❚❚♥︎🆉",
     "required": false
-}
+},
+"GNAME": {
+  "description": "Add Your Group Name Here.You Can See in Most Commands",
+   "value": "sɪɢᴍᴀ ᴹᴰ-sᴜᴘᴘᴏʀᴛ",
+    "required": false
+},
+"WAURL": {
+  "description": "Add Your Group Link.You Can See IT IN Most Commands",
+   "value": " https://chat.whatsapp.com/JM1yBMlveulDrAN22jHcWV",
+    "required": false
+},
+"BOT_NAME": {
+  "description": "Add Your Own Bot Name",
+   "value": "sɪɢᴍᴀ ᴹᴰ",
+    "required": false
+},
+"ANTI_BAD_WORD": {
+  "description": "Add Bad Words ",
+   "value": "nobadwordokey",
+    "required": false
+},
+"REMOVE_BG_KEY": {
+  "description": "Add The RemoveBg Api Key.Git New APi Key From remove.bg",
+   "value": "34wcCGPoe3yaGtpiBZgx4SN7",
+    "required": false
+},
+"CAPTION": {
+  "description": "Add Your Caption.You Will See In Most Commands ",
+   "value": "*⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ*",
+    "required": false
+},
+"THEME": {
+  "description": "Add The Theme You Like\nAvailable Premium Themes::BTS,SIGMA_MD,JOKER,AVENGERS,SHELBY,PATRICK,MOMOLAND",
+   "value": "SIGMA_MD"
+    }
 },
 
 "addons": [
