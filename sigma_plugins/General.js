@@ -131,60 +131,7 @@ Module_Exports({
 
 
 //---------------------------------------------------------------------------
-Module_Exports({
-  kingcmd: "impnote",
-  shortcut:["inote"],
-  infocmd: "How TO Update Vars in Sigma Md",
-  kingclass: "general",
-},
-    async(bot,man,text) =>{
-      await bot.sendMessage(man.chat, {
-        image: { url: await botpic() },
-        caption: `*_Important Note_*\n\n_If You Wanna Change Some Vars Like BotName,Group name/Link or Any Other Var_\n_You Can Change It By Following_\n${prefix}setvar BOT_NAME:Your-Bot-Name\n${prefix}setvar GNAME:Your-group-name\n${prefix}setvar WAURL:your-group-link\n*_Make Sure The Var Name Is Correct_*\n*_This is Due To You Can't Change AnyThing in Bot On Github_*\n*_Use: ${prefix}gitvar To Get All GitHub Vars So You Can Change Them Easily_*`,
-  contextInfo: {
-      externalAdReply: {
-            title: `ᴅᴇᴠᴇʟᴏᴘᴇʀ`,
-            body: "ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ",
-            thumbnail: log0,
-            mediaType: 4,
-            mediaUrl: '',
-            sourceUrl: ``,}}
-    });
-})
-//----------------------------------------------------------------------------
-Module_Exports({
-  kingcmd: "gitvar",
-  shortcut:["gvar"],
-  infocmd: "Give GitHub Vars So User Can Change Them",
-  kingclass: "general",
-},
-    async(bot,man,text) =>{
-      await bot.sendMessage(man.chat, {
-        image: { url: await botpic() },
-        caption:
-`
-*_Here's All GitHub Vars_*      
-© = *_Current Value_*
-TIME_ZONE © ${name.timezone}
-WAURL © ${name.waUrl}
-GNAME © ${name.Gname}
-MZTIT © ${name.mztit}
-ANTI_BAD_WORD © change it
-BOT_NAME © ${name.botname}
-CAPTION © ${name.caption}\n
-*_To Update A Var Use:_*
-${prefix}setvar BOT_NAME:NEW-MD      
-`,
-  contextInfo: {
-      externalAdReply: {
-            title: `ᴅᴇᴠᴇʟᴏᴘᴇʀ`,
-            body: "ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ",
-            thumbnail: log0,
-            mediaType: 4,
-            mediaUrl: '',
-            sourceUrl: ``,}}
-    });
-})
+
 //---------------------------------------------------------------------------
 Module_Exports({
   kingcmd: "script",

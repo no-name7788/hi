@@ -102,7 +102,17 @@
     "description": "Put Sticker Author_Name.",
      "value": "ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ",
      "required": false 
-  }
+  },
+"TIME_ZONE": {
+  "description": "Add Your TimeZone \n make sure the timzone is correct",
+   "value": "Asia/Karachi",
+    "required": false
+},
+"MZTIT": {
+  "description": "Add Your Title",
+   "value": "🅼♥︎❚❚♥︎🆉",
+    "required": false
+}
 },
 
 "addons": [
