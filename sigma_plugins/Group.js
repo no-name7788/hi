@@ -1372,7 +1372,7 @@ Module_Exports({
 ┏━━⟪⟪ ${mztit} ⟫━⦿
 ┃✗ •ᴡᴏᴡ,sᴏᴍᴇᴏɴᴇ ᴊᴜsᴛ•
 ┃✗ •ʟᴇᴠᴇʟᴇᴅ ᴜᴘ ʜᴜʜ•
-┃✗ •ɴᴀᴍᴇ• ${man.pushName}
+┃✗ •ɴᴀᴍᴇ• ${citel.pushName}
 ┃✗ •ʟᴇᴠᴇʟ• ${sck1.level}🍭
 ┃✗ •ᴇxᴘ• ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
 ┃✗ •ʀᴏʟᴇ• *${role}*
