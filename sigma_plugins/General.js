@@ -140,7 +140,40 @@ Module_Exports({
     async(bot,man,text) =>{
       await bot.sendMessage(man.chat, {
         image: { url: await botpic() },
-        caption: `*_Important Note_*\n\n_If You Wanna Change Some Vars Like BotName,Group name/Link or Any Other Var_\n_You Can Change It By Following_\n${prefix}setvar BOT_NAME:Your-Bot-Name-Here\n${prefix}setvar Gname:Your-group-name\n${prefix}setvar waUrl:your-group-link_\n*_Make Sure The Var Name Is Correct_*\n*_This is Due To You Can't Change AnyThing in Bot On Github_*\n*_Use: ${prefix}gitvar To Get All GitHub Vars So You Can Change Them Easily_*`,
+        caption: `*_Important Note_*\n\n_If You Wanna Change Some Vars Like BotName,Group name/Link or Any Other Var_\n_You Can Change It By Following_\n${prefix}setvar BOT_NAME:Your-Bot-Name\n${prefix}setvar Gname:Your-group-name\n${prefix}setvar waUrl:your-group-link\n*_Make Sure The Var Name Is Correct_*\n*_This is Due To You Can't Change AnyThing in Bot On Github_*\n*_Use: ${prefix}gitvar To Get All GitHub Vars So You Can Change Them Easily_*`,
+  contextInfo: {
+      externalAdReply: {
+            title: `ᴅᴇᴠᴇʟᴏᴘᴇʀ`,
+            body: "ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ",
+            thumbnail: log0,
+            mediaType: 4,
+            mediaUrl: '',
+            sourceUrl: ``,}}
+    });
+})
+//----------------------------------------------------------------------------
+Module_Exports({
+  kingcmd: "impnote",
+  shortcut:["inote"],
+  infocmd: "How TO Update Vars in Sigma Md",
+  kingclass: "general",
+},
+    async(bot,man,text) =>{
+      await bot.sendMessage(man.chat, {
+        image: { url: await botpic() },
+        caption: `
+        *_Here's All GitHub Vars_*\n
+        TIME_ZONE
+        WAURL
+        GNAME
+        MZTIT
+        ANTI_BAD_WORD
+        BOT_NAME
+        THEME
+        CAPTION\n
+        *_To Update A Var Use:_*
+        ${prefix}BOT_NAME:NEW-MD
+        `,
   contextInfo: {
       externalAdReply: {
             title: `ᴅᴇᴠᴇʟᴏᴘᴇʀ`,
