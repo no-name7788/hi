@@ -229,7 +229,7 @@ ${sɪɢᴍᴀ_readmore}
 
 
   let sigma_lists = `
-┏━━⟪⟪ ${mztit} ⟫━⦿
+┏━━⟪⟪ ${mztit} ⟫━⦿        
 ┃✗ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴀᴛᴇɢᴏʀɪᴇs*
 ┃✗ ᴍɪsᴄ
 ┃✗ ᴀɴɪᴍᴇ ᴘɪᴄs
@@ -252,7 +252,7 @@ ${sɪɢᴍᴀ_readmore}
 ┃✗ ${prefix}list Category Name
 ┃✗ To See Its All Commands
 ┃✗ ${prefix}list developer
-┗━━━━━━━━━━⦿`
+┗━━━━━━━━━━⦿        `
     
     
           let lists = 
