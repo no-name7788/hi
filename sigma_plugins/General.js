@@ -140,7 +140,7 @@ Module_Exports({
 
 
   let sigma_lists = `
-┏━━⟪⟪ ${mztit} ⟫━⦿        
+┏━━⟪⟪ ${mztit} ⟫━⦿         
 ┃✗ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴀᴛᴇɢᴏʀɪᴇs*
 ┃✗ ᴍɪsᴄ
 ┃✗ ᴀɴɪᴍᴇ ᴘɪᴄs
@@ -163,7 +163,7 @@ Module_Exports({
 ┃✗ *${prefix}list Category Name*
 ┃✗ *To See Its All Commands*
 ┃✗ *${prefix}list developer*
-┗━━━━━━━━━━⦿        `
+┗━━━━━━━━━━⦿          `
     
     
           let lists = 
@@ -349,7 +349,7 @@ async(bot, man,write,{isCreator}) => {
 
 if(!isCreator) return man.reply(tlang().owner);
 let SIGMA_THEMES=`┏━━⟪⟪ ${mztit} ⟫━⦿ \n┃✗ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʀᴇᴍɪᴜᴍ*\n┃✗ *ᴛʜᴇᴍᴇs ɪɴ sɪɢᴍᴀ ᴹᴰ*\n`
-SIGMA_THEMES+=`┃✗ SHELBY\n┃✗ JOKER\n┃✗ PATRICK\n┃✗ SIGMA_MD\n┃✗ AVENGERS\n┃✗ BTS\n┃✗ MOMOLAND\n┃✗ ADAM\n┃✗ AYANOKOJI\n┃✗ EDITH\n┃✗ FRIDAY\n┃✗ GENOS\n┃✗ GIDEON\n┃✗ GOKU\n┃✗ LUFFY\n┃✗ NARUTO\n┃✗ NEZUKO\n┃✗ PARKER\n┃✗ MZ\n┃✗ ${prefix}setvar THEME:BTS\n┗━━━━━━━━━━⦿`
+SIGMA_THEMES+=`┃✗ SHELBY\n┃✗ JOKER\n┃✗ PATRICK\n┃✗ SIGMA_MD\n┃✗ AVENGERS\n┃✗ BTS\n┃✗ ᴀɴɪᴍᴇ\n┃✗ MOMOLAND\n┃✗ ADAM\n┃✗ AYANOKOJI\n┃✗ EDITH\n┃✗ FRIDAY\n┃✗ GENOS\n┃✗ GIDEON\n┃✗ GOKU\n┃✗ LUFFY\n┃✗ NARUTO\n┃✗ NEZUKO\n┃✗ PARKER\n┃✗ MZ\n┃✗ ${prefix}setvar THEME:BTS\n┗━━━━━━━━━━⦿`
 return man.reply(SIGMA_THEMES)
   
 }
