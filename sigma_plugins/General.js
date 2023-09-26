@@ -140,7 +140,7 @@ Module_Exports({
 
 
   let sigma_lists = `
-┏━━⟪⟪ ${mztit} ⟫━⦿         
+┏━━⟪⟪ ${mztit} ⟫━⦿       
 ┃✗ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴀᴛᴇɢᴏʀɪᴇs*
 ┃✗ ᴍɪsᴄ
 ┃✗ ᴀɴɪᴍᴇ ᴘɪᴄs
@@ -161,9 +161,9 @@ Module_Exports({
 ┃✗ sᴇᴀʀᴄʜ
 ┃✗ ᴇᴅɪᴛᴏʀ
 ┃✗ *${prefix}list Category Name*
-┃✗ *To See Its All Commands*
+┃✗ *To See Its Commands*
 ┃✗ *${prefix}list developer*
-┗━━━━━━━━━━⦿          `
+┗━━━━━━━━━━⦿        `
     
     
           let lists = 
