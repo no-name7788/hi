@@ -264,5 +264,5 @@ ${sɪɢᴍᴀ_readmore}
 
               };
              
-          return await Void.sendMessage(citel.chat, lists, {   quoted: citel, });
+          return await bot.sendMessage(man.chat, lists, {   quoted: man, });
  })
