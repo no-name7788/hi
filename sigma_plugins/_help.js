@@ -86,69 +86,44 @@ ${sɪɢᴍᴀ_readmore}
 )
 
       //---------------------------------------------------------------------------
+
+      //---------------------------------------------------------------------------
       sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-        kingcmd: "listc",
-        infocmd: "list menu",
+        kingcmd: "ownner",
+        infocmd: "To find owner number",
         kingclass: "general",
-        //react: "🥀"
-     },
-    async(bot, man , text ) => {
-      
-        const { commands } = require('../lib');
-        text = `
-╭━━〘 *${name.botname}* 〙────⊷     
-┃ ✭ Theme: ${tlang().title}
-┃ ✭ Prefix: ${prefix}
-┃ ✭ Owner: ${name.ownername}
-┃ ✭ Commands: ${commands.length}
-┃ ✭ Uptime: ${runtime(process.uptime())}
-┃ ✭ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-╰━━━━━━━━━━━━━━⊷\n`
-text = '';
-        for (let i = 0; i < commands.length; i++){if(commands[i].kingcmd==undefined){ continue; }else { text += `*${i+1} ${fancytext(commands[i].kingcmd,1)}*\n  ${fancytext(commands[i].infocmd,1)}\n`}}
+    },
+    async(bot, man) => {
+      const name = require('../Setting')
+      const thmb = await getBuffer(global.THUMB_IMAGE)
+        const vcard = 'BEGIN:VCARD\n' +
+            'VERSION:3.0\n' +
+            'FN:' + name.ownername + '\n' +
+            'ORG:;\n' +
+            'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
+            'END:VCARD'
+        let Maher = {
+            contacts: { displayName: name.ownername, contacts: [{ vcard }] },
+            contextInfo: {
+                externalAdReply: {
+                    title: name.ownername,
+                    body: 'ᴛᴀᴘ ʜᴇʀᴇ ᴛᴏ ᴍᴇssᴀɢᴇ ᴍᴇ',
+                    renderLargerThumbnail: true,
+                    thumbnailUrl: ``,
+                    thumbnail: thmb,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=ʜɪ ʙʀᴏ, ɪ ᴀᴍ ' + man.pushName,
+                },
+            },
+        };
+        return await bot.sendMessage(man.chat, Maher, {
+            quoted: man,
+        });
 
-        
-
-//str += `╰━━━━━━━━━━━───⊷\nsᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo`
-       try{ return await bot.sendMessage(man.chat, { image: { url: THUMB_IMAGE }, caption: text + name.caption}); }catch{return await send(citel,str,{},"",citel);}
     }
 )
-      //---------------------------------------------------------------------------
-  sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-          kingcmd: "ownner",
-          infocmd: "To check ping",
-          kingclass: "general",
 
-      },
-      async(bot, person) => {
-          const name = require('../Setting')
-          const thmb = await getBuffer(global.THUMB_IMAGE)
-          const vcard = 'BEGIN:VCARD\n' +
-              'VERSION:3.0\n' +
-              'FN:' + name.ownername + '\n' +
-              'ORG:;\n' +
-              'TEL;type=CELL;type=VOICE;waid=' + global.owner + ':+' + global.owner + '\n' +
-              'END:VCARD'
-          let buttonMessaged = {
-              contacts: { displayName: name.ownername, contacts: [{ vcard }] },
-              contextInfo: {
-                  externalAdReply: {
-                      title: name.ownername,
-                      body: 'Touch here.',
-                      renderLargerThumbnail: true,
-                      thumbnailUrl: ``,
-                      thumbnail: thmb,
-                      mediaType: 1,
-                      mediaUrl: '',
-                      sourceUrl: `https://wa.me/+` + owner + '?text=Hii+bro,I+am+' + person.pushName,
-                  },
-              },
-          };
-          return await bot.sendMessage(person.chat, buttonMessaged, {   quoted: person, });
-  
-      }
-  )
-  //------------------------------------------------------------------------------------
   const readDirectory = (text) => {
     return new Promise((resolve, reject) => {
       fs.readdir(text, (err, files) => {
@@ -160,7 +135,7 @@ text = '';
       });
     });
   };
-  //------------------------------------------------------------------------------------
+
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
     kingcmd: "file",
     infocmd: "to get extact name where that command is in repo.\nSo user can edit that.",
@@ -195,5 +170,5 @@ text = '';
 
 
   })
- //-----------------------------------------------------------------
+
 

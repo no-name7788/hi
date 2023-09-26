@@ -14,13 +14,13 @@ global.email = 'HELP_SIGMA-MD@outlook.com' ;
 global.github = 'https://github.com/Maher-Zubair/SIGMA-MD' ;
 global.location = 'Lahore Pakistan' ;
 global.timezone  = process.env.TIME_ZONE || 'Asia/Karachi'
-global.gurl = 'https://www.youtube.com/@InnoxentTech' ; // add your username
+global.gurl = 'https://www.youtube.com/@InnoxentTech' ; 
 global.sudo =  process.env.SUDO || "27718060308" ;
 global.devs = "923466319114"; //Dont change it From here
 global.mztit = process.env.MZTIT ||"🅼♥︎❚❚♥︎🆉",
 global.Gname = process.env.GNAME ||"xxx",
 global.waUrl = process.env.WAURL ||"https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK",
-global.website = 'https://github.com/SuhailTechInfo/Secktor-Md' ; //wa.me/+91000000000000
+global.website = 'https://github.com/SuhailTechInfo/Secktor-Md' ; 
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/2ca599cf20ac50ba941f6.jpg' ;
 module.exports = {
   sessionName: process.env.SESSION_ID || '',      //Put Your Session Id Here
@@ -46,12 +46,12 @@ module.exports = {
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
   HEROKU_API_KEY: process.env.HEROKU_API_KEY,
   REMOVE_BG_KEY: process.env.REMOVE_BG_KEY || "34wcCGPoe3yaGtpiBZgx4SN7",
-  caption :process.env.CAPTION || "\t*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ Maher Zubair•* ",   //*『sᴜʙsᴄʀɪʙᴇ • sᴜʜᴀɪʟ ᴛᴇᴄʜ』*\n youtube.com/@suhailtechinfo0"),
+  caption :process.env.CAPTION || "\t*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ Maher Zubair•* ",   //*『sᴜʙsᴄʀɪʙᴇ • ɪɴɴᴏxᴇɴᴛ ᴛᴇᴄʜ』https://www.youtube.com/@InnoxentTech,
   promote_demote_messages : process.env.PROMOTE_DEMOTE_MESSAGES || 'true' ,
   OPENAI_API_KEY: process.env.OPENAI_API_KEY ||'' ,
-  VERSION: process.env.VERSION || '𝒗.1.0.0',
+  VERSION: process.env.VERSION || '𝚅.𝟷.𝟶.𝟶',
   LANG: process.env.THEME|| 'SHELBY',
-  menu : process.env.MENU || 'Suhail-Md', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Suhail-Md Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
+  menu : process.env.MENU || '', // Not Available in current Version
   WORKTYPE: process.env.WORKTYPE || 'private'
 };
 
