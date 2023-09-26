@@ -94,10 +94,10 @@ ${sɪɢᴍᴀ_readmore}
     async(Void, citel) => {
         const { commands } = require('../lib');
         let str = `
-╭━━〘 *${Config.botname}* 〙────⊷     
+╭━━〘 *${name.botname}* 〙────⊷     
 ┃ ✭ Theme: ${tlang().title}
 ┃ ✭ Prefix: ${prefix}
-┃ ✭ Owner: ${Config.ownername}
+┃ ✭ Owner: ${name.ownername}
 ┃ ✭ Commands: ${commands.length}
 ┃ ✭ Uptime: ${runtime(process.uptime())}
 ┃ ✭ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
@@ -113,7 +113,7 @@ ${sɪɢᴍᴀ_readmore}
         
 
 //str += `╰━━━━━━━━━━━───⊷\nsᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo`
-        return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str + Config.caption ,footer: tlang().footer, headerType: 4 })
+        return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str + name.caption ,footer: tlang().footer, headerType: 4 })
     }
 )
       //---------------------------------------------------------------------------
