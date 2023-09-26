@@ -185,7 +185,7 @@ ${sɪɢᴍᴀ_readmore}
     kingcmd: "file",
     infocmd: "to get extact name where that command is in repo.\nSo user can edit that.",
     kingclass: "general",
-    react: "👑",
+    //react: "👑",
     kingpath: __filename
 },
  async(Void, citel, text ,{isCreator }) => {
