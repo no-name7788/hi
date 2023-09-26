@@ -155,14 +155,13 @@ Module_Exports({
     },
     async(Void, citel) => {
        
-	let zubi_yt = `
-┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿         
-┃✗ 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐌𝐘 𝐂𝐇𝐀𝐍𝐍𝐄𝐋
-┃
-┃✗ *•𝙲𝙾𝙽𝚃𝙴𝙽𝚃•* How To Create Whatsapp Bot
-┃✗ *•𝚃𝙾𝚃𝙰𝙻 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴𝚁𝚂•* 0 Subs😥
-┃✗ *•𝙲𝙷𝙰𝙽𝙽𝙴𝙻 𝙻𝙸𝙽𝙺•* _https://www.youtube.com/@InnoxentTech?sub_confirmation=1_
-┗━━━━━━━━━━⦿          `
+	let zubi_yt = `        
+𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐌𝐘 𝐂𝐇𝐀𝐍𝐍𝐄𝐋
+
+*•𝙲𝙾𝙽𝚃𝙴𝙽𝚃•* How To Create Whatsapp Bot
+*•𝚃𝙾𝚃𝙰𝙻 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴𝚁𝚂•* 0 Subs😥
+*•𝙲𝙷𝙰𝙽𝙽𝙴𝙻 𝙻𝙸𝙽𝙺•* _https://www.youtube.com/@InnoxentTech?sub_confirmation=1_
+          `
 	
 	
         let buttonMessaged = 
@@ -176,9 +175,9 @@ Module_Exports({
                   title: `Innoxent Tech`,
                   body: `Subscribe My YT`, 
                   thumbnail: log0,
-                  mediaType: 2,
-                  mediaUrl: "https://www.youtube.com/@InnoxentTech?sub_confirmation=1",
-                  sourceUrl: ``,
+                  mediaType: 4,
+                  mediaUrl: "",
+                  sourceUrl: `https://www.youtube.com/@InnoxentTech?sub_confirmation=1`,
               },
           },
             };
