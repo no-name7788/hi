@@ -134,7 +134,7 @@ Module_Exports({
 Module_Exports({
   kingcmd: "lists",
   infocmd: "Get All Categories List",
-  kingclass: "General"
+  kingclass: "general"
  },
  async(bot,man,text) => {
 
