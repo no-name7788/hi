@@ -87,7 +87,7 @@ ${sɪɢᴍᴀ_readmore}
 
       //---------------------------------------------------------------------------
       sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-        kingcmd: "list",
+        kingcmd: "listc",
         infocmd: "list menu",
         kingclass: "general",
         //react: "🥀"
@@ -110,7 +110,7 @@ text = '';
         
 
 //str += `╰━━━━━━━━━━━───⊷\nsᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo`
-       try{ return await mabotn.sendMessage(man.chat, { image: { url: THUMB_IMAGE }, caption: text + name.caption}); }catch{return await send(citel,str,{},"",citel);}
+       try{ return await bot.sendMessage(man.chat, { image: { url: THUMB_IMAGE }, caption: text + name.caption}); }catch{return await send(citel,str,{},"",citel);}
     }
 )
       //---------------------------------------------------------------------------
