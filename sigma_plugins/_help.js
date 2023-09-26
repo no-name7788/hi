@@ -25,9 +25,9 @@ async(Void, citel, text) => {
         if(cmd){
                     arr.push(`┏━━⟪ ${mztit} ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
                     if (cmd.kingclass) arr.push(`┃✗ •ᴄᴀᴛᴇɢᴏʀʏ• ${cmd.kingclass}`);
-                    if (cmd.shortcut) arr.push(`┃✗ •ᴀʟɪᴀs• ${cmd.shortcut}`);
-                    if (cmd.infocmd) arr.push(`┃✗ •ᴅᴇsᴄʀɪᴘᴛɪᴏɴ• ${cmd.infocmd}`);
-                    if (cmd.use) arr.push(`┃✗ •ᴜsᴀɢᴇ•\n ${prefix}${cmd.kingcmd} ${cmd.use}\n┗━━━━━━━━━━⦿`);
+                    if (cmd.shortcut) arr.push(`┃✗ •sʜᴏʀᴛᴄᴜᴛ• ${cmd.shortcut}`);
+                    if (cmd.use) arr.push(`┃✗ •ᴜsᴀɢᴇ•\n ${prefix}${cmd.kingcmd} ${cmd.use}`);
+                    if (cmd.infocmd) arr.push(`┃✗ •ɪɴꜰᴏ• ${cmd.infocmd}\n┗━━━━━━━━━━⦿`);
                     return await citel.reply(arr.join('\n')); 
         }
         const cmds = {}
@@ -70,12 +70,12 @@ ${sɪɢᴍᴀ_readmore}
            zubair += `┏━━『 ${tiny(kingclass)} 』━━❖\n` ;
            if(text.toLowerCase() == kingclass.toLowerCase().trim()){ ctgry  = `┏━━『 ${tiny(kingclass)} 』━━❖\n` ;      
                 for (const plugins of cmds[kingclass]) { ctgry += `┃ ${fancytext(plugins,1)}\n` ; }
-                ctgry += `┗━━━━━━━━━━◉\n*⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ*`  ;break ;
+                ctgry += `┗━━━━━━━━━━◉\n${name.caption}`  ;break ;
            }else { for (const plugins of cmds[kingclass]) { zubair += `┃ ${fancytext(plugins,1)}\n` ; }
                  zubair += `┗━━━━━━━━━━━◉\n`  ; 
            }
         }
-        zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇxᴀᴍᴘʟᴇ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n   *⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸* sɪɢᴍᴀ ᴹᴰ `
+        zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇxᴀᴍᴘʟᴇ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n${name.caption}`
         return await Void.sendMessage(citel.chat, { image: { url: await botpic() }, caption: ctgry ? ctgry : zubair, } );
 
 
@@ -186,7 +186,7 @@ ${sɪɢᴍᴀ_readmore}
     infocmd: "to get extact name where that command is in repo.\nSo user can edit that.",
     kingclass: "general",
     react: "👑",
-    filename: __filename
+    kingpath: __filename
 },
  async(Void, citel, text ,{isCreator }) => {
    if(!isCreator) return citel.reply("ᴏɴʟʏ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ")
@@ -210,7 +210,7 @@ ${sɪɢᴍᴀ_readmore}
           if (!cmd) return await citel.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs");
           else Maher.push(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
           if (cmd.kingclass) Maher.push(`┃✗ •ᴛʏᴘᴇ• ${cmd.kingclass}`);
-          if(cmd.filename) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.filename}\n┗━━━━━━━━━━⦿\n      *•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`)
+          if(cmd.kingpath) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.kingpath}\n┗━━━━━━━━━━⦿\n      *•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`)
           return await citel.reply(Maher.join('\n'));
   
 
