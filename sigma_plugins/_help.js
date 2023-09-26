@@ -31,6 +31,7 @@ async(Void, citel, text) => {
                     return await citel.reply(arr.join('\n')); 
         }
         const cmds = {}
+        try{
         commands.map(async(command, index) => {
             if (command.dontAddCommandList === false && command.kingcmd !== undefined) {
                 if (!cmds[command.kingclass]) cmds[command.kingclass] = []
@@ -60,7 +61,7 @@ async(Void, citel, text) => {
 ┃✗ *•ᴜsᴇʀs•* ${sɪɢᴍᴀ_total}
 ┃✗ *•ᴠᴇʀsɪᴏɴ•* sɪɢᴍᴀ
 ┃✗ *•ʙʀᴀɴᴄʜ•* ${name.BRANCH}
-┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ* ♕
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ*
 ┗━━━━━━━━━━━⦿       
 
 ${sɪɢᴍᴀ_readmore}
@@ -70,13 +71,14 @@ ${sɪɢᴍᴀ_readmore}
            zubair += `┏━━『 ${tiny(kingclass)} 』━━❖\n` ;
            if(text.toLowerCase() == kingclass.toLowerCase().trim()){ ctgry  = `┏━━『 ${tiny(kingclass)} 』━━❖\n` ;      
                 for (const plugins of cmds[kingclass]) { ctgry += `┃ ${fancytext(plugins,1)}\n` ; }
-                ctgry += `┗━━━━━━━━━━◉\n${name.caption}`  ;break ;
+                ctgry += `┗━━━━━━━━━━◉\n*⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ*`  ;break ;
            }else { for (const plugins of cmds[kingclass]) { zubair += `┃ ${fancytext(plugins,1)}\n` ; }
                  zubair += `┗━━━━━━━━━━━◉\n`  ; 
            }
         }
         zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇxᴀᴍᴘʟᴇ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n${name.caption}`
-        return await Void.sendMessage(citel.chat, { image: { url: await botpic() }, caption: ctgry ? ctgry : zubair, } );
+        return await Void.sendMessage(citel.chat, { image: { url: await botpic() }, caption: ctgry ? ctgry : zubair, } )
+      }catch {citel.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
 
 
 }
@@ -91,6 +93,7 @@ ${sɪɢᴍᴀ_readmore}
      },
     async(Void, citel) => {
         const { commands } = require('../lib');
+        try{
         timestampe = sɪɢᴍᴀ_speed();
         latensie = sɪɢᴍᴀ_speed() - timestampe;
         let [sɪɢᴍᴀ_date, sɪɢᴍᴀ_time] = new Date()
@@ -130,6 +133,7 @@ ${sɪɢᴍᴀ_readmore}
 
 //Zubair += `Maher Zubair`
         return await Void.sendMessage(citel.chat, Maher)
+      }catch {person.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
     }
 )
       //---------------------------------------------------------------------------
