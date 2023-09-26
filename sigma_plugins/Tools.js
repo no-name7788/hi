@@ -72,9 +72,9 @@ Module_Exports({
 
 
 Module_Exports({
-  kingcmd: "install",
-  kingclass: "tools",
-  infocmd: "Installs external Plugins..",
+  pattern: "install",
+  category: "tools",
+  desc: "Installs external Plugins..",
   use: " ",
 },
 async(sigma, person, memo, {isCreator}) => {
@@ -117,9 +117,9 @@ async(sigma, person, memo, {isCreator}) => {
     plugin['url'] = url;
 
     await new plugindb(plugin).save();
-    person.reply('*ᴘʟᴜɢɪɴ* ' + l + (' *ɪɴsᴛᴀʟʟᴇᴅ ɪɴ* ' + `*sɪɢᴍᴀ ᴹᴰ*` + ' ' ));
+    person.reply('*ᴘʟᴜɢɪɴ* ' + l + (' *ɪɴsᴛᴀʟʟᴇᴅ ɪɴ* ' + `*sɪɢᴍᴀ ᴹᴰ*` + ' ' ))
 
-  }
+  }})
 
 //------------------------------------------------------------------
 Module_Exports(
@@ -133,6 +133,8 @@ Module_Exports(
           if (!isCreator) return citel.reply(tlang().owner);
             const { exec } = require("child_process");
              citel.reply(`*_Please Wait While_*\n*_${name.botname} Restarting_*`); exec('pm2 restart all'); });
+
+
 
 
 
