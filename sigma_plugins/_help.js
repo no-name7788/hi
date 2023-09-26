@@ -86,7 +86,7 @@ ${sɪɢᴍᴀ_readmore}
 )
 
       //---------------------------------------------------------------------------
-     /* sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
+      sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
         kingcmd: "listall",
         shortcut: ["listc"],
         infocmd: "list menu",
@@ -136,7 +136,7 @@ ${sɪɢᴍᴀ_readmore}
         return await bot.sendMessage(person.chat, Maher)
       //}catch {person.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
     }
-)*/
+)
       //---------------------------------------------------------------------------
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
           kingcmd: "ownner",
