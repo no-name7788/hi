@@ -9,6 +9,7 @@
   const sɪɢᴍᴀ_readmore = long.repeat(4001)
   const sɪɢᴍᴀ_speed = require('performance-now')
   const sɪɢᴍᴀ_ᴍᴅ = require('../lib/sigma_plugins')
+  
 
   //------------------------------------------------------------------------------------
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
@@ -214,7 +215,7 @@ ${sɪɢᴍᴀ_readmore}
           if (!cmd) return await citel.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs");
           else Maher.push(`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
           if (cmd.kingclass) Maher.push(`┃✗ •ᴛʏᴘᴇ• ${cmd.kingclass}`);
-          if(cmd.kingpath) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.kingpath}\n┗━━━━━━━━━━⦿\n${name.caption}`)
+          if(cmd.kingpath) Maher.push(`┃✗ •ꜰɪʟᴇ-ᴘᴀᴛʜ• ${cmd.kingpath}\n┗━━━━━━━━━━⦿\n${name.caption}`)
           return await citel.reply(Maher.join('\n'));
   
 
