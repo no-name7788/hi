@@ -4,7 +4,7 @@
   const moment = require("moment-timezone")
   const fs = require("fs")
 
-  let { fancytext, tlang, tiny, runtime, formatp, botpic, getBuffer ,prefix, sck1,name } = require("../lib");
+  let { fancytext, tlang, tiny, runtime, formatp, botpic, getBuffer ,prefix, sck1,name, Module_Exports } = require("../lib");
   const long = String.fromCharCode(8206)
   const sɪɢᴍᴀ_readmore = long.repeat(4001)
   const sɪɢᴍᴀ_speed = require('performance-now')
@@ -19,7 +19,7 @@
     kingclass: "general",
      
 },
-async(Void, citel, text) => {
+async(bot, person, text) => {
     const { commands } = require('../lib');
         let arr = [];
         const cmd =text ?  commands.find( (cmd) => cmd.kingcmd === (text) ) : false
@@ -29,7 +29,7 @@ async(Void, citel, text) => {
                     if (cmd.shortcut) arr.push(`┃✗ •sʜᴏʀᴛᴄᴜᴛ• ${cmd.shortcut}`);
                     if (cmd.use) arr.push(`┃✗ •ᴜsᴀɢᴇ•\n ${prefix}${cmd.kingcmd} ${cmd.use}`);
                     if (cmd.infocmd) arr.push(`┃✗ •ɪɴꜰᴏ• ${cmd.infocmd}\n┗━━━━━━━━━━⦿`);
-                    return await citel.reply(arr.join('\n')); 
+                    return await person.reply(arr.join('\n')); 
         }
         const cmds = {}
         try{
@@ -46,7 +46,7 @@ async(Void, citel, text) => {
 .split(",");
         let sɪɢᴍᴀ_total = await sck1.countDocuments()
         let zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿      
-┃✗ *•ᴡᴇʟᴄᴏᴍᴇ•* ${citel.pushName}
+┃✗ *•ᴡᴇʟᴄᴏᴍᴇ•* ${person.pushName}
 ┃✗ *•ʙᴏᴛ-ɴᴀᴍᴇ•* ${name.botname}
 ┃✗ *•ᴏᴡɴᴇʀ•* ${name.ownername}
 ┃✗ *•ᴘʀᴇғɪx•* 『 *${prefix}* 』
@@ -78,8 +78,8 @@ ${sɪɢᴍᴀ_readmore}
            }
         }
         zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇxᴀᴍᴘʟᴇ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n${name.caption}`
-        return await Void.sendMessage(citel.chat, { image: { url: await botpic() }, caption: ctgry ? ctgry : zubair, } )
-      }catch {citel.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
+        return await bot.sendMessage(person.chat, { image: { url: await botpic() }, caption: ctgry ? ctgry : zubair, } )
+      }catch {person.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
 
 
 }
@@ -92,7 +92,7 @@ ${sɪɢᴍᴀ_readmore}
         infocmd: "list menu",
         kingclass: "general",
      },
-    async(Void, citel) => {
+    async(bot, person) => {
         const { commands } = require('../lib');
        // try{
         timestampe = sɪɢᴍᴀ_speed();
@@ -133,19 +133,18 @@ ${sɪɢᴍᴀ_readmore}
         
 
 //Zubair += `Maher Zubair`
-        return await Void.sendMessage(citel.chat, Maher)
-      //}catch {citel.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
+        return await bot.sendMessage(person.chat, Maher)
+      //}catch {person.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
     }
 )
       //---------------------------------------------------------------------------
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-          kingcmd: "owner",
+          kingcmd: "ownner",
           infocmd: "To check ping",
           kingclass: "general",
-          //react: "💜",
-          kingpath: __filename
+
       },
-      async(Void, citel) => {
+      async(bot, person) => {
           const name = require('../Setting')
           const thmb = await getBuffer(global.THUMB_IMAGE)
           const vcard = 'BEGIN:VCARD\n' +
@@ -165,11 +164,11 @@ ${sɪɢᴍᴀ_readmore}
                       thumbnail: thmb,
                       mediaType: 1,
                       mediaUrl: '',
-                      sourceUrl: `https://wa.me/+` + owner + '?text=Hii+bro,I+am+' + citel.pushName,
+                      sourceUrl: `https://wa.me/+` + owner + '?text=Hii+bro,I+am+' + person.pushName,
                   },
               },
           };
-          return await Void.sendMessage(citel.chat, buttonMessaged, {   quoted: citel, });
+          return await bot.sendMessage(person.chat, buttonMessaged, {   quoted: person, });
   
       }
   )
@@ -179,7 +178,7 @@ ${sɪɢᴍᴀ_readmore}
       fs.readdir(text, (err, files) => {
         if (err) {reject('Error reading directory'); }
         else {
-          //citel.reply("Files Here \n "+files.toString())
+          //person.reply("Files Here \n "+files.toString())
           resolve(files);
         }
       });
@@ -190,20 +189,19 @@ ${sɪɢᴍᴀ_readmore}
     kingcmd: "file",
     infocmd: "to get extact name where that command is in repo.\nSo user can edit that.",
     kingclass: "general",
-    //react: "👑",
-    kingpath: __filename
+
 },
- async(Void, citel, text ,{isCreator }) => {
-   if(!isCreator) return citel.reply("ᴏɴʟʏ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ")
-   if(!text) return citel.reply("ᴘʟᴇᴀsᴇ, ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ᴄᴏᴍᴍᴀɴᴅ/ᴅɪʀᴇᴄᴛᴏʀʏ")
+ async(bot, person, text ,{isCreator }) => {
+   if(!isCreator) return person.reply("ᴏɴʟʏ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ")
+   if(!text) return person.reply("ᴘʟᴇᴀsᴇ, ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ᴄᴏᴍᴍᴀɴᴅ/ᴅɪʀᴇᴄᴛᴏʀʏ")
    if(text.startsWith("."))
    {
       let res="------------- FILE MANAGER -------------\n"
       try {
             const sɪɢᴍᴀ_files = await readDirectory(text);
             files.forEach(sɪɢᴍᴀ_file => { res += file + '\n'; });
-            await citel.reply(res.toString());
-      } catch (error) {  citel.reply(error); }
+            await person.reply(res.toString());
+      } catch (error) {  person.reply(error); }
         return;
    }
    
@@ -212,13 +210,59 @@ ${sɪɢᴍᴀ_readmore}
    
    let Maher = [];
           const cmd = commands.find((cmd) => cmd.kingcmd === (text.split(" ")[0].toLowerCase()))
-          if (!cmd) return await citel.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs");
+          if (!cmd) return await person.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs");
           else Maher.push(`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
-          if (cmd.kingclass) Maher.push(`┃✗ •ᴛʏᴘᴇ• ${cmd.kingclass}`);
+          if (cmd.kingclass) Maher.push(`┃✗ •ᴄʟᴀss• ${cmd.kingclass}`);
           if(cmd.kingpath) Maher.push(`┃✗ •ꜰɪʟᴇ-ᴘᴀᴛʜ• ${cmd.kingpath}\n┗━━━━━━━━━━⦿\n${name.caption}`)
-          return await citel.reply(Maher.join('\n'));
+          return await person.reply(Maher.join('\n'));
   
 
 
   })
-  
+ //-----------------------------------------------------------------
+ Module_Exports({
+  kingcmd: "lists",
+  infocmd: "Get All Categories List",
+  kingclass: "General"
+ },
+ async(bot,man,text) => {
+
+
+  let sigma_lists = `
+┏━━⟪⟪ ${mztit} ⟫━⦿
+┃✗ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴀᴛᴇɢᴏʀɪᴇs*
+┃✗ ᴍɪsᴄ
+┃✗ ᴀɴɪᴍᴇ ᴘɪᴄs
+┃✗ ᴄᴏɴᴠᴇʀᴛᴇʀ
+┃✗ sᴛɪᴄᴋᴇʀ
+┃✗ ɢʀᴏᴜᴘ
+┃✗ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
+┃✗ ᴇᴄᴏɴᴏᴍʏ
+┃✗ ꜰᴜɴ
+┃✗ ɢᴀᴍᴇ
+┃✗ ᴀɪ
+┃✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ
+┃✗ ᴛᴏᴏʟs
+┃✗ ɢᴇɴᴇʀᴀʟ
+┃✗ ᴏᴡɴᴇʀ 
+┃✗ ʟᴏɢᴏ 
+┃✗ ᴜsᴇʀ 
+┃✗ sᴇᴀʀᴄʜ
+┃✗ ᴇᴅɪᴛᴏʀ
+┃✗ ${prefix}list Category Name
+┃✗ To See Its All Commands
+┃✗ ${prefix}list developer
+┗━━━━━━━━━━⦿`
+    
+    
+          let lists = 
+              {
+              image: { url: await botpic() },
+              caption: sigma_lists,
+              footer: tlang().footer,
+              headerType: 4,
+
+              };
+             
+          return await Void.sendMessage(citel.chat, lists, {   quoted: citel, });
+ })
