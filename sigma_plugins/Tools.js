@@ -94,7 +94,7 @@ Module_Exports(
      }, async(Void, citel,text,{ isCreator }) => {
           if (!isCreator) return citel.reply(tlang().owner);
             const { exec } = require("child_process");
-             citel.reply(`*Please Wait While*\n${name.botname} *Restarting*`); exec('pm2 restart all'); });
+             citel.reply(`*_Please Wait While_*\n*_${name.botname} Restarting_*`); exec('pm2 restart all'); });
 
 
 
