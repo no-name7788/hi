@@ -49,7 +49,7 @@ module.exports = {
   caption :process.env.CAPTION || "\t*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ Maher Zubair•* ",   //*『sᴜʙsᴄʀɪʙᴇ • sᴜʜᴀɪʟ ᴛᴇᴄʜ』*\n youtube.com/@suhailtechinfo0"),
   promote_demote_messages : process.env.PROMOTE_DEMOTE_MESSAGES || 'true' ,
   OPENAI_API_KEY: process.env.OPENAI_API_KEY ||'' ,
-  VERSION: process.env.VERSION || 'ᴠ.1.0.0',
+  VERSION: process.env.VERSION || '𝒗.1.0.0',
   LANG: process.env.THEME|| 'SHELBY',
   menu : process.env.MENU || 'Suhail-Md', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Suhail-Md Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
   WORKTYPE: process.env.WORKTYPE || 'private'
