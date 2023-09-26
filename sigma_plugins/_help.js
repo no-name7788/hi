@@ -133,7 +133,7 @@ ${sɪɢᴍᴀ_readmore}
 
 //Zubair += `Maher Zubair`
         return await Void.sendMessage(citel.chat, Maher)
-      }catch {person.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
+      }catch {citel.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
     }
 )
       //---------------------------------------------------------------------------
