@@ -160,9 +160,9 @@ Module_Exports({
 ┃✗ ᴜsᴇʀ 
 ┃✗ sᴇᴀʀᴄʜ
 ┃✗ ᴇᴅɪᴛᴏʀ
-┃✗ ${prefix}list Category Name
-┃✗ To See Its All Commands
-┃✗ ${prefix}list developer
+┃✗ *${prefix}list Category Name*
+┃✗ *To See Its All Commands*
+┃✗ *${prefix}list developer*
 ┗━━━━━━━━━━⦿        `
     
     
