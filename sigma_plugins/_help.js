@@ -59,7 +59,7 @@ async(Void, citel, text) => {
 ┃✗ *•sᴘᴇᴇᴅ•* ${latensie.toFixed(4)} ᴍs
 ┃✗ *•ᴘʟᴀᴛꜰᴏʀᴍ•* ᴍᴀᴄ-ᴏs
 ┃✗ *•ᴜsᴇʀs•* ${sɪɢᴍᴀ_total}
-┃✗ *•ᴠᴇʀsɪᴏɴ•* sɪɢᴍᴀ
+┃✗ *•ᴠᴇʀsɪᴏɴ•* ${name.VERSION}
 ┃✗ *•ʙʀᴀɴᴄʜ•* ${name.BRANCH}
 ┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ*
 ┗━━━━━━━━━━━⦿       
@@ -86,34 +86,54 @@ ${sɪɢᴍᴀ_readmore}
 
       //---------------------------------------------------------------------------
       sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-        kingcmd: "list",
+        kingcmd: "listall",
+        shortcut: ["listc"],
         infocmd: "list menu",
         kingclass: "general",
-        //react: "🥀"
      },
     async(Void, citel) => {
         const { commands } = require('../lib');
-        let str = `
-╭━━〘 *${name.botname}* 〙────⊷     
-┃ ✭ Theme: ${tlang().title}
-┃ ✭ Prefix: ${prefix}
-┃ ✭ Owner: ${name.ownername}
-┃ ✭ Commands: ${commands.length}
-┃ ✭ Uptime: ${runtime(process.uptime())}
-┃ ✭ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-╰━━━━━━━━━━━━━━⊷\n`
+       // try{
+        timestampe = sɪɢᴍᴀ_speed();
+        latensie = sɪɢᴍᴀ_speed() - timestampe;
+        let [sɪɢᴍᴀ_date, sɪɢᴍᴀ_time] = new Date()
+  .toLocaleString("en-pk", { timeZone: global.timezone })
+  .split(",");
+        let sɪɢᴍᴀ_total = await sck1.countDocuments()
+        let Zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿
+┃✗ •ᴏᴡɴᴇʀ• ${name.ownername}
+┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${name.botname}
+┃✗ •ᴘʀᴇғɪx• 『 *${prefix}* 』
+┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
+┃✗ •ᴍᴏᴅᴇ• ${name.WORKTYPE}
+┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
+┃✗ •ᴅᴀᴛᴇ• ${sɪɢᴍᴀ_date}
+┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
+┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
+┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
+┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
+┃✗ •ᴜsᴇʀs• ${sɪɢᴍᴀ_total}
+┃✗ •ᴠᴇʀsɪᴏɴ• ${name.VERSION}
+┃✗ •ʙʀᴀɴᴄʜ• ${name.BRANCH}
+┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ
+┗━━━━━━━━━━━⦿\n${sɪɢᴍᴀ_readmore}`
 
         for (let i = 0; i < commands.length; i++) 
         {
              if(commands[i].kingcmd==undefined) continue
-             str +=       `╭ ${i+1} *${fancytext(commands[i].kingcmd,1)}*\n`                // ${i+1} 
-             str += `╰➛ ${fancytext(commands[i].infocmd,1)}\n`
+             Zubair +=       `┏➛ ${i+1} *${fancytext(commands[i].kingcmd,1)}*\n`                // ${i+1} 
+             Zubair += `┗➛ ${fancytext(commands[i].infocmd,1)}\n`
         }
-
+              let Maher = {
+      image: { url: await botpic() },
+      caption: Zubair + name.caption,
+}
         
 
-//str += `╰━━━━━━━━━━━───⊷\nsᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo`
-        return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str + name.caption ,footer: tlang().footer, headerType: 4 })
+//Zubair += `Maher Zubair`
+        return await Void.sendMessage(citel.chat, Maher)
+      //}catch {citel.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
     }
 )
       //---------------------------------------------------------------------------
