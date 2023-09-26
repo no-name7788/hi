@@ -105,7 +105,7 @@ ${sɪɢᴍᴀ_readmore}
 ┃ ✭ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 ╰━━━━━━━━━━━━━━⊷\n`
 text = '';
-        for (let i = 0; i < commands.length; i++){if(commands[i].pattern==undefined){ continue; }else { text += `*${i+1} ${fancytext(commands[i].pattern,1)}*\n  ${fancytext(commands[i].desc,1)}\n`}}
+        for (let i = 0; i < commands.length; i++){if(commands[i].kingcmd==undefined){ continue; }else { text += `*${i+1} ${fancytext(commands[i].kingcmd,1)}*\n  ${fancytext(commands[i].infocmd,1)}\n`}}
 
         
 
