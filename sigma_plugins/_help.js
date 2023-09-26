@@ -85,44 +85,40 @@ ${sɪɢᴍᴀ_readmore}
 }
 )
 
-      //---------------------------------------------------------------------------
+  sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
+          kingcmd: "ownner",
+          infocmd: "To check ping",
+          kingclass: "general",
 
-      //---------------------------------------------------------------------------
-      sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-        kingcmd: "ownner",
-        infocmd: "To find owner number",
-        kingclass: "general",
-    },
-    async(bot, man) => {
-      const name = require('../Setting')
-      const thmb = await getBuffer(global.THUMB_IMAGE)
-        const vcard = 'BEGIN:VCARD\n' +
-            'VERSION:3.0\n' +
-            'FN:' + name.ownername + '\n' +
-            'ORG:;\n' +
-            'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
-            'END:VCARD'
-        let Maher = {
-            contacts: { displayName: name.ownername, contacts: [{ vcard }] },
-            contextInfo: {
-                externalAdReply: {
-                    title: name.ownername,
-                    body: 'ᴛᴀᴘ ʜᴇʀᴇ ᴛᴏ ᴍᴇssᴀɢᴇ ᴍᴇ',
-                    renderLargerThumbnail: true,
-                    thumbnailUrl: ``,
-                    thumbnail: thmb,
-                    mediaType: 4,
-                    mediaUrl: '',
-                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=ʜɪ ʙʀᴏ, ɪ ᴀᴍ ' + man.pushName,
-                },
-            },
-        };
-        return await bot.sendMessage(man.chat, Maher, {
-            quoted: man,
-        });
-
-    }
-)
+      },
+      async(bot, person) => {
+          const name = require('../Setting')
+          const thmb = await getBuffer(global.THUMB_IMAGE)
+          const vcard = 'BEGIN:VCARD\n' +
+              'VERSION:3.0\n' +
+              'FN:' + name.ownername + '\n' +
+              'ORG:;\n' +
+              'TEL;type=CELL;type=VOICE;waid=' + global.owner + ':+' + global.owner + '\n' +
+              'END:VCARD'
+          let buttonMessaged = {
+              contacts: { displayName: name.ownername, contacts: [{ vcard }] },
+              contextInfo: {
+                  externalAdReply: {
+                      title: name.ownername,
+                      body: 'Touch here.',
+                      renderLargerThumbnail: true,
+                      thumbnailUrl: ``,
+                      thumbnail: thmb,
+                      mediaType: 1,
+                      mediaUrl: '',
+                      sourceUrl: `https://wa.me/+` + owner + '?text=Hii+bro,I+am+' + person.pushName,
+                  },
+              },
+          };
+          return await bot.sendMessage(person.chat, buttonMessaged, {   quoted: person, });
+  
+      }
+  )
 
   const readDirectory = (text) => {
     return new Promise((resolve, reject) => {
