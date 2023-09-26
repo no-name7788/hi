@@ -291,6 +291,24 @@ const { formatp, runtime } = require("../lib");
  
 //-------------------------------------------------------------------------
 Module_Exports({
+  kingcmd: "theme",
+  shortcut: ["themes"],
+  infocmd: "To find all themes",
+  kingclass: "general",
+  kingpath: __filename,
+},
+async(bot, man,write,{isCreator}) => {
+
+if(!isCreator) return man.reply(tlang().owner);
+let SIGMA_THEMES=`┏━━⟪⟪ ${mztit} ⟫━⦿ \n┃✗ *•ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜᴇᴍᴇs•*\n`
+SIGMA_THEMES+=`┃✗ SHELBY\n┃✗ JOKER\n┃✗ PATRICK\n┃✗ SIGMA_MD\n┃✗ AVENGERS\n┃✗ BTS\n┃✗ MOMOLAND\n┃✗ ADAM\n┃✗ AYANOKOJI\n┃✗ EDITH\n┃✗ FRIDAY\n┃✗ GENOS\n┃✗ GIDEON\n┃✗ GOKU\n┃✗ LUFFY\n┃✗ NARUTO\n┃✗ NEZUKO\n┃✗ PARKER\n┃✗ MZ\n┃✗ ${prefix}setvar THEME:BTS\n┗━━━━━━━━━━⦿`
+return man.reply(SIGMA_THEMES)
+  
+}
+)
+
+//--------------------------------------------------------------------------
+Module_Exports({
   kingcmd: "speed",
   infocmd: "TO check bot responding speed",
   kingclass: "tools",

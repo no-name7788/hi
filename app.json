@@ -135,7 +135,7 @@
 },
 "REMOVE_BG_KEY": {
   "description": "Add The RemoveBg Api Key.Git New APi Key From remove.bg",
-   "value": "34wcCGPoe3yaGtpiBZgx4SN7",
+   "value": "",
     "required": false
 },
 "CAPTION": {
