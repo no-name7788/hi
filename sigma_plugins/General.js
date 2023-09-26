@@ -147,36 +147,40 @@ async(bot, citel, {isCreator}) => {
 )
 
 Module_Exports({
-        kingcmd: "link",
-        shortcut: ["ytube", "yt", "myyt"],
-        infocmd: "Sends info about My Ytube Channel __CheckOut :_ www.Youtube.com/c/SuhailTechInfo",
+        kingcmd: "yt",
+        shortcut: ["ytube", "link", "myyt"],
+        infocmd: "Sends info about My Ytube Channel CheckOut : https://www.youtube.com/@InnoxentTech",
         kingclass: "developer",
         kingpath: __filename,
     },
     async(Void, citel) => {
        
-	let cap = `
-╔══════════════════════════╗
-  ☞𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐘𝐎𝐔𝐓𝐔𝐁𝐄 𝐂𝐇𝐀𝐍𝐍𝐄𝐋☜
-╚══════════════════════════╝\n
-*⭐ Youtube Content :* How To Create Whatsapp Bot
-*🍽️ Total Subscriber:* 36 Subscribers
-*🍁 Channel Link:* _https://youtube.com/suhailtechinfo?sub_confirmation=1_\n
-╭━━━━━━━━━━━━━━━━━━━━╮
-┇  ╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗
-┇  ║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣
-┇  ╠╗║╚╝║║╠╗║╚╣║║║║║═╣
-┇  ╚═╩══╩═╩═╩═╩╝╚╩═╩═╝
-╰━━━━━━━━━━━━━━━━━━━━╯
-𝐏𝐋𝐄𝐀𝐒𝐄 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐌𝐘 𝐘𝐎𝐔𝐓𝐔𝐁𝐄 𝐂𝐇𝐀𝐍𝐍𝐄𝐋*`
+	let zubi_yt = `
+┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿         
+┃✗ 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐌𝐘 𝐂𝐇𝐀𝐍𝐍𝐄𝐋
+┃
+┃✗ *•𝙲𝙾𝙽𝚃𝙴𝙽𝚃•* How To Create Whatsapp Bot
+┃✗ *•𝚃𝙾𝚃𝙰𝙻 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴𝚁𝚂•* 0 Subs😥
+┃✗ *•𝙲𝙷𝙰𝙽𝙽𝙴𝙻 𝙻𝙸𝙽𝙺•* _https://www.youtube.com/@InnoxentTech?sub_confirmation=1_
+┗━━━━━━━━━━⦿          `
 	
 	
         let buttonMessaged = 
             {
             image: { url: await botpic() },
-            caption: cap,
+            caption: zubi_yt,
             footer: tlang().footer,
-            headerType: 4
+            headerType: 4,
+             contextInfo: {
+              externalAdReply: {
+                  title: `Innoxent Tech`,
+                  body: `Subscribe My YT`, 
+                  thumbnail: log0,
+                  mediaType: 2,
+                  mediaUrl: "https://www.youtube.com/@InnoxentTech?sub_confirmation=1",
+                  sourceUrl: ``,
+              },
+          },
             };
            
         return await Void.sendMessage(citel.chat, buttonMessaged, {   quoted: citel, });
