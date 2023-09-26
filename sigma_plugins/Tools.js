@@ -72,7 +72,7 @@ Module_Exports({
 
 
 Module_Exports({
-  pattern: "install",
+  kingcmd: "install",
   category: "tools",
   desc: "Installs external Plugins..",
   use: " ",
