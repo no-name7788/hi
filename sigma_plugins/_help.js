@@ -212,7 +212,7 @@ ${sɪɢᴍᴀ_readmore}
    let Maher = [];
           const cmd = commands.find((cmd) => cmd.kingcmd === (text.split(" ")[0].toLowerCase()))
           if (!cmd) return await citel.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs");
-          else Maher.push(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
+          else Maher.push(`┏━━⟪⟪ ${mztit} ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
           if (cmd.kingclass) Maher.push(`┃✗ •ᴛʏᴘᴇ• ${cmd.kingclass}`);
           if(cmd.kingpath) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.kingpath}\n┗━━━━━━━━━━⦿\n${name.caption}`)
           return await citel.reply(Maher.join('\n'));
