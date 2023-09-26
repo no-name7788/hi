@@ -98,7 +98,7 @@ async(sigma, person, memo, {isCreator}) => {
     
     let fs = require('fs'), {data} = await axios.get(url.href);
 
-    let lp = /pattern: ["'](.*)["'],/g.exec(data);
+    let lp = /kingcmd: ["'](.*)["'],/g.exec(data);
     let lj = lp[1].split(' ')[0] || Math.random().toString(36).slice(-5);
     l = lj.replace(/[^A-Za-z]/g,'');
 
