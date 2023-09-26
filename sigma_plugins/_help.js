@@ -210,7 +210,7 @@ ${sɪɢᴍᴀ_readmore}
           if (!cmd) return await citel.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs");
           else Maher.push(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
           if (cmd.kingclass) Maher.push(`┃✗ •ᴛʏᴘᴇ• ${cmd.kingclass}`);
-          if(cmd.kingpath) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.kingpath}\n┗━━━━━━━━━━⦿\n      *•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`)
+          if(cmd.kingpath) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.kingpath}\n┗━━━━━━━━━━⦿\n${name.caption}`)
           return await citel.reply(Maher.join('\n'));
   
 
