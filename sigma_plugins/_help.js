@@ -86,7 +86,7 @@ ${sɪɢᴍᴀ_readmore}
 )
 
       //---------------------------------------------------------------------------
-      sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
+     /* sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
         kingcmd: "listall",
         shortcut: ["listc"],
         infocmd: "list menu",
@@ -136,7 +136,7 @@ ${sɪɢᴍᴀ_readmore}
         return await bot.sendMessage(person.chat, Maher)
       //}catch {person.reply("*_Unknown Error Occured,Or May Be Your TimeZone Is In Correct_*")}
     }
-)
+)*/
       //---------------------------------------------------------------------------
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
           kingcmd: "ownner",
@@ -220,49 +220,4 @@ ${sɪɢᴍᴀ_readmore}
 
   })
  //-----------------------------------------------------------------
- Module_Exports({
-  kingcmd: "lists",
-  infocmd: "Get All Categories List",
-  kingclass: "General"
- },
- async(bot,man,text) => {
 
-
-  let sigma_lists = `
-┏━━⟪⟪ ${mztit} ⟫━⦿        
-┃✗ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴀᴛᴇɢᴏʀɪᴇs*
-┃✗ ᴍɪsᴄ
-┃✗ ᴀɴɪᴍᴇ ᴘɪᴄs
-┃✗ ᴄᴏɴᴠᴇʀᴛᴇʀ
-┃✗ sᴛɪᴄᴋᴇʀ
-┃✗ ɢʀᴏᴜᴘ
-┃✗ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
-┃✗ ᴇᴄᴏɴᴏᴍʏ
-┃✗ ꜰᴜɴ
-┃✗ ɢᴀᴍᴇ
-┃✗ ᴀɪ
-┃✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ
-┃✗ ᴛᴏᴏʟs
-┃✗ ɢᴇɴᴇʀᴀʟ
-┃✗ ᴏᴡɴᴇʀ 
-┃✗ ʟᴏɢᴏ 
-┃✗ ᴜsᴇʀ 
-┃✗ sᴇᴀʀᴄʜ
-┃✗ ᴇᴅɪᴛᴏʀ
-┃✗ ${prefix}list Category Name
-┃✗ To See Its All Commands
-┃✗ ${prefix}list developer
-┗━━━━━━━━━━⦿        `
-    
-    
-          let lists = 
-              {
-              image: { url: await botpic() },
-              caption: sigma_lists,
-              footer: tlang().footer,
-              headerType: 4,
-
-              };
-             
-          return await bot.sendMessage(man.chat, lists, {   quoted: man, });
- })
