@@ -7,7 +7,7 @@
             use: '<quote|reply|tag>',
         },
  **/
-/* These Commands Are Still Under Development
+
 
 
 
@@ -368,4 +368,4 @@
                     Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
                 }
             }
-        )*/
+        )

@@ -1,6 +1,4 @@
-/*
 
-These Commands Are Still Underdevelopment
 
 const { tlang,Module_Exports } = require('../lib')
 const fs = require('fs')
@@ -171,4 +169,3 @@ Module_Exports({
         } else  citel.send(`Reply to the audio you want to change with.*`);
     }
 )
-*/
