@@ -58,38 +58,7 @@ Module_Exports({
 
 
 //---------------------------------------------------------------------------
-/*
-Module_Exports({
-        kingcmd: "gpt",
-        infocmd: "chat with an AI",
-        kingclass: "AI",
-        use: '<Hii, Suhail Tech Info>',
-        kingpath: __filename,
-    },
-    async(Void, citel,text) => 
-    {
-  if (!name.OPENAI_API_KEY || name.OPENAI_API_KEY=='' ||  !name.OPENAI_API_KEY.startsWith('sk') ) return citel.reply('You Dont Have OPENAI API KEY \nPlease Create OPEN API KEY from Given Link \nhttps://platform.openai.com/account/api-keys\nAnd Set Key in Heroku OPENAI_API_KEY Var  ')
-  if (!text) return citel.reply(`Hey there! ${citel.pushName}. How are you doing these days?`); 
-	
-const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${name.OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-3.5-turbo", // Specify the desired model here
-      messages: [{ role: "system", content: "You" }, { role: "user", content: text }],
-    }),
-  });
 
-  const data = await response.json();
-  //console.log("GPT REPONCE : ",data); 
-  if (!data.choices || data.choices.length === 0) {citel.reply("*Invalid ChatGPT API Key, Please Put New Key*"); }
-  return await  citel.reply(data.choices[0].message.content)
-
-    }
-)*/
 
 Module_Exports({
   kingcmd: "gpt",
@@ -101,10 +70,11 @@ Module_Exports({
    
     if(!text) return man.reply('*_Give me Text To Get ChatGpt Response_*');
         
-   
+   try{
        const response = await fetch(`https://aemt.me/openai?text=${text}`);
        const data = await response.json();
-       return man.reply(data.result);
+       return man.reply(data.result,{quoted:man});}
+       catch(e){man.reply("*_Unknown Error Occured_*")}
    }
 )
 
