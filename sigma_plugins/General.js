@@ -63,7 +63,7 @@ Module_Exports({
 Module_Exports({
   kingcmd: "gpt",
   shortcut: ["chatgpt", "openai"],
-  kingclass: "ai",
+  kingclass: "AI",
   infocmd: "To get open ai response"
 },
   async(bot, man,text) => {
