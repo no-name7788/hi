@@ -93,18 +93,18 @@ const response = await fetch("https://api.openai.com/v1/chat/completions", {
 
 Module_Exports({
   kingcmd: "gpt",
-  shortcut: ["ai", "openai"],
+  shortcut: ["chatgpt", "openai"],
   kingclass: "ai",
   infocmd: "To get open ai response"
 },
   async(bot, man,text) => {
    
-    if(!text) return man.reply('Provide me a query ex Who is Aztec');
+    if(!text) return man.reply('*_Give me Text To Get ChatGpt Response_*');
         
    
        const response = await fetch(`https://aemt.me/openai?text=${text}`);
        const data = await response.json();
-       return await  man.reply(data)
+       return await bot.sendMessage(man.chat,data,{quoted:man})
    }
 )
 
