@@ -1,4 +1,4 @@
-FROM quay.io/maherzubair/sigma-md:latest
+FROM quay.io/maherzubair/sigma-md:beta
 RUN git clone https://github.com/Ali-Ahmad77/hi /root/Ali-Ahmad77/hi
 WORKDIR /root/Ali-Ahmad77/hi/
 RUN npm install npm@latest
