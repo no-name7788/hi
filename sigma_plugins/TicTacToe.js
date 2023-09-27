@@ -240,4 +240,6 @@ Module_Exports({ kingcmd: "ship" , kingclass: "fun" }, async(Void, citel, text) 
         await Void.sendMessage(citel.chat,{text: caption,mentions: [citel.sender,shiper]},{quoted:citel})
    }
 )
-// IDEA of Shipcent from => https://github.com/iamherok/WhatsApp-Botto-Ruka/blob/master/handler/message.js#L842
+// These Games are Developed By @Maher-Zubair
+// whatsapp +923466319114
+// Usage and copyRights are reserved
