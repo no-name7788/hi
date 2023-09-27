@@ -236,7 +236,7 @@ Module_Exports({ kingcmd: "ship" , kingclass: "fun" }, async(Void, citel, text) 
         caption += `@${citel.sender.split('@')[0]}  x  @${shiper.split('@')[0]}\n`
         caption += `\t\t✯────────────────────✯\n`
         caption += await couple(percentage)
-        if(citel.sender.split('@')[0]===shiper.split('@')[0]) return citel.reply('```'+'Wait... What!!!,You wanna do matchmaking with yourself'+'```')
+        if(citel.sender.split('@')[0]===shiper.split('@')[0]) return citel.reply('```'+'Wait... What!!!,You wanna do matchmaking with yourself!!'+'```')
         await Void.sendMessage(citel.chat,{text: caption,mentions: [citel.sender,shiper]},{quoted:citel})
    }
 )
