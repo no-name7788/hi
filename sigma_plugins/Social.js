@@ -26,14 +26,14 @@ Module_Exports({
    
 
 async function tiktokdl (url) {
-    const gettoken = await axios.get("https://downtik.io//id");
+    const gettoken = await axios.get("https://tikdown.org/id");
     const $ = cheerio.load(gettoken.data);
     const token = $("#download-form > input[type=hidden]:nth-child(2)").attr("value");
     const param = {
         url: url,
         _token: token,
     };
-    const { data } = await axios.request("https://downtik.io//getAjax?", {
+    const { data } = await axios.request("https://tikdown.org/getAjax?", {
         method: "post",
         data: new URLSearchParams(Object.entries(param)),
         headers: {
