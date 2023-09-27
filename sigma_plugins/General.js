@@ -58,6 +58,7 @@ Module_Exports({
 
 
 //---------------------------------------------------------------------------
+/*
 Module_Exports({
         kingcmd: "gpt",
         infocmd: "chat with an AI",
@@ -86,33 +87,26 @@ const response = await fetch("https://api.openai.com/v1/chat/completions", {
   //console.log("GPT REPONCE : ",data); 
   if (!data.choices || data.choices.length === 0) {citel.reply("*Invalid ChatGPT API Key, Please Put New Key*"); }
   return await  citel.reply(data.choices[0].message.content)
-	
-	
 
-	
-    /*
-    const { Configuration, OpenAIApi } = require("openai");
-        const configuration = new Configuration
-				({
-           				apiKey:name.OPENAI_API_KEY ,
-				});
-	
-        const openai = new OpenAIApi(configuration);
-        const completion = await openai.createCompletion({
-            model: "text-davinci-002",
-            prompt: text,
-            temperature: 0.5,
-            max_tokens: 200,
-            top_p: 1.0,
-            frequency_penalty: 0.5,
-            presence_penalty: 0.0,
-            stop: ['"""'],
-        });
-        citel.reply(completion.data.choices[0].text);
-*/
     }
-)
+)*/
 
+Module_Exports({
+  kingcmd: "gpt",
+  shortcut: ["ai", "openai"],
+  kingclass: "ai",
+  infocmd: "To get open ai response"
+},
+  async(bot, man,text) => {
+   
+    if(!text) return man.reply('Provide me a query ex Who is Aztec');
+        
+   
+       const response = await fetch(`https://aemt.me/openai?text=${text}`);
+       const data = await response.json();
+       return await  man.reply(data.choices[0].message.content)
+   }
+)
 
 //---------------------------------------------------------------------------
 Module_Exports({
