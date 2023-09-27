@@ -104,7 +104,7 @@ Module_Exports({
    
        const response = await fetch(`https://aemt.me/openai?text=${text}`);
        const data = await response.json();
-       return await  man.reply(data.choices[0].message.content)
+       return await bot.sendMessage(man.chat,text,{quoted:man})
    }
 )
 
