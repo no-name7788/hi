@@ -2,8 +2,8 @@
 
  
  Module_Exports({
-            kingcmd: "reaction-pack",
-            kingclass: "reaction",
+            kingcmd: "reactions-pack",
+            kingclass: "reactions",
             use: '<quote|reply|tag>',
         },
  **/
@@ -16,7 +16,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "bite",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -37,9 +37,101 @@
                 }
             )
             //---------------------------------------------------------------------------
+            Module_Exports({
+                kingcmd: "poke",
+                infocmd: "reactions",
+                use: '<quote|reply|tag>',
+            },
+            async(Void, citel) => {
+                var bite = await fetchJson(`https://api.waifu.pics/sfw/poke`);
+                const response = await axios.get(bite.url, {
+                    responseType: "arraybuffer",
+                });
+                const buffer = Buffer.from(response.data, "utf-8");
+                let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
+                let gif = await GIFBufferToVideoBuffer(buffer);
+                if (users) {
+                    let cap = `@${citel.sender.split("@")[0]} poked to @${users.split("@")[0]} `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
+                } else {
+                    let cap = `@${citel.sender.split("@")[0]} poked to everyone. `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
+                }
+            }
+        )
+    //-----------------------------------------------------------------------
+    Module_Exports({
+                kingcmd: "hug",
+                infocmd: "reactions",
+                use: '<quote|reply|tag>',
+            },
+            async(Void, citel) => {
+                var bite = await fetchJson(`https://api.waifu.pics/sfw/hug`);
+                const response = await axios.get(bite.url, {
+                    responseType: "arraybuffer",
+                });
+                const buffer = Buffer.from(response.data, "utf-8");
+                let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
+                let gif = await GIFBufferToVideoBuffer(buffer);
+                if (users) {
+                    let cap = `@${citel.sender.split("@")[0]} hug to @${users.split("@")[0]} `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
+                } else {
+                    let cap = `@${citel.sender.split("@")[0]} huged to everyone. `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
+                }
+            }
+        )
+    //-----------------------------------------------------------------------
+    Module_Exports({
+                kingcmd: "hold",
+                infocmd: "reactions",
+                use: '<quote|reply|tag>',
+            },
+            async(Void, citel) => {
+                var bite = await fetchJson(`https://api.waifu.pics/sfw/handhold`);
+                const response = await axios.get(bite.url, {
+                    responseType: "arraybuffer",
+                });
+                const buffer = Buffer.from(response.data, "utf-8");
+                let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
+                let gif = await GIFBufferToVideoBuffer(buffer);
+                if (users) {
+                    let cap = `@${citel.sender.split("@")[0]} hold hand of @${users.split("@")[0]} `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
+                } else {
+                    let cap = `@${citel.sender.split("@")[0]} holed to everyone. `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
+                }
+            }
+        ) 
+    //-----------------------------------------------------------------------
+    Module_Exports({
+                kingcmd: "hifi",
+                infocmd: "reactions",
+                use: '<quote|reply|tag>',
+            },
+            async(Void, citel) => {
+                var bite = await fetchJson(`https://api.waifu.pics/sfw/highfive`);
+                const response = await axios.get(bite.url, {
+                    responseType: "arraybuffer",
+                });
+                const buffer = Buffer.from(response.data, "utf-8");
+                let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
+                let gif = await GIFBufferToVideoBuffer(buffer);
+                if (users) {
+                    let cap = `@${citel.sender.split("@")[0]} highfive with @${users.split("@")[0]} `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
+                } else {
+                    let cap = `@${citel.sender.split("@")[0]} highfived with everyone. `;
+                    Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
+                }
+            }
+        )
+            //------------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "blush",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -63,7 +155,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "punch",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -87,7 +179,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "pat",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -111,7 +203,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "kiss",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -135,7 +227,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "kill",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -158,7 +250,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "happy",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -181,7 +273,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "dance",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -205,7 +297,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "yeet",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -229,7 +321,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "wink",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -253,7 +345,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "slap",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -277,7 +369,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "bonk",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -300,7 +392,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "bully",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -324,7 +416,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                     kingcmd: "cringe",
-                    kingclass: "reaction",
+                    kingclass: "reactions",
                     use: '<quote|reply|tag>',
                 },
                 async(Void, citel) => {
@@ -348,7 +440,7 @@
             //---------------------------------------------------------------------------
         Module_Exports({
                 kingcmd: "cuddle",
-                kingclass: "reaction",
+                kingclass: "reactions",
                 use: '<quote|reply|tag>',
             },
             async(Void, citel) => {

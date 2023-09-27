@@ -35,7 +35,7 @@ cmd({
         kingpath: __filename,
     },
 async(Void,citel,text)=>{
-if(!text) return await citel.reply("*Give Me Song Name to Delete From BGM*")
+if(!text) return await citel.reply("*_Give Me Song Name to Delete From BGM_*")
  let bgmm= await bgms.findOne({ id:"3" }) || await new bgms({ id:"3"}).save();
 //text = text.split(' ')[0];
 if (bgmm.bgmArray.has(text)) {
@@ -57,7 +57,7 @@ cmd({
         kingpath: __filename,
     },
 async(Void,citel,text)=>{
- text = ' *BGM SONG INFORMATION*\n'
+ text = ' *_BGM SONG INFORMATION_*\n'
 const {TelegraPh , bgm } = require('../lib/')
   let bgmm= await bgms.findOne({ id:"3" }) || await new bgms({ id:"3"}).save();
     for (const [name, url] of bgmm.bgmArray) 
@@ -77,8 +77,8 @@ cmd({
 
 async(Void,citel,text)=>
 {
-if(!citel.quoted) return await citel.reply("Uhh Please, Reply to Audio/Video To Add In Bgm")
-  if(!text) return await citel.reply ("Uhh Please give Bgm Song NAme")
+if(!citel.quoted) return await citel.reply("*_Please, Reply to Audio To Add In Bgm_*")
+  if(!text) return await citel.reply ("_Please give Bgm Song NAme_")
   
 let isVideo = false ;
 let path ='' ; 
@@ -94,7 +94,7 @@ let audioPath = await Void.downloadAndSaveMediaMessage(citel.quoted,'audio');
 let res = await convertAudioToBlackScreenVideo(audioPath, './convertedVideo.mp4');
 if(res.result) {path = "./convertedVideo.mp4"}
 }
- else return await citel.reply("Uhh Please, Reply to Audio/Video To Add In Bgm")
+ else return await citel.reply("*_Please, Reply to Audio/Video To Add In Bgm_*")
 if (!path) return await citel.reply("There's an Error While Adding Bgm Song")
  let url = await TelegraPh(path)
   let bgmm= await bgms.findOne({ id:"3" }) || await new bgms({ id:"3"}).save();
@@ -102,7 +102,7 @@ if (!path) return await citel.reply("There's an Error While Adding Bgm Song")
    //text = text.split(' ')[0];
     bgmm.bgmArray.set(text, url);
     await bgmm.save();
-    return await citel.reply(`*New Song Added in BGM with Name : ${text}*`);
+    return await citel.reply(`*_New Song Added in BGM with Name : ${text}_*`);
  } catch (error) { return await citel.reply('Error updating BGM:'+ error); }
 //await citel.reply("bgmm data  :" + bgmm)
 
