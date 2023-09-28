@@ -92,4 +92,4 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
 - *I will only Assit You in Bot Deployment and Hosting, Not in Bot Development*
 - *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
 - *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
-- *Regards [Maher-Zubair](https://github.com/Maher-Zubair)*
+- ***Regards [Maher-Zubair](https://github.com/Maher-Zubair)***
