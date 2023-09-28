@@ -81,7 +81,7 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
 
 
 ## ```License```
-***The SIGMA-MD is Made Under The [GPL-3 license](https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE). *** 
+•. ***The SIGMA-MD is Made Under The [GPL-3 license](https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE). *** 
 
 
 ## ```Warning```
