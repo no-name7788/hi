@@ -50,7 +50,7 @@
 
 
 
-## ```Deployment Methods```
+### ***Deployment Methods*** 
 1. ***Click [`FORK`](https://github.com/Maher-Zubair/SIGMA-MD/fork) And `Star⭐ The Repository`***
 2. ***Get SESSION ID  by [`Scanning QR Code`](https://replit.com/@SuhailTechInfo/Secktor-Bot). `Whatapp>Three dots>Linked Devices`***
 3. ***Get a Mongodb url From [`Mongodb,`](https://account.mongodb.com/)  Watch Tutorial  [`How To Get MongoDB Url`](https://youtu.be/).***
