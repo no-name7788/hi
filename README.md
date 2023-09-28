@@ -58,7 +58,7 @@
  [`How To Deploy on Heroku`](https://youtu.be/).***
 5. ***Deploy FREE on `Codespace,`  Watch Tutorial  [`How To Deploy on Codespace`](https://youtu.be/)***
 6. ***Deploy on [`Replit,`](https://repli)  Watch Tutorial  [`How To Deploy on Replit`](https://youtu.be/).***
-7. ***Install [External Plugins](https://github.com/Maher-Zubair/SIGMA_MD-Plugins)***
+7. ***Install [`External Plugins`](https://github.com/Maher-Zubair/SIGMA_MD-Plugins)***
 
 ***If You Don't Have Any MongoDB Url Then, Use This Public one.!***
 ```
