@@ -5,6 +5,7 @@
   <a href="https://www.youtube.com/@InnoxentTech">
     <img alt=Support height="350" src="https://i.imgur.com/t6VBCJL.jpg"> 
     </p>
+    <p align="center">
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Playfair+Display&weight=500&size=30&duration=3000&pause=1000&color=F7F7F7&center=true&width=435&lines=Welcome+To+SIGMA-MD;Multi-Device+Whatsapp+Bot;Developed+By+Maher+Zubair;Released+Date." alt="Typing SVG" /></a>
   </p>
 
