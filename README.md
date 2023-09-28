@@ -51,11 +51,12 @@
 
 
 ## ```Deployment Methods```
-1. ***Click [FORK](https://github.com/Mehar-Zubi/Open-AI/fork)***
+1. ***Click [FORK](https://github.com/Maher-Zubair/SIGMA-MD/fork)***
 2. ***Get SESSION ID  by [`Scanning QR code`](https://replit.com/@SuhailTechInfo/Secktor-Bot). `Whatapp>Three dots>Linked Devices`***
-3. ***Deploy on [`Heroku`](https://repl.it/github/SuhailTechInfo/Secktor-bot)***
-4. ***If it Doesn't Generate QR Code in first Attempt then Run the Template again it will works***
-5. ***More Deploy Methods are comming soon***
+3. ***Get a Mongodb url from [Mongodb](https://account.mongodb.com/)| Watch Tutorial [`How To Deploy Get MongoDB Url`](https://youtu.be/).***
+4. ***Deploy on [`Heroku`](https://heroku.com/deploy?template=https://github.com/Maher-Zubair/SIGMA-MD)| Watch Tutorial [`How To Deploy on Heroku`](https://youtu.be/).***
+5. ***Deploy FREE on `Codespace,`| Watch Tutorail [`How To Deploy on Codespace`](https://youtu.be/)***
+6. ***Deploy on [`Replit`](https://repli)| Watch Tutorial [`How To Deploy on Replit`](https://youtu.be/).***
 
 ## ```EXTERNAL DOCS AND API```
 
