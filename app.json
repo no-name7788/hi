@@ -77,7 +77,7 @@
   },
   "WELCOME_MESSAGE": {
     "description": "Enter the message here which you want to see when a new user joins a Group.",
-       "value": "@pp\n*_Hey Dear_* @user\n*_Welcome In_* @gname\n*_Read Description CareFully_* @gdesc\n\nSupport ME By Subscribing\n",
+       "value": "@pp\n*_Hey Dear_* @user\n*_Welcome In_* @gname\n*_Read Description CareFully_* @gdesc\n\n*_Support ME By Subscribing_* https://www.youtube.com/@InnoxentTech\n",
        "required" :false
   },
   "MONGODB_URI": {
@@ -104,14 +104,14 @@
      "required": false 
   },
 "TIME_ZONE": {
-  "description": "Add Your TimeZone. make sure the timzone is correct",
-   "value": "Asia/Karachi",
-    "required": false
+  "description": "Add Your TimeZone. make sure the timzone is correct/Otherwise you will have errors",
+   "value": "Asia/Karachi"
+    
 },
 "MZTIT": {
   "description": "Add Your Title",
-   "value": "🅼♥︎❚❚♥︎🆉",
-    "required": false
+   "value": "🅼♥︎❚❚♥︎🆉"
+    
 },
 "GNAME": {
   "description": "Add Your Group Name Here.You Can See in Most Commands",
@@ -125,8 +125,8 @@
 },
 "BOT_NAME": {
   "description": "Add Your Own Bot Name",
-   "value": "sɪɢᴍᴀ ᴹᴰ",
-    "required": false
+   "value": "sɪɢᴍᴀ ᴹᴰ"
+    
 },
 "ANTI_BAD_WORD": {
   "description": "Add Bad Words ",
@@ -144,7 +144,7 @@
     "required": false
 },
 "THEME": {
-  "description": "Add The Theme You Like\nAvailable Premium Themes::BTS,SIGMA_MD,JOKER,AVENGERS,SHELBY,PATRICK,MOMOLAND",
+  "description": "Add The Theme You Like\nAvailable Premium Themes::BTS,SIGMA_MD,JOKER,AVENGERS,SHELBY,PATRICK,MOMOLAND,ANIME",
    "value": "SIGMA_MD"
     }
 },
