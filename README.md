@@ -1,5 +1,5 @@
 
-<h1 align="center"> ***SIGMA-MD*** </h1>
+<h1 align="center"> sɪɢᴍᴀ ᴹᴰ </h1>
 </p>
 <p align="center">
   <a href="https://www.youtube.com/@InnoxentTech">
