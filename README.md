@@ -22,7 +22,7 @@
 
 
 <p align="center">
-<a href="https://github.com/Maher-Zubair"><img title="Owner" src="https://img.shields.io/badge/Owner-Maher Zubair-black.svg?style=for-the-badge&logo=github" width="170px" height="31"></a>
+<a href="https://github.com/Maher-Zubair"><img title="Owner" src="https://img.shields.io/badge/Owner-Maher Zubair-black.svg?style=for-the-badge&logo=github" width="170px" height="29"></a>
 
  <a href="https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE">
 <img src='https://img.shields.io/github/license/Maher-Zubair/SIGMA-MD?color=%231e81b0&style=for-the-badge' width="143px">
