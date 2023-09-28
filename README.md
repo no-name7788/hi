@@ -86,18 +86,10 @@ The SIGMA-MD is Made Under The [`GPL-3 license`](https://github.com/Maher-Zubair
 ### ***Special Thanks To***
 - ***[Suhail Tech Info](https://github.com/SuhailTechInfo)***
 - ***[Diegoson Tech](https://github.com/DiegosonTech)***
-- ***For Thier Help***
-
-
-## ```Warning```
-- This bot is not made by WhatsApp.inc so overusing this bot may result in WhatsApp account ban.
-- I will only assist you in `Bot Deployment ( Installation or Hosting )`. Not in `Bot Development`.
-- If you Modify this bot and face any issues, I am not responsible for that because it's not possible for me  to help everyone in bot Development / Modification. Only modify if you know what you are doing.
-- This bot is made for `Educational / Fun / Group Management` purposes only. I will not be responsible for any misuse of this bot.
-- I will only assist you in `Setup / Deployment` of this bot.
-
+- ***For Their Help***
 
 ## ```Legal Disclaimer```
-- I suggest you to use your `Own MongoDB URL` while deploying inside `.env` or `Environment Variables`. That will increase your Privacy and Security.
-- I don't recommend to hardly modify the script. `If you do so, you will not be responsible for any issues / bugs and I will not provide any support` as I am also busy in my life.
-- I will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group `(So don't make someone Group Admin who you don't know just because they are hosting the Bot)`.
+- *I will only Assit You in Bot Deployment and Hosting, Not in Bot Development*
+- *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
+- *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
+- *Regards Maher-Zubair(https://github.com/Maher-Zubair)*
