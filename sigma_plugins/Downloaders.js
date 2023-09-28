@@ -586,6 +586,7 @@ Module_Exports({
                                 renderLargerThumbnail: true,
                                 mediaType: 2,
                                 mediaUrl: ``,
+                                thumbnail:log0,
                                 sourceUrl: waUrl
                             }
                         }
