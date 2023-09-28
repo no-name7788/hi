@@ -77,11 +77,11 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
     <img src="https://i.ibb.co/2MLVZwm/whatsapp-logo-icon-181644.png" align="centre" width="90" />
   </a>
 </p>
-
+- Star ⭐ My Repo If You Like This Bot.
 
 
 ## ```License```
-The ᴏᴘᴇɴ ᴀⁱ is made available under the [GPL-3 license](https://github.com/Mehar-Zubi/Open-AI/blob/main/LICENCE).  
+***The SIGMA-MD is Made Under The [GPL-3 license](https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE). *** 
 
 
 ## ```Warning```
