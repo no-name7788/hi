@@ -739,7 +739,7 @@ Module_Exports({
                             //thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            thumbnail: await getBuffer(search.all[0].thumbnail),
+                            //thumbnail: await getBuffer(search.all[0].thumbnail),
                             sourceUrl: ``,
                         },
                     },
