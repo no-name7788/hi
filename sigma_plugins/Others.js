@@ -1,5 +1,5 @@
 const {Module_Exports,name } = require('../lib')
-const hrs = new Date().getHours({ timeZone: 'Asia/Karachi' })
+const hrs = new Date().getHours({ timeZone: global.timezone })
 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 Module_Exports({
@@ -25,7 +25,8 @@ async(Void, citel, text,) => {
         use: '',
     },
     async(Void, citel, text) => {
-var sigma_time = new Date().toLocaleString('HI', { timeZone: 'Asia/Karachi' }).split(' ')[1]
+try{
+var sigma_time = new Date().toLocaleString('HI', { timeZone: global.timezone }).split(' ')[1]
 var sigma_date = new Date().toLocaleDateString(get_localized_date)
 var sigma_wish = ''
 if (hrs < 12) sigma_wish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ⛅'
@@ -47,7 +48,7 @@ message: {
        "itemCount" : Zubair[Math.floor(8*Math.random())],
        "status": 1,
        "surface" : 1,
-       "message": `❏ ${name.botname}\nᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ʙʏ ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ`,
+       "message": `❏ sɪɢᴍᴀ ᴹᴰ\nᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ʙʏ ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ`,
        "orderTitle": "alive",
        "sellerJid": '923466319114@s.whatsapp.net' 
     }
@@ -61,7 +62,8 @@ let Maher =`
 │    *ᴅᴀᴛᴇ* 🗓️  ${sigma_date} 
 ╰────────────╯
 `
-return await Void.sendMessage(citel.chat, { text:Maher }, { quoted : king } )
+return await Void.sendMessage(citel.chat, { text:Maher }, { quoted : king } )}
+catch(e){citel.reply("*_Your Timezone Is Incorrect_*")}
 })
 //---------------------------------------------------------------
 
