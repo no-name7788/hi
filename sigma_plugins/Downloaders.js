@@ -582,11 +582,11 @@ Module_Exports({
                             externalAdReply: {
                                 title: `${name.ownername}`,
                                 body: `${name.botname}`,
-                                thumbnailUrl: await getBuffer(search.all[0].thumbnail),
+                                //thumbnailUrl: await getBuffer(search.all[0].thumbnail),
                                 renderLargerThumbnail: true,
                                 mediaType: 2,
                                 mediaUrl: search.all[0].thumbnail,
-                                sourceUrl: ``
+                                sourceUrl: waUrl
                             }
                         }
                     }
@@ -658,11 +658,11 @@ Module_Exports({
                             title: `${name.ownername}`,
                             body: `‌${name.botname}`,
                             renderLargerThumbnail: true,
-                            thumbnail: search.all[0].thumbnail,
+                            //thumbnail: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            thumbnailUrl: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: ``,
+                            thumbnailUrl: devp,
+                            sourceUrl: waUrl,
                         },
                     },
                 }
@@ -739,8 +739,8 @@ Module_Exports({
                             //thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            //thumbnail: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: ``,
+                            thumbnail: devp,
+                            sourceUrl: `${waUrl}`,
                         },
                     },
                 }
