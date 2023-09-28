@@ -35,7 +35,16 @@
   <a aria-label="Join our chats" href="https://chat.whatsapp.com/JM1yBMlveulDrAN22jHcWV" target="_blank">
    <img alt="whatsapp" src="https://img.shields.io/badge/Whatsapp Support Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
-
+## Bot Features
+---
+1. ***Game Menu.***
+2.  ***Multi-Themes Supported.***
+3.  ***Huge Logo Maker Menu.***
+4.  ***Photo Editor Menu.***
+5.  ***Ban Protection.***
+6.  ***Multi-Device Supported.***
+7.  ***Simple And Relieable.***
+##
 
 
 
