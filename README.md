@@ -60,9 +60,9 @@
 6. ***Deploy on [`Replit,`](https://repli)  Watch Tutorial  [`How To Deploy on Replit`](https://youtu.be/).***
 7. ***Install [`External Plugins`](https://github.com/Maher-Zubair/SIGMA_MD-Plugins)***
 
-***If You Don't Have Any MongoDB Url Then, Use This Public one.!***
+- ***If You Don't Have Any MongoDB Url Then, Use This Public one.!***
 ```
-mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=majority
+mongodb+srv://Maher-Zubair:SIGMA-MD@zubi.9g6b16y.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
 ```
 
 
