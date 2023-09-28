@@ -59,12 +59,13 @@
 5. ***Deploy FREE on `Codespace,`  Watch Tutorial  [`How To Deploy on Codespace`](https://youtu.be/)***
 6. ***Deploy on [`Replit,`](https://repli)  Watch Tutorial  [`How To Deploy on Replit`](https://youtu.be/).***
 7. ***Install [`External Plugins`](https://github.com/Maher-Zubair/SIGMA_MD-Plugins)***
+##
 
 - ***If You Don't Have Any MongoDB Url Then, Use This Public one.!***
 ```
 mongodb+srv://Maher-Zubair:SIGMA-MD@zubi.9g6b16y.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
 ```
-
+##
 
  ## ```𝘛𝘢𝘱 𝘈𝘯𝘺 𝘓𝘖𝘎𝘖 𝘛𝘰 𝘊𝘰𝘯𝘵𝘢𝘤𝘵 𝘔𝘦```
  <p align="centre">
@@ -72,7 +73,7 @@ mongodb+srv://Maher-Zubair:SIGMA-MD@zubi.9g6b16y.mongodb.net/?retryWrites=true&w
     <img src="https://i.ibb.co/Kx8NXxT/mail-gmail-22737.png" align="centre" width="90" />
    <a href="https://wa.me/923466319114?text=Hi%20Maher-Zubair%20Sir...%20I%20need%20some%20help%20in%20SIGMA-MD">
     <img src="https://i.ibb.co/2MLVZwm/whatsapp-logo-icon-181644.png" align="centre" width="90" />
-
+##
 
 - ***Star ⭐ My Repo If You Like This Bot.***
 
@@ -82,9 +83,10 @@ mongodb+srv://Maher-Zubair:SIGMA-MD@zubi.9g6b16y.mongodb.net/?retryWrites=true&w
 - ***[Suhail Tech Info](https://github.com/SuhailTechInfo)***
 - ***[Diegoson Tech](https://github.com/DiegosonTech)***
 - ***For Their Help***
-
+##
 ## ```𝘓𝘦𝘨𝘢𝘭 𝘋𝘪𝘴𝘤𝘭𝘢𝘪𝘮𝘦𝘳```
 - *I will only Assit You in Bot Deployment and Hosting, Not in Bot Development*
 - *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
 - *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
 - ***Regards [Maher-Zubair](https://github.com/Maher-Zubair)***
+##
