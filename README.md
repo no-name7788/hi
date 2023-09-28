@@ -51,45 +51,33 @@
 
 
 ## ```Deployment Methods```
-1. ***Click [`FORK`](https://github.com/Maher-Zubair/SIGMA-MD/fork) And `Star🌟 The Repository`***
-2. ***Get SESSION ID  by [`Scanning QR code`](https://replit.com/@SuhailTechInfo/Secktor-Bot). `Whatapp>Three dots>Linked Devices`***
+1. ***Click [`FORK`](https://github.com/Maher-Zubair/SIGMA-MD/fork) And `Star⭐ The Repository`***
+2. ***Get SESSION ID  by [`Scanning QR Code`](https://replit.com/@SuhailTechInfo/Secktor-Bot). `Whatapp>Three dots>Linked Devices`***
 3. ***Get a Mongodb url From [`Mongodb,`](https://account.mongodb.com/)  Watch Tutorial  [`How To Get MongoDB Url`](https://youtu.be/).***
 4. ***Deploy on [`Heroku,`](https://heroku.com/deploy?template=https://github.com/Maher-Zubair/SIGMA-MD)  Watch Tutorial 
  [`How To Deploy on Heroku`](https://youtu.be/).***
 5. ***Deploy FREE on `Codespace,`  Watch Tutorial  [`How To Deploy on Codespace`](https://youtu.be/)***
 6. ***Deploy on [`Replit,`](https://repli)  Watch Tutorial  [`How To Deploy on Replit`](https://youtu.be/).***
+7. ***Install [External Plugins](https://github.com/Maher-Zubair/SIGMA_MD-Plugins)***
 
-## ```EXTERNAL DOCS AND API```
-
-1. ***Install [External Plugins](https://github.com/SamPandey001/Secktor-Plugins)***
-2. ***Get a Mongodb url from*** [Mongodb](https://account.mongodb.com/)
-3. ***Free Mongodb URI,For Public Use***
 ```
 mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=majority
 ```
-<p align="center"><img src="https://profile-counter.glitch.me/{Mehar-Zubi}/count.svg" alt="Mehar-Zubi :: Visitor's Count" /></p>
+
 
  ## ```Tap LOGO To Contact Me```
  <p align="centre">
-  <a href="mailto:etc@gmail.com">
+  <a href="mailto:HELP_SIGMA-MD@outlook.com">
     <img src="https://i.ibb.co/Kx8NXxT/mail-gmail-22737.png" align="centre" width="90" />
   </a>
 </p> 
 
   <p align="centre">
-  <a href="https://wa.me/xxxxxxxxxxxx?text=Hi%20Maher-Zubair%20Sir...%20I%20need%20some%20help%20in%20ᴏᴘᴇɴ-ᴀⁱ%20MD">
+  <a href="https://wa.me/923466319114?text=Hi%20Maher-Zubair%20Sir...%20I%20need%20some%20help%20in%20SIGMA-MD">
     <img src="https://i.ibb.co/2MLVZwm/whatsapp-logo-icon-181644.png" align="centre" width="90" />
   </a>
 </p>
 
-<br>
-
-## ```Click This Logo To Join Support Group```
- <p align="centre">
-   <a aria-label="Join our chats" href="https://chat.whatsapp.com/xxxxxxxxxxxxxxx" target="_blank">
-    <img src="https://i.ibb.co/2MLVZwm/whatsapp-logo-icon-181644.png" align="centre" width="90" />
-  </a>
-</p>
 
 
 ## ```License```
