@@ -736,7 +736,7 @@ Module_Exports({
                             title: `${name.ownername}`,
                             body: `‌${name.botname}`,
                             renderLargerThumbnail: true,
-                            thumbnailUrl: search.all[0].thumbnail,
+                            //thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
