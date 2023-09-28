@@ -39,7 +39,7 @@
             //---------------------------------------------------------------------------
             Module_Exports({
                 kingcmd: "poke",
-                infocmd: "reactions",
+                kingclass: "reactions",
                 use: '<quote|reply|tag>',
             },
             async(Void, citel) => {
@@ -62,7 +62,7 @@
     //-----------------------------------------------------------------------
     Module_Exports({
                 kingcmd: "hug",
-                infocmd: "reactions",
+                kingclass: "reactions",
                 use: '<quote|reply|tag>',
             },
             async(Void, citel) => {
@@ -85,7 +85,7 @@
     //-----------------------------------------------------------------------
     Module_Exports({
                 kingcmd: "hold",
-                infocmd: "reactions",
+                kingclass: "reactions",
                 use: '<quote|reply|tag>',
             },
             async(Void, citel) => {
@@ -108,7 +108,7 @@
     //-----------------------------------------------------------------------
     Module_Exports({
                 kingcmd: "hifi",
-                infocmd: "reactions",
+                kingclass: "reactions",
                 use: '<quote|reply|tag>',
             },
             async(Void, citel) => {

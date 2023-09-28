@@ -46,6 +46,17 @@ Module_Exports({
             return await citel.reply(`${dare()}`);
         }
     )
+    Module_Exports({
+        kingcmd: "dirtydare",
+        shortcut: "ddare",
+        infocmd: "truth and dare(dare game.).",
+        kingclass: "game",
+        kingpath: __filename,
+    },
+    async(Void, citel, text) => {
+        return await citel.reply(`${dirtydare()}`);
+    }
+)
 //--------------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "joke",
