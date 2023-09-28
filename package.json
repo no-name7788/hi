@@ -12,6 +12,7 @@
           "author": "Maher Zubair",
           "dependencies": {
                     "@adiwajshing/keyed-db": "^0.2.4",
+                    "@bochilteam/scraper": "latest",
                     "@hapi/boom": "^9.1.4",
                     "@sampandey001/baileys": "latest",
                     "@shineiichijo/marika": "^2.0.3",
@@ -20,7 +21,6 @@
                     "aptoide-scraper": "^1.0.1",
                     "async-g-i-s": "^1.4.0",
                     "awesome-phonenumber": "^3.3.0",
-                    "@bochilteam/scraper": "latest",
                     "axios": "^0.24.0",
                     "chalk": "^4.1.2",
                     "cheerio": "^1.0.0-rc.10",
@@ -61,6 +61,7 @@
                     "translatte": "^3.0.1",
                     "util": "^0.12.4",
                     "wa-sticker-formatter": "^4.3.2",
+                    "ytdl-core": "^4.11.5",
                     "ytdl-secktor": "^0.0.1-development"
           },
           "directories": {
