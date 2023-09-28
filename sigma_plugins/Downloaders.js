@@ -544,7 +544,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
 
 Module_Exports({
             kingcmd: "ytmp4",
-            shortcut: ["ytv","ytvid" , "ytvideo"],
+            shortcut: ["ytv","ytvid" , "ytvideo","yt4"],
             infocmd: "Downloads video from youtube.",
             kingclass: "downloader",
             kingpath: __filename,
@@ -669,7 +669,7 @@ Module_Exports({
                             title: `${name.ownername}`,
                             body: `‌${name.botname}`,
                             renderLargerThumbnail: true,
-                            thumbnailUrl: search.all[0].thumbnail,
+                            thumbnail: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
@@ -747,7 +747,7 @@ Module_Exports({
                             title: `${name.ownername}`,
                             body: `‌${name.botname}`,
                             renderLargerThumbnail: true,
-                            thumbnailUrl: search.all[0].thumbnail,
+                            thumbnail: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
