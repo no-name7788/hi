@@ -236,32 +236,32 @@ Module_Exports({ kingcmd: "neon", kingclass: "logo", infocmd: "Some text to imag
 //-------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "summer", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
     if (!text) return citel.reply(`*_Example: ${prefix}summer Zubair_*`)
-    return await singleText(Void, citel , 'create-a-summer-neon-light-text-effect-online-1076.html' , text )
+    return await singleText(Void, citel , 'create-a-summer-neon-light-text-effect-online-1076' , text )
 })
 //-------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "pixel", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
     if (!text) return citel.reply(`*_Example: ${prefix}pixel Zubair_*`)
-    return await singleText(Void, citel , 'online-3d-pixel-text-effect-generator-1138.html' , text )
+    return await singleText(Void, citel , 'online-3d-pixel-text-effect-generator-1138' , text )
 })
 Module_Exports({ kingcmd: "2024", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
     if (!text) return citel.reply(`*_Example: ${prefix}2024 Zubair_*`)
-    return await singleText(Void, citel , 'happy-new-year-2024-greeting-3d-card-1058.html' , text )
+    return await singleText(Void, citel , 'happy-new-year-2024-greeting-3d-card-1058' , text )
 })
 Module_Exports({ kingcmd: "newyear", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
     if (!text) return citel.reply(`*_Example: ${prefix}newyear Zubair_*`)
-    return await singleText(Void, citel , 'new-year-cards-3d-by-name-960.html' , text )
+    return await singleText(Void, citel , 'new-year-cards-3d-by-name-960' , text )
 })
 Module_Exports({ kingcmd: "party", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
     if (!text) return citel.reply(`*_Example: ${prefix}party Zubair_*`)
-    return await singleText(Void, citel , 'party-text-effect-with-the-night-event-theme-1105.html' , text )
+    return await singleText(Void, citel , 'party-text-effect-with-the-night-event-theme-1105' , text )
 })
 Module_Exports({ kingcmd: "valentine", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
     if (!text) return citel.reply(`*_Example: ${prefix}valentine Zubair_*`)
-    return await singleText(Void, citel , 'create-realistic-golden-text-effect-on-red-sparkles-online-1082.html' , text )
+    return await singleText(Void, citel , 'create-realistic-golden-text-effect-on-red-sparkles-online-1082' , text )
 })
 Module_Exports({ kingcmd: "frozen", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
     if (!text) return citel.reply(`*_Example: ${prefix}frozen Zubair_*`)
-    return await singleText(Void, citel , 'create-realistic-3d-text-effect-frozen-winter-1099.html' , text )
+    return await singleText(Void, citel , 'create-realistic-3d-text-effect-frozen-winter-1099' , text )
 })
 
 
