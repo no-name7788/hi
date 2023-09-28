@@ -585,7 +585,7 @@ Module_Exports({
                                 //thumbnailUrl: await getBuffer(search.all[0].thumbnail),
                                 renderLargerThumbnail: true,
                                 mediaType: 2,
-                                mediaUrl: search.all[0].thumbnail,
+                                mediaUrl: ``,
                                 sourceUrl: waUrl
                             }
                         }
@@ -661,8 +661,8 @@ Module_Exports({
                             //thumbnail: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            thumbnailUrl: devp,
-                            sourceUrl: waUrl,
+                            thumbnailUrl: log0,
+                            sourceUrl: `${waUrl}`,
                         },
                     },
                 }
@@ -739,7 +739,7 @@ Module_Exports({
                             //thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            thumbnail: devp,
+                            thumbnail: log0,
                             sourceUrl: `${waUrl}`,
                         },
                     },
