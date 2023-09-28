@@ -92,4 +92,4 @@ The SIGMA-MD is Made Under The [`GPL-3 license`](https://github.com/Maher-Zubair
 - *I will only Assit You in Bot Deployment and Hosting, Not in Bot Development*
 - *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
 - *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
-- *Regards Maher-Zubair(https://github.com/Maher-Zubair)*
+- *Regards [Maher-Zubair](https://github.com/Maher-Zubair)*
