@@ -34,7 +34,7 @@
 
 <p align="center"><img src="https://profile-counter.glitch.me/{Maher-Zubair}/count.svg" alt="Maher-Zubair :: Visitor's Count" /></p>
 
-## Bot Features
+## ***Bot Features***
 ---
 1. ***Game Menu.***
 2.  ***Multi-Themes Supported.***
@@ -60,12 +60,13 @@
 6. ***Deploy on [`Replit,`](https://repli)  Watch Tutorial  [`How To Deploy on Replit`](https://youtu.be/).***
 7. ***Install [External Plugins](https://github.com/Maher-Zubair/SIGMA_MD-Plugins)***
 
+***If You Don't Have Any MongoDB Url Then, Use This Public one.!***
 ```
 mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=majority
 ```
 
 
- ## ```Tap LOGO To Contact Me```
+ ## ```Tap Any LOGO To Contact Me```
  <p align="centre">
   <a href="mailto:HELP_SIGMA-MD@outlook.com">
     <img src="https://i.ibb.co/Kx8NXxT/mail-gmail-22737.png" align="centre" width="90" />
@@ -78,7 +79,7 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
   </a>
 </p>
 
-- Star ⭐ My Repo If You Like This Bot.
+- ***Star ⭐ My Repo If You Like This Bot.***
 
 The SIGMA-MD is Made Under The [`GPL-3 license`](https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE).
 
