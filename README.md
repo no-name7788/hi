@@ -79,9 +79,12 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
 </p>
 
 - Star ⭐ My Repo If You Like This Bot.
+The SIGMA-MD is Made Under The [`GPL-3 license`](https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE).
 
-
-The SIGMA-MD is Made Under The [GPL-3 license](https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE). *** 
+### Special Thanks To
+- ***[Suhail Tech Info](https://github.com/SuhailTechInfo)***
+- ***[Diegoson Tech](https://github.com/DiegosonTech)***
+ ***For Thier Help***
 
 
 ## ```Warning```
