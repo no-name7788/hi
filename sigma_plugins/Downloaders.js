@@ -358,45 +358,34 @@ Module_Exports({
     //---------------------------------------------------------------------------
     Module_Exports({
         kingcmd: "pint",
-        infocmd: "Downloads image from pinterest.",
-        kingclass: "downloader",
-        kingpath: __filename,
-        use: 'crown',
+        desc: "Downloads image from pinterest.",
+        category: "downloader",
+        filename: __filename,
+        use: '<text|image name>',
     },
-    async(sigma, citel, text) => {
-        if (!text) return citel.send(`*_What Picture You Are Looking For?_*\nExample: ${prefix}pint crown`) && Void.sendMessage(citel.chat, {
-            react: {
-                text: '',
-                key: citel.key
-            }
-        })
+    async(Void, citel, text) => {
+        if (!text) return citel.send(`What picture are you looking for?`) && Void.sendMessage(citel.chat, { react: {  text: '❌', key: citel.key  }  })
         try {
-            anu = await pinterest(text)
-            result = anu[Math.floor(Math.random() * anu.length)]
-            let Maher = {
-                image: {
-                    url: result
-                },
-                caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
-                footer: tlang().footer,
+            let anu = await pinterest(text)
+            let result = anu[Math.floor(Math.random() * anu.length)]
+            let buttonMessage = {
+                image: { url: result },
+                caption: Config.caption ,
+                //footer: tlang().footer,
                 headerType: 4,
                 contextInfo: {
                     externalAdReply: {
-                        title: `${Gname}`,
-                        body: ``,
+                        title: `Here it is✨`,
+                        body: `${Config.ownername}`,
                         thumbnail: log0,
                         mediaType: 2,
                         mediaUrl: ``,
-                        sourceUrl: `${waUrl}`
+                        sourceUrl: `youtube.com/c/SuhailTechInfo`
                     }
                 }
             }
-            return sigma.sendMessage(citel.chat, Maher, {
-                quoted: citel
-            })
-        } catch (e) {
-            console.log(e)
-        }
+            return Void.sendMessage(citel.chat, buttonMessage, {  quoted: citel })
+        } catch (e) {  return citel.reply("Uhh Plese, Give me a Name. Ex .pint apple")  }
     })
     //---------------------------------------------------------------------------
 Module_Exports({
