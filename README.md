@@ -10,30 +10,30 @@
   </p>
 
 <p align="center">
-  <a href="https://github.com/Mehar-Zubi/Open-AI/fork">
-    <img src="https://img.shields.io/github/forks/Mehar-Zubi/Open-AI?label=Fork&style=social">
+  <a href="https://github.com/Maher-Zubair/SIGMA-MD/fork">
+    <img src="https://img.shields.io/github/forks/Maher-Zubair/SIGMA-MD?label=Fork&style=social">
     
     
-  <a href="https://github.com/Mehar-Zubi/Open-AI/stargazers">
-    <img src="https://img.shields.io/github/stars/Mehar-Zubi/Open-AI?style=social">
+  <a href="https://github.com/Maher-Zubair/SIGMA-MD/stargazers">
+    <img src="https://img.shields.io/github/stars/Maher-Zubair/SIGMA-MD?style=social">
   </a>
 
 </p>
 
 
 <p align="center">
-<a href="https://github.com/Mehar-Zubi"><img title="Owner" src="https://img.shields.io/badge/Owner-Maher Zubair-black.svg?style=for-the-badge&logo=github" width="170px" height="31"></a>
+<a href="https://github.com/Maher-Zubair"><img title="Owner" src="https://img.shields.io/badge/Owner-Maher Zubair-black.svg?style=for-the-badge&logo=github" width="170px" height="31"></a>
 
- <a href="https://github.com/Mehar-Zubi/Open-AI/blob/main/LICENCE">
-<img src='https://img.shields.io/github/license/Mehar-Zubi/Open-AI?color=%231e81b0&style=for-the-badge' width="143px">
+ <a href="https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE">
+<img src='https://img.shields.io/github/license/Maher-Zubair/SIGMA-MD?color=%231e81b0&style=for-the-badge' width="143px">
 
 <p align="center">
-<a href="https://github.com/Mehar-Zubi"><img title="Open Source" src="https://img.shields.io/badge/Open%20Source-YES-black.svg?style=for-the-badge" width="150px"></a>
-<a href="https://github.com/Mehar-Zubi"><img title="" src="https://img.shields.io/badge/Maintained-YES-black.svg?style=for-the-badge" width="150px"></a>
+<a href="https://github.com/Maher-Zubair"><img title="Open Source" src="https://img.shields.io/badge/Open%20Source-YES-black.svg?style=for-the-badge" width="150px"></a>
+<a href="https://github.com/Maher-Zubair"><img title="" src="https://img.shields.io/badge/Maintained-YES-black.svg?style=for-the-badge" width="150px"></a>
 
 <p align="center"> 
-  <a aria-label="Join our chats" href="https://chat.whatsapp.com/xxxxxxxxxxxxxxx" target="_blank">
-   <img alt="whatsapp" src="https://img.shields.io/badge/Support Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+  <a aria-label="Join our chats" href="https://chat.whatsapp.com/JM1yBMlveulDrAN22jHcWV" target="_blank">
+   <img alt="whatsapp" src="https://img.shields.io/badge/Whatsapp Support Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 
 
