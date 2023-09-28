@@ -1,5 +1,15 @@
+/**
+ Copyright (C) 2022.
+ Licensed under the  GPL-3.0 License;
+ You may not use this file except in compliance with the License.
+ It is supplied in the hope that it may be useful.
+ * @project_name : Secktor-Md
+ * @author : SamPandey001 <https://github.com/SamPandey001>
+ * @description : Secktor,A Multi-functional whatsapp bot.
+ * @version 0.0.6
+ **/
 
-const { dare, truth, random_question ,name,dirtydare } = require('../lib/truth-dare.js')
+const { dare, truth, random_question ,name } = require('../lib/truth-dare.js')
 const axios = require('axios')
 const { Module_Exports,sleep } = require('../lib')
 const fetch = require('node-fetch');
@@ -36,17 +46,6 @@ Module_Exports({
             return await citel.reply(`${dare()}`);
         }
     )
-    Module_Exports({
-        kingcmd: "dirtydare",
-        shortcut: "ddare",
-        infocmd: "truth and dare(dare game.).",
-        kingclass: "game",
-        kingpath: __filename,
-    },
-    async(Void, citel, text) => {
-        return await citel.reply(`${dirtydare()}`);
-    }
-)
 //--------------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "joke",
