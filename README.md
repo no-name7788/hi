@@ -50,7 +50,7 @@
 
 
 
-## `𝘿𝙚𝙥𝙡𝙤𝙮𝙢𝙚𝙣𝙩 𝙈𝙚𝙩𝙝𝙤𝙙𝙨`
+## `𝘋𝘦𝘱𝘭𝘰𝘺𝘮𝘦𝘯𝘵 𝘔𝘦𝘵𝘩𝘰𝘥𝘴`
 1. ***Click [`FORK`](https://github.com/Maher-Zubair/SIGMA-MD/fork) And `Star⭐ The Repository`***
 2. ***Get SESSION ID  by [`Scanning QR Code`](https://replit.com/@SuhailTechInfo/Secktor-Bot). `Whatapp>Three dots>Linked Devices`***
 3. ***Get a Mongodb url From [`Mongodb,`](https://account.mongodb.com/)  Watch Tutorial  [`How To Get MongoDB Url`](https://youtu.be/).***
@@ -66,7 +66,7 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
 ```
 
 
- ## ```Tap Any LOGO To Contact Me```
+ ## ```𝘛𝘢𝘱 𝘈𝘯𝘺 𝘓𝘖𝘎𝘖 𝘛𝘰 𝘊𝘰𝘯𝘵𝘢𝘤𝘵 𝘔𝘦```
  <p align="centre">
   <a href="mailto:HELP_SIGMA-MD@outlook.com">
     <img src="https://i.ibb.co/Kx8NXxT/mail-gmail-22737.png" align="centre" width="90" />
@@ -83,7 +83,7 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
 - ***[Diegoson Tech](https://github.com/DiegosonTech)***
 - ***For Their Help***
 
-## ```Legal Disclaimer```
+## ```𝘓𝘦𝘨𝘢𝘭 𝘋𝘪𝘴𝘤𝘭𝘢𝘪𝘮𝘦𝘳```
 - *I will only Assit You in Bot Deployment and Hosting, Not in Bot Development*
 - *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
 - *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
