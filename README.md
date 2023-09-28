@@ -1,11 +1,11 @@
 
-<h1 align="center"> ᴏᴘᴇɴ ᴀⁱ-Md </h1>
+<h1 align="center"> SIGMA MD </h1>
 </p>
 <p align="center">
-  <a href="https://chat.whatsapp.com/">
+  <a href="https://www.youtube.com/@InnoxentTech">
     <img alt=Support height="350" src="https://i.imgur.com/t6VBCJL.jpg"> 
     </p>
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Impact&size=50&pause=1000&color=000000&center=true&width=910&height=100&lines=THIS IS+XLICON-MD ;MULTI+DEVICE+WHATSAPP+BOT;CREATED+BY+THE TEAM XLICON ;PUBLIC+RELESED+DATE;2023/08/11." alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Croissant+One&weight=600&size=35&duration=5500&pause=1000&color=F7F7F7&width=435&lines=Welcome+To+SIGMA-MD;Multi-Device+Whatsapp+Bot;Developed+By+Maher+Zubair;Released+Date." alt="Typing SVG" /></a>
   </p>
 
 <p align="center">
