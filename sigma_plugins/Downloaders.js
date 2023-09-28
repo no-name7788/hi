@@ -370,13 +370,13 @@ Module_Exports({
             let result = anu[Math.floor(Math.random() * anu.length)]
             let buttonMessage = {
                 image: { url: result },
-                caption: Config.caption ,
+                caption: name.caption ,
                 //footer: tlang().footer,
                 headerType: 4,
                 contextInfo: {
                     externalAdReply: {
                         title: `Here it is✨`,
-                        body: `${Config.ownername}`,
+                        body: `${name.ownername}`,
                         thumbnail: log0,
                         mediaType: 2,
                         mediaUrl: ``,
