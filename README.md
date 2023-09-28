@@ -27,9 +27,7 @@
  <a href="https://github.com/Maher-Zubair/SIGMA-MD/blob/main/LICENCE">
 <img src='https://img.shields.io/github/license/Maher-Zubair/SIGMA-MD?color=%231e81b0&style=for-the-badge' width="143px">
 
-<p align="center">
-<a href="https://github.com/Maher-Zubair"><img title="Open Source" src="https://img.shields.io/badge/Open%20Source-YES-black.svg?style=for-the-badge" width="150px"></a>
-<a href="https://github.com/Maher-Zubair"><img title="" src="https://img.shields.io/badge/Maintained-YES-black.svg?style=for-the-badge" width="150px"></a>
+<p align="center"><img src="https://profile-counter.glitch.me/{Maher-Zubair}/count.svg" alt="Maher-Zubair :: Visitor's Count" /></p>
 
 <p align="center"> 
   <a aria-label="Join our chats" href="https://chat.whatsapp.com/JM1yBMlveulDrAN22jHcWV" target="_blank">
