@@ -34,8 +34,8 @@
 <p align="center"> 
   <a aria-label="Join our chats" href="https://chat.whatsapp.com/JM1yBMlveulDrAN22jHcWV" target="_blank">
    <img alt="whatsapp" src="https://img.shields.io/badge/Support Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-    <a aria-label="Join our chats" href="https://chat.whatsapp.com/JM1yBMlveulDrAN22jHcWV" target="_blank">
-   <img alt="whatsapp" src="https://img.shields.io/badge/Support Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+    <a aria-label="Join our chats" href="https://chat.whatsapp.com/CkWgmF0ykS33Lzi55T5XlY" target="_blank">
+   <img alt="whatsapp" src="https://img.shields.io/badge/Public Bot Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 ## Bot Features
 ---
