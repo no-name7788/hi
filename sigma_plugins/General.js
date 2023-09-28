@@ -108,7 +108,7 @@ Module_Exports({
 ┃✗ ᴍᴇᴅɪᴀ
 ┃✗ ᴜsᴇʀ 
 ┃✗ sᴇᴀʀᴄʜ
-┃✗ ᴘʜᴏᴛᴏ ᴇᴅɪᴛᴏʀ
+┃✗ ᴘɪᴄ ᴇᴅɪᴛᴏʀ
 ┃✗ ʀᴇᴀᴄᴛɪᴏɴs
 ┃✗ *${prefix}list Category Name*
 ┃✗ *To See Its Commands*

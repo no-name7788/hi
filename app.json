@@ -1,5 +1,5 @@
 {
-  "name": "SIGMA_MD Whatsapp Bot By Maher Zubair",
+  "name": "SIGMA-MD Whatsapp Bot By Maher Zubair",
   "description": "A Whatsapp Bot With Most Premium Features Makes Your Whatsapp Premium. For Any Help See My YT:https://www.youtube.com/@InnoxentTech",
   "logo": "https://telegra.ph/file/e5768d0b5a4441b4e576b.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "SIGMA_MD", "SIGMA_BOT", "SIGMA","SIGMA_MD-BOT","Multi-Themes Bot","multi device"],
@@ -82,11 +82,11 @@
   },
   "MONGODB_URI": {
     "description": "Add Your Own, If you have key. Its a secret String for Mongodb Connection",
-     "value": "mongodb+srv://Suhail_Md:Suhail_Md@cluster1.0tlyzhm.mongodb.net/?retryWrites=true&w=majority"
+     "value": "mongodb+srv://Maher-Zubair:SIGMA-MD@zubi.9g6b16y.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp"
   },
     "WORKTYPE": {
   "description": "Worktype of your bot. Use public or private, if it is private then only bot number can use it. If public then everyone can use it.",
-         "value": "private"
+         "value": "public"
   },
       "AUTO_REACTION": {
     "description": " Set it `true` If You Wants To Reacts emoji to all commands. \n And Set it `all` is You Wants to React Emojies to All Messages",
@@ -138,11 +138,7 @@
    "value": "",
     "required": false
 },
-"CAPTION": {
-  "description": "Add Your Caption.You Will See In Most Commands ",
-   "value": "*⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ*",
-    "required": false
-},
+
 "THEME": {
   "description": "Add The Theme You Like\nAvailable Premium Themes::BTS,SIGMA_MD,JOKER,AVENGERS,SHELBY,PATRICK,MOMOLAND,ANIME",
    "value": "SIGMA_MD"

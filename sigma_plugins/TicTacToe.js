@@ -111,7 +111,7 @@ ${arr.slice(6).join("  ")}
           state: "WAITING",
         };
         if (text) room.name = text;
-        citel.reply("_Waiting for player,use .ttt to join this game._ ");
+        citel.reply(`_Waiting for player,use ${prefix}ttt to join this game._ `);
         this.game[room.id] = room;
       }
     }
