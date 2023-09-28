@@ -659,7 +659,7 @@ Module_Exports({
                             title: `${name.ownername}`,
                             body: `‌${name.botname}`,
                             renderLargerThumbnail: true,
-                            thumbnail: logo,
+                            thumbnail: log0,
                             mediaUrl: text,
                             mediaType: 1,
                             //thumbnailUrl: log0,
