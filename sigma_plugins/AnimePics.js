@@ -313,3 +313,16 @@ async(Void, man,text) =>
     return await Void.sendMessage(man.chat,{image :{url : random } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
 })
 //-------------------------------------------------------------------------
+Module_Exports({
+    kingcmd: "tikvid",
+    shortcut: ["tikv"],
+    infocmd: "To get Random tiktok Videos",
+    kingclass: "downloader",
+    kingpath: __filename
+},
+async(Void, man,text) =>
+{
+    let anu = await fetchJson('https://raw.githubusercontent.com/Maher-Zubair/SIGMA-MD/main/Media/Videos/Tik_Videos.json')
+    let random = anu[Math.floor(Math.random() * anu.length)]
+    return await Void.sendMessage(man.chat,{video :{url : random.SIGMA_MD } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`,width: 600,height: 490  }, { quoted: man })
+})
