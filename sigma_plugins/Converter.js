@@ -57,62 +57,7 @@ Module_Exports({
   } else return citel.reply ("```Please, Reply To A Non Animated Sticker```")
         }
     )
-//---------------------------------------------------------------------------
-    
- Module_Exports({
-             kingcmd: "vv",
-             shortcut : ['viewonce','retrive'],
-             infocmd: "Send VV MEssage in current message",
-             kingclass: "converter",
-             use: '',
-             kingpath: __filename
-         },
-         async(sigma, citel, text) => {
-try {
-const quot = citel.msg.contextInfo.quotedMessage.viewOnceMessageV2;
-  if(quot)
-  {
-    if(quot.message.imageMessage) 
-    { console.log("Quot Entered") 
-       let cap =quot.message.imageMessage.caption;
-       let anu = await sigma.downloadAndSaveMediaMessage(quot.message.imageMessage)
-       return sigma.sendMessage(citel.chat,{image:{url : anu},caption : cap })
-    }
-    if(quot.message.videoMessage) 
-    {
-       let cap =quot.message.videoMessage.caption;
-       let anu = await sigma.downloadAndSaveMediaMessage(quot.message.videoMessage)
-       return sigma.sendMessage(citel.chat,{video:{url : anu},caption : cap })
-    }
-     
-  }
-  //else citel.reply("```This is Not A ViewOnce Message```") 
-           
-}  
-         
- catch(e) {  console.log("error" , e ) }     
 
-           
-if(!citel.quoted) return citel.reply("```Please Reply A ViewOnce Message```")           
-if(citel.quoted.mtype === "viewOnceMessage")
-{ console.log("ViewOnce Entered") 
-     if(citel.quoted.message.imageMessage )
-    { 
-      let cap =citel.quoted.message.imageMessage.caption;
-      let anu = await sigma.downloadAndSaveMediaMessage(citel.quoted.message.imageMessage)
-      sigma.sendMessage(citel.chat,{image:{url : anu},caption : cap })
-    }
-    else if(citel.quoted.message.videoMessage )
-    {
-      let cap =citel.quoted.message.videoMessage.caption;
-      let anu = await sigma.downloadAndSaveMediaMessage(citel.quoted.message.videoMessage)
-      sigma.sendMessage(citel.chat,{video:{url : anu},caption : cap })
-    }
- 
-}
-else return citel.reply("```This is Not A ViewOnce Message```")
- 
-})
  //---------------------------------------------------------------------------
  //---------------------------------------------------------------------------
 Module_Exports({
