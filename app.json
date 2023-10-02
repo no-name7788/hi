@@ -128,11 +128,6 @@
    "value": "sɪɢᴍᴀ ᴹᴰ"
     
 },
-"ANTI_BAD_WORD": {
-  "description": "Add Bad Words ",
-   "value": "nobadwordokey",
-    "required": false
-},
 "REMOVE_BG_KEY": {
   "description": "Add The RemoveBg Api Key.Git New APi Key From remove.bg",
    "value": "",
