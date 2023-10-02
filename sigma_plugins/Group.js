@@ -46,35 +46,7 @@ Module_Exports({
         }
     )
     //---------------------------------------------------------------------------
-    Module_Exports({
-        kingcmd: 'left',
-        infocmd: 'Left from group',
-        kingclass: 'group',
-        filename: __filename
-      }, async (conn, m, text, {cmdName, isCreator}) => {
-      
-        if (!m.isGroup) return await m.reply(tlang().group, {}, '', m)
-        if (!isCreator) return await m.reply(tlang().owner)
-      
-        let sure = text.toLowerCase().trim()
-        if (sure.startsWith('yes') || sure.includes('ok') || sure.includes('sure')) {
-          
-          try {
-            const owner = await conn.groupMetadata.participants.id
-            await m.reply('*_Group Left!_*')
-            await sleep(1000)
-            await conn.groupParticipantsUpdate(m.chat, [owner], 'remove')
-      
-          } catch (err) {
-            await m.reply(err)
-            console.log('Error While lefting Group : ', err)
-          }
-      
-        } else {
-          return await m.reply(`*_Use: ${prefix+cmdName} sure/yes/ok, For security threats_*`, {}, '', m)
-        }
-      
-      })
+
     //-----------------------------------------------------------------------------
      Module_Exports({
         kingcmd: "support",
