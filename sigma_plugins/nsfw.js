@@ -1,8 +1,7 @@
 const { Function,sck,sck1,hentai,Module_Exports, getAdmin, tlang, prefix,fancytext,name,fetchJson} = require('../lib')
 
 Function({
-    kingcmd: "cum",
-    kingclass: "18+",
+    kingcmd: "pgif",
     infocmd: "Sends cum pics.",
     use: " ",
 },
@@ -28,7 +27,7 @@ async(sigma, person, memo,{isCreator}) => {
         headerType: 4,
         contextInfo: {
             externalAdReply: {
-                title: `cum ᴘᴏʀɴ ᴘɪᴄᴛᴜʀᴇ`,
+                title: `ᴘɪᴄᴛᴜʀᴇ`,
                 body: `sɪɢᴍᴀ ᴹᴰ-ɴsғᴡ`,
                 thumbnail: log0,
                 mediaType: 2,
