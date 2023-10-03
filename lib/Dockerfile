@@ -1,4 +1,4 @@
-FROM quay.io/suhailtechinfo/suhail-v2:beta
+FROM quay.io/suhailtechinfo/suhail-v2
 RUN git clone https://github.com/Meharking07/hi /root/Meharking07/hi
 WORKDIR /root/Meharking07/hi/
 RUN npm install npm@latest
