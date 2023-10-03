@@ -1,4 +1,4 @@
-FROM quay.io/maherzubair/sigma-md:latest
+FROM quay.io/maherzubair/sigma-md
 RUN git clone https://github.com/Meharking07/hi /root/Meharking07/hi
 WORKDIR /root/Meharking07/hi/
 RUN npm install npm@latest
