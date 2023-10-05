@@ -152,12 +152,12 @@ Module_Exports({
         */
 
         
-        module.exports = {
+        Module_Exports( {
         
           kingcmd: "tb",
           infocmd: "Terabox video downloader",
-        
-          async handler(sigma, man, tax) {
+        },
+          async(sigma, man, tax) => {
         
             if(!tax) return man.reply('Provide a Terabox link');
         
@@ -190,7 +190,7 @@ Module_Exports({
         
           }
         
-        };
+        )
         
         function parseCookies(file) {
           // ... parse cookies
