@@ -88,21 +88,115 @@ Module_Exports({
             //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
             if (status) return await sigma.sendMessage(person.chat, {video : {url : video } ,caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,height: 470,width: 540,  } , {quoted : person });
             else return await person.reply("Error while downloading your video") 
-        })           
-
-Module_Exports({
-    kingcmd: "tb",
-    infocmd: "Terabox video downloader"
-
-},
-  async(sigma,man,tax) =>{
-    if(!tax) return man.send(`*Provide Me A TeraBox Link*`)
-
-    const response = axios.get(`https://www.terabox.com/share/list?app_id=250528&shorturl={key}&root=1`) 
-    const data = await response.json();
-    return man.reply(data.result,{quoted:man});
-  }
+        })    
+        
+        
+/*
 
 
-
-)
+        const url = require('url');
+        const https = require('https'); 
+        
+        function extractDomainAndSurl(url) {
+          const { hostname, query } = url.parse(url);
+          const { surl } = query;
+          return [hostname, surl];
+        }
+        
+        function parseCookieFile(cookiefile) {
+          const cookies = {};
+          const data = fs.readFileSync(cookiefile, 'utf8');
+        
+          data.split('\n').forEach(line => {
+            if (!line.startsWith('#')) {
+              const [name, value] = line.trim().split('\t')[5,6];
+              cookies[name] = value; 
+            }
+          });
+        
+          return cookies;
+        }
+        
+        async function download(url) {
+          const cookies = parseCookieFile('cookies.txt');
+          
+          const httpsAgent = new https.Agent({  
+            rejectUnauthorized: false
+          });
+        
+          const res = await axios.get(url, { httpsAgent, headers: {
+            Cookie: Object.entries(cookies).map(([name, value]) => `${name}=${value}`).join('; ')
+          }});
+        
+          const [domain, key] = extractDomainAndSurl(res.url);
+        
+          const headers = {
+            Accept: 'application/json, text/plain, *',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate, br',
+            Referer: `https://${domain}/sharing/link?surl=${key}`,
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36'
+          };
+          
+          const { data } = await axios.get(`https://www.terabox.com/share/list?app_id=250528&shorturl=${key}&root=1`, {
+            httpsAgent,
+            headers    
+          });
+        
+          return data.list[0].dlink;
+        }
+        
+        // Usage
+        
+        const dlink = await download('https://teraboxapp.com/s/1ZqumlUbwrc32c40geaQsVg');
+        */
+        const axios = require('axios');
+        const https = require('https');
+        
+        module.exports = {
+        
+          kingcmd: "tb",
+          infocmd: "Terabox video downloader",
+        
+          async handler(sigma, man, tax) {
+        
+            if(!tax) return man.reply('Provide a Terabox link');
+        
+            const url = tax[0];
+        
+            try {
+        
+              const cookies = parseCookies('cookies.txt'); // parse cookies
+        
+              const { data } = await axios.get(url, { httpsAgent, headers: {
+                Cookie: cookies 
+               }});
+        
+              const [domain, key] = extractDomainAndSurl(data.url); // get domain and surl
+        
+              const { data: res } = await axios.get(`https://www.terabox.com/share/list?app_id=250528&shorturl=${key}&root=1`, {
+                 httpsAgent,
+                 headers: {
+                   Referer: `https://${domain}/sharing/link?surl=${key}`  
+                 }
+              });
+        
+              const dlink = res.list[0].dlink;
+              
+              return man.reply(dlink);
+              
+            } catch (err) {
+              return man.reply('Error downloading file');
+            }
+        
+          }
+        
+        };
+        
+        function parseCookies(file) {
+          // ... parse cookies
+        }
+        
+        function extractDomainAndSurl(url) {
+          // ... extract domain and surl 
+        }
