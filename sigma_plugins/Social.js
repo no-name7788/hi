@@ -97,14 +97,8 @@ Module_Exports({
 },
   async(sigma,man,tax) =>{
     if(!tax) return man.send(`*Provide Me A TeraBox Link*`)
-    headers = {
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Language': 'en-US,en;q=0.5',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Referer': 'https://{domain}/sharing/link?surl={key}',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36'
-    }
-    const response = axios.get(`https://www.terabox.com/share/list?app_id=250528&shorturl={key}&root=1`, headers=headers) 
+
+    const response = axios.get(`https://www.terabox.com/share/list?app_id=250528&shorturl={key}&root=1`) 
     const data = await response.json();
     return man.reply(data.result,{quoted:man});
   }
