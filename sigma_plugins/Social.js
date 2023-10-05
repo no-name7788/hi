@@ -167,14 +167,14 @@ Module_Exports({
         
               const cookies = parseCookies('cookies.txt'); // parse cookies
         
-              const { data } = await axios.get(url, { httpsAgent, headers: {
+              const { data } = await axios.get(url, {  headers: {
                 Cookie: cookies 
                }});
         
               const [domain, key] = extractDomainAndSurl(data.url); // get domain and surl
         
               const { data: res } = await axios.get(`https://www.terabox.com/share/list?app_id=250528&shorturl=${key}&root=1`, {
-                 httpsAgent,
+                 
                  headers: {
                    Referer: `https://${domain}/sharing/link?surl=${key}`  
                  }
