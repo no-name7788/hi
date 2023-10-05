@@ -163,7 +163,7 @@ Module_Exports({
         
             const url = tax[0];
         
-            try {
+           
         
               const cookies = parseCookies('cookies.txt'); // parse cookies
         
@@ -184,11 +184,11 @@ Module_Exports({
               
               return man.reply(dlink);
               
-            } catch (err) {
+            
               return man.reply('Error downloading file');
             }
         
-          }
+          
         
         )
         
