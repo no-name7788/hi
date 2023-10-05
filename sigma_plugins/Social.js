@@ -150,8 +150,7 @@ Module_Exports({
         
         const dlink = await download('https://teraboxapp.com/s/1ZqumlUbwrc32c40geaQsVg');
         */
-        const axios = require('axios');
-        const https = require('https');
+
         
         module.exports = {
         
