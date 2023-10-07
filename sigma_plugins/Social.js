@@ -203,28 +203,23 @@ Module_Exports({
 
 
 //-----------------------------------------
-        Module_Exports({
-          kingcmd: 'tiktok',
-          shortcut: ['tik'],
-          kingclass: 'Downloads',
-          infocmd: 'Download videos from TikTok.'
-        },
-          
-        async(sigma, person,text) => {
-            
-if (!text) return person.send("Provide me Tiktok Video")
-            
-              
-            
-              
-              const btch = await ttdl(url);
+Module_Exports( {
+  kingcmd: 'tiktok',
+  shortcut: ['tik'],
+  kingclass: 'Downloads',
+  infocmd: 'Download videos from TikTok.',
+};
 
-              
+async (sigma, person, text) => {
+  if (!text) return sigma.sendMessage('Provide me TikTok Video URL');
 
-             
-              const caption = `🌳TITLE:`;
-              sigma.sendMessage(person.chat, caption,btch);
+  try {
+    const url = text.trim();
+    const btch = await ttdl(url);
 
-
-             })
-            
+    const caption = `🌳 TITLE: ${btch.title}\n🎥 VIDEO URL: ${btch.videoUrl}`;
+    sigma.sendMessage(person.chat, caption);
+  } catch (error) {
+    sigma.sendMessage(person.chat, { text: 'Failed to download TikTok video'});
+  }
+});
