@@ -214,7 +214,7 @@ Module_Exports({
             
 if (!text) return person.send("Provide me Tiktok Video")
             
-              const url = args[0];
+              
             
               
               const downloader = new ttdl();
