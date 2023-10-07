@@ -217,19 +217,13 @@ if (!text) return person.send("Provide me Tiktok Video")
               
             
               
-              const downloader = await ttdl();
-              const videoInfo = await downloader.getVideoInfo(url);
+              const btch = await ttdl(txt);
+
               
-              const videoUrl = videoInfo.videoUrl;
-              const videoImage = videoInfo.thumbnailUrl;
-              const videoTitle = videoInfo.title;
-              const videoViews = videoInfo.views;
-              const videoLikes = videoInfo.likes;
-              const videoPublished = videoInfo.published;
-               
+
              
-              const caption = `🌳TITLE: ${videoTitle}\n👀VIEWS: ${videoViews}\n👍LIKES: ${videoLikes}\n🙌PUBLISHED: ${videoPublished}\n\nPlease reply the video quality:\n1. High Quality\n2. Low Quality`;
-              sigma.sendMessage(person.chat, videoImage, caption);
+              const caption = `🌳TITLE:`;
+              sigma.sendMessage(person.chat, caption,btch);
 
 
              })
