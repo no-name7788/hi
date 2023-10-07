@@ -7,22 +7,22 @@ const axios= require('axios');
 const ttdl = require('btch-downloader');
 
 
-const { tiktokdl: downloadTikTok } = require('tiktokdl');
+
+const { tiktokdl } = require('tiktokdl');
 
 Module_Exports({
   kingcmd: 'tiktok',
   shortcut: ['tik'],
   kingclass: 'Downloads',
-  infocmd: 'Download videos from TikTok.'
+  infocmd: 'Download videos from TikTok.',
 },
+ async (sigma, person, text) => {
+    const url = text.split(' ')[1];
 
-async (sigma, person, text) => {
-  const url = text.split(' ')[1];
-
-  try {
-    const data = await downloadTikTok(url);
-    sigma.sendMessage(person.chat, { text: 'TikTok video downloaded successfully!' });
-  } catch (error) {
-    sigma.sendMessage(person.chat, { text: 'Error downloading TikTok video: ' + error.message });
-  }
-});
+    try {
+      const response = await tiktokdl(url);
+      sigma.sendMessage(person.chat, { text: 'TikTok video downloaded successfully!' });
+    } catch (error) {
+      sigma.sendMessage(person.chat, { text: 'Error downloading TikTok video: ' + error.message });
+    }
+};
