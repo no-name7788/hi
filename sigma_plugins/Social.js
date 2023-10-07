@@ -217,7 +217,7 @@ if (!text) return person.send("Provide me Tiktok Video")
               
             
               
-              const downloader = new ttdl();
+              const downloader = await ttdl();
               const videoInfo = await downloader.getVideoInfo(url);
               
               const videoUrl = videoInfo.videoUrl;
