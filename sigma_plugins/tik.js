@@ -1,4 +1,4 @@
-
+/*
 const {Module_Exports , name , prefix,getBuffer,tlang,fetchJson } = require('../lib')
 const fetch = require('node-fetch');
 const bocil = require('@bochilteam/scraper');
@@ -26,3 +26,4 @@ Module_Exports({
       sigma.sendMessage(person.chat, { text: 'Error downloading TikTok video: ' + error.message });
     }
 };
+*/
