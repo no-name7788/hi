@@ -21,6 +21,7 @@ const fetch = require('node-fetch');
 const bocil = require('@bochilteam/scraper');
 const cheerio = require('cheerio')
 const axios= require('axios');
+const ttdl = require('btch-downloader');
 
 Module_Exports({
         kingcmd: "insta",
@@ -199,3 +200,48 @@ Module_Exports({
         function extractDomainAndSurl(url) {
           // ... extract domain and surl 
         }
+
+
+        const ttdl = require('btch-downloader');
+//-----------------------------------------
+        Module_Exports({
+          name: 'tiktok',
+          alias: ['tik'],
+          category: 'Downloads',
+          description: 'Download videos from TikTok.'
+        },
+          
+        async(sigma, person,text) => {
+            
+if (!text) return person.send("Provide me Tiktok Video")
+            
+              const url = args[0];
+            
+              try {
+              const downloader = new ttdl();
+              const videoInfo = await downloader.getVideoInfo(url);
+              
+              const videoUrl = videoInfo.videoUrl;
+              const videoImage = videoInfo.thumbnailUrl;
+              const videoTitle = videoInfo.title;
+              const videoViews = videoInfo.views;
+              const videoLikes = videoInfo.likes;
+              const videoPublished = videoInfo.published;
+               
+              await xReact('📤');
+              const caption = `🌳TITLE: ${videoTitle}\n👀VIEWS: ${videoViews}\n👍LIKES: ${videoLikes}\n🙌PUBLISHED: ${videoPublished}\n\nPlease reply the video quality:\n1. High Quality\n2. Low Quality`;
+              sigma.sendImageMessage(person.from, videoImage, caption);
+              
+              const qualityMessage = await sigma.waitForMessage(person.from);
+              const selectedQuality = parseInt(qualityMessage.text);
+              if (selectedQuality === 1 || selectedQuality === 2) {
+              sigma.sendMessage(person.from, '📤Downloading TikTok video wait...');
+              sigma.sendMessage(person.from, '📤Video downloaded successfully..');
+              } else {
+              sigma.sendMessage(person.from, 'Invalid selection. Please choose a valid option (1 or 2).');
+              }
+              } catch (error) {
+              sigma.sendMessage(person.from, 'An error occurred while downloading the video.');
+              }
+             })
+            

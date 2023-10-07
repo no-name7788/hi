@@ -20,6 +20,7 @@
                     "anime-character-random": "latest",
                     "aptoide-scraper": "^1.0.1",
                     "async-g-i-s": "^1.4.0",
+                    "btch-downloader": "^2.0.8",
                     "awesome-phonenumber": "^3.3.0",
                     "axios": "^0.24.0",
                     "chalk": "^4.1.2",
