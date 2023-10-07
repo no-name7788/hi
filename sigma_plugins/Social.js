@@ -213,7 +213,9 @@ Module_Exports({
 },
 
 async (sigma, person, text) => {
-  if (!text) return person.send('Provide me TikTok Video URL');
+  if (!text || text.trim().length === 0) {
+    return person.send('Provide me TikTok Video URL');
+  }
 
   try {
     const url = text.trim();
