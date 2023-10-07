@@ -217,7 +217,7 @@ if (!text) return person.send("Provide me Tiktok Video")
               
             
               
-              const btch = await ttdl(txt);
+              const btch = await ttdl(url);
 
               
 
