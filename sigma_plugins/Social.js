@@ -207,8 +207,8 @@ Module_Exports( {
   kingcmd: 'tiktok',
   shortcut: ['tik'],
   kingclass: 'Downloads',
-  infocmd: 'Download videos from TikTok.',
-};
+  infocmd: 'Download videos from TikTok.'
+},
 
 async (sigma, person, text) => {
   if (!text) return sigma.sendMessage('Provide me TikTok Video URL');
