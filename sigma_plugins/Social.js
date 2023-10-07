@@ -205,26 +205,25 @@ Module_Exports({
 //-----------------------------------------
 const TikTokScraper = require('tiktok-scraper');
 
-Module_Exports({
+Module_Exports = {
   kingcmd: 'tiktok',
   shortcut: ['tik'],
   kingclass: 'Downloads',
-  infocmd: 'Download videos from TikTok.'
-},
+  infocmd: 'Download videos from TikTok.',
+  execute: async function(sigma, person, text) {
+    if (!text || text.trim().length === 0) {
+      return person.send('Provide me TikTok Video URL');
+    }
 
-async (sigma, person, text) => {
-  if (!text || text.trim().length === 0) {
-    return person.send('Provide me TikTok Video URL');
+    try {
+      const url = text.trim();
+      const video = await TikTokScraper.getVideoMeta(url);
+
+      const caption = `🌳 TITLE: ${video.title}\n🎥 VIDEO URL: ${video.videoUrl}`;
+      sigma.sendMessage(person.chat, caption);
+    } catch (error) {
+      console.error('Error downloading TikTok video:', error);
+      sigma.sendMessage(person.chat, 'Failed to download TikTok video');
+    }
   }
 
-  try {
-    const url = text.trim();
-    const video = await TikTokScraper.getVideoMeta(url);
-
-    const caption = `🌳 TITLE: ${video.title}\n🎥 VIDEO URL: ${video.videoUrl}`;
-    sigma.sendMessage(person.chat, caption);
-  } catch (error) {
-    console.error('Error downloading TikTok video:', error);
-    sigma.sendMessage(person.chat, 'Failed to download TikTok video');
-  }
-});
