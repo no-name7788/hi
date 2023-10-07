@@ -213,13 +213,13 @@ Module_Exports( {
 async (sigma, person, text) => {
   if (!text) return sigma.sendMessage('Provide me TikTok Video URL');
 
-  try {
+  
     const url = text.trim();
     const btch = await ttdl(url);
 
     const caption = `🌳 TITLE: ${btch.title}\n🎥 VIDEO URL: ${btch.videoUrl}`;
     sigma.sendMessage(person.chat, caption);
-  } catch (error) {
+
     sigma.sendMessage(person.chat, { text: 'Failed to download TikTok video'});
-  }
+  
 });
