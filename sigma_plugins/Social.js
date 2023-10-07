@@ -205,7 +205,7 @@ Module_Exports({
 //-----------------------------------------
 const TikTokScraper = require('tiktok-scraper');
 
-Module_Exports({
+module.exports = {
   kingcmd: 'tiktok',
   shortcut: ['tik'],
   kingclass: 'Downloads',
@@ -227,4 +227,4 @@ async (sigma, person, text) => {
     console.error('Error downloading TikTok video:', error);
     sigma.sendMessage(person.chat, 'Failed to download TikTok video');
   }
-});
+};
