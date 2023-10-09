@@ -13,7 +13,7 @@ const util = require("util");
           if(!citel.quoted) return citel.reply('*_Please Mention a user for action._*')
           let user = await sck1.findOne({id:citel.quoted.sender});
           if(user.permit==='true') return citel.reply(`*_${user.name} Have Already Permission To Message You in Pm._*`)
-          await sck1.updateOne({ id: citel.quoted.sender }, { permit: "true",times: '1' })
+          await sck1.updateOne({ id: citel.quoted.sender }, { permit: "true",times: '2' })
           return citel.reply(`*_Permitted ${user.name} To Message You in Pm_*`);
   
           }
