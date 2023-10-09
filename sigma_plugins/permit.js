@@ -42,9 +42,9 @@ const util = require("util");
   let user = await sck1.findOne({id:citel.sender});
   if(!citel.isGroup && user.permit==='false' && !citel.key.fromMe){
   var text;
-  if(user.times>1) text = `*_Hi This is sɪɢᴍᴀ ᴹᴰ a Personal Assistant Of_* ${name.ownername}.\n*_Do Not Call or Send Messages OtherWise You Will Be Blocked_*\n*_Wait Until My Owner Responds You_*`
-  if (user.times>2) text = `*_Hello Idiot ${citel.pushName}, Blocking You For Messaging in ${name.ownername} Pm._*\n*_You Crossed ${user.times} Warning(s)._*`
-         //let ter = `*_Pm-Protect Action Of_*\n${name.ownername}\n\n${text}\n\n*_⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ_*`;
+  if(user.times>1) text = `*_Pm-Protect Action Of Maher Zubair_*\n\n*_Hello ${citel.pushName}_*\n*_This is sɪɢᴍᴀ ᴹᴰ A Personal Assistant Of Maher Zubair_*.\n*_Do Not Call or Send Messages OtherWise You Will Be Blocked_*\n*_Wait Until Maher Zubair Responds You_*\n*_⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ_*`
+  if (user.times>2) text = `*_Hello Idiot ${citel.pushName}, Blocking You For Messaging in ${name.ownername} Pm._*\n*_You Crossed ${user.times} Warning(s)._*\n*_⤹★ᴘᴏᴡᴇʀᴇᴅ ʙʏ★⤸ sɪɢᴍᴀ ᴹᴰ_*`
+        
           let buttonMessaged = {
               image: {
                   url: await botpic(),
