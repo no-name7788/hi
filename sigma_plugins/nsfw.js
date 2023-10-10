@@ -16,7 +16,7 @@ async(sigma, person, memo,{isCreator}) => {
     let mongoschemas = zerogroup.nsfw || "false";
     if (mongoschemas == "false") return person.reply("*_NSFW is not Active_*");
     const response = await fetchJson('https://raw.githubusercontent.com/Meharking07/hi/main/Media/SIGMA-MD%20NSFW/Porn_Gif.json')
-    let random = anu[Math.floor(Math.random() * response.length)]
+    let random = response[Math.floor(Math.random() * response.length)]
     const buffer = Buffer.from(response.data, "utf-8");
     let gif = await GIFBufferToVideoBuffer(buffer);
 
