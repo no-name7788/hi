@@ -12,7 +12,7 @@ const { tiktokdl } = require('tiktokdl');
 
 Module_Exports({
   kingcmd: 'tiktok',
-  shortcut: ['tik'],
+  shortcut: ['tt'],
   kingclass: 'Downloads',
   infocmd: 'Download videos from TikTok.'
 },
@@ -21,7 +21,7 @@ Module_Exports({
 
     
       const response = await tiktokdl(url);
-      sigma.sendMessage(person.chat, { text: 'TikTok video downloaded successfully!' });
+      sigma.sendMessage(person.chat, {video : {url : video } ,caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,height: 470,width: 540,  } , {quoted : person });
     
     
 })
