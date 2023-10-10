@@ -12,7 +12,7 @@ const { tiktokdl } = require('tiktokdl');
 
 Module_Exports({
   kingcmd: 'tiktok',
-  shortcut: ['tt'],
+  shortcut: ['tk'],
   kingclass: 'Downloads',
   infocmd: 'Download videos from TikTok.'
 },
