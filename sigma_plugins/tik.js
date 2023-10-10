@@ -19,11 +19,10 @@ Module_Exports({
  async (sigma, person, text) => {
     const url = text.split(' ')[1];
 
-    try {
+    
       const response = await tiktokdl(url);
       sigma.sendMessage(person.chat, { text: 'TikTok video downloaded successfully!' });
-    } catch (error) {
-      sigma.sendMessage(person.chat, { text: 'Error downloading TikTok video: ' + error.message });
-    }
+    
+    
 })
 
