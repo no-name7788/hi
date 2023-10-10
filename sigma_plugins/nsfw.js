@@ -17,26 +17,7 @@ async(sigma, person, memo,{isCreator}) => {
     if (mongoschemas == "false") return person.reply("*_NSFW is not Active_*");
     let anu = await fetchJson('https://raw.githubusercontent.com/Meharking07/hi/main/Media/SIGMA-MD%20NSFW/Porn_Gif.json')
     let random = anu[Math.floor(Math.random() * anu.length)]
-    let Maher_Zubair = {
-        video: {
-            gif,url:random.SIGMS_NSFW
-        },
-        gifPlayback:true,
-        caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
-        footer: sigma.user.name,
-        headerType: 4,
-        contextInfo: {
-            externalAdReply: {
-                title: `ᴘɪᴄᴛᴜʀᴇ`,
-                body: `sɪɢᴍᴀ ᴹᴰ-ɴsғᴡ`,
-                thumbnail: log0,
-                mediaType: 2,
-                mediaUrl: ``,
-                sourceUrl: ``,
-            },
-        },
-    };
-    sigma.sendMessage(person.chat, Maher_Zubair , { quoted: person })
+    sigma.sendMessage(person.chat, { video: gif, gifPlayback: true,url:random.SIGMS_NSFW} , { quoted: person })
     
 }
 )
