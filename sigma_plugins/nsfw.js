@@ -1,4 +1,4 @@
-const { Function,sck,sck1,hentai,Module_Exports, getAdmin, tlang, prefix,fancytext,name,fetchJson} = require('../lib')
+const { Function,sck,sck1,hentai,Module_Exports, getAdmin, tlang, prefix,fancytext,name,fetchJson,GIFBufferToVideoBuffer} = require('../lib')
 
 Function({
     kingcmd: "pgif",
@@ -15,6 +15,7 @@ async(sigma, person, memo,{isCreator}) => {
         .save());
     let mongoschemas = zerogroup.nsfw || "false";
     if (mongoschemas == "false") return person.reply("*_NSFW is not Active_*");
+    let gif = await GIFBufferToVideoBuffer(buffer);
     let anu = await fetchJson('https://raw.githubusercontent.com/Meharking07/hi/main/Media/SIGMA-MD%20NSFW/Porn_Gif.json')
     let random = anu[Math.floor(Math.random() * anu.length)]
     sigma.sendMessage(person.chat, { video: gif, gifPlayback: true,url:random.SIGMS_NSFW} , { quoted: person })
