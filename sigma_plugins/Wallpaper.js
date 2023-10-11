@@ -69,13 +69,14 @@ async(Void, man,text) =>
     return await Void.sendMessage(man.chat,Maher_Zubair, { quoted: man })})
 //----------------------------------------------------------------------
 Module_Exports({
-    kingcmd: "blackpink",
+    kingcmd: "blakpink",
     infocmd: "To get blackpink wallpapers",
     kingclass: "wallpapers",
 },
 async(Void, man,text) =>
 {
     let anu = await fetchJson('https://raw.githubusercontent.com/Maher-Zubair/SIGMA-MD/main/Media/WallPapers/blackpink_pics.json')
+    citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+text)
     let random = anu[Math.floor(Math.random() * anu.length)]
     let Maher_Zubair = {
         image: {
