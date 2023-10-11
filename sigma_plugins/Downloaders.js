@@ -316,12 +316,13 @@ Module_Exports({
         headerType: 4,
         contextInfo: {
             externalAdReply: {
-                title: `${name.ownername}`,
+                title: snam,
+                body: `ᴍᴜsɪᴄ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                 thumbnail: log0,
                 mediaType: 2,
 
 
-                sourceUrl: `${waUrl}`,
+                sourceUrl: zyt,
                 
             },
         },
