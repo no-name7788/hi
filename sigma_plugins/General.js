@@ -158,14 +158,17 @@ timestampe = speed();
   try{
   let { data } = await axios.get('https://api.github.com/repos/Maher-Zubair/SIGMA-MD')
   let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿
-┃✗ *_•sᴛᴀʀs•_* ${data.stargazers_count} sᴛᴀʀs
-┃✗ *_•ꜰᴏʀᴋs•_* ${data.forks_count} ꜰᴏʀᴋs
-┃✗ *_•sᴘᴇᴇᴅ•_* ${latensie.toFixed(4)} ᴍs 
-┃✗ *_•ᴠᴇʀsɪᴏɴ•_* sɪɢᴍᴀ
-┃✗ *_•ᴅᴇᴠᴇʟᴏᴘᴇʀ•_* ᴍ ᴢᴜʙᴀɪʀ
-┃✗ *_•ɢɪᴛ•_*
-https://github.com/Maher-Zubair/SIGMA-MD
-┗━━━━━━━━━━⦿`
+┃✗ *•sᴛᴀʀs•* ${data.stargazers_count} sᴛᴀʀs
+┃✗ *•ꜰᴏʀᴋs•* ${data.forks_count} ꜰᴏʀᴋs
+┃✗ *•sᴘᴇᴇᴅ•* ${latensie.toFixed(4)} ᴍs 
+┃✗ *•ᴠᴇʀsɪᴏɴ•* sɪɢᴍᴀ
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
+┗━━━━━━━━━━⦿\n
+*•𝚁𝙴𝙻𝙴𝙰𝚂𝙴𝙳 𝙳𝙰𝚃𝙴•*
+₁/₁₀/₂₀₂₃
+
+
+`
 let Maher_Zubair_repo = {
   image: { url: await botpic() },
   caption: cap,
