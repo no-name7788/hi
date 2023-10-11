@@ -143,6 +143,7 @@ function _0xda55(_0x28fa32,_0x5445d5){const _0x52cbbf=_0x405c();return _0xda55=f
 },
 async(sigma, person, memo) => {
     if (!memo) return person.reply(`_Give me text to change into audio_\nEx: ${prefix}tts i am SIGMA MALE`)
+    citel.reply("*_Converting Your Text To Voice..._*")
     let memotts = memo
     const ttsurl = googleTTS.getAudioUrl(memotts, {
         lang: "en",
@@ -303,6 +304,7 @@ Module_Exports({
         },
         async(bot, citel, tax) => {
             if (!tax) return citel.send(`*Give A Number Example: ${prefix}music 3*`)
+            citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+tax)
 	const n = parseInt(tax);
 	if(n.toString()=="NaN" || n < 1 || n > 160 ) return citel.reply('```Give Number From 1 to 160```');
 	   let url = `https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/sound${n.toString()}.mp3`
@@ -375,6 +377,7 @@ Module_Exports({
     },
     async(Void, citel, text) => {
         if (!text) return citel.send(`What picture are you looking for?`)
+        citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+text)
         try {
             let anu = await pinterest(text)
             let result = anu[Math.floor(Math.random() * anu.length)]
