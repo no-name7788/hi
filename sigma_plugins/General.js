@@ -170,8 +170,8 @@ _𝟷/𝟷𝟶/𝟸𝟶𝟸𝟹_
 _http://lnkiy.in/SIGMA-MD_GITHUB_
 *•𝚅𝙸𝚂𝙸𝚃 𝙵𝙾𝚁 𝙷𝙴𝙻𝙿•*
 _http://lnkiy.in/Innoxent-yt_
-${scap}
-`
+
+${scap}`
 let Maher_Zubair_repo = {
   image: { url: await botpic() },
   caption: cap,
