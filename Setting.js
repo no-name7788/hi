@@ -24,7 +24,7 @@ global.mztit = process.env.MZTIT ||"🅼♥︎❚❚♥︎🆉",
 global.Gname = process.env.GNAME ||"xxx",
 global.waUrl = process.env.WAURL ||"https://chat.whatsapp.com/CmY0THcJCUYEGxLJulhcRV",
 global.website = 'https://github.com/SuhailTechInfo/Secktor-Md' ; 
-global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/2ca599cf20ac50ba941f6.jpg' ;
+global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/03e49e6e2057568db8926.jpg' ;
 module.exports = {
   sessionName: process.env.SESSION_ID || '',      //Put Your Session Id Here
   botname: process.env.BOT_NAME || 'NO-MD',
