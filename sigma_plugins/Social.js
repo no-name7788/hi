@@ -65,27 +65,12 @@ Module_Exports({
         },
        async(sigma, person, memo) => {
         if (!memo) return person.reply(`Give me facebook video link`);
-        let txt = memo ? memo.split(" ")[0]:'';
-if (!/facebook/.test(txt)) return await person.reply(`Please give me valid facebook video link..!`);
-person.send('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+memo)
-        bocil.facebookdlv2(memo).then(async (data) =>
-         {        
-         let SIGMA_FB_DOWNLODER = {
-          video : {url : data.result[0] },
-          caption: sgen,
-          footer: tlang().footer,
-          headerType: 4,
-          width: 600,
-          height: 490,
-          contextInfo: {
-              externalAdReply: {
-                  title: snam,
-                  body: "ꜰʙ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ",
-                  thumbnail: log0,
-                  mediaType: 4,
-                  mediaUrl: '',
-                  sourceUrl: zyt,}}}
-          return sigma.sendMessage(person.chat,SIGMA_FB_DOWNLODER,  { quoted: person }) } )
+         let txt = memo ? memo.split(" ")[0]:'';
+ if (!/facebook/.test(txt)) return await person.reply(`Please give me valid facebook video link..!`);
+ person.send('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+memo)
+         bocil.facebookdlv2(memo).then(async (data) =>
+          {  return sigma.sendMessage(person.chat, { video: { url: data.result[0].url },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 550,height: 470, },{ quoted: person }) }) 
+         return person.reply("Error while downloading your video")
         
       
       })
