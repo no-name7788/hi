@@ -145,14 +145,51 @@ Module_Exports({
  })
 //---------------------------------------------------------------------------
 Module_Exports({
-  kingcmd: "script",
-  shortcut: ["git", "sc", "repo"],
+  kingcmd: "repo",
+  shortcut: ["git", "sc", "script"],
   infocmd: "Sends info about repo.",
   kingclass: "developer",
   use:""
 },
 async(bot, citel, {isCreator}) => {
- const _0x169e7f=_0x5514;(function(_0x136229,_0x267961){const _0x504221=_0x5514,_0x284125=_0x136229();while(!![]){try{const _0x71f82c=-parseInt(_0x504221(0x19d))/0x1+parseInt(_0x504221(0x197))/0x2+-parseInt(_0x504221(0x181))/0x3*(parseInt(_0x504221(0x193))/0x4)+-parseInt(_0x504221(0x17d))/0x5+parseInt(_0x504221(0x198))/0x6*(-parseInt(_0x504221(0x1a3))/0x7)+parseInt(_0x504221(0x180))/0x8+parseInt(_0x504221(0x189))/0x9;if(_0x71f82c===_0x267961)break;else _0x284125['push'](_0x284125['shift']());}catch(_0x3475c9){_0x284125['push'](_0x284125['shift']());}}}(_0x2780,0xb5857));const _0x2c943a=(function(){let _0x2bb104=!![];return function(_0x3cb0a7,_0x1f06b3){const _0x17bfdd=_0x2bb104?function(){const _0xdf6464=_0x5514;if(_0x1f06b3){const _0x419a43=_0x1f06b3[_0xdf6464(0x191)](_0x3cb0a7,arguments);return _0x1f06b3=null,_0x419a43;}}:function(){};return _0x2bb104=![],_0x17bfdd;};}()),_0x34bd0b=_0x2c943a(this,function(){const _0x642864=_0x5514;return _0x34bd0b['toString']()[_0x642864(0x19f)](_0x642864(0x17b))['toString']()['constructor'](_0x34bd0b)[_0x642864(0x19f)]('(((.+)+)+)+$');});function _0x2780(){const _0x5b5f07=['forks_count','\x20⟫━⦿\x0a┃✗\x20*_•sᴛᴀʀs•_*\x20','ᴛᴀᴘ\x20ʜᴇʀᴇ\x20ꜰᴏʀ\x20ʀᴇᴘᴏ','console','constructor','apply','toString','120qMAmjw','log','get','https://github.com/Maher-Zubair/SIGMA-MD','1015190EQNojQ','588bAIJDC','\x20sᴛᴀʀs\x0a┃✗\x20*_•ꜰᴏʀᴋs•_*\x20','┏━━⟪⟪\x20','__proto__','error','1060927QuYlDP','return\x20(function()\x20','search','https://api.github.com/repos/Maher-Zubair/SIGMA-MD','warn','chat','90447binuiN','(((.+)+)+)+$','info','1389410LxdvGl','send','*_The\x20Repo\x20is\x20Private\x20or\x20It\x20is\x20Not\x20Available\x20at\x20The\x20Moment_*','9418808LvgkiK','55512GgZAfY','toFixed','sɪɢᴍᴀ\x20ᴹᴰ-ʀᴇᴘᴏ','sendMessage','\x20ᴍs\x20\x0a┃✗\x20*_•ᴠᴇʀsɪᴏɴ•_*\x20sɪɢᴍᴀ\x0a┃✗\x20*_•ᴅᴇᴠᴇʟᴏᴘᴇʀ•_*\x20ᴍ\x20ᴢᴜʙᴀɪʀ\x0a┃✗\x20*_•ɢɪᴛ•_*\x0ahttps://github.com/Maher-Zubair/SIGMA-MD\x0a┗━━━━━━━━━━⦿','stargazers_count','bind','exception','19968768flEuYT','trace','prototype'];_0x2780=function(){return _0x5b5f07;};return _0x2780();}_0x34bd0b();const _0x422eed=(function(){let _0x235707=!![];return function(_0x1e79f3,_0x273eb3){const _0x53c65d=_0x235707?function(){const _0x1f652d=_0x5514;if(_0x273eb3){const _0x44ede6=_0x273eb3[_0x1f652d(0x191)](_0x1e79f3,arguments);return _0x273eb3=null,_0x44ede6;}}:function(){};return _0x235707=![],_0x53c65d;};}()),_0x29040c=_0x422eed(this,function(){const _0x4e066d=_0x5514;let _0x514225;try{const _0x4c99b3=Function(_0x4e066d(0x19e)+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x514225=_0x4c99b3();}catch(_0xe4043b){_0x514225=window;}const _0xc7d845=_0x514225[_0x4e066d(0x18f)]=_0x514225[_0x4e066d(0x18f)]||{},_0xb2ce2e=[_0x4e066d(0x194),_0x4e066d(0x1a1),_0x4e066d(0x17c),_0x4e066d(0x19c),_0x4e066d(0x188),'table',_0x4e066d(0x18a)];for(let _0x352270=0x0;_0x352270<_0xb2ce2e['length'];_0x352270++){const _0x37f265=_0x422eed[_0x4e066d(0x190)][_0x4e066d(0x18b)][_0x4e066d(0x187)](_0x422eed),_0x44929b=_0xb2ce2e[_0x352270],_0x5c52fb=_0xc7d845[_0x44929b]||_0x37f265;_0x37f265[_0x4e066d(0x19b)]=_0x422eed['bind'](_0x422eed),_0x37f265[_0x4e066d(0x192)]=_0x5c52fb[_0x4e066d(0x192)][_0x4e066d(0x187)](_0x5c52fb),_0xc7d845[_0x44929b]=_0x37f265;}});_0x29040c(),timestampe=speed(),latensie=speed()-timestampe;function _0x5514(_0x4d4b8d,_0x533cb3){const _0x4eef00=_0x2780();return _0x5514=function(_0x29040c,_0x422eed){_0x29040c=_0x29040c-0x17b;let _0x2514d8=_0x4eef00[_0x29040c];return _0x2514d8;},_0x5514(_0x4d4b8d,_0x533cb3);}try{let {data}=await axios[_0x169e7f(0x195)](_0x169e7f(0x1a0)),cap=_0x169e7f(0x19a)+mztit+_0x169e7f(0x18d)+data[_0x169e7f(0x186)]+_0x169e7f(0x199)+data[_0x169e7f(0x18c)]+'\x20ꜰᴏʀᴋs\x0a┃✗\x20*_•sᴘᴇᴇᴅ•_*\x20'+latensie[_0x169e7f(0x182)](0x4)+_0x169e7f(0x185),Maher_Zubair_repo={'image':{'url':await botpic()},'caption':cap,'headerType':0x4,'footer':tlang()['footer'],'contextInfo':{'externalAdReply':{'title':_0x169e7f(0x183),'body':_0x169e7f(0x18e),'renderLargerThumbnail':!![],'thumbnailUrl':'','thumbnail':log0,'mediaType':0x4,'mediaUrl':'','sourceUrl':_0x169e7f(0x196)}}};await bot[_0x169e7f(0x184)](citel[_0x169e7f(0x1a2)],Maher_Zubair_repo,{'quoted':citel});}catch(_0xfae8f3){citel[_0x169e7f(0x17e)](_0x169e7f(0x17f));}
+ 
+timestampe = speed();
+  latensie = speed() - timestampe;
+  try{
+  let { data } = await axios.get('https://api.github.com/repos/Maher-Zubair/SIGMA-MD')
+  let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿
+┃✗ *_•sᴛᴀʀs•_* ${data.stargazers_count} sᴛᴀʀs
+┃✗ *_•ꜰᴏʀᴋs•_* ${data.forks_count} ꜰᴏʀᴋs
+┃✗ *_•sᴘᴇᴇᴅ•_* ${latensie.toFixed(4)} ᴍs 
+┃✗ *_•ᴠᴇʀsɪᴏɴ•_* sɪɢᴍᴀ
+┃✗ *_•ᴅᴇᴠᴇʟᴏᴘᴇʀ•_* ᴍ ᴢᴜʙᴀɪʀ
+┃✗ *_•ɢɪᴛ•_*
+https://github.com/Maher-Zubair/SIGMA-MD
+┗━━━━━━━━━━⦿`
+let Maher_Zubair_repo = {
+  image: { url: await botpic() },
+  caption: cap,
+  headerType: 4,
+  footer: tlang().footer,
+  contextInfo: {
+      externalAdReply: {
+          title: `sɪɢᴍᴀ ᴹᴰ-ʀᴇᴘᴏ`,
+          body: 'ᴛᴀᴘ ʜᴇʀᴇ ꜰᴏʀ ʀᴇᴘᴏ',
+          thumbnailUrl: ``,
+          thumbnail: log0,
+          mediaType: 4,
+          mediaUrl: '',
+          sourceUrl: srepo,
+      },
+  },
+}
+  await bot.sendMessage(citel.chat, Maher_Zubair_repo, {
+      quoted: citel,
+  })}
+  catch(e){
+    citel.send("*_The Repo is Private or It is Not Available at The Moment_*")}
+
+
 
 }
 )
@@ -171,7 +208,7 @@ Module_Exports({
 
 *•𝙲𝙾𝙽𝚃𝙴𝙽𝚃•* How To Create Whatsapp Bot
 *•𝚃𝙾𝚃𝙰𝙻 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴𝚁𝚂•* 0 Subs😥
-*•𝙲𝙷𝙰𝙽𝙽𝙴𝙻 𝙻𝙸𝙽𝙺•* _https://www.youtube.com/@InnoxentTech?sub_confirmation=1_
+*•𝙲𝙷𝙰𝙽𝙽𝙴𝙻 𝙻𝙸𝙽𝙺•* _${zyt}_
 `
 	
 	
@@ -183,12 +220,12 @@ Module_Exports({
             headerType: 4,
              contextInfo: {
               externalAdReply: {
-                  title: `Innoxent Tech`,
-                  body: `Subscribe My YT`, 
-                  thumbnail: log0,
+                  title: `ɪɴɴᴏxᴇɴᴛ ᴛᴇᴄʜ`,
+                  body: `sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴛ`, 
+                  thumbnail: devp,
                   mediaType: 4,
                   mediaUrl: "",
-                  sourceUrl: `https://www.youtube.com/@InnoxentTech?sub_confirmation=1`,
+                  sourceUrl: zyt,
               },
           },
             };
@@ -231,9 +268,9 @@ async(sigma, person) => {
               title: name.botname,
               body: `ʙᴏᴛ-sᴛᴀᴛᴜs`, 
               thumbnail: log0,
-              mediaType: 2,
+              mediaType: 4,
               mediaUrl: "",
-              sourceUrl: ``,
+              sourceUrl: zyt,
           },
       },
   };
