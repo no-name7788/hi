@@ -81,7 +81,7 @@ async(Void, man,text) =>
     let random = anu[Math.floor(Math.random() * anu.length)]
     let Maher_Zubair = {
         image: {
-            url: random.SIMGA_MD,
+            url: random.SIGMA_MD,
         },
         caption: sgen,
         footer: tlang().footer,
