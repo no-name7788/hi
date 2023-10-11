@@ -102,34 +102,7 @@ Module_Exports({
  async(bot,man,text) => {
 
 
-  let sigma_lists = `
-┏━━⟪⟪ ${mztit} ⟫━⦿       
-┃✗ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴀᴛᴇɢᴏʀɪᴇs*
-┃✗ ᴍɪsᴄ
-┃✗ ᴀɴɪᴍᴇ ᴘɪᴄs
-┃✗ ᴀᴜᴅɪᴏ
-┃✗ ᴄᴏɴᴠᴇʀᴛᴇʀ
-┃✗ sᴛɪᴄᴋᴇʀ
-┃✗ ɢʀᴏᴜᴘ
-┃✗ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
-┃✗ ᴇᴄᴏɴᴏᴍʏ
-┃✗ ꜰᴜɴ
-┃✗ ɢᴀᴍᴇ
-┃✗ ᴀɪ
-┃✗ ᴅᴇᴠᴇʟᴏᴘᴇʀ
-┃✗ ᴛᴏᴏʟs
-┃✗ ɢᴇɴᴇʀᴀʟ
-┃✗ ᴏᴡɴᴇʀ 
-┃✗ ʟᴏɢᴏ 
-┃✗ ᴍᴇᴅɪᴀ
-┃✗ ᴜsᴇʀ 
-┃✗ sᴇᴀʀᴄʜ
-┃✗ ᴘɪᴄ ᴇᴅɪᴛᴏʀ
-┃✗ ʀᴇᴀᴄᴛɪᴏɴs
-┃✗ *${prefix}list Category Name*
-┃✗ *To See Its Commands*
-┃✗ *${prefix}list developer*
-┗━━━━━━━━━━⦿        `
+  let sigma_lists = `${scate}\n${scap}`
     
     
           let lists = 
