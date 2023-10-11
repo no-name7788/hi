@@ -39,7 +39,7 @@ Module_Exports({ kingcmd: "slice", kingclass: "logo", infocmd: "Some text to ima
                     mediaType: 4,
                     mediaUrl: '',
                     sourceUrl: ``,}}}
-        return await singleText(Void, citel , 'create-light-glow-sliced-text-effect-online-1068' , slogo )
+        return await singleText(Void, citel , 'create-light-glow-sliced-text-effect-online-1068' , text,slogo )
     })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "glow", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
