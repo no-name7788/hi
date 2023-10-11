@@ -47,12 +47,12 @@ Module_Exports({
         height: 490,
         contextInfo: {
             externalAdReply: {
-                title: ``,
-                body: "Easy to Use",
+                title: snam,
+                body: "ɪɴsᴛᴀɢʀᴀᴍ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ",
                 thumbnail: log0,
                 mediaType: 4,
                 mediaUrl: '',
-                sourceUrl: ``,}}}
+                sourceUrl: zyt,}}}
       return sigma.sendMessage(person.chat,SIGMA_INSTA_DOWNLODER,{ quoted: person })
     
     })
