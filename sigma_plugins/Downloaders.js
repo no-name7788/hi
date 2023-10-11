@@ -206,13 +206,13 @@ async(sigma, person, memo) => {
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: `${name.ownername}`,
+                            title: snam,
                             body: ``,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
                             renderLargerThumbnail: true,
                             mediaType: 4,
                             mediaUrl: ``,
-                            sourceUrl: `${waUrl}`,
+                            sourceUrl:zyt,
                         }
                     }
                 }
