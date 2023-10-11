@@ -40,7 +40,7 @@ async(Void, man,text) =>
             url: random.SIGMA_MD,
         },
         caption: sgen,
-        footer: sigma.user.name,
+        footer: tlang().footer,
         headerType: 4,
         contextInfo: {
             externalAdReply: {
