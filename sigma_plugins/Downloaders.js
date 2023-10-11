@@ -143,7 +143,7 @@ function _0xda55(_0x28fa32,_0x5445d5){const _0x52cbbf=_0x405c();return _0xda55=f
 },
 async(sigma, person, memo) => {
     if (!memo) return person.reply(`_Give me text to change into audio_\nEx: ${prefix}tts i am SIGMA MALE`)
-    citel.reply("*_Converting Your Text To Voice..._*")
+    person.reply("*_Converting Your Text To Voice..._*")
     let memotts = memo
     const ttsurl = googleTTS.getAudioUrl(memotts, {
         lang: "en",
