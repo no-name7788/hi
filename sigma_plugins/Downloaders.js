@@ -320,7 +320,7 @@ Module_Exports({
             externalAdReply: {
                 title: snam,
                 body: `ᴍᴜsɪᴄ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-                thumbnail: log0,
+                //thumbnail: log0,
                 mediaType: 2,
 
 
@@ -560,6 +560,7 @@ Module_Exports({
                 citel.reply("*_Give ME YouTube Link_*");
                 return;
             }
+            citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+text)
             try {
                 let urlYt = text;
                 if (!urlYt.startsWith("http")) return citel.reply("*_Plz Give ME YouTube Link_*");
@@ -596,10 +597,10 @@ Module_Exports({
                                 title: snam,
                                 body: `ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                                 //thumbnailUrl: await getBuffer(search.all[0].thumbnail),
-                                renderLargerThumbnail: true,
+                                //renderLargerThumbnail: true,
                                 mediaType: 2,
                                 mediaUrl: ``,
-                                thumbnail:log0,
+                               // thumbnail:log0,
                                 sourceUrl: zyt
                             }
                         }
@@ -638,6 +639,7 @@ Module_Exports({
                 citel.reply(`_Idiot Give YouTube Link_!`);
                 return;
             }
+            citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+text)
             let infoYt = await ytdl.getInfo(urlYt);
             //30 MIN
             if (infoYt.videoDetails.lengthSeconds >= videotime) {
@@ -671,8 +673,8 @@ Module_Exports({
                         externalAdReply: {
                             title: snam,
                             body: `sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-                            renderLargerThumbnail: true,
-                            thumbnail: log0,
+                           // renderLargerThumbnail: true,
+                            //thumbnail: log0,
                             mediaUrl: text,
                             mediaType: 1,
                             //thumbnailUrl: log0,
@@ -716,6 +718,7 @@ Module_Exports({
                 citel.reply(`_Idiot Give YouTube Link_`);
                 return;
             }
+            citel.reply('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+text)
             let infoYt = await ytdl.getInfo(urlYt);
             //30 MIN
             if (infoYt.videoDetails.lengthSeconds >= videotime) {
@@ -749,11 +752,11 @@ Module_Exports({
                         externalAdReply: {
                             title: snam,
                             body: `‌ᴀᴜᴅɪᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-                            renderLargerThumbnail: true,
+                            //renderLargerThumbnail: true,
                             //thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            thumbnail: log0,
+                           // thumbnail: log0,
                             sourceUrl: zyt,
                         },
                     },
