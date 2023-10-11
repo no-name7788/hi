@@ -1,4 +1,4 @@
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
+//══════════════════════════════════════════════════════════════════════════════════════════════════════// 
 //                                                                                                      //
 //                                   MULTI-DEVICE WHATSAPP BOT                                          //
 //                                                                                                      //
@@ -212,7 +212,7 @@ async(sigma, person, memo) => {
                             renderLargerThumbnail: true,
                             mediaType: 4,
                             mediaUrl: ``,
-                            sourceUrl:zyt,
+                            sourceUrl: zyt,
                         }
                     }
                 }
@@ -269,13 +269,13 @@ async(sigma, person, memo) => {
                 contextInfo: {
                     externalAdReply: {
                         title: snam,
-                        body: ``,
+                        body: `sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                         renderLargerThumbnail: true,
                         thumbnailUrl: search.all[0].thumbnail,
                         mediaUrl: tax,
                         mediaType: 1,
                         thumbnail: await getBuffer(search.all[0].thumbnail),
-                        sourceUrl: `${waUrl}`,
+                        sourceUrl: zyt,
                         
                     },
                 },
@@ -350,12 +350,13 @@ Module_Exports({
         headerType: 4,
         contextInfo: {
             externalAdReply: {
-                title: `${name.ownername}`,
+                title: snam,
+                body: `ʀɪɴɢᴛᴏɴᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                 thumbnail: log0,
                 mediaType: 2,
 
 
-                sourceUrl: `${waUrl}`,
+                sourceUrl: zyt,
                 
             },
         },
@@ -478,19 +479,19 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
             let buttonMessage = {
                 document: fs.readFileSync(`./${randomName}`),
                 mimetype: 'audio/mpeg',
-                caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
+                caption: sgen,
                 fileName: titleYt + ".mp3",
                 headerType: 4,
                 contextInfo: {
                     externalAdReply: {
-                        title: `${name.ownername}`,
-                        body: ``,
+                        title: snam,
+                        body: `ᴀᴜᴅɪᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                         renderLargerThumbnail: true,
                         thumbnailUrl: search.all[0].thumbnail,
                         mediaUrl: tax,
                         mediaType: 1,
                         thumbnail: await getBuffer(search.all[0].thumbnail),
-                        sourceUrl: `${waUrl}`,
+                        sourceUrl: zyt,
                         
                     },
                 },
@@ -581,21 +582,21 @@ Module_Exports({
                         video: fs.readFileSync(`./${randomName}`),
                         jpegThumbnail: log0,
                         mimetype: 'video/mp4',
-                        caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
+                        caption: sgen,
                         height:640,
                         width:780,
                         fileName: `${titleYt}.mp4`,
                         headerType: 4,
                         contextInfo: {
                             externalAdReply: {
-                                title: `${name.ownername}`,
-                                body: `${name.botname}`,
+                                title: snam,
+                                body: `ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                                 //thumbnailUrl: await getBuffer(search.all[0].thumbnail),
                                 renderLargerThumbnail: true,
                                 mediaType: 2,
                                 mediaUrl: ``,
                                 thumbnail:log0,
-                                sourceUrl: waUrl
+                                sourceUrl: zyt
                             }
                         }
                     }
@@ -659,19 +660,19 @@ Module_Exports({
                 let buttonMessage = {
                     audio: fs.readFileSync(`./${randomName}`),
                     mimetype: 'audio/mpeg',
-                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
+                    caption: sgen,
                     fileName: titleYt + ".mp3",
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: `${name.ownername}`,
-                            body: `‌${name.botname}`,
+                            title: snam,
+                            body: `sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                             renderLargerThumbnail: true,
                             thumbnail: log0,
                             mediaUrl: text,
                             mediaType: 1,
                             //thumbnailUrl: log0,
-                            sourceUrl: `${waUrl}`,
+                            sourceUrl: zyt,
                         },
                     },
                 }
@@ -737,19 +738,19 @@ Module_Exports({
                 let buttonMessage = {
                     document: fs.readFileSync(`./${randomName}`),
                     mimetype: 'audio/mpeg',
-                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
+                    caption: sgen,
                     fileName: titleYt + ".mp3",
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: `${name.ownername}`,
-                            body: `‌${name.botname}`,
+                            title: snam,
+                            body: `‌ᴀᴜᴅɪᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                             renderLargerThumbnail: true,
                             //thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: log0,
-                            sourceUrl: `${waUrl}`,
+                            sourceUrl: zyt,
                         },
                     },
                 }
