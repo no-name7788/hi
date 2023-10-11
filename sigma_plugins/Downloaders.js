@@ -207,7 +207,7 @@ async(sigma, person, memo) => {
                     contextInfo: {
                         externalAdReply: {
                             title: snam,
-                            body: ``,
+                            body: `ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
                             renderLargerThumbnail: true,
                             mediaType: 4,
