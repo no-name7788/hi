@@ -145,8 +145,8 @@ Module_Exports({
  })
 //---------------------------------------------------------------------------
 Module_Exports({
-  kingcmd: "repo",
-  shortcut: ["git", "sc", "script"],
+  kingcmd: "script",
+  shortcut: ["git", "sc", "repo"],
   infocmd: "Sends info about repo.",
   kingclass: "developer",
   use:""
@@ -215,7 +215,8 @@ Module_Exports({
 *•𝙲𝙾𝙽𝚃𝙴𝙽𝚃•* How To Create Whatsapp Bot
 *•𝚃𝙾𝚃𝙰𝙻 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴𝚁𝚂•* 0 Subs😥
 *•𝙲𝙷𝙰𝙽𝙽𝙴𝙻 𝙻𝙸𝙽𝙺•* _${zyt}_
-`
+
+${scap}`
 	
 	
         let buttonMessaged = 
