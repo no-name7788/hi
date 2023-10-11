@@ -84,8 +84,8 @@ person.send('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+memo)
                   thumbnail: log0,
                   mediaType: 4,
                   mediaUrl: '',
-                  sourceUrl: zyt,}}}} )
-          return sigma.sendMessage(person.chat,SIGMA_FB_DOWNLODER,  { quoted: person }) 
+                  sourceUrl: zyt,}}}
+          return sigma.sendMessage(person.chat,SIGMA_FB_DOWNLODER,  { quoted: person }) } )
         
       
       })
