@@ -57,23 +57,15 @@ Module_Exports({
     
     })
     Module_Exports({
-        kingcmd: "facebook",
-        shortcut: ["fb","fbdl"],
-        kingclass: "downloader",
-        infocmd: "downloads facebook videos",
-        use: "paste fb video link"
-        },
-       async(sigma, person, memo) => {
-        if (!memo) return person.reply(`Give me facebook video link`);
-         let txt = memo ? memo.split(" ")[0]:'';
- if (!/facebook/.test(txt)) return await person.reply(`Please give me valid facebook video link..!`);
+      kingcmd: "facebook",
+      shortcut: ["fb","fbdl"],
+      kingclass: "downloader",
+      infocmd: "downloads facebook videos",
+      use: "paste fb video link"
+      },
+     async(sigma, person, memo) => {
+         var _0x43ef=["\x72\x65\x70\x6C\x79","\x20","\x73\x70\x6C\x69\x74","","\x63\x68\x61\x74","\x75\x72\x6C","\x72\x65\x73\x75\x6C\x74","\x62\x6F\x74\x6E\x61\x6D\x65","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65","\x74\x68\x65\x6E","\x66\x61\x63\x65\x62\x6F\x6F\x6B\x64\x6C\x76\x32","\x45\x72\x72\x6F\x72\x20\x77\x68\x69\x6C\x65\x20\x64\x6F\x77\x6E\x6C\x6F\x61\x64\x69\x6E\x67\x20\x79\x6F\x75\x72\x20\x72\x65\x71\x75\x65\x73\x74"];if(!memo){return person[_0x43ef[0]]("\x2A\x5F\x47\x69\x76\x65\x20\x6D\x65\x20\x66\x61\x63\x65\x62\x6F\x6F\x6B\x20\x76\x69\x64\x65\x6F\x20\x6C\x69\x6E\x6B\x5F\x2A")};let txt=memo?memo[_0x43ef[2]](_0x43ef[1])[0]:_0x43ef[3];try{bocil[_0x43ef[10]](memo)[_0x43ef[9]](async (_0x2bacx2)=>{return sigma[_0x43ef[8]](person[_0x43ef[4]],{video:{url:_0x2bacx2[_0x43ef[6]][0][_0x43ef[5]]},caption:("\u2570\u2508\u27A4\x20\uD835\uDE76\uD835\uDE74\uD835\uDE7D\uD835\uDE74\uD835\uDE81\uD835\uDE70\uD835\uDE83\uD835\uDE74\uD835\uDE73\x20\uD835\uDE71\uD835\uDE88\x20"+name[_0x43ef[7]]+_0x43ef[3]),width:550,height:470},{quoted:person})})}catch(e){return person[_0x43ef[0]](_0x43ef[11])}})
 
-         bocil.facebookdlv2(memo).then(async (data) =>
-          {  return sigma.sendMessage(person.chat, { video: { url: data.result[0].url },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 550,height: 470, },{ quoted: person }) }) 
-         return person.reply("Error while downloading your video")
-        
-      
-      })
 
 async function tiktokdl (url) {
     const gettoken = await axios.get("https://tikdown.org/id");
