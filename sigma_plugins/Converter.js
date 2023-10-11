@@ -440,7 +440,7 @@ async(Void, citel,text) => {
 if (!text) { text=citel.quoted.text;}
     if(!text) return citel.reply('*_Please Reply To Any Text To Get Link._*');
     let data = await pastebin.createPaste(text, "Maher Zubair");
-    return citel.reply(`*_Here is your link._*\n`+data+`\n${scap}`);
+    return citel.reply(`*_Here is your link._*\n`+data+`\n${sgen}`);
 }
 );
 //----------------------------------------------- ---------------------------
