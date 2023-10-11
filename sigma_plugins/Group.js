@@ -48,7 +48,7 @@ Module_Exports({
     //---------------------------------------------------------------------------
 
     //-----------------------------------------------------------------------------
-     Module_Exports({
+    Module_Exports({
         kingcmd: "support",
         infocmd: "Sends official support group link.",
         kingclass: "developer",
@@ -56,7 +56,19 @@ Module_Exports({
 
     },
     async(sigma, man, text,) => {
-var _0x28d67a=_0x30ff;(function(_0x5f085c,_0x15a370){var _0x1d3dc5=_0x30ff,_0x2cfe72=_0x5f085c();while(!![]){try{var _0x40d6a4=parseInt(_0x1d3dc5(0x1cf))/(0x254d*-0x1+-0x1*-0x1b2d+0xa21*0x1)+-parseInt(_0x1d3dc5(0x1d8))/(-0x822*-0x1+-0x1*0x10f9+0xf*0x97)+parseInt(_0x1d3dc5(0x1e6))/(-0x1394+-0x1e35+0x18e6*0x2)*(-parseInt(_0x1d3dc5(0x1d1))/(0x15*-0xdd+-0x6b*0x52+0x346b))+parseInt(_0x1d3dc5(0x1d7))/(0x3*0x59c+-0x296*0x1+-0xe39)+-parseInt(_0x1d3dc5(0x1d6))/(0x2cb+-0x14f*0xc+0xcef)+-parseInt(_0x1d3dc5(0x1c6))/(0x26bd+0x443*0x7+-0x448b)+parseInt(_0x1d3dc5(0x1d2))/(-0x240e+-0x16af+-0x11*-0x375)*(parseInt(_0x1d3dc5(0x1db))/(0x9+-0x1ed3+0x1ed3));if(_0x40d6a4===_0x15a370)break;else _0x2cfe72['push'](_0x2cfe72['shift']());}catch(_0x4c311a){_0x2cfe72['push'](_0x2cfe72['shift']());}}}(_0x37d6,0x118e8*0x1+0x5cead+0x609c9),await sigma[_0x28d67a(0x1e4)+'e'](man[_0x28d67a(0x1dc)],{'image':log0,'text':_0x28d67a(0x1e1)+_0x28d67a(0x1c9)+_0x28d67a(0x1c4)+_0x28d67a(0x1da)+_0x28d67a(0x1c8)+_0x28d67a(0x1c7)+_0x28d67a(0x1e0)+_0x28d67a(0x1d0)+_0x28d67a(0x1e3)+_0x28d67a(0x1cb)+_0x28d67a(0x1d9)+_0x28d67a(0x1de)+_0x28d67a(0x1cc)+_0x28d67a(0x1d5)+_0x28d67a(0x1d3)+_0x28d67a(0x1d4)+_0x28d67a(0x1e5)+_0x28d67a(0x1df),'contextInfo':{'externalAdReply':{'title':_0x28d67a(0x1ca)+_0x28d67a(0x1dd),'body':_0x28d67a(0x1cd)+'e','thumbnail':log0,'mediaType':0x4,'mediaUrl':'','sourceUrl':_0x28d67a(0x1e2)+_0x28d67a(0x1c5)+_0x28d67a(0x1ce)+_0x28d67a(0x1c3)+_0x28d67a(0x1e7)}}}));function _0x30ff(_0x280de9,_0x4e698e){var _0x4f4939=_0x37d6();return _0x30ff=function(_0x580a38,_0x13101e){_0x580a38=_0x580a38-(0x1*0x2322+0x101*0x25+-0x1*0x4684);var _0x1b7805=_0x4f4939[_0x580a38];return _0x1b7805;},_0x30ff(_0x280de9,_0x4e698e);}function _0x37d6(){var _0xe9375e=['808092LTXXuh','chat','ᴜᴘᴘᴏʀᴛ','M1yBMlveul','━━━━━⦿','*\x20\x0a┃✗\x20*_•ɢ','┏━━⟪⟪\x20🅼♥︎❚❚','https://ch','_*\x20https:/','sendMessag','𝐚𝐢𝐫\x0a┗━━━━━','123BLGaZR','N22jHcWV','BMlveulDrA','*_•ɢʀᴏᴜᴘ\x20ɴ','at.whatsap','8972026mZNbug','ᴰ-sᴜᴘᴘᴏʀᴛ•','\x20*•sɪɢᴍᴀ\x20ᴹ','♥︎🆉\x20⟫━⦿\x0a┃✗\x20','sɪɢᴍᴀ\x20ᴹᴰ-s','/chat.what','DrAN22jHcW','Easy\x20to\x20Us','p.com/JM1y','1435728xdEmhC','ʀᴏᴜᴘ\x20ʟɪɴᴋ•','70188ocVAhO','208kWDOfJ','ᴠᴇʟᴏᴘᴇʀ•_*','\x20𝐌𝐚𝐡𝐞𝐫\x20𝐙𝐮𝐛','V\x0a┃✗\x20*_•ᴅᴇ','909630JmEKpQ','1246345GGlsGt','2037026zdtbtC','sapp.com/J','ᴀᴍᴇ•_*\x20\x0a┃✗'];_0x37d6=function(){return _0xe9375e;};return _0x37d6();}
+
+        await sigma.sendMessage(man.chat, {
+            image: log0,
+            text: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *_•ɢʀᴏᴜᴘ ɴᴀᴍᴇ•_* \n┃✗ *•sɪɢᴍᴀ ᴹᴰ-sᴜᴘᴘᴏʀᴛ•* \n┃✗ *_•ɢʀᴏᴜᴘ ʟɪɴᴋ•_* \+ ${sgc} +\n┃✗ *_•ᴅᴇᴠᴇʟᴏᴘᴇʀ•_* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
+	    contextInfo: {
+	        externalAdReply: {
+                title: `sɪɢᴍᴀ ᴹᴰ-sᴜᴘᴘᴏʀᴛ`,
+                body: "Easy to Use",
+                thumbnail: log0,
+                mediaType: 4,
+                mediaUrl: '',
+                sourceUrl: sgc,}}
+        });
    
     }
 )

@@ -27,18 +27,3 @@ Module_Exports({kingcmd: "facebook",
          return person.reply("Error while downloading your video") 
 })
 
-Module_Exports({
-    kingcmd: "insta",
-    shortcut: ["ig","tt1","instagram"],
-    infocmd: "download instagram videos",
-    kingclass: "downloader",
-    use: "paste insta video link"
-},
-async(sigma,person,memo) => {
-if(!memo) return person.reply('*_Give me insta video link_*')
-
-let data;
-try{ data= await (await fetch(`https://inrl-web.onrender.com/api/tiktok?url=${memo}`)).json();} 
-catch { return person.reply(`An error occurred`);  }
-return sigma.sendMessage(person.chat, {video : {url : data.result[0] },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 600,height: 490, },{ quoted: person })
-})
