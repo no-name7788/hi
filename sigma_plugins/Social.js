@@ -38,7 +38,22 @@ Module_Exports({
       let data;
       try{ data= await (await fetch(`https://inrl-web.onrender.com/api/insta?url=${memo}`)).json();} 
       catch { return person.reply(`An error occurred`);  }
-      return sigma.sendMessage(person.chat, {video : {url : data.result[0] },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 600,height: 490, },{ quoted: person })
+      let SIGMA_INSTA_DOWNLODER = {
+        video : {url : data.result[0] },
+        caption: sgen,
+        footer: tlang().footer,
+        headerType: 4,
+        width: 600,
+        height: 490,
+        contextInfo: {
+            externalAdReply: {
+                title: ``,
+                body: "Easy to Use",
+                thumbnail: log0,
+                mediaType: 4,
+                mediaUrl: '',
+                sourceUrl: ``,}}}
+      return sigma.sendMessage(person.chat,SIGMA_INSTA_DOWNLODER,{ quoted: person })
     
     })
     Module_Exports({
