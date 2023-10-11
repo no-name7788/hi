@@ -57,7 +57,7 @@ Module_Exports({
 //---------------------------------------------------------------------------
 Module_Exports({
         kingcmd: "remove",
-        shortcut :['uninstall'],
+        shortcut :['uninstall','rem'],
         kingclass: "tools",
         infocmd: "removes external modules.",
         kingpath: __filename

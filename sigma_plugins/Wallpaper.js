@@ -35,7 +35,25 @@ async(Void, man,text) =>
 {
     let anu = await fetchJson('https://raw.githubusercontent.com/Maher-Zubair/SIGMA-MD/main/Media/WallPapers/Aesthetic.json')
     let random = anu[Math.floor(Math.random() * anu.length)]
-    return await Void.sendMessage(man.chat,{image :{url : random.SIGMA_MD } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`  }, { quoted: man })
+    let Maher_Zubair = {
+        image: {
+            url: random.SIGMA_MD,
+        },
+        caption: sgen,
+        footer: sigma.user.name,
+        headerType: 4,
+        contextInfo: {
+            externalAdReply: {
+                title: snam,
+                body: `ᴡᴀʟʟᴘᴀᴘᴇʀ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
+                thumbnail: log0,
+                mediaType: 2,
+                mediaUrl: ``,
+                sourceUrl: zyt,
+            },
+        },
+    };
+    return await Void.sendMessage(man.chat,Maher_Zubair, { quoted: man })
 })
 //----------------------------------------------------------------------
 Module_Exports({
