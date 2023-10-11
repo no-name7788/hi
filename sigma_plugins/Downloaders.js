@@ -263,7 +263,7 @@ async(sigma, person, memo) => {
             let buttonMessage = {
                 audio: fs.readFileSync(`./${randomName}`),
                 mimetype: 'audio/mpeg',
-                caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
+                caption: sgen,
                 fileName: titleYt + ".mp3",
                 headerType: 4,
                 contextInfo: {
