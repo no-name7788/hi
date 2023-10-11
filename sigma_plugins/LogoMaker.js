@@ -280,7 +280,7 @@ Module_Exports({ kingcmd: "frozen", kingclass: "logo", infocmd: "Some text to im
     return await singleText(Void, citel , 'create-realistic-3d-text-effect-frozen-winter-1099' , text )
 })
 Module_Exports({ kingcmd: "golden",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-    if (!text) return citel.reply(`_Example : ${prefix}stel Maher;Zubair_`);  
+    if (!text) return citel.reply(`_Example : ${prefix}golden Maher;Zubair_`);  
     let text1 = text ? text.split(';')[0] : '';
     let text2 = text ? text.split(';')[1] : '';
     if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}golden text1;text2*`);
@@ -293,14 +293,14 @@ Module_Exports({ kingcmd: "deluxe", kingclass: "logo", infocmd: "Some text to im
         if (!text) return citel.reply(`*_Example: ${prefix}deluxe Zubair_*`)
         return await singleText(Void, citel , 'deluxe-silver-text-effect-970' , text )})
 Module_Exports({ kingcmd: "captain",kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
-            if (!text) return citel.reply(`_Example : ${prefix}stel Maher;Zubair_`);  
+            if (!text) return citel.reply(`_Example : ${prefix}captain Maher;Zubair_`);  
             let text1 = text ? text.split(';')[0] : '';
             let text2 = text ? text.split(';')[1] : '';
             if(!text2 || !text1) return await citel.reply(`*Please Provide text. Example: ${prefix}captain text1;text2*`);
             return await singleText(Void, citel , 'create-a-captain-america-text-effect-free-online-1039' , text1 , text2 )})
 Module_Exports({ kingcmd: "black", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
                 if (!text) return citel.reply(`*_Example: ${prefix}black Zubair_*`)
-                return await singleText(Void, citel , '3d-chrome-text-effect-827' , text )})
+                return await singleText(Void, citel , 'shiny-black-3d-text-effect-generator-1143' , text )})
 
 //  All These Logos are Developed By @Maher-Zubair
 //  Whatsapp +923466319114

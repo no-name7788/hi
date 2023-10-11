@@ -438,9 +438,9 @@ Module_Exports({
 },
 async(Void, citel,text) => { 
 if (!text) { text=citel.quoted.text;}
-    if(!text) return citel.reply('Please reply to any text to get link.');
-    let data = await pastebin.createPaste(text, "Suhail Tech Info");
-    return citel.reply('_Here is your link._\n'+data+'\n*Click to Get Your Text*');
+    if(!text) return citel.reply('*_Please Reply To Any Text To Get Link._*');
+    let data = await pastebin.createPaste(text, "Maher Zubair");
+    return citel.reply(`*_Here is your link._*\n'+data+'\n${scap}`);
 }
 );
 //----------------------------------------------- ---------------------------
