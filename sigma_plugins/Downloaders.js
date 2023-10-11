@@ -200,7 +200,7 @@ async(sigma, person, memo) => {
                     jpegThumbnail: log0,
         
                     mimetype: 'video/mp4',
-                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`,
+                    caption: sgen,
         height: 640,
                     width: 780,
                     headerType: 4,
@@ -268,7 +268,7 @@ async(sigma, person, memo) => {
                 headerType: 4,
                 contextInfo: {
                     externalAdReply: {
-                        title: `${name.ownername}`,
+                        title: snam,
                         body: ``,
                         renderLargerThumbnail: true,
                         thumbnailUrl: search.all[0].thumbnail,
@@ -372,28 +372,28 @@ Module_Exports({
         use: '<text|image name>',
     },
     async(Void, citel, text) => {
-        if (!text) return citel.send(`What picture are you looking for?`) && Void.sendMessage(citel.chat, { react: {  text: '❌', key: citel.key  }  })
+        if (!text) return citel.send(`What picture are you looking for?`)
         try {
             let anu = await pinterest(text)
             let result = anu[Math.floor(Math.random() * anu.length)]
             let buttonMessage = {
                 image: { url: result },
-                caption: name.caption ,
+                caption: sgen ,
                 //footer: tlang().footer,
                 headerType: 4,
                 contextInfo: {
                     externalAdReply: {
-                        title: `Here it is✨`,
-                        body: `${name.ownername}`,
+                        title: snam,
+                        body: `ᴘɪɴᴛᴇʀᴇsᴛ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                         thumbnail: log0,
                         mediaType: 2,
                         mediaUrl: ``,
-                        sourceUrl: `youtube.com/c/SuhailTechInfo`
+                        sourceUrl: zyt
                     }
                 }
             }
             return Void.sendMessage(citel.chat, buttonMessage, {  quoted: citel })
-        } catch (e) {  return citel.reply("Uhh Plese, Give me a Name. Ex .pint apple")  }
+        } catch (e) {  return citel.reply(`*_Give Me Query_*\n*_Ex ${prefix}pint crown_*`)  }
     })
     //---------------------------------------------------------------------------
 Module_Exports({
