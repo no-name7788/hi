@@ -26,7 +26,20 @@ async function singleText(Void, citel , url = '' , text1 , text2 ){
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "slice", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
         if (!text) return citel.reply(`*_Example : ${prefix}slice Maher Zubair_*`);
-        return await singleText(Void, citel , 'create-light-glow-sliced-text-effect-online-1068' , text )
+        let slogo = {
+            image: { url: await botpic() },
+            caption: text,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: ``,
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,}}}
+        return await singleText(Void, citel , 'create-light-glow-sliced-text-effect-online-1068' , slogo )
     })
 //-----------------------------------------------------------------------------------
 Module_Exports({ kingcmd: "glow", kingclass: "logo", infocmd: "Some text to image feature with various styles.",kingpath: __filename, }, async(Void, citel, text) => {
