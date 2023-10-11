@@ -320,7 +320,7 @@ Module_Exports({
             externalAdReply: {
                 title: snam,
                 body: `ᴍᴜsɪᴄ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-                //thumbnail: log0,
+                thumbnail: log0,
                 mediaType: 2,
 
 
