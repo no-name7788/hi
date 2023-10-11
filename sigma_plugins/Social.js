@@ -31,8 +31,16 @@ Module_Exports({
         use: "paste insta video link"
     },
     async(sigma,person,memo) => {
-        var _0xc57e=["\x2A\x5F\x47\x69\x76\x65\x20\x6D\x65\x20\x69\x6E\x73\x74\x61\x20\x76\x69\x64\x65\x6F\x20\x6C\x69\x6E\x6B\x5F\x2A","\x72\x65\x70\x6C\x79","\x20","\x73\x70\x6C\x69\x74","","\x74\x65\x73\x74","\x6A\x73\x6F\x6E","\x63\x68\x61\x74","\x72\x65\x73\x75\x6C\x74","\x62\x6F\x74\x6E\x61\x6D\x65","\x2A","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];if(!memo){return person[_0xc57e[1]](_0xc57e[0])};let txt=memo?memo[_0xc57e[3]](_0xc57e[2])[0]:_0xc57e[4];if(!/instagram/[_0xc57e[5]](txt)){return  await person[_0xc57e[1]]("\x2A\x5F\x50\x6C\x65\x61\x73\x65\x20\x67\x69\x76\x65\x20\x6D\x65\x20\x76\x61\x6C\x69\x64\x20\x69\x6E\x73\x74\x61\x67\x72\x61\x6D\x20\x76\x69\x64\x65\x6F\x20\x6C\x69\x6E\x6B\x2E\x2E\x21\x5F\x2A")};let data;try{data= await( await fetch(("\x68\x74\x74\x70\x73\x3A\x2F\x2F\x69\x6E\x72\x6C\x2D\x77\x65\x62\x2E\x6F\x6E\x72\x65\x6E\x64\x65\x72\x2E\x63\x6F\x6D\x2F\x61\x70\x69\x2F\x69\x6E\x73\x74\x61\x3F\x75\x72\x6C\x3D"+memo+_0xc57e[4])))[_0xc57e[6]]()}catch{return person[_0xc57e[1]]("\x41\x6E\x20\x65\x72\x72\x6F\x72\x20\x6F\x63\x63\x75\x72\x72\x65\x64")};return sigma[_0xc57e[11]](person[_0xc57e[7]],{video:{url:data[_0xc57e[8]][0]},caption:("\x2A\u2570\u2508\u27A4\x20\uD835\uDE76\uD835\uDE74\uD835\uDE7D\uD835\uDE74\uD835\uDE81\uD835\uDE70\uD835\uDE83\uD835\uDE74\uD835\uDE73\x20\uD835\uDE71\uD835\uDE88\x20"+name[_0xc57e[9]]+_0xc57e[10]),width:600,height:490},{quoted:person})    })
-
+      if(!memo) return person.reply('*_Give me insta video link_*')
+      let txt = memo ? memo.split(" ")[0]:'';
+      if (!/instagram/.test(txt)) return await person.reply(`*_Please give me valid instagram video link..!_*`);
+      person.send('*𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶:* '+memo)
+      let data;
+      try{ data= await (await fetch(`https://inrl-web.onrender.com/api/insta?url=${memo}`)).json();} 
+      catch { return person.reply(`An error occurred`);  }
+      return sigma.sendMessage(person.chat, {video : {url : data.result[0] },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 600,height: 490, },{ quoted: person })
+    
+    })
     Module_Exports({
         kingcmd: "facebook",
         shortcut: ["fb","fbdl"],

@@ -675,7 +675,7 @@ Module_Exports({
                             body: `sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                            // renderLargerThumbnail: true,
                             thumbnail: log0,
-                            //mediaUrl: text,
+                            mediaUrl: text,
                             mediaType: 1,
                             //thumbnailUrl: log0,
                             sourceUrl: zyt,
