@@ -175,7 +175,6 @@ let Maher_Zubair_repo = {
       externalAdReply: {
           title: `sɪɢᴍᴀ ᴹᴰ-ʀᴇᴘᴏ`,
           body: 'ᴛᴀᴘ ʜᴇʀᴇ ꜰᴏʀ ʀᴇᴘᴏ',
-          renderLargerThumbnail: true,
           thumbnailUrl: ``,
           thumbnail: log0,
           mediaType: 4,
