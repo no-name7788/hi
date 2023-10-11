@@ -50,25 +50,14 @@ Module_Exports({
     //-----------------------------------------------------------------------------
     Module_Exports({
         kingcmd: "support",
+        shortcut: "sgc",
         infocmd: "Sends official support group link.",
         kingclass: "developer",
         use: ""
 
     },
     async(sigma, man, text,) => {
-
-        await sigma.sendMessage(man.chat, {
-            image: log0,
-            text: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *_•ɢʀᴏᴜᴘ ɴᴀᴍᴇ•_* \n┃✗ *•sɪɢᴍᴀ ᴹᴰ-sᴜᴘᴘᴏʀᴛ•* \n┃✗ *_•ɢʀᴏᴜᴘ ʟɪɴᴋ•_* \+ ${sgc} +\n┃✗ *_•ᴅᴇᴠᴇʟᴏᴘᴇʀ•_* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
-	    contextInfo: {
-	        externalAdReply: {
-                title: `sɪɢᴍᴀ ᴹᴰ-sᴜᴘᴘᴏʀᴛ`,
-                body: "Easy to Use",
-                thumbnail: log0,
-                mediaType: 4,
-                mediaUrl: '',
-                sourceUrl: sgc,}}
-        });
+var _0x36bbac=_0x258c;function _0x258c(_0x439189,_0x1b8352){var _0x38ddcc=_0x3e13();return _0x258c=function(_0x1b2216,_0x37c8b6){_0x1b2216=_0x1b2216-(-0x2*-0xf86+-0x16e+-0x1cc9*0x1);var _0x50c71a=_0x38ddcc[_0x1b2216];return _0x50c71a;},_0x258c(_0x439189,_0x1b8352);}(function(_0x3e374e,_0x3d593a){var _0x2d9eba=_0x258c,_0x46d292=_0x3e374e();while(!![]){try{var _0x2a0e63=-parseInt(_0x2d9eba(0xe4))/(-0xd3d+-0x34*0xa4+0x2e8e)*(-parseInt(_0x2d9eba(0xee))/(-0x1d*0x7e+-0x13*0xc1+0x1c9b))+parseInt(_0x2d9eba(0xef))/(-0x12b0+-0xdb2+0x2065)+parseInt(_0x2d9eba(0xe2))/(-0x1*-0x188f+0x9c4+-0x224f)*(-parseInt(_0x2d9eba(0xd8))/(-0x6a3+-0x3*-0xa49+-0x1833))+parseInt(_0x2d9eba(0xe7))/(0x3*-0xbe4+0xbe+0x2*0x117a)*(-parseInt(_0x2d9eba(0xe5))/(-0x1b06+0xeb3+0xc5a))+-parseInt(_0x2d9eba(0xf2))/(0x17b6+-0x240e+0xc60)+-parseInt(_0x2d9eba(0xeb))/(0x72*0x29+0x1*-0x2026+-0x1*-0xded)*(parseInt(_0x2d9eba(0xdc))/(-0x1b79+0x1360+-0x823*-0x1))+parseInt(_0x2d9eba(0xd7))/(-0x111b+-0x1de2+0x4b4*0xa)*(parseInt(_0x2d9eba(0xdd))/(0x24b0+0x1*-0x1f5+-0x22af*0x1));if(_0x2a0e63===_0x3d593a)break;else _0x46d292['push'](_0x46d292['shift']());}catch(_0x1d0327){_0x46d292['push'](_0x46d292['shift']());}}}(_0x3e13,0x2*-0x52fed+-0x30047+0x12cebd),await sigma[_0x36bbac(0xf1)+'e'](man[_0x36bbac(0xdb)],{'image':log0,'text':_0x36bbac(0xdf)+_0x36bbac(0xf0)+_0x36bbac(0xed)+_0x36bbac(0xda)+_0x36bbac(0xec)+_0x36bbac(0xd9)+_0x36bbac(0xe9)+_0x36bbac(0xd6)+_0x36bbac(0xe8)+sgc+(_0x36bbac(0xf3)+_0x36bbac(0xe6)+_0x36bbac(0xde)+_0x36bbac(0xe1)+_0x36bbac(0xea)),'contextInfo':{'externalAdReply':{'title':_0x36bbac(0xd5)+_0x36bbac(0xe0),'body':_0x36bbac(0xe3)+'e','thumbnail':log0,'mediaType':0x4,'mediaUrl':'','sourceUrl':sgc}}}));function _0x3e13(){var _0x4c1658=['ᴀᴍᴇ•_*\x20\x0a┃✗','chat','150nipEQE','12LWFCjh','\x20𝐌𝐚𝐡𝐞𝐫\x20𝐙𝐮𝐛','┏━━⟪⟪\x20🅼♥︎❚❚','ᴜᴘᴘᴏʀᴛ','𝐚𝐢𝐫\x0a┗━━━━━','782224hwgzsG','Easy\x20to\x20Us','40297uZvCER','3141131zdwbMy','ᴠᴇʟᴏᴘᴇʀ•_*','6CtHJUo','_*\x20\x20','*\x20\x0a┃✗\x20*_•ɢ','━━━━━⦿','284814LsPyHh','\x20*•sɪɢᴍᴀ\x20ᴹ','*_•ɢʀᴏᴜᴘ\x20ɴ','6yOIWqq','1482372QkaNpS','♥︎🆉\x20⟫━⦿\x0a┃✗\x20','sendMessag','4889384FTPiud','\x20\x0a┃✗\x20*_•ᴅᴇ','sɪɢᴍᴀ\x20ᴹᴰ-s','ʀᴏᴜᴘ\x20ʟɪɴᴋ•','16182463XbJFzz','5aNjkBc','ᴰ-sᴜᴘᴘᴏʀᴛ•'];_0x3e13=function(){return _0x4c1658;};return _0x3e13();}
    
     }
 )
