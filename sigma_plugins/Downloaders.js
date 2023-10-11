@@ -598,9 +598,9 @@ Module_Exports({
                                 body: `ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
                                 //thumbnailUrl: await getBuffer(search.all[0].thumbnail),
                                 //renderLargerThumbnail: true,
-                               // mediaType: 2,
+                                mediaType: 2,
                                 mediaUrl: ``,
-                               // thumbnail:log0,
+                                thumbnail:log0,
                                 sourceUrl: zyt
                             }
                         }
