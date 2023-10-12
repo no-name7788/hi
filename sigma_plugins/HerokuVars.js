@@ -207,6 +207,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
 //----------------------------------------------------------------------------------
 Module_Exports({
         kingcmd: "setvar",
+        shortcut:["svar"],
         infocmd: "To Set Heroku Vars",
         kingclass: "tools",
         kingpath: __filename
