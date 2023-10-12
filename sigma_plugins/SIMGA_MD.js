@@ -50,7 +50,7 @@
               contextInfo: {
                   externalAdReply: {
                       title: name.ownername,
-                      body: 'Touch here.',
+                      body: 'ᴛᴀᴘ ʜᴇʀᴇ ᴛᴏ ᴍᴇssᴀɢᴇ ᴍᴇ',
                       renderLargerThumbnail: true,
                       thumbnailUrl: ``,
                       thumbnail: thmb,
