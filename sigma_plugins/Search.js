@@ -143,7 +143,7 @@ Module_Exports({
     },
     async(sigma, person, text) => {
         if (!text) return person.reply(`*_Give me Location_*...!\nEx: ${prefix}weather lahore`);
-        person.send(`*_Wait While Getting Weather Info Of_*`+text)
+        person.send(`*_Wait While Getting Weather Info Of_* ` + text)
      try{
         let wdata = await axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
