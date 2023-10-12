@@ -142,7 +142,46 @@ Module_Exports({
         use: 'Lahore',
     },
     async(sigma, person, text) => {
-const _0x3843d6=_0x20c9;(function(_0x45e77b,_0x6f0eb4){const _0x46d844=_0x20c9,_0x3a9327=_0x45e77b();while(!![]){try{const _0x2ba43c=parseInt(_0x46d844(0xa6))/(-0x1093*0x2+0x712+-0x1*-0x1a15)*(parseInt(_0x46d844(0xd2))/(-0x736*-0x1+0x1e2e+-0x366*0xb))+parseInt(_0x46d844(0xc4))/(0x23b5+0x1129+-0x34db*0x1)*(parseInt(_0x46d844(0xcb))/(0x99e+0x678+-0x1012))+-parseInt(_0x46d844(0xb4))/(-0x16*0xf3+-0x2040+-0xb*-0x4d5)*(-parseInt(_0x46d844(0xde))/(-0x3*-0x153+0x5*0x775+0x196*-0x1a))+parseInt(_0x46d844(0xc8))/(0x7*0x430+0x13ce+-0x3117)+parseInt(_0x46d844(0xc3))/(-0x1*-0xaed+0x119d+-0x1c82)+-parseInt(_0x46d844(0xd6))/(0x149*0x1+0x84a*0x4+-0x16f*0x18)*(-parseInt(_0x46d844(0xca))/(0x1*0x1d1b+-0x1bc4*0x1+-0x14d))+-parseInt(_0x46d844(0xdd))/(0x23e9+-0x2681+0x2a3);if(_0x2ba43c===_0x6f0eb4)break;else _0x3a9327['push'](_0x3a9327['shift']());}catch(_0x54e310){_0x3a9327['push'](_0x3a9327['shift']());}}}(_0x4903,-0x4*0x12cd0+-0x9*-0x7367+0xecd24));if(!text)return person[_0x3843d6(0x95)](_0x3843d6(0xb0)+_0x3843d6(0xb2)+_0x3843d6(0xab)+prefix+(_0x3843d6(0xdc)+_0x3843d6(0xbc)));function _0x20c9(_0x5a7aaa,_0x206914){const _0x3f7ded=_0x4903();return _0x20c9=function(_0x3c28ec,_0xca85ac){_0x3c28ec=_0x3c28ec-(-0xb*0xd1+-0x1777*-0x1+-0xded);let _0x2ad950=_0x3f7ded[_0x3c28ec];return _0x2ad950;},_0x20c9(_0x5a7aaa,_0x206914);}try{let wdata=await axios[_0x3843d6(0xa1)](_0x3843d6(0xd7)+_0x3843d6(0xa3)+_0x3843d6(0xb9)+_0x3843d6(0xad)+_0x3843d6(0xd9)+text+(_0x3843d6(0xba)+_0x3843d6(0xc0)+_0x3843d6(0xae)+_0x3843d6(0x9f)+_0x3843d6(0xaf)+_0x3843d6(0xbb)+_0x3843d6(0xa7))),mz='';mz+=_0x3843d6(0x93)+mztit+(_0x3843d6(0xcf)+_0x3843d6(0x8f)+_0x3843d6(0xda)+_0x3843d6(0x92)+_0x3843d6(0xa9))+fancytext(_0x3843d6(0xc1)+'f*',-0x3f7+-0x1b17+-0x1f0f*-0x1)+'\x20'+text+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xbe)+'*',0x994+-0x2f*0x6d+0x29c*0x4)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0x90)][_0x3843d6(0x98)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xb5)+_0x3843d6(0xe0),0x7a0+0x7*0x485+-0x13a1*0x2)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xa5)][-0x61*0x5f+-0x1550+-0x35f*-0x11][_0x3843d6(0xa4)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xc9)+_0x3843d6(0x9c),0x5c9*-0x2+-0x13*0x49+0x1*0x10fe)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xa5)][0x4*-0x421+0x2*0xf4d+0xe16*-0x1][_0x3843d6(0xdf)+'n']+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xb8)+_0x3843d6(0xb1),0x63c+0x58*0x28+-0x6a9*0x3)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xa4)][_0x3843d6(0xbf)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xd3)+_0x3843d6(0x99),0x1*-0x8d3+0x22f0+0x4*-0x687)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xa4)][_0x3843d6(0x91)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xe1)+'•*',0x8*0x2cd+-0x178d*-0x1+-0x2df4)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xa4)][_0x3843d6(0xd0)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xd1)+'•*',0x12d*0x1a+-0x157e+0x913*-0x1)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xa4)][_0x3843d6(0xb3)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xac)+_0x3843d6(0xd8),0x2*-0x5fa+0x15c9+-0x9d4)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xa2)][_0x3843d6(0xc7)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0xdb)+'•*',-0x139f*-0x1+0x1e38+-0x31d6*0x1)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xb7)][_0x3843d6(0xd4)]+'\x0a',mz+=_0x3843d6(0x9d)+fancytext(_0x3843d6(0x9e)+_0x3843d6(0x97),-0x2*-0xeca+-0x2571+0x7de)+'\x20'+wdata[_0x3843d6(0xcc)][_0x3843d6(0xb7)][_0x3843d6(0xb6)]+(_0x3843d6(0x9b)+_0x3843d6(0xd5)+_0x3843d6(0xcd)+'\x20')+name[_0x3843d6(0xce)]+'*';let king={'image':{'url':await botpic()},'text':mz,'footer':tlang()[_0x3843d6(0xa8)],'headerType':0x4,'contextInfo':{'externalAdReply':{'title':''+Gname,'body':_0x3843d6(0xaa)+'e','thumbnail':log0,'mediaType':0x4,'mediaUrl':'','sourceUrl':''+waUrl}}};sigma[_0x3843d6(0x9a)+'e'](person[_0x3843d6(0xc6)],king,{'quoted':person});}catch{person[_0x3843d6(0x95)](_0x3843d6(0xbd)+_0x3843d6(0xc2)+_0x3843d6(0x94)+_0x3843d6(0xa0)+_0x3843d6(0x96)+_0x3843d6(0xc5)+_0x3843d6(0xb2));}function _0x4903(){const _0x4309aa=['reply','ase\x20Give\x20M','e•*','country','ke•*','sendMessag','\x0a┗━━━━━━━━','ion•*','┃✗\x20','*•longitud','9809c2cd4d','id_*\x0a*_Ple','get','wind','i.openweat','main','weather','2CvMQFK','e=en','footer','\x0a┃✗\x20\x20\x20\x20\x20\x20\x20','Easy\x20to\x20Us','...!\x0aEx:\x20','*•wind-spe','/data/2.5/','060a6bcfa1','97a212b192','*_Give\x20me\x20','ure•*','Location_*','humidity','228905aJoxgh','*•conditio','lon','coord','*•temperat','hermap.org','&units=met','73&languag','hore','*_Your\x20Giv','*•country•','temp','ric&appid=','*weather\x20o','en\x20Locatio','6095072ipTECq','15gWPCMc','e\x20a\x20Valid\x20','chat','speed','10276231hxydEq','*•descript','50360pQmIxk','787712OkdGQl','data','𝙽𝙴𝚁𝙰𝚃𝙴𝙳\x20𝙱𝚈','botname','\x20⟫━⦿\x0a┃┏➛\x20*','pressure','*•humidity','806172ycqoxz','*•feels-li','lat','━━⦿\x0a*╰┈➤𝙶𝙴','1701qfAFGx','https://ap','ed•*','weather?q=','┃┗➛\x20*ᴡᴇᴀᴛʜ','*•latitude','weather\x20la','55066649LPaBns','126FcgMwC','descriptio','n•*','*•pressure','sɪɢᴍᴀ\x20ᴹᴰ*\x0a','sys','feels_like','ᴇʀ\x20sᴇᴀʀᴄʜ*','┏━━⟪⟪\x20','n\x20is\x20Inval'];_0x4903=function(){return _0x4309aa;};return _0x4903();}
+        if (!text) return person.reply(`*_Give me Location_*...!\nEx: ${prefix}weather lahore`);
+        person.send(`*_Wait While Getting Weather Info Of_*`+text)
+     try{
+        let wdata = await axios.get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
+        );
+        let mz = ``;
+        mz += `┏━━⟪⟪ ${mztit} ⟫━⦿\n┃┏➛ *sɪɢᴍᴀ ᴹᴰ*\n┃┗➛ *ᴡᴇᴀᴛʜᴇʀ sᴇᴀʀᴄʜ*\n┃✗       ${fancytext("*weather of*",1)} ${text}\n`;
+        mz += `┃✗ ${fancytext("*•country•*",1)} ${wdata.data.sys.country}\n`;
+        mz += `┃✗ ${fancytext("*•condition•*",1)} ${wdata.data.weather[0].main}\n`;
+        mz += `┃✗ ${fancytext("*•description•*",1)} ${wdata.data.weather[0].description}\n`;
+        mz += `┃✗ ${fancytext("*•temperature•*",1)} ${wdata.data.main.temp}\n`;
+        mz += `┃✗ ${fancytext("*•feels-like•*",1)} ${wdata.data.main.feels_like}\n`;
+        mz += `┃✗ ${fancytext("*•pressure•*",1)} ${wdata.data.main.pressure}\n`;
+        mz += `┃✗ ${fancytext("*•humidity•*",1)} ${wdata.data.main.humidity}\n`;
+        mz += `┃✗ ${fancytext("*•wind-speed•*",1)} ${wdata.data.wind.speed}\n`;
+        mz += `┃✗ ${fancytext("*•latitude•*",1)} ${wdata.data.coord.lat}\n`;
+        mz += `┃✗ ${fancytext("*•longitude•*",1)} ${wdata.data.coord.lon}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}*`;
+        const slog = await getBuffer(global.slogo)
+
+        let king = {
+            image: { url: await botpic() },
+            text: mz,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                title: `${Gname}`,
+                body: "Easy to Use",
+                thumbnail: slog,
+                mediaType: 4,
+                mediaUrl: '',
+                sourceUrl: `${waUrl}`,}}}
+        sigma.sendMessage(
+            person.chat, 
+                 king,
+             {
+                quoted: person,});
+     
+            }catch {person.reply("*_Your Given Location is Invalid_*\n*_Please Give Me a Valid Location_*")}
         }
 )
     //---------------------------------------------------------------------------
