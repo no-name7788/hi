@@ -172,7 +172,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
                    body: JSON.stringify({ [varName.toUpperCase()]: newVarValue })
         })
   .then(response => response.json())
-  .then(data => {  return citel.reply(`*${varName} updated Succesfully.*\n${varName}  :  ${newVarValue}`);   })
+  .then(data => {  return citel.reply(`*_${varName} Added SuccessFully._*\n*_New ${varName} ➪ ${newVarValue}_*`);   })
   .catch(error => citel.reply('Error Adding app variable:'));
   });
 //-----------------------------------------------------------------------------------
