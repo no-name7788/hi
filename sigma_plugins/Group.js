@@ -1059,7 +1059,6 @@ Module_Exports({
         },
         async(bot, man, write) => {
             if (!man.isGroup) return man.reply(tlang().group);
-            if (!man.quoted) return man.reply(`Reply to an Image`);
             const groupAdmins = await getAdmin(bot, man)
             const botNumber = await bot.decodeJid(bot.user.id)
             const isBotAdmins = man.isGroup ? groupAdmins.includes(botNumber) : false;
