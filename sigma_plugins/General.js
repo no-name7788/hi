@@ -145,8 +145,8 @@ _http://lnkiy.in/SIGMA-MD_GITHUB_
 _http://lnkiy.in/Innoxent-yt_
 
 *•𝙻𝙰𝚂𝚃 𝚄𝙿𝙳𝙰𝚃𝙴•*
-      *•𝙳𝙰𝚃𝙴•* 『${sdat}』
-      *•𝚃𝙸𝙼𝙴•* 『${stim}』
+          *•𝙳𝙰𝚃𝙴•* 『${sdat}』
+          *•𝚃𝙸𝙼𝙴•* 『${stim}』
 
 ${scap}`
 let Maher_Zubair_repo = {
