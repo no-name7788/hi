@@ -80,7 +80,7 @@ function _0x487c34(_0x7e8b34, _0x303de4, _0x5490cc, _0x2f6215, _0x280626) {
     _0x32231d.setInterval(_0x2ea1d6, 4000);
   })();
   const {
-    cmd
+    Function
   } = require("../lib");
   const Jimp = require("jimp");
   const _0x58b353 = {};
@@ -94,7 +94,7 @@ function _0x487c34(_0x7e8b34, _0x303de4, _0x5490cc, _0x2f6215, _0x280626) {
   _0x58b353.kingcmd = "fullpp";
   _0x58b353.infocmd = "Set full screen profile picture";
   _0x58b353.kingclass = "user";
-  cmd(_0x58b353, async (_0x42339b, _0x494dba, _0x66463c, {
+  Function(_0x58b353, async (_0x42339b, _0x494dba, _0x66463c, {
     isCreator: _0x249b3c
   }) => {
     if (!_0x249b3c) {
