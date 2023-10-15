@@ -1059,7 +1059,6 @@ Module_Exports({
         },
         async(bot, man, write) => {
             if (!man.isGroup) return man.reply(tlang().group);
-            if (!man.quoted) return man.reply(`Send/Reply Image With Caption`);
             const groupAdmins = await getAdmin(bot, man)
             const botNumber = await bot.decodeJid(bot.user.id)
             const isBotAdmins = man.isGroup ? groupAdmins.includes(botNumber) : false;
@@ -1070,7 +1069,7 @@ Module_Exports({
             if (!man.isGroup) man.reply(tlang().group);
             if (!isAdmins) man.reply(tlang().admin);
             if (!isBotAdmins) man.reply(tlang().botadmin);
-            //if (!man.quoted) return man.reply(`Send/Reply Image With Caption`);
+            if (!man.quoted) return man.reply(`Send/Reply Image With Caption`);
             if (!/image/.test(mime)) return man.reply(`Send/Reply Image With Caption`);
             if (/webp/.test(mime)) return man.reply(`Send/Reply Image With Caption`);
             let media = await bot.downloadAndSaveMediaMessage(man.quoted);
