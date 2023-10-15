@@ -16,13 +16,7 @@
 //                                                                                                      //
 //══════════════════════════════════════════════════════════════════════════════════════════════════════//
 
-const { sck, sck1,Module_Exports, jsonformat, botpic, TelegraPh, RandomXP,fancytext, name, tlang, warndb, sleep,getAdmin,getBuffer, prefix,parsedJid } = require('../lib')
-const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
-const moment = require("moment-timezone");
-const Levels = require("discord-xp");
-const fs = require('fs-extra')
-const Jimp = require("jimp");
-const sɪɢᴍᴀ_ᴍᴅ = require('../lib/sigma_plugins')
+function _0x32a8(){const _0x27b7a7=['323616vRmgCs','18aqmbFf','jimp','921097ksuYDq','ezone','583956thvXZV','888QKHijw','169902pzIYkX','6uSvYzr','../lib/sig','-formatter','12111PZNxqL','67858TeXxsL','discord-xp','../lib','ma_plugins','wa-sticker','moment-tim','fs-extra','184Vqhnni','1770320YNiQbe','5vbOXiw'];_0x32a8=function(){return _0x27b7a7;};return _0x32a8();}function _0x1afd(_0x2af215,_0x34cf7e){const _0x26bd7f=_0x32a8();return _0x1afd=function(_0x8571a,_0x4d976b){_0x8571a=_0x8571a-(-0x21*0x6a+0x8ea*0x2+0x1*-0x277);let _0x33d4d7=_0x26bd7f[_0x8571a];return _0x33d4d7;},_0x1afd(_0x2af215,_0x34cf7e);}const _0x39898d=_0x1afd;(function(_0x1cf98c,_0x3fa90c){const _0x845b46=_0x1afd,_0x4d619a=_0x1cf98c();while(!![]){try{const _0xfd87a1=-parseInt(_0x845b46(0x1c4))/(-0x11*0x169+0xc1c+0xbde)+parseInt(_0x845b46(0x1b3))/(0x2386+0x1*-0x101e+-0x1366)*(parseInt(_0x845b46(0x1c6))/(-0x12e*-0x2+-0x1204*0x2+0x1*0x21af))+-parseInt(_0x845b46(0x1c1))/(-0x1*-0x8bc+-0xa1c*0x2+0x8*0x170)*(-parseInt(_0x845b46(0x1c0))/(0x1*-0x1f66+0x2183+0x86*-0x4))+parseInt(_0x845b46(0x1c2))/(0x26e0+-0x26bb+0x1f*-0x1)*(parseInt(_0x845b46(0x1b7))/(0x235d+-0x3*-0x203+-0x295f))+parseInt(_0x845b46(0x1be))/(-0x1205+-0xf1e+0x212b)*(parseInt(_0x845b46(0x1c8))/(0x919*0x2+0xdee*-0x1+-0x43b))+parseInt(_0x845b46(0x1bf))/(0x69d*0x2+-0x1390+0x660)+-parseInt(_0x845b46(0x1b6))/(0x1255+0x21ed*0x1+-0x3437)*(-parseInt(_0x845b46(0x1c7))/(0x1ed*0xd+0x1*0x742+0x7f*-0x41));if(_0xfd87a1===_0x3fa90c)break;else _0x4d619a['push'](_0x4d619a['shift']());}catch(_0x5d5145){_0x4d619a['push'](_0x4d619a['shift']());}}}(_0x32a8,0x4e45d+-0xc89f0+0xec01c));const {sck,sck1,Module_Exports,jsonformat,botpic,TelegraPh,RandomXP,fancytext,name,tlang,warndb,sleep,getAdmin,getBuffer,prefix,parsedJid}=require(_0x39898d(0x1b9)),{Sticker,createSticker,StickerTypes}=require(_0x39898d(0x1bb)+_0x39898d(0x1b5)),moment=require(_0x39898d(0x1bc)+_0x39898d(0x1c5)),Levels=require(_0x39898d(0x1b8)),fs=require(_0x39898d(0x1bd)),Jimp=require(_0x39898d(0x1c3)),sɪɢᴍᴀ_ᴍᴅ=require(_0x39898d(0x1b4)+_0x39898d(0x1ba));
 
 
 
@@ -1059,6 +1053,7 @@ Module_Exports({
         },
         async(bot, man, write) => {
             if (!man.isGroup) return man.reply(tlang().group);
+            if (!man.quoted) return man.reply(`*_Reply To An Image_*`);
             const groupAdmins = await getAdmin(bot, man)
             const botNumber = await bot.decodeJid(bot.user.id)
             const isBotAdmins = man.isGroup ? groupAdmins.includes(botNumber) : false;
