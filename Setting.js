@@ -34,7 +34,7 @@ module.exports = {
   auto_read_status : process.env.AUTO_READ_STATUS || 'true',
   packname:  process.env.PACK_NAME || "SIGMA" ,
   autoreaction: process.env.AUTO_REACTION || 'true',
-  antibadword : process.env.ANTI_BAD_WORD || 'nobadwordokey',
+  antibadword : process.env.ANTI_BAD_WORD || 'Fuck,porn,sex',
   alwaysonline: process.env.ALWAYS_ONLINE || 'true',
   antifake :   process.env.FAKE_COUNTRY_CODE ||'212',
   readmessage: process.env.READ_MESSAGE || 'true',
