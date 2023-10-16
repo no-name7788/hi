@@ -116,66 +116,8 @@ Module_Exports({
              
           return await bot.sendMessage(man.chat, lists, {   quoted: man, });
  })
-//---------------------------------------------------------------------------
-Module_Exports({
-  kingcmd: "script",
-  shortcut: ["git", "sc", "repo"],
-  infocmd: "Sends info about repo.",
-  kingclass: "developer",
-  use:""
-},
-async(bot, citel, {isCreator}) => {
- 
-timestampe = speed();
-  latensie = speed() - timestampe;
-  try{
-  let { data } = await axios.get('https://api.github.com/repos/Maher-Zubair/SIGMA-MD')
-  let cap = `┏━━⟪⟪ ${mztit} ⟫━⦿
-┃✗ *•sᴛᴀʀs•* ${data.stargazers_count} sᴛᴀʀs
-┃✗ *•ꜰᴏʀᴋs•* ${data.forks_count} ꜰᴏʀᴋs
-┃✗ *•sᴘᴇᴇᴅ•* ${latensie.toFixed(4)} ᴍs 
-┃✗ *•ᴠᴇʀsɪᴏɴ•* sɪɢᴍᴀ
-┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
-┗━━━━━━━━━━⦿
-*•𝚁𝙴𝙻𝙴𝙰𝚂𝙴𝙳 𝙳𝙰𝚃𝙴•*
-𝟷/𝟷𝟶/𝟸𝟶𝟸𝟹
-*•𝚁𝙴𝙿𝙾•*
-_http://lnkiy.in/SIGMA-MD_GITHUB_
-*•𝚅𝙸𝚂𝙸𝚃 𝙵𝙾𝚁 𝙷𝙴𝙻𝙿•*
-_http://lnkiy.in/Innoxent-yt_
-
-*•𝙻𝙰𝚂𝚃 𝚄𝙿𝙳𝙰𝚃𝙴•*
-          *•𝙳𝙰𝚃𝙴•* 『${sdat}』
-          *•𝚃𝙸𝙼𝙴•* 『${stim}』
-
-${scap}`
-let Maher_Zubair_repo = {
-  image: { url: await botpic() },
-  caption: cap,
-  headerType: 4,
-  footer: tlang().footer,
-  contextInfo: {
-      externalAdReply: {
-          title: `sɪɢᴍᴀ ᴹᴰ-ʀᴇᴘᴏ`,
-          body: 'ᴛᴀᴘ ʜᴇʀᴇ ꜰᴏʀ ʀᴇᴘᴏ',
-          thumbnailUrl: ``,
-          thumbnail: log0,
-          mediaType: 4,
-          mediaUrl: '',
-          sourceUrl: srepo,
-      },
-  },
-}
-  await bot.sendMessage(citel.chat, Maher_Zubair_repo, {
-      quoted: citel,
-  })}
-  catch(e){
-    citel.send("*_The Repo is Private or It is Not Available at The Moment_*")}
-
-
-
-}
-)
+//------------------------------------sc---------------------------------------
+const _0x4c7ac3=_0x856f;function _0x856f(_0x487889,_0x560de3){const _0x48c3f1=_0x55c6();return _0x856f=function(_0x3cace3,_0x28c04d){_0x3cace3=_0x3cace3-(-0x215*0x5+0x163e+0xac8*-0x1);let _0x1ea8ea=_0x48c3f1[_0x3cace3];return _0x1ea8ea;},_0x856f(_0x487889,_0x560de3);}function _0x55c6(){const _0x1d597c=['1835KNfObC','ᴛᴀᴘ\x20ʜᴇʀᴇ\x20ꜰ','ᴠᴇʀsɪᴏɴ•*\x20','𝟸𝟹\x0a*•𝚁𝙴𝙿𝙾•','\x20about\x20rep','\x20Not\x20Avail','ᴏʀ\x20ʀᴇᴘᴏ','lnkiy.in/S','n/Innoxent','\x20ᴍs\x20\x0a┃✗\x20*•','ᴇᴘᴏ','footer','\x20\x20*•𝚃𝙸𝙼𝙴•*','52261lEfGpQ','jKjLL','send','𝚂𝚃\x20𝚄𝙿𝙳𝙰𝚃𝙴•','•ᴅᴇᴠᴇʟᴏᴘᴇʀ','e\x20or\x20It\x20is','\x20\x20*•𝙳𝙰𝚃𝙴•*','repo','ʀ\x0a┗━━━━━━━','-yt_\x0a\x0a*•𝙻𝙰','THUB_\x0a*•𝚅𝙸','228CkaUBP','Sends\x20info','https://ap','get','\x20sᴛᴀʀs\x0a┃✗\x20','toFixed','vPeMB','sendMessag','i.github.c','\x20ꜰᴏʀᴋs\x0a┃✗\x20','*_The\x20Repo','*•sᴘᴇᴇᴅ•*\x20','*\x0a\x20\x20\x20\x20\x20\x20\x20\x20','*\x0a_http://','𝙻𝙿•*\x0a_http','_count','r/SIGMA-MD','developer','𝙴𝙰𝚂𝙴𝙳\x20𝙳𝙰𝚃𝙴','716ocNwPr','𝚂𝙸𝚃\x20𝙵𝙾𝚁\x20𝙷𝙴','45CjzAEp','17268924qviNdb','chat','sɪɢᴍᴀ\x0a┃✗\x20*','able\x20at\x20Th','IGMA-MD_GI','://lnkiy.i','』\x0a\x0a','om/repos/M','nbZAC','•*\x0a𝟷/𝟷𝟶/𝟸𝟶','aher-Zubai','sᴛᴀʀs•*\x20','*•ꜰᴏʀᴋs•*\x20','1036040rEqJGh','30985NjrCEE','OMfoy','sɪɢᴍᴀ\x20ᴹᴰ-ʀ','ZGvFA','forks_coun','script','12okmABZ','┏━━⟪⟪\x20','git','bNLgx','\x20is\x20Privat','stargazers','e\x20Moment_*','━━━⦿\x0a*•𝚁𝙴𝙻','』\x0a\x20\x20\x20\x20\x20\x20\x20\x20','\x20⟫━⦿\x0a┃✗\x20*•','3326568KUFJGL','58863cYFZxa','•*\x20ᴍ\x20ᴢᴜʙᴀɪ','2330ocZFDj'];_0x55c6=function(){return _0x1d597c;};return _0x55c6();}(function(_0x563160,_0x45c96b){const _0x1976c1=_0x856f,_0x561572=_0x563160();while(!![]){try{const _0x5a4c1c=-parseInt(_0x1976c1(0x135))/(-0x8e9*-0x1+0x2591*0x1+-0x2e79*0x1)*(-parseInt(_0x1976c1(0x13b))/(-0x137b*0x2+0x1988+-0x14*-0xac))+parseInt(_0x1976c1(0x145))/(0xb3*0x30+-0x1*0x1d15+-0x478)+parseInt(_0x1976c1(0x124))/(0x22*0x53+-0x12*0x1e+0x1*-0x8e6)*(-parseInt(_0x1976c1(0x149))/(-0x2678+0x980+0x1cfd))+parseInt(_0x1976c1(0x111))/(0x87a+0x1eb2*0x1+-0x2726*0x1)*(parseInt(_0x1976c1(0x146))/(-0x15a*0x1c+0xdb9+0x1826))+parseInt(_0x1976c1(0x134))/(0x2*0x9cb+-0x34*-0x9b+-0x330a)*(-parseInt(_0x1976c1(0x126))/(-0xc14+-0x2*0xb3e+-0x2299*-0x1))+-parseInt(_0x1976c1(0x148))/(0x1dd2+-0x174*0x11+-0x82*0xa)*(-parseInt(_0x1976c1(0x156))/(-0x1345*0x1+0x2*-0x1fc+0x1748))+-parseInt(_0x1976c1(0x127))/(-0x2675+0x1487+-0x27*-0x76);if(_0x5a4c1c===_0x45c96b)break;else _0x561572['push'](_0x561572['shift']());}catch(_0x135322){_0x561572['push'](_0x561572['shift']());}}}(_0x55c6,-0x27535*0x1+-0x3f03d+-0x257a*-0x67),Module_Exports({'kingcmd':_0x4c7ac3(0x13a),'shortcut':[_0x4c7ac3(0x13d),'sc',_0x4c7ac3(0x10d)],'infocmd':_0x4c7ac3(0x112)+_0x4c7ac3(0x14d)+'o.','kingclass':_0x4c7ac3(0x122),'use':''},async(_0x1009af,_0x341520,{isCreator:_0x185fc4})=>{const _0x232cc6=_0x4c7ac3,_0x3ac4bc={'jKjLL':function(_0x26cac1){return _0x26cac1();},'vPeMB':function(_0x5822db,_0x3e8d01){return _0x5822db-_0x3e8d01;},'ZGvFA':_0x232cc6(0x113)+_0x232cc6(0x119)+_0x232cc6(0x12e)+_0x232cc6(0x131)+_0x232cc6(0x121),'nbZAC':function(_0x17920b){return _0x17920b();},'OMfoy':_0x232cc6(0x14a)+_0x232cc6(0x14f),'bNLgx':_0x232cc6(0x11b)+_0x232cc6(0x13f)+_0x232cc6(0x15b)+_0x232cc6(0x14e)+_0x232cc6(0x12a)+_0x232cc6(0x141)};timestampe=_0x3ac4bc[_0x232cc6(0x157)](speed),latensie=_0x3ac4bc[_0x232cc6(0x117)](_0x3ac4bc[_0x232cc6(0x157)](speed),timestampe);try{let {data:_0x3a6f82}=await axios[_0x232cc6(0x114)](_0x3ac4bc[_0x232cc6(0x138)]),_0x507e65=_0x232cc6(0x13c)+mztit+(_0x232cc6(0x144)+_0x232cc6(0x132))+_0x3a6f82[_0x232cc6(0x140)+_0x232cc6(0x120)]+(_0x232cc6(0x115)+_0x232cc6(0x133))+_0x3a6f82[_0x232cc6(0x139)+'t']+(_0x232cc6(0x11a)+_0x232cc6(0x11c))+latensie[_0x232cc6(0x116)](0x2010+0xd6d*-0x2+-0x5f*0xe)+(_0x232cc6(0x152)+_0x232cc6(0x14b)+_0x232cc6(0x129)+_0x232cc6(0x15a)+_0x232cc6(0x147)+_0x232cc6(0x10e)+_0x232cc6(0x142)+_0x232cc6(0x123)+_0x232cc6(0x130)+_0x232cc6(0x14c)+_0x232cc6(0x11e)+_0x232cc6(0x150)+_0x232cc6(0x12b)+_0x232cc6(0x110)+_0x232cc6(0x125)+_0x232cc6(0x11f)+_0x232cc6(0x12c)+_0x232cc6(0x151)+_0x232cc6(0x10f)+_0x232cc6(0x159)+_0x232cc6(0x11d)+_0x232cc6(0x15c)+'\x20『')+sdat+(_0x232cc6(0x143)+_0x232cc6(0x155)+'\x20『')+stim+_0x232cc6(0x12d)+scap,_0x30d347={'image':{'url':await _0x3ac4bc[_0x232cc6(0x12f)](botpic)},'caption':_0x507e65,'headerType':0x4,'footer':_0x3ac4bc[_0x232cc6(0x157)](tlang)[_0x232cc6(0x154)],'contextInfo':{'externalAdReply':{'title':_0x232cc6(0x137)+_0x232cc6(0x153),'body':_0x3ac4bc[_0x232cc6(0x136)],'thumbnailUrl':'','thumbnail':log0,'mediaType':0x4,'mediaUrl':'','sourceUrl':srepo}}};await _0x1009af[_0x232cc6(0x118)+'e'](_0x341520[_0x232cc6(0x128)],_0x30d347,{'quoted':_0x341520});}catch(_0x271082){_0x341520[_0x232cc6(0x158)](_0x3ac4bc[_0x232cc6(0x13e)]);}}));
 
 Module_Exports({
         kingcmd: "yt",
