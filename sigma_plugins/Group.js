@@ -1105,14 +1105,14 @@ const _0x212b0b=_0x547a;function _0x547a(_0x12d0f0,_0x5b53a2){const _0x3c0b37=_0
         'infocmd': "get group info by link",
         'kingclass': 'group',
         'use': "<group link.>"
-      }, async (bot, man, text, {
+      }, async (bot, citel, text, {
         isCreator: _0x19d137
       }) => {
         try {
-          let _0x288ebd = text.toLowerCase().includes("chat.whatsapp.com") ? text : man.quoted ? man.quoted.text : '';
+          let _0x288ebd = text.toLowerCase().includes("chat.whatsapp.com") ? text : citel.quoted ? citel.quoted.text : '';
           const _0x40edeb = _0x288ebd.match(/https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9]{22}/g) || false;
           if (!_0x40edeb) {
-            return await man.reply("*_Uhh Please, provide group link_*");
+            return await citel.reply("*_Uhh Please, provide group link_*");
           }
           const _0x3c974c = await bot.groupGetInviteInfo("Lg6uxvTbc9UFv8853M4Le9");
           if (_0x3c974c) {
@@ -1132,14 +1132,14 @@ const _0x212b0b=_0x547a;function _0x547a(_0x12d0f0,_0x5b53a2){const _0x3c0b37=_0
                 'sourceUrl': _0x40edeb[0x0]
               }
             };
-            return await send(man, (_0x3c974c.subject + "\n\nCreator: wa.me/" + _0x3c974c.owner.split('@')[0x0] + " \nGJid; ```" + _0x3c974c.id + "  ```\n*Muted:* " + (_0x3c974c.announce ? " yes" : " no") + " ___ *Locked:* " + (_0x3c974c.restrict ? " yes" : " no") + "\n*createdAt:* " + _0x3502b8 + "\n*participents:* " + (_0x3c974c.size > 0x3 ? _0x3c974c.size + 'th' : _0x3c974c.size) + "\n" + (_0x3c974c.desc ? "*description:* " + _0x3c974c.desc + "\n" : '') + "\n" + Config.caption + "\n").trim(), {
+            return await send(citel, (_0x3c974c.subject + "\n\nCreator: wa.me/" + _0x3c974c.owner.split('@')[0x0] + " \nGJid; ```" + _0x3c974c.id + "  ```\n*Muted:* " + (_0x3c974c.announce ? " yes" : " no") + " ___ *Locked:* " + (_0x3c974c.restrict ? " yes" : " no") + "\n*createdAt:* " + _0x3502b8 + "\n*participents:* " + (_0x3c974c.size > 0x3 ? _0x3c974c.size + 'th' : _0x3c974c.size) + "\n" + (_0x3c974c.desc ? "*description:* " + _0x3c974c.desc + "\n" : '') + "\n" + Config.caption + "\n").trim(), {
               'mentions': [_0x3c974c.owner],
               'contextInfo': _0x490108
-            }, '', man);
+            }, '', cite);
           }
         } catch (_0x106678) {
           console.log("error while getting info gc\n\t", _0x106678);
-          return await man.error(_0x106678 + "\n\ncmdName: ginfo\n");
+          
         }
       });
      //---------------------------------------------------------------------------
