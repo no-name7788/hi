@@ -237,6 +237,61 @@ await sleep(1000)
 
     )
 
+Module_Exports({
+
+kingcmd: "love",
+kingclass: "fun",
+infocmd: "hacking prank",
+use: ' ',
+kingpath: __filename,
+},
+async (Void, citel, text) => {
+citel.reply(`𝐇𝐞𝐲 𝐙𝐮𝐛𝐢ˣ𝐅𝐚𝐢𝐫𝐲 ✨🥀`)
+await sleep(2000)
+citel.reply("𝐅𝐢𝐧𝐝𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐋𝐨𝐯𝐞♥❣💕")
+await sleep(1000)
+citel.reply("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 ⏳")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ 𝟸𝟶%")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ 𝟺𝟶%")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%")
+await sleep(3000)
+citel.reply("𝐀𝐡𝐡 𝐖𝐡𝐚𝐭!!!!")
+await sleep(3000)
+citel.reply("𝐖𝐡𝐲 𝐘𝐨𝐮 𝐅𝐢𝐧𝐝𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐋𝐨𝐯𝐞🥀🌙")
+await sleep(3000)
+citel.reply("𝐆𝐨 𝐁𝐚𝐜𝐤 𝐍𝐨𝐰!!😒")
+await sleep(3000)
+citel.reply("𝐍𝐨 𝐎𝐧𝐞 𝐋𝐨𝐯𝐞 𝐘𝐨𝐮")
+await sleep(3000)
+citel.reply("𝐎𝐩𝐬𝐬 𝐒𝐨𝐫𝐫𝐲😁😜🤪\n𝐘𝐨𝐮 𝐇𝐚𝐯𝐞 𝐁𝐞𝐞𝐧 𝐏𝐫𝐚𝐧𝐤𝐞𝐝🤭🤭")
+await sleep(6000)
+citel.reply("𝐒𝐡𝐨𝐰𝐢𝐧𝐠 𝐘𝐨𝐮 𝐌𝐲 𝐋𝐨𝐯𝐞❣♥")
+await sleep(1000)
+citel.reply("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭⏳👉👉")
+await sleep(3000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ 𝟸𝟶%")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ 𝟺𝟶%")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%")
+await sleep(1000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%")
+await sleep(1000)
+return citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%")
+//await sleep(3000)
+
+//return citel.reply('');
+
+    
+})
+
 // These Fun Commands are Developed By @Maher-Zubair
 // Whatsapp +923466319114
 // Usage And CopyRights Are Reserved
