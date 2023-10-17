@@ -23,6 +23,7 @@ const fs = require('fs-extra');
 const formData = require('form-data')
 const axios = require('axios')
 const fetch = require('node-fetch');
+const { Module } = require('module');
     //---------------------------------------------------------------------------
 
 Module_Exports({
@@ -415,10 +416,10 @@ cmd({
           return console.log("error from pmpermit", _0x9836ec);
         }
       });
-      smd({
-        'pattern': "approve",
-        'alias': ['a'],
-        'desc': "Approves that person for pm",
+      Module_Exports({
+        'kingcmd': "approve",
+        'shortcut': ['a'],
+        'infocmd': "Approves that person for pm",
         'category': "user",
         'filename': __filename
       }, async (_0x144786, _0x39d619, _0x251a82, {
@@ -460,10 +461,10 @@ cmd({
           return await _0x39d619.error(_0x8405a4 + "\nCommand: approve ");
         }
       });
-      smd({
-        'pattern': "disapprove",
-        'alias': ['da'],
-        'desc': "Disapproves user for pm.",
+      Module_Exports({
+        'kingcmd': "disapprove",
+        'shortcut': ['da'],
+        'infocmd': "Disapproves user for pm.",
         'category': 'user',
         'filename': __filename
       }, async (_0x14e20b, _0x532c00, _0x1ae037, {
@@ -503,7 +504,7 @@ cmd({
           return console.log("error from disapprove", _0x1a9fe7);
         }
       });
-      smd({
+      Module_Exports({
         'on': "text"
       }, async (_0x51ee15, _0x437ed1, _0x2cf494, {
         isCreator: _0x18be89
