@@ -284,8 +284,18 @@ citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%
 await sleep(1000)
 citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%")
 await sleep(1000)
-return citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%")
-//await sleep(3000)
+citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%")
+await sleep(3000)
+citel.reply("𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬𝐞 𝐘𝐨𝐮𝐫 𝐄𝐲𝐞𝐬 🤭❤💕")
+await sleep(6000)
+   let pfp = await Void.profilePictureUrl(citel.sender, "image") ||  'https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg'
+  let  cap = "hi"
+        let king = {            
+            image: { url: pfp},
+            caption: cap,
+            footer: tlang().footer,
+            headerType: 4}
+return Void.sendMessage(citel.chat,king)
 
 //return citel.reply('');
 
