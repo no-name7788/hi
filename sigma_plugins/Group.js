@@ -1103,29 +1103,29 @@ Module_Exports({
             'infocmd': "left from a group.",
             'kingclass': "group",
             'kingpath': __filename
-          }, async (bot, _0x45b78b, _0x130854, {
+          }, async (bot, citel, text, {
             cmdName: _0x1096fc,
             isCreator: _0x5d8385
           }) => {
-            if (!_0x45b78b.isGroup) {
-              return await _0x45b78b.send(tlang().group, {}, '', _0x45b78b);
+            if (!citel.isGroup) {
+              return await citel.send(tlang().group, {}, '', citel);
             }
             if (!_0x5d8385) {
-              return await _0x45b78b.reply(tlang().owner);
+              return await citel.reply(tlang().owner);
             }
-            let _0x40fb82 = _0x130854.toLowerCase().trim();
+            let _0x40fb82 = text.toLowerCase().trim();
             if (_0x40fb82.startsWith("sure") || _0x40fb82.startsWith('ok') || _0x40fb82.startsWith("yes")) {
               try {
                 const _0x2ce27d = await bot.bot.decodeJid(bot.bot.user.id);
-                await _0x45b78b.send("*_Group Left!_*");
+                await citel.send("*_Group Left!_*");
                 await sleep(0x3e8);
-                await bot.bot.groupParticipantsUpdate(_0x45b78b.chat, [_0x2ce27d], 'remove');
+                await bot.bot.groupParticipantsUpdate(citel.chat, [_0x2ce27d], 'remove');
               } catch (_0x44a5eb) {
-                await _0x45b78b.error(_0x44a5eb);
+                await citel.error(_0x44a5eb);
                 return console.log("Error While lefting Group : ", _0x44a5eb);
               }
             } else {
-              return await _0x45b78b.send("*_Use: " + (prefix + _0x1096fc) + " sure/yes/ok, For security threats_*", {}, '', _0x45b78b);
+              return await citel.send("*_Use: " + (prefix + _0x1096fc) + " sure/yes/ok, For security threats_*", {}, '', citel);
             }
           });
      //---------------------------------------------------------------------------
