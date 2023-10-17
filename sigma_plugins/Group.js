@@ -1110,7 +1110,7 @@ Module_Exports({
             if (!citel.isGroup) {
               return await citel.send(tlang().group, {}, '', citel);
             }
-            if (!isCreator) {
+            if (!_0x5d8385) {
               return await citel.reply(tlang().owner);
             }
             let sure = text.toLowerCase().trim();
