@@ -246,20 +246,13 @@ use: ' ',
 kingpath: __filename,
 },
 async (Void, citel, text) => {
-citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ 𝟸𝟶%")
-await sleep(1000)
-citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ 𝟺𝟶%")
-await sleep(1000)
-citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%")
-await sleep(1000)
-citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%")
-await sleep(1000)
+
 citel.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%")
 await sleep(3000)
 citel.reply("𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬𝐞 𝐘𝐨𝐮𝐫 𝐄𝐲𝐞𝐬 🤭❤💕")
 await sleep(6000)
    //let pfp = await Void.profilePictureUrl(citel.sender, "image") ||  'https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg'
-  let  cap = "hi"
+  let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐅𝐚𝐢𝐫𝐲 ✨🥀 *Cᴜᴛᴇ Cᴏᴜᴘʟᴇ*\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ*\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹"
         let king = {            
             image: { url: `https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg`},
             caption: cap,
