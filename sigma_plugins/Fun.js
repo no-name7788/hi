@@ -263,7 +263,7 @@ await sleep(6000)
         let king = {            
             image: { url: pfp},
             caption: cap,
-            footer: tlang().footer,
+            //footer: tlang().footer,
             headerType: 4}
 return Void.sendMessage(citel.chat,king)
 
