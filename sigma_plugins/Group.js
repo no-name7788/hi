@@ -1099,8 +1099,9 @@ Module_Exports({
     )
         //---------------------------------------------------------------------------
         Module_Exports({
-            'kingcmd': "left",
-            'infocmd': "left from a group.",
+            'kingcmd': "leave",
+            shortcut : ['left'],
+            'infocmd': "leave  a group.",
             'kingclass': "group",
             'kingpath': __filename
           }, async (bot, citel, text, {
@@ -1110,11 +1111,12 @@ Module_Exports({
             if (!citel.isGroup) {
               return await citel.send(tlang().group, {}, '', citel);
             }
+            if (!text) await citel.send(`*_To Left The Group Use_*\n${prefix}leave absolutely/ok/yes`)
             if (!_0x5d8385) {
               return await citel.reply(tlang().owner);
             }
             let sure = text.toLowerCase().trim();
-            if (sure.startsWith("sure") || sure.startsWith('ok') || sure.startsWith("yes")) {
+            if (sure.startsWith("absolutely") || sure.startsWith('ok') || sure.startsWith("yes")) {
               try {
                 const _0x2ce27d = await bot.decodeJid(bot.user.id);
                 await citel.send("*_Group Left!_*");
@@ -1125,7 +1127,7 @@ Module_Exports({
                 return console.log("Error While lefting Group : ", _0x44a5eb);
               }
             } else {
-              return await citel.send("*_Use: " + (prefix + _0x1096fc) + " sure/yes/ok, For security threats_*", {}, '', citel);
+              return await citel.send("*_Use: " + (prefix + _0x1096fc) + " absolutely/yes/ok, For security threats_*", {}, '', citel);
             }
           });
      //---------------------------------------------------------------------------
