@@ -1111,7 +1111,7 @@ Module_Exports({
             if (!citel.isGroup) {
               return await citel.send(tlang().group, {}, '', citel);
             }
-            if (!text) await citel.send(`*_To Left The Group Use_*\n${prefix}leave absolutely/ok/yes`)
+            if (!text) await citel.send(`*_To Leave The Group Use_*\n${prefix}leave absolutely/ok/yes`)
             if (!_0x5d8385) {
               return await citel.reply(tlang().owner);
             }
@@ -1119,7 +1119,7 @@ Module_Exports({
             if (sure.startsWith("absolutely") || sure.startsWith('ok') || sure.startsWith("yes")) {
               try {
                 const _0x2ce27d = await bot.decodeJid(bot.user.id);
-                await citel.send("*_Group Left!_*");
+                await citel.send("*_SuccessFully Left The Group!_*");
                 await sleep(0x3e8);
                 await bot.groupParticipantsUpdate(citel.chat, [_0x2ce27d], 'remove');
               } catch (_0x44a5eb) {
