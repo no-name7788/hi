@@ -1110,16 +1110,16 @@ Module_Exports({
             if (!citel.isGroup) {
               return await citel.send(tlang().group, {}, '', citel);
             }
-            if (!_0x5d8385) {
+            if (!isCreator) {
               return await citel.reply(tlang().owner);
             }
-            let _0x40fb82 = text.toLowerCase().trim();
-            if (_0x40fb82.startsWith("sure") || _0x40fb82.startsWith('ok') || _0x40fb82.startsWith("yes")) {
+            let sure = text.toLowerCase().trim();
+            if (sure.startsWith("sure") || sure.startsWith('ok') || sure.startsWith("yes")) {
               try {
-                const _0x2ce27d = await bot.bot.decodeJid(bot.bot.user.id);
+                const _0x2ce27d = await bot.decodeJid(bot.user.id);
                 await citel.send("*_Group Left!_*");
                 await sleep(0x3e8);
-                await bot.bot.groupParticipantsUpdate(citel.chat, [_0x2ce27d], 'remove');
+                await bot.groupParticipantsUpdate(citel.chat, [_0x2ce27d], 'remove');
               } catch (_0x44a5eb) {
                 await citel.error(_0x44a5eb);
                 return console.log("Error While lefting Group : ", _0x44a5eb);
