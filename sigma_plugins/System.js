@@ -358,12 +358,12 @@ cmd({
         'shortcut': ["permit"],
         'infocmd': "enable/disable pm permit",
         'kingclass': "user",
-      }, async (bot, person, _0x1ee35f, {
+      }, async (bot, citel, _0x1ee35f, {
         cmdName: _0x288fcc,
         isCreator: _0x5d679d
       }) => {
         if (!_0x5d679d) {
-          return person.reply(tlang().owner);
+          return citel.reply(tlang().owner);
         }
         try {
           let _0x1758f5 = (await alive.findOne({
@@ -373,7 +373,7 @@ cmd({
           }));
           console.log("permit data : ", _0x1758f5);
           if (!_0x1ee35f) {
-            return await person.send("*PmPermit Currently *" + (_0x1758f5.permit ? "enabled" : "disabled") + "!!!*\n  *Set to:* ```" + _0x1758f5.values.toUpperCase() + "```\n  \n*Available Cmds:*```\n  " + (prefix + _0x288fcc) + " off \n  " + (prefix + _0x288fcc) + " on | all\n  " + (prefix + _0x288fcc) + " on | 212,91```\n\n\n" + Config.caption);
+            return await citel.send("*PmPermit Currently *" + (_0x1758f5.permit ? "enabled" : "disabled") + "!!!*\n  *Set to:* ```" + _0x1758f5.values.toUpperCase() + "```\n  \n*Available Cmds:*```\n  " + (prefix + _0x288fcc) + " off \n  " + (prefix + _0x288fcc) + " on | all\n  " + (prefix + _0x288fcc) + " on | 212,91```\n\n\n" + Config.caption);
           }
           var _0x3f182b = _0x1ee35f.toLowerCase().trim();
           const _0x56cf02 = _0x3f182b.split('|')[0x0] || '';
@@ -384,7 +384,7 @@ cmd({
           let _0x5be7a4 = _0xade89c ? _0xade89c : _0x1758f5.values;
           if (_0x56cf02.startsWith('on') || _0x56cf02.startsWith('enable') || _0x56cf02.startsWith("act")) {
             if (_0x1758f5.permit && _0x1758f5.values === _0x5be7a4) {
-              return await person.send("*_Uhh Dear, PmPermit Already enabled!_*");
+              return await citel.send("*_Uhh Dear, PmPermit Already enabled!_*");
             }
             let _0x8d898a = _0x1758f5.permit;
             await alive.updateOne({
@@ -393,33 +393,33 @@ cmd({
               'permit': true,
               'values': _0x5be7a4
             });
-            return await person.send("*_PmPermit " + (_0x8d898a ? "Updated" : "Activated") + " Succesfully!_*\n*_Now " + (_0x5be7a4 === 'all' ? "everyone" : _0x5be7a4) + " need permission for pm_*");
+            return await citel.send("*_PmPermit " + (_0x8d898a ? "Updated" : "Activated") + " Succesfully!_*\n*_Now " + (_0x5be7a4 === 'all' ? "everyone" : _0x5be7a4) + " need permission for pm_*");
           } else {
             if (_0x56cf02.startsWith("off") || _0x56cf02.startsWith("disable") || _0x56cf02.startsWith("deact")) {
               if (!_0x1758f5.permit) {
-                return await person.send("*_Uhh Dear, PmPermit Already disabled!_*");
+                return await citel.send("*_Uhh Dear, PmPermit Already disabled!_*");
               }
               await alive.updateOne({
                 'id': "Suhail_Md"
               }, {
                 'permit': false
               });
-              return await person.send("*_PmPermit deactivated Succesfully!!!_*");
+              return await citel.send("*_PmPermit deactivated Succesfully!!!_*");
             } else {
-              return await bot.sendMessage(person.chat, {
+              return await bot.sendMessage(citel.chat, {
                 'text': "*PmPermit Currently *" + (_0x1758f5.permit ? 'enabled' : "disabled") + "!!!*\n*Provide Valid instruction, such as on/off to enable/disable pmPermit.*"
               });
             }
           }
         } catch (_0x9836ec) {
-          await person.error(_0x9836ec + "\nCommand: " + _0x288fcc + " ");
+          await citel.error(_0x9836ec + "\nCommand: " + _0x288fcc + " ");
           return console.log("error from pmpermit", _0x9836ec);
         }
       });
       Module_Exports({
         'kingcmd': "approve",
         'shortcut': ['a'],
-        'infocmd': "Approves that person for pm",
+        'infocmd': "Approves that citel for pm",
         'category': "user",
         'filename': __filename
       }, async (_0x144786, _0x39d619, _0x251a82, {
