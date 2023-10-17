@@ -185,3 +185,28 @@ Module_Exports({
         } else  citel.send(`Reply to the audio you want to change with.*`);
     }
 )
+//----------------------------------------------------------------------------------
+Module_Exports({
+    kingcmd: "nightcore",
+    infocmd: "Adds nightcore(equilizer) in quoted audio.",
+    kingclass: "audio",
+    use: '<reply to any audio>',
+  //  react:"✅",
+},
+async(bot, citel) => {
+    let mime = citel.quoted.mtype
+    let set = '-filter:a atempo=1.06,asetrate=44100*1.25"';
+    if (/audio/.test(mime)) {
+        citel.send(tlang().wait);
+        let media = await bot.downloadAndSaveMediaMessage(citel.quoted);
+        let ran = citel.sender.slice(6) + (".mp3");
+        exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+            fs.unlinkSync(media);
+            if (err) return citel.send(err);
+            let buff = fs.readFileSync(ran);
+            bot.sendMessage( citel.chat, {  audio: buff, mimetype: "audio/mpeg",}, { quoted: citel, });
+            fs.unlinkSync(ran);
+        });
+    } else  citel.send(`Reply to the audio you want to change with.*`);
+}
+)
