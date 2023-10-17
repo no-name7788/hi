@@ -1098,6 +1098,36 @@ Module_Exports({
         }
     )
         //---------------------------------------------------------------------------
+        Module_Exports({
+            'kingcmd': "left",
+            'infocmd': "left from a group.",
+            'kingclass': "group",
+            'kingpath': __filename
+          }, async (bot, _0x45b78b, _0x130854, {
+            cmdName: _0x1096fc,
+            isCreator: _0x5d8385
+          }) => {
+            if (!_0x45b78b.isGroup) {
+              return await _0x45b78b.send(tlang().group, {}, '', _0x45b78b);
+            }
+            if (!_0x5d8385) {
+              return await _0x45b78b.reply(tlang().owner);
+            }
+            let _0x40fb82 = _0x130854.toLowerCase().trim();
+            if (_0x40fb82.startsWith("sure") || _0x40fb82.startsWith('ok') || _0x40fb82.startsWith("yes")) {
+              try {
+                const _0x2ce27d = await bot.bot.decodeJid(bot.bot.user.id);
+                await _0x45b78b.send("*_Group Left!_*");
+                await sleep(0x3e8);
+                await bot.bot.groupParticipantsUpdate(_0x45b78b.chat, [_0x2ce27d], 'remove');
+              } catch (_0x44a5eb) {
+                await _0x45b78b.error(_0x44a5eb);
+                return console.log("Error While lefting Group : ", _0x44a5eb);
+              }
+            } else {
+              return await _0x45b78b.send("*_Use: " + (prefix + _0x1096fc) + " sure/yes/ok, For security threats_*", {}, '', _0x45b78b);
+            }
+          });
      //---------------------------------------------------------------------------
      Module_Exports({
         kingcmd: "tagadmin",

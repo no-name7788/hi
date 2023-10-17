@@ -1,9 +1,6 @@
 const fs = require('fs-extra')
 if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/config.env' })
-// bad word
-// sudo 
-// telegram 
-// set in main
+
 
 //═══════[Required Variables]════════\\
 global.owner = process.env.OWNER_NUMBER || '923466319114' ;

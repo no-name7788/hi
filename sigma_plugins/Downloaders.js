@@ -403,7 +403,7 @@ Module_Exports({
     //---------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "mediafire",
-            shortcut :['mf','mfire'],
+            shortcut :['mfire'],
             infocmd: "Downloads media from Mediafire.",
             kingclass: "downloader",
             kingpath: __filename,
