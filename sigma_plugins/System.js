@@ -373,7 +373,7 @@ cmd({
           }));
           console.log("permit data : ", _0x1758f5);
           if (!_0x1ee35f) {
-            return await citel.send("*PmPermit Currently *" + (_0x1758f5.permit ? "enabled" : "disabled") + "!!!*\n  *Set to:* ```" + _0x1758f5.values.toUpperCase() + "```\n  \n*Available Cmds:*```\n  " + (prefix + _0x288fcc) + " off \n  " + (prefix + _0x288fcc) + " on | all\n  " + (prefix + _0x288fcc) + " on | 212,91```\n\n\n" + Config.caption);
+            return await citel.send("*PmPermit Currently *" + (_0x1758f5.permit ? "enabled" : "disabled") + "!!!*\n  *Set to:* ```" + _0x1758f5.values.toUpperCase() + "```\n  \n*Available Cmds:*```\n  " + (prefix + _0x288fcc) + " off \n  " + (prefix + _0x288fcc) + " on | all\n  " + (prefix + _0x288fcc) + " on | 212,91```\n\n\n" + name.caption);
           }
           var _0x3f182b = _0x1ee35f.toLowerCase().trim();
           const _0x56cf02 = _0x3f182b.split('|')[0x0] || '';
@@ -412,7 +412,7 @@ cmd({
             }
           }
         } catch (_0x9836ec) {
-         // await citel.error(_0x9836ec + "\nCommand: " + _0x288fcc + " ");
+         await citel.send(_0x9836ec + "\nCommand: " + _0x288fcc + " ");
           return console.log("error from pmpermit", _0x9836ec);
         }
       });
@@ -422,12 +422,12 @@ cmd({
         'infocmd': "Approves that citel for pm",
         'category': "user",
         'filename': __filename
-      }, async (_0x144786, _0x39d619, _0x251a82, {
+      }, async (_0x144786, citel, _0x251a82, {
         isCreator: _0x2ff6cc
       }) => {
         try {
           if (!_0x2ff6cc) {
-            return _0x39d619.reply(tlang().owner);
+            return citel.reply(tlang().owner);
           }
           let _0x22752b = (await alive.findOne({
             'id': "Suhail_Md"
@@ -435,30 +435,30 @@ cmd({
             'id': "Suhail_Md"
           }));
           if (!_0x22752b.permit) {
-            return await _0x39d619.sendMessage(_0x39d619.chat, {
+            return await citel.sendMessage(citel.chat, {
               'text': "*_PmPermit disabled, please enable it!!_*"
             });
           }
-          if (!_0x39d619.quoted) {
-            return _0x39d619.reply("*Please reply to a user for action.*");
+          if (!citel.quoted) {
+            return citel.reply("*Please reply to a user for action.*");
           }
           let _0x2fba95 = (await sck1.findOne({
-            'id': _0x39d619.quoted.sender
+            'id': citel.quoted.sender
           })) || (await sck1.new({
-            'id': _0x39d619.quoted.sender
+            'id': citel.quoted.sender
           }));
           if (_0x2fba95.permit === "true") {
-            return _0x39d619.reply('*_' + (_0x2fba95.name ? _0x2fba95.name : "user") + " has permission for pm already._*");
+            return citel.reply('*_' + (_0x2fba95.name ? _0x2fba95.name : "user") + " has permission for pm already._*");
           }
           await sck1.updateOne({
-            'id': _0x39d619.quoted.sender
+            'id': citel.quoted.sender
           }, {
             'permit': "true",
             'times': 0x0
           });
-          return _0x39d619.send("*_Permitted " + (_0x2fba95.name ? _0x2fba95.name : "user") + " for pm._*");
+          return citel.send("*_Permitted " + (_0x2fba95.name ? _0x2fba95.name : "user") + " for pm._*");
         } catch (_0x8405a4) {
-          return await _0x39d619.error(_0x8405a4 + "\nCommand: approve ");
+          return await citel.error(_0x8405a4 + "\nCommand: approve ");
         }
       });
       Module_Exports({
@@ -467,12 +467,12 @@ cmd({
         'infocmd': "Disapproves user for pm.",
         'category': 'user',
         'filename': __filename
-      }, async (_0x14e20b, _0x532c00, _0x1ae037, {
+      }, async (_0x14e20b, citel, _0x1ae037, {
         isCreator: _0x575cc8
       }) => {
         try {
           if (!_0x575cc8) {
-            return _0x532c00.reply(tlang().owner);
+            return citel.reply(tlang().owner);
           }
           let _0xec7794 = (await alive.findOne({
             'id': "Suhail_Md"
@@ -480,27 +480,27 @@ cmd({
             'id': 'Suhail_Md'
           }));
           if (!_0xec7794.permit) {
-            return await _0x532c00.sendMessage(_0x532c00.chat, {
+            return await citel.sendMessage(citel.chat, {
               'text': "*_PmPermit disabled, please enable it!!_*"
             });
           }
-          if (!_0x532c00.quoted) {
-            return _0x532c00.send("*Please reply to a user for action.*");
+          if (!citel.quoted) {
+            return citel.send("*Please reply to a user for action.*");
           }
           let _0x506670 = (await sck1.findOne({
-            'id': _0x532c00.quoted.sender
+            'id': citel.quoted.sender
           })) || (await sck1.new({
-            'id': _0x532c00.quoted.sender
+            'id': citel.quoted.sender
           }));
           await sck1.updateOne({
-            'id': _0x532c00.quoted.sender
+            'id': citel.quoted.sender
           }, {
             'permit': "false",
             'times': 0x0
           });
-          return _0x532c00.send("*_Revoked permission of " + (_0x506670.name ? _0x506670.name : "user") + " for pm._*");
+          return citel.send("*_Revoked permission of " + (_0x506670.name ? _0x506670.name : "user") + " for pm._*");
         } catch (_0x1a9fe7) {
-          await _0x532c00.error(_0x1a9fe7 + "\nCommand: disapprove ");
+          await citel.error(_0x1a9fe7 + "\nCommand: disapprove ");
           return console.log("error from disapprove", _0x1a9fe7);
         }
       });
@@ -528,15 +528,15 @@ cmd({
           if (_0x3407db && _0x7f2b8a.permit && _0x5b4b0d.permit === "false") {
             var _0x2cf494;
             if (_0x5b4b0d.times === 0x0) {
-              _0x2cf494 = "*Hii this is " + tlang().title + " a Personal Assistant of " + Config.ownername + ".*\n\n*Please do not send message in pm else you will be blocked automatically.*\n\n_Please wait until my owner responds to you._\n\n" + Config.caption;
+              _0x2cf494 = "*Hii this is " + tlang().title + " a Personal Assistant of " + name.ownername + ".*\n\n*Please do not send message in pm else you will be blocked automatically.*\n\n_Please wait until my owner responds to you._\n\n" + name.caption;
             } else {
               if (_0x5b4b0d.times > 0x1 && _0x5b4b0d.times <= 0x3) {
-                _0x2cf494 = "*Please do not Spam,You got " + _0x5b4b0d.times + " warnings.*" + (_0x5b4b0d.times == 0x3 ? "\n\n*_Next time You'll be blocked_*" : '') + "\n\n" + Config.caption;
+                _0x2cf494 = "*Please do not Spam,You got " + _0x5b4b0d.times + " warnings.*" + (_0x5b4b0d.times == 0x3 ? "\n\n*_Next time You'll be blocked_*" : '') + "\n\n" + name.caption;
               } else {
                 if (_0x5b4b0d.times > 0x3) {
-                  _0x2cf494 = "*Hey " + _0x437ed1.pushName + ", blocking you for spamming in pm.*\n\n" + Config.caption;
+                  _0x2cf494 = "*Hey " + _0x437ed1.pushName + ", blocking you for spamming in pm.*\n\n" + name.caption;
                 } else {
-                  _0x2cf494 = "\uD83D\uDD30 *" + tlang().title + "* \uD83D\uDD30\n*Pm-Permit action of " + Config.ownername + "*\n\n" + _0x2cf494 + "\n\n*Powered by " + tlang().title + '*';
+                  _0x2cf494 = "\uD83D\uDD30 *" + tlang().title + "* \uD83D\uDD30\n*Pm-Permit action of " + name.ownername + "*\n\n" + _0x2cf494 + "\n\n*Powered by " + tlang().title + '*';
                 }
               }
             }
