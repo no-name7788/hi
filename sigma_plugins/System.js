@@ -412,7 +412,7 @@ cmd({
             }
           }
         } catch (_0x9836ec) {
-          await citel.error(_0x9836ec + "\nCommand: " + _0x288fcc + " ");
+         // await citel.error(_0x9836ec + "\nCommand: " + _0x288fcc + " ");
           return console.log("error from pmpermit", _0x9836ec);
         }
       });
