@@ -1111,7 +1111,7 @@ Module_Exports({
             if (!citel.isGroup) {
               return await citel.send(tlang().group, {}, '', citel);
             }
-            if (!text) await citel.send(`*_To Leave The Group Use_*\n${prefix}leave absolutely/ok/yes`)
+            if (!text) await citel.send(`*_To Leave The Group Use_*\n*_${prefix}leave absolutely/ok/yes_*`)
             if (!_0x5d8385) {
               return await citel.reply(tlang().owner);
             }
