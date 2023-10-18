@@ -37,7 +37,7 @@ citel.reply("𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬�
          // let pic = [{"https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg","https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"}]
       let pic =   [{
           "male": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg",
-          "male": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg"
+          "male": "https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg"
       }] 
          let random = pic[Math.floor(Math.random() * pic.length)]
       let king = {            
