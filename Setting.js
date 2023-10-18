@@ -2,7 +2,7 @@ const fs = require('fs-extra')
 if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/config.env' })
 
 
-//═══════[Required Variables]════════\\
+//═══════[Required Variables ]════════\\
 global.owner = process.env.OWNER_NUMBER || '923466319114' ;
 global.mongodb = process.env.MONGODB_URI || "" ;
 global.port=5000  ;
