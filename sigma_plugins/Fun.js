@@ -51,7 +51,7 @@ Module_Exports({
                caption: cap,
                headerType: 4}
                var last = new Date().getTime();
-               return await sigma.sendMessage(person.chat,king, {text: '*𝘗𝘐𝘕𝘎*' (first - last), edit: key});
+               return await sigma.sendMessage(person.chat,king, {text: '*𝘗𝘐𝘕𝘎*\n *' + (final - inital) + ' 𝘔𝘚* ', edit: key});
    })
 //--------------------------------------------------------------------------------
 Module_Exports({
