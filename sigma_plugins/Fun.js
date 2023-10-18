@@ -29,7 +29,7 @@ Module_Exports({
    use: ' ',
    kingpath: __filename,
    },
-   async (sigma, citel, text) => {
+   async (sigma, person, text) => {
     var first = new Date().getTime();
     const { key } = await sigma.sendMessage(person.chat, {text: '_Checking ping!!!_'});
    await sleep(3000)
