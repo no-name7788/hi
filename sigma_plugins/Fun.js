@@ -30,12 +30,11 @@ Module_Exports({
    kingpath: __filename,
    },
    async (sigma, person, text) => {
-    var first = new Date().getTime();
+    //var first = new Date().getTime();
     const { key } = await sigma.sendMessage(person.chat, {text: '_Checking ping!!!_'});
    await sleep(3000)
-   
-      
-     let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
+   await sigma.sendMessage(person.chat, {text: 'hello ', edit: key});
+let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
           // let pic = [{"https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg","https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"}]
        let mzpic =   [
 {"mz": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"},
@@ -50,8 +49,7 @@ Module_Exports({
                image: {url:random.mz },
                caption: cap,
                headerType: 4}
-               var last = new Date().getTime();
-               return await sigma.sendMessage(person.chat,king, {text: '*𝘗𝘐𝘕𝘎*\n *' + (first - last) + ' 𝘔𝘚* ', edit: key});
+               return await sigma.sendMessage(person.chat,king);
    })
 //--------------------------------------------------------------------------------
 Module_Exports({
