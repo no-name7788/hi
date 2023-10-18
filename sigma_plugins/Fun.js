@@ -32,8 +32,9 @@ Module_Exports({
    async (sigma, person, text) => {
     //var first = new Date().getTime();
     const { key } = await sigma.sendMessage(person.chat, {text: '_Checking ping!!!_'});
-   await sleep(3000)
+   await sleep(5000)
    await sigma.sendMessage(person.chat, {text: 'hello ', edit: key});
+       await sleep(3000)
 let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
           // let pic = [{"https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg","https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"}]
        let mzpic =   [
