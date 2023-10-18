@@ -46,83 +46,51 @@ const _0x2e1835=_0x1c3e;function _0x1c3e(_0x21d0f8,_0xcde877){const _0x3098c5=_0
 
 
 
-         Module_Exports({
-          kingcmd: "tiktok",
-          shortcut: ['tt', 'ttdl'],
-          infocmd: "Downloads Tiktok Videos Via Url.",
-          kingclass: "downloader",
-          use: "paste tiktok video link",
-        
-          async execute(sigma, person, memo) {
-            if (!memo) return await person.reply(`Give me tiktok video link`);
-            let txt = memo ? memo.split(" ")[0] : '';
-            if (!/tiktok/.test(txt)) return await person.reply(`Please give me a valid tiktok video link..!`);
-        
-            try {
-              const result = await TiktokDownloader(txt);
-              const videoUrl = result.result.nowatermark || result.result.watermark;
-              if (result.status) {
-                return await sigma.sendMessage(person.chat, {
-                  video: { url: videoUrl },
-                  caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma.botname}`,
-                  height: 470,
-                  width: 540,
-                }, { quoted: person });
-              } else {
-                return await person.reply("Error while downloading your video");
-              }
-            } catch (error) {
-              console.error(error);
-              return await person.reply("Error while downloading your video");
-            }
-          }
-        });
-        
-        async function TiktokDownloader(Url) {
-          return new Promise(async (resolve, reject) => {
-            try {
-              const response = await axios.request({
-                url: "https://ttdownloader.com/",
-                method: "GET",
-                headers: {
-                  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,/;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                  "accept-language": "en-US,en;q=0.9,id;q=0.8",
-                  "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
-                  "cookie": "_ga=GA1.2.1240046717.1620835673; PHPSESSID=i14curq5t8omcljj1hlle52762; popCookie=1; _gid=GA1.2.1936694796.1623913934"
-                }
-              });
-        
-              const $ = cheerio.load(response.data);
-              const token = $('#token').attr('value');
-        
-              const res = await axios({
-                url: "https://ttdownloader.com/req/",
-                method: "POST",
-                data: new URLSearchParams(Object.entries({ url: Url, format: "", token: token })),
-                headers: {
-                  "accept": "/",
-                  "accept-language": "en-US,en;q=0.9,id;q=0.8",
+         async function tiktokdl (url) {
+          const gettoken = await axios.get("https://ttdownloader.com/");
+          const $ = cheerio.load(gettoken.data);
+          const token = $("#download-form > input[type=hidden]:nth-child(2)").attr("value");
+          const param = {
+              url: url,
+              _token: token,
+          };
+          const { data } = await axios.request("https://ttdownloader.com/req/", {
+              method: "post",
+              data: new URLSearchParams(Object.entries(param)),
+              headers: {
                   "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                  "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
-                  "cookie": "_ga=GA1.2.1240046717.1620835673; PHPSESSID=i14curq5t8omcljj1hlle52762; popCookie=1; _gid=GA1.2.1936694796.1623913934"
-                }
-              });
-        
-              const ch = cheerio.load(res.data);
-              const result = {
-                status: res.status,
-                result: {
-                  nowatermark: ch('#results-list > div:nth-child(2)').find('div.download > a').attr('href'),
-                  watermark: ch('#results-list > div:nth-child(3)').find('div.download > a').attr('href'),
-                  audio: ch('#results-list > div:nth-child(4)').find(' div.download > a').attr('href')
-                }
-              };
-              resolve(result);
-            } catch (error) {
-              reject(error);
-            }
+                  "user-agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36",
+              },
           });
-        }   
+          var getdata = cheerio.load(data.html);
+          if (data.status) {
+              return {
+                  status: true,
+                  thumbnail: getdata("img").attr("src"),
+                  video: getdata("div.download-links > div:nth-child(1) > a").attr("href"),
+                  audio: getdata("div.download-links > div:nth-child(2) > a").attr("href"),
+              };
+          } else return { status: false };
+      };
+      
+      
+      
+      Module_Exports({
+                  kingcmd: "tiktok",
+            shortcut :  ['tt','ttdl'],
+                  infocmd: "Downloads Tiktok Videos Via Url.",
+                  kingclass: "downloader",
+                  use: "paste tiktok video link",
+      },
+      
+              async(sigma, person, memo) => {
+       if(!memo) return await person.reply(`*_Give me tiktok video link_*`);
+       let txt = memo ? memo.split(" ")[0]:'';
+       if (!/tiktok/.test(txt)) return await person.reply(`*_Please give me valid tiktok video link..!_*`);
+       const { status ,thumbnail, video, audio } = await tiktokdl(txt)
+       //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
+       if (status) return await sigma.sendMessage(person.chat, {video : {url : video } ,caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,height: 470,width: 540,  } , {quoted : person });
+       else return await person.reply("Error while downloading your video") 	})   
         
         
 /*
