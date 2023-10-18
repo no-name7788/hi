@@ -30,6 +30,7 @@ Module_Exports({
    kingpath: __filename,
    },
    async (sigma, citel, text) => {
+    var first = new Date().getTime();
     const { key } = await sigma.sendMessage(person.chat, {text: '_Checking ping!!!_'});
    await sleep(3000)
    
@@ -49,7 +50,8 @@ Module_Exports({
                image: {url:random.mz },
                caption: cap,
                headerType: 4}
-               return await sigma.sendMessage(person.chat,king, {text: '*𝘗𝘐𝘕𝘎*' (final - inital), edit: key});
+               var last = new Date().getTime();
+               return await sigma.sendMessage(person.chat,king, {text: '*𝘗𝘐𝘕𝘎*' (first - last), edit: key});
    })
 //--------------------------------------------------------------------------------
 Module_Exports({
