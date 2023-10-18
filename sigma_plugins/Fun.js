@@ -22,74 +22,7 @@ const { Module_Exports,sleep } = require('../lib')
 const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
 
-Module_Exports({
-  kingcmd: "mz",
-   kingclass: "fun",
-   infocmd: "hacking prank",
-   use: ' ',
-   kingpath: __filename,
-   },
-   async (sigma, person, text) => {
-   const { key } = await sigma.sendMessage(person.chat, {text: '𝐇𝐞𝐲 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀'});
-   await sleep(3000)
-   await sigma.sendMessage(person.chat, {text: '𝐅𝐢𝐧𝐝𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐋𝐨𝐯𝐞♥❣💕', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 ⏳', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ 𝟸𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ 𝟺𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%', edit: key});
-   await sleep(3000)
-   await sigma.sendMessage(person.chat, {text: '𝐀𝐡𝐡 𝐖𝐡𝐚𝐭!!!!', edit: key});
-   await sleep(4000)
-   await sigma.sendMessage(person.chat, {text: '𝐖𝐡𝐲 𝐘𝐨𝐮 𝐅𝐢𝐧𝐝𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐋𝐨𝐯𝐞🥀🌙', edit: key});
-   await sleep(5000)
-   await sigma.sendMessage(person.chat, {text: '𝐆𝐨 𝐁𝐚𝐜𝐤 𝐍𝐨𝐰!!😒', edit: key});
-   await sleep(5000)
-   await sigma.sendMessage(person.chat, {text: '𝐍𝐨 𝐎𝐧𝐞 𝐋𝐨𝐯𝐞 𝐘𝐨𝐮 💔💔', edit: key});
-   await sleep(8000)
-   await sigma.sendMessage(person.chat, {text: '𝐎𝐩𝐬𝐬 𝐒𝐨𝐫𝐫𝐲😁😜🤪\n𝐘𝐨𝐮 𝐇𝐚𝐯𝐞 𝐁𝐞𝐞𝐧 𝐏𝐫𝐚𝐧𝐤𝐞𝐝🤭🤭', edit: key});
-   await sleep(5000)
-   await sigma.sendMessage(person.chat, {text: '𝐒𝐡𝐨𝐰𝐢𝐧𝐠 𝐘𝐨𝐮 𝐌𝐲 𝐋𝐨𝐯𝐞❣♥', edit: key});
-   await sleep(2000)
-   await sigma.sendMessage(person.chat, {text: '𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭⏳👉👉', edit: key});
-   await sleep(3500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ 𝟸𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ 𝟺𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%', edit: key});
-   await sleep(1500)
-   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%', edit: key});
-   await sleep(3500)
-   await sigma.sendMessage(person.chat, {text: '𝐀𝐫𝐞 𝐘𝐨𝐮 𝐒𝐮𝐫𝐞\n𝐘𝐨𝐮 𝐖𝐚𝐧𝐭 𝐓𝐨 𝐒𝐞𝐞🤭🤭', edit: key});
-   await sleep(4500)
-   await sigma.sendMessage(person.chat, {text: '𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬𝐞 𝐘𝐨𝐮𝐫 𝐄𝐲𝐞𝐬 🤭❤💕', edit: key});
-   await sleep(7000)
-let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
-       let mzpic =   [
-{"mz": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"},
-{"mz": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg"},
-{"mz": "https://i.pinimg.com/564x/32/ac/df/32acdff5d75f0de1239414a10d8178a6.jpg"},
-{"mz": "https://i.pinimg.com/564x/c5/a9/4b/c5a94b1c9b5e4ba381e1223762066c83.jpg"},
-{"mz": "https://i.pinimg.com/564x/7c/35/ed/7c35ed596356ddc31ef3d926df97243b.jpg"},
-{"mz": "https://i.pinimg.com/564x/f7/c1/21/f7c1219f9cd57d13b393442d6254b4e7.jpg"
-     }] 
-          let random = mzpic[Math.floor(Math.random() * mzpic.length)]
-       let king = {            
-               image: {url:random.mz },
-               caption: cap,
-               headerType: 4}
-               return await sigma.sendMessage(person.chat,king);
-   })
+
 //--------------------------------------------------------------------------------
 Module_Exports({
             kingcmd: "question",
