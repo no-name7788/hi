@@ -30,15 +30,51 @@ Module_Exports({
    kingpath: __filename,
    },
    async (sigma, person, text) => {
-    //var first = new Date().getTime();
-    const { key } = await sigma.sendMessage(person.chat, {text: '_Checking ping!!!_'});
+   const { key } = await sigma.sendMessage(person.chat, {text: '𝐇𝐞𝐲 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀'});
+   await sleep(3000)
+   await sigma.sendMessage(person.chat, {text: '𝐅𝐢𝐧𝐝𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐋𝐨𝐯𝐞♥❣💕', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 ⏳', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ 𝟸𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ 𝟺𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%', edit: key});
+   await sleep(3000)
+   await sigma.sendMessage(person.chat, {text: '𝐀𝐡𝐡 𝐖𝐡𝐚𝐭!!!!', edit: key});
+   await sleep(4000)
+   await sigma.sendMessage(person.chat, {text: '𝐖𝐡𝐲 𝐘𝐨𝐮 𝐅𝐢𝐧𝐝𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐋𝐨𝐯𝐞🥀🌙', edit: key});
    await sleep(5000)
-   await sigma.sendMessage(person.chat, {text: 'hello ', edit: key});
-   await sleep(3000)
-   await sigma.sendMessage(person.chat, {text: 'hello ', edit: key});
-   await sleep(3000)
+   await sigma.sendMessage(person.chat, {text: '𝐆𝐨 𝐁𝐚𝐜𝐤 𝐍𝐨𝐰!!😒', edit: key});
+   await sleep(5000)
+   await sigma.sendMessage(person.chat, {text: '𝐍𝐨 𝐎𝐧𝐞 𝐋𝐨𝐯𝐞 𝐘𝐨𝐮 💔💔', edit: key});
+   await sleep(8000)
+   await sigma.sendMessage(person.chat, {text: '𝐎𝐩𝐬𝐬 𝐒𝐨𝐫𝐫𝐲😁😜🤪\n𝐘𝐨𝐮 𝐇𝐚𝐯𝐞 𝐁𝐞𝐞𝐧 𝐏𝐫𝐚𝐧𝐤𝐞𝐝🤭🤭', edit: key});
+   await sleep(5000)
+   await sigma.sendMessage(person.chat, {text: '𝐒𝐡𝐨𝐰𝐢𝐧𝐠 𝐘𝐨𝐮 𝐌𝐲 𝐋𝐨𝐯𝐞❣♥', edit: key});
+   await sleep(2000)
+   await sigma.sendMessage(person.chat, {text: '𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭⏳👉👉', edit: key});
+   await sleep(3500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ 𝟸𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ 𝟺𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ 𝟼𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ 𝟾𝟶%', edit: key});
+   await sleep(1500)
+   await sigma.sendMessage(person.chat, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 ⏳\n█ █ █ █ █ █ █ █ █ █ 𝟷𝟶𝟶%', edit: key});
+   await sleep(3500)
+   await sigma.sendMessage(person.chat, {text: '𝐀𝐫𝐞 𝐘𝐨𝐮 𝐒𝐮𝐫𝐞\n𝐘𝐨𝐮 𝐖𝐚𝐧𝐭 𝐓𝐨 𝐒𝐞𝐞🤭🤭', edit: key});
+   await sleep(4500)
+   await sigma.sendMessage(person.chat, {text: '𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬𝐞 𝐘𝐨𝐮𝐫 𝐄𝐲𝐞𝐬 🤭❤💕', edit: key});
+   await sleep(7000)
 let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
-          // let pic = [{"https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg","https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"}]
        let mzpic =   [
 {"mz": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"},
 {"mz": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg"},
