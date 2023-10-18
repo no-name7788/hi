@@ -23,21 +23,19 @@ const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
 
 Module_Exports({
-
-  kingcmd: "mz",
+ kingcmd: "mz",
   kingclass: "fun",
   infocmd: "hacking prank",
   use: ' ',
   kingpath: __filename,
   },
   async (Void, citel, text) => {
-  
-  citel.reply("𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬𝐞 𝐘𝐨𝐮𝐫 𝐄𝐲𝐞𝐬 🤭❤💕")
+citel.reply("𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬𝐞 𝐘𝐨𝐮𝐫 𝐄𝐲𝐞𝐬 🤭❤💕")
   await sleep(1000)
      
     let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
          // let pic = [{"https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg","https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"}]
-         [{
+      let pic =   [{
           "male": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg",
           "male": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg"
       }] 
