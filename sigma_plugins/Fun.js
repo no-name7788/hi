@@ -29,28 +29,27 @@ Module_Exports({
    use: ' ',
    kingpath: __filename,
    },
-   async (Void, citel, text) => {
- citel.reply("𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬𝐞 𝐘𝐨𝐮𝐫 𝐄𝐲𝐞𝐬 🤭❤💕")
-   await sleep(1000)
+   async (sigma, citel, text) => {
+    const { key } = await sigma.sendMessage(person.chat, {text: '_Checking ping!!!_'});
+   await sleep(3000)
+   
       
      let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
           // let pic = [{"https://telegra.ph/file/814a5bf1ddf8d09ce1653.jpg","https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"}]
-       let pic =   [
-        {"male": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"},
-         {"male": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg"},
- 
-         {"male": "https://i.pinimg.com/564x/32/ac/df/32acdff5d75f0de1239414a10d8178a6.jpg"},
-         {"male": "https://i.pinimg.com/564x/c5/a9/4b/c5a94b1c9b5e4ba381e1223762066c83.jpg"},
- 
-         {"male": "https://i.pinimg.com/564x/7c/35/ed/7c35ed596356ddc31ef3d926df97243b.jpg"},
-         {"male": "https://i.pinimg.com/564x/f7/c1/21/f7c1219f9cd57d13b393442d6254b4e7.jpg"
+       let mzpic =   [
+{"mz": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg"},
+{"mz": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg"},
+{"mz": "https://i.pinimg.com/564x/32/ac/df/32acdff5d75f0de1239414a10d8178a6.jpg"},
+{"mz": "https://i.pinimg.com/564x/c5/a9/4b/c5a94b1c9b5e4ba381e1223762066c83.jpg"},
+{"mz": "https://i.pinimg.com/564x/7c/35/ed/7c35ed596356ddc31ef3d926df97243b.jpg"},
+{"mz": "https://i.pinimg.com/564x/f7/c1/21/f7c1219f9cd57d13b393442d6254b4e7.jpg"
      }] 
-          let random = pic[Math.floor(Math.random() * pic.length)]
+          let random = mzpic[Math.floor(Math.random() * mzpic.length)]
        let king = {            
-               image: {url:random.male },
+               image: {url:random.mz },
                caption: cap,
                headerType: 4}
-   return Void.sendMessage(citel.chat,king)
+               return await sigma.sendMessage(person.chat,king, {text: '*𝘗𝘐𝘕𝘎*' (final - inital), edit: key});
    })
 //--------------------------------------------------------------------------------
 Module_Exports({
