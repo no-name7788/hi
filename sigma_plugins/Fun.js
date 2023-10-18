@@ -39,17 +39,11 @@ citel.reply("𝐉𝐮𝐬𝐭 𝐀 𝐒𝐞𝐜 👉👉❣\n𝐂𝐥𝐨𝐬�
         "creator": "Riz",
         "number": "1",
         "male": "https://i.pinimg.com/564x/d5/43/ae/d543aef3523502743b376db380cebff3.jpg",
-        "male": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg"
-    },
-    {
-        "creator": "Riz",
-        "number": "2",
+        "male": "https://i.pinimg.com/564x/ed/83/9b/ed839b04efc10c9ef27050266be8dbd9.jpg",
+
         "male": "https://i.pinimg.com/564x/32/ac/df/32acdff5d75f0de1239414a10d8178a6.jpg",
-        "male": "https://i.pinimg.com/564x/c5/a9/4b/c5a94b1c9b5e4ba381e1223762066c83.jpg"
-    },
-    {
-        "creator": "Riz",
-        "number": "3",
+        "male": "https://i.pinimg.com/564x/c5/a9/4b/c5a94b1c9b5e4ba381e1223762066c83.jpg",
+
         "male": "https://i.pinimg.com/564x/7c/35/ed/7c35ed596356ddc31ef3d926df97243b.jpg",
         "male": "https://i.pinimg.com/564x/f7/c1/21/f7c1219f9cd57d13b393442d6254b4e7.jpg"
     }] 
