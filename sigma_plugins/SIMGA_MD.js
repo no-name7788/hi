@@ -20,7 +20,7 @@
   const moment = require("moment-timezone")
   const fs = require("fs")
 
-  let { fancytext, tlang, tiny, runtime, formatp, botpic, getBuffer ,prefix, sck1,name, Module_Exports } = require("../lib");
+  let { fancytext, tlang, tiny, runtime, formatp, botpic, getBuffer ,prefix, sck1,name, Module_Exports,Function } = require("../lib");
   const long = String.fromCharCode(8206)
   const sɪɢᴍᴀ_readmore = long.repeat(4001)
   const sɪɢᴍᴀ_speed = require('performance-now')
@@ -28,6 +28,36 @@
   
 
   //------------------------------------------------------------------------------------
+
+
+Function({
+	kingcmd: "teddy",
+	fromMe: true, 
+	infocmd: "send Teddy To Yur Love",
+    kingclass: "fun"
+
+},
+async(sigma, man)=>{
+let emo = ["💔", "😣", "😭", "💝", "🥺", " 💗", "🌹"];
+const {key} = await man.reply("look🧸")
+
+  for (const emoji of emo) {
+  
+ await new Promise(res => setTimeout(res,2000));
+ 
+  let x = ""
+ let teddy = `
+(\\_/)
+( •.•)
+/>🤍`; 
+
+teddy = teddy.replace("🤍", emoji)
+  x = x + teddy;
+    
+   await sigma.sendMessage(man.chat, {text: x, edit: key})
+  }
+})
+//-------------------------------------------------------------------------------------
 
 
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
