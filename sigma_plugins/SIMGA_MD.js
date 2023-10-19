@@ -127,7 +127,7 @@ async(bot, person, text) => {
 ┃✗ *•sᴘᴇᴇᴅ•* ${latensie.toFixed(4)} ᴍs
 ┃✗ *•ᴘʟᴀᴛꜰᴏʀᴍ•* ᴍᴀᴄ-ᴏs
 ┃✗ *•ᴠᴇʀsɪᴏɴ•* ${name.VERSION}
-┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ${dev[Math.floor(8*Math.random())]}
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ${Zubair[Math.floor(8*Math.random())]}
 ┗━━━━━━━━━━━⦿         
 
 ${sɪɢᴍᴀ_readmore}
