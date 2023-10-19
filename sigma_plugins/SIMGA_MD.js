@@ -53,10 +53,10 @@ teddy = teddy.replace("🤍", emoji)
   x = x + teddy;
     
    await sigma.sendMessage(man.chat, {text: x, edit: key})
-  // await sleep(1500)
+  
   }
-  await sleep(1500)
-  await sigma.sendMessage(man.chat, {text: '𝐈 𝐋𝐎𝐕𝐄 𝐘𝐎𝐔 𝐒𝐎 𝐌𝐔𝐂𝐇 𝐌𝐎𝐍𝐀❤️💞'})
+  
+  await sigma.sendMessage(man.chat, {text: '𝐈 𝐋𝐎𝐕𝐄 𝐘𝐎𝐔\n𝐒𝐎 𝐌𝐔𝐂𝐇 𝐌𝐎𝐍𝐀❤️💞'})
   
 })
 //-------------------------------------------------------------------------------------
