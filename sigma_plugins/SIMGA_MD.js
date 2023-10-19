@@ -111,8 +111,7 @@ async(bot, person, text) => {
 .split(",");
         let sɪɢᴍᴀ_total = await sck1.countDocuments()
         const Zubair= [`𝟷𝟸ᴹᴮ/128ᴳᴮ`,`𝟿𝟶ᴹᴮ/𝟸𝟻𝟼ᴳᴮ`,`𝟿𝟿ᴹᴮ/𝟸𝟻𝟼ᴳᴮ`,`𝟻𝟷𝟸ᴹᴮ/𝟸𝟻𝟼ᴳᴮ`,`𝟽ᴳᴮ/𝟸𝟻𝟼ᴳᴮ`,`𝟸𝟻𝟶ᴹᴮ/𝟸𝟻𝟼ᴳᴮ`,`𝟸ᴳᴮ/𝟸𝟻𝟼ᴳᴮ`,`𝟷𝟶ᴹᴮ/𝟸𝟻𝟼ᴳᴮ`,`𝟷𝟶ᴳᴮ/𝟸𝟻𝟼ᴳᴮ`]
-        const DevZ = ["*𝙼𝚉*","*𝑀𝒵*","*ᴹᴬᴴᴱᴿ𝚉𝚄𝙱𝙰𝙸𝚁*","*𝑀 𝓩𝓤𝓑𝓲*"]
-        let zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿      
+        let zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿             
 ┃✗ *•ᴡᴇʟᴄᴏᴍᴇ•* ${person.pushName}
 ┃✗ *•ʙᴏᴛ-ɴᴀᴍᴇ•* ${name.botname}
 ┃✗ *•ᴏᴡɴᴇʀ•* ${name.ownername}
@@ -127,8 +126,8 @@ async(bot, person, text) => {
 ┃✗ *•sᴘᴇᴇᴅ•* ${latensie.toFixed(4)} ᴍs
 ┃✗ *•ᴘʟᴀᴛꜰᴏʀᴍ•* ᴍᴀᴄ-ᴏs
 ┃✗ *•ᴠᴇʀsɪᴏɴ•* ${name.VERSION}
-┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ${DevZ[Math.floor(8*Math.random())]}
-┗━━━━━━━━━━━⦿         
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴹᴬᴴᴱᴿ ᶻᵁᴮᴬᴵᴿ*
+┗━━━━━━━━━━━⦿                
 
 ${sɪɢᴍᴀ_readmore}
 `
