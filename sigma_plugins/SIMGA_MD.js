@@ -110,7 +110,7 @@ async(bot, person, text) => {
 .toLocaleString("en-pk", { timeZone: global.timezone })
 .split(",");
         let sɪɢᴍᴀ_total = await sck1.countDocuments()
-        const Zubair= [99,81,2023,2005,78,5000]
+        const Zubair= [`12mb/128gb`,`90mb/128gb`,`512mb/128gb`]
 
         let zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿      
 ┃✗ *•ᴡᴇʟᴄᴏᴍᴇ•* ${person.pushName}
