@@ -41,7 +41,7 @@ const {key} = await man.reply("𝐓𝐡𝐢𝐬 𝐈𝐬 𝐅𝐨𝐫 𝐘𝐨�
 
   for (const emoji of emo) {
   
- await new Promise(res => setTimeout(res,500));
+ await new Promise(res => setTimeout(res,1700));
  
   let x = ""
  let teddy = `
@@ -56,8 +56,8 @@ teddy = teddy.replace("🤍", emoji)
   
   }
   
-  await sigma.sendMessage(man.chat, {text: '𝐈 𝐋𝐎𝐕𝐄 𝐘𝐎𝐔\n𝐒𝐎 𝐌𝐔𝐂𝐇 𝐌𝐎𝐍𝐀❤️💞'})
-await sleep(1500)
+  await sigma.sendMessage(man.chat, {text: '𝐈 𝐋𝐎𝐕𝐄 𝐘𝐎𝐔 𝐌𝐎𝐍𝐀❤️💞'})
+
   
 })
 //-------------------------------------------------------------------------------------
