@@ -111,6 +111,7 @@ async(bot, person, text) => {
 .split(",");
         let sɪɢᴍᴀ_total = await sck1.countDocuments()
         let num = [512/128,180/128,60/128,80/128,20/128,143/128]
+        let random = num[Math.floor(Math.random() * num.length)]
 
         let zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿      
 ┃✗ *•ᴡᴇʟᴄᴏᴍᴇ•* ${person.pushName}
@@ -121,7 +122,7 @@ async(bot, person, text) => {
 ┃✗ *•ᴍᴏᴅᴇ•* ${name.WORKTYPE}
 ┃✗ *•ᴛɪᴍᴇ•* ${sɪɢᴍᴀ_time}
 ┃✗ *•ᴅᴀᴛᴇ•* ${sɪɢᴍᴀ_date}
-┃✗ *•ᴍᴇᴍ•* ${num[Math.floor(8*Math.random())]}
+┃✗ *•ᴍᴇᴍ•* ${random.num}
 ┃✗ *•ᴜᴘ-ᴛɪᴍᴇ•* ${runtime(process.uptime())}
 ┃✗ *•ᴘʟᴜɢɪɴs•* ${commands.length}
 ┃✗ *•sᴘᴇᴇᴅ•* ${latensie.toFixed(4)} ᴍs
@@ -130,7 +131,7 @@ async(bot, person, text) => {
 ┃✗ *•ᴠᴇʀsɪᴏɴ•* ${name.VERSION}
 ┃✗ *•ʙʀᴀɴᴄʜ•* ${name.BRANCH}
 ┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ*
-┗━━━━━━━━━━━⦿       
+┗━━━━━━━━━━━⦿         
 
 ${sɪɢᴍᴀ_readmore}
 `
