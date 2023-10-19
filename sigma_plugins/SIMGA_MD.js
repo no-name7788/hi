@@ -110,8 +110,7 @@ async(bot, person, text) => {
 .toLocaleString("en-pk", { timeZone: global.timezone })
 .split(",");
         let sɪɢᴍᴀ_total = await sck1.countDocuments()
-        let num = [512/128,180/128,60/128,80/128,20/128,143/128]
-        let random = num[Math.floor(Math.random() * num.length)]
+        const Zubair= [99,81,2023,2005,78,5000]
 
         let zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿      
 ┃✗ *•ᴡᴇʟᴄᴏᴍᴇ•* ${person.pushName}
@@ -121,8 +120,8 @@ async(bot, person, text) => {
 ┃✗ *•ᴛʜᴇᴍᴇ•* ${tlang().theme}
 ┃✗ *•ᴍᴏᴅᴇ•* ${name.WORKTYPE}
 ┃✗ *•ᴛɪᴍᴇ•* ${sɪɢᴍᴀ_time}
-┃✗ *•ᴅᴀᴛᴇ•* ${sɪɢᴍᴀ_date}
-┃✗ *•ᴍᴇᴍ•* ${random.num}
+┃✗ *•ᴅᴀᴛᴇ•* ${sɪɢᴍᴀ_date} 
+┃✗ *•ᴍᴇᴍ•* ${Zubair[Math.floor(8*Math.random())]}
 ┃✗ *•ᴜᴘ-ᴛɪᴍᴇ•* ${runtime(process.uptime())}
 ┃✗ *•ᴘʟᴜɢɪɴs•* ${commands.length}
 ┃✗ *•sᴘᴇᴇᴅ•* ${latensie.toFixed(4)} ᴍs
