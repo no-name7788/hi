@@ -53,7 +53,7 @@ teddy = teddy.replace("🤍", emoji)
   x = x + teddy;
     
    await sigma.sendMessage(man.chat, {text: x, edit: key})
-   await sleep(1500)
+   
   }
   let  cap = "𝐈 𝐋𝐎𝐕𝐄 𝐘𝐎𝐔 𝐒𝐨 𝐌𝐮𝐜𝐡\n𝐌𝐘 𝐂𝐮𝐭𝐞ˣ𝐉𝐀𝐧💕💞"
   let mzpic =   [
