@@ -193,51 +193,5 @@ sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
   
 
 
-  })
 
-   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-    kingcmd: "listall",
-    shortcut: ["hlist"],
-    infocmd: "Get help about all commands",
-    kingclass: "general",
- },
-async(Void, citel) => {
-    const { sigma_plugins } = require('../lib');
-    timestampe = sɪɢᴍᴀ_speed();
-    latensie = sɪɢᴍᴀ_speed() - timestampe;
-    let [sɪɢᴍᴀ_date, sɪɢᴍᴀ_time] = new Date()
-.toLocaleString("en-pk", { timeZone: global.timezone })
-.split(",");
-    let sɪɢᴍᴀ_total = await sck1.countDocuments()
-    let Zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿
-┃✗ •ᴏᴡɴᴇʀ• ${name.ownername}
-┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${name.botname}
-┃✗ •ᴘʀᴇғɪx• 『 *${prefix}* 』
-┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
-┃✗ •ᴍᴏᴅᴇ• ${name.WORKTYPE}
-┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
-┃✗ •ᴅᴀᴛᴇ• ${sɪɢᴍᴀ_date}
-┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
-┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
-┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
-┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
-┃✗ •ᴜsᴇʀs• ${sɪɢᴍᴀ_total}
-┃✗ •ᴠᴇʀsɪᴏɴ• sɪɢᴍᴀ
-┃✗ •ʙʀᴀɴᴄʜ• ${name.BRANCH}
-┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
-┗━━━━━━━━━━━⦿\n${sɪɢᴍᴀ_readmore}`
-
-    for (let i = 0; i < sigma_plugins.length; i++) 
-    {
-         if(sigma_plugins[i].kingcmd==undefined) continue
-         Zubair +=       `┏➛ ${i+1} *${fancytext(sigma_plugins[i].kingcmd,35)}*\n`                // ${i+1} 
-         Zubair += `┗➛ ${fancytext(sigma_plugins[i].infocmd,35)}\n`
-    }
-
-
-//Zubair += `Maher Zubair`
-    return await Void.sendMessage(citel.chat,{ image: { url: await botpic() }, caption:Zubair, })
-}
-)
 
