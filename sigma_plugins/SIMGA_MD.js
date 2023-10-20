@@ -99,7 +99,7 @@ async(bot, person, text) => {
 
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
     kingcmd: "menu",
-    shortcut: ["list"],
+   // shortcut: ["list"],
     infocmd: "All Commands lists",
     kingclass: "general",
      
@@ -195,8 +195,8 @@ sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
 
   })
 
-  sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-    kingcmd: "helplist",
+   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
+    kingcmd: "list",
     shortcut: ["hlist"],
     infocmd: "Get help about all commands",
     kingclass: "general",
@@ -234,15 +234,10 @@ async(Void, citel) => {
          Zubair +=       `┏➛ ${i+1} *${fancytext(commands[i].kingcmd,1)}*\n`                // ${i+1} 
          Zubair += `┗➛ ${fancytext(commands[i].innfocmd,1)}\n`
     }
-          let Maher = {
-  image: { url: await botpic() },
-  caption: Zubair + scap,
-}
-    
+
 
 //Zubair += `Maher Zubair`
-    return await Void.sendMessage(citel.chat, Maher)
+    return await Void.sendMessage(citel.chat,{ image: { url: await botpic() }, caption:Zubair, })
 }
 )
-
 
