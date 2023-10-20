@@ -196,7 +196,7 @@ sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
   })
 
    sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-    kingcmd: "list",
+    kingcmd: "listall",
     shortcut: ["hlist"],
     infocmd: "Get help about all commands",
     kingclass: "general",
@@ -231,8 +231,8 @@ async(Void, citel) => {
     for (let i = 0; i < commands.length; i++) 
     {
          if(commands[i].kingcmd==undefined) continue
-         Zubair +=       `┏➛ ${i+1} *${fancytext(commands[i].kingcmd,1)}*\n`                // ${i+1} 
-         Zubair += `┗➛ ${fancytext(commands[i].innfocmd,1)}\n`
+         Zubair +=       `┏➛ ${i+1} *${fancytext(commands[i].kingcmd,35)}*\n`                // ${i+1} 
+         Zubair += `┗➛ ${fancytext(commands[i].infocmd,35)}\n`
     }
 
 
