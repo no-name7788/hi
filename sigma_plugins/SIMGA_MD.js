@@ -236,6 +236,6 @@ sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
           return await person.reply(Maher.join('\n'));
   
 
-
+ })
 
 
