@@ -195,4 +195,54 @@ sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
 
   })
 
+  sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
+    kingcmd: "helplist",
+    shortcut: ["hlist"],
+    infocmd: "Get help about all commands",
+    kingclass: "general",
+ },
+async(Void, citel) => {
+    const { commands } = require('../lib');
+    timestampe = sɪɢᴍᴀ_speed();
+    latensie = sɪɢᴍᴀ_speed() - timestampe;
+    let [sɪɢᴍᴀ_date, sɪɢᴍᴀ_time] = new Date()
+.toLocaleString("en-pk", { timeZone: global.timezone })
+.split(",");
+    let sɪɢᴍᴀ_total = await sck1.countDocuments()
+    let Zubair = `┏━━⟪⟪ ${mztit} ⟫━━⦿
+┃✗ •ᴏᴡɴᴇʀ• ${name.ownername}
+┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${name.botname}
+┃✗ •ᴘʀᴇғɪx• 『 *${prefix}* 』
+┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
+┃✗ •ᴍᴏᴅᴇ• ${name.WORKTYPE}
+┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
+┃✗ •ᴅᴀᴛᴇ• ${sɪɢᴍᴀ_date}
+┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
+┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
+┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
+┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
+┃✗ •ᴜsᴇʀs• ${sɪɢᴍᴀ_total}
+┃✗ •ᴠᴇʀsɪᴏɴ• sɪɢᴍᴀ
+┃✗ •ʙʀᴀɴᴄʜ• ${name.BRANCH}
+┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
+┗━━━━━━━━━━━⦿\n${sɪɢᴍᴀ_readmore}`
+
+    for (let i = 0; i < commands.length; i++) 
+    {
+         if(commands[i].kingcmd==undefined) continue
+         Zubair +=       `┏➛ ${i+1} *${fancytext(commands[i].kingcmd,1)}*\n`                // ${i+1} 
+         Zubair += `┗➛ ${fancytext(commands[i].innfocmd,1)}\n`
+    }
+          let Maher = {
+  image: { url: await botpic() },
+  caption: Zubair + scap,
+}
+    
+
+//Zubair += `Maher Zubair`
+    return await Void.sendMessage(citel.chat, Maher)
+}
+)
+
 
