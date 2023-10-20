@@ -28,6 +28,50 @@
   
 
   //------------------------------------------------------------------------------------
+Function({
+	kingcmd: "teddy",
+	fromMe: true, 
+	infocmd: "send Teddy To Yur Love",
+    kingclass: "fun"
+
+},
+async(sigma, man)=>{
+let emo =  ['❤', '💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '❣️', '💖', '💘', '❤️', '💟', '🤍', '💓', '😍', '😘', '💚', '❤️'];
+const {key} = await man.reply("𝐓𝐡𝐢𝐬 𝐈𝐬 𝐅𝐨𝐫 𝐘𝐨𝐮 𝐌𝐲 𝐁𝐀𝐁𝐄 💕")
+
+  for (const emoji of emo) {
+  
+ await new Promise(res => setTimeout(res,500));
+ 
+  let x = ""
+ let teddy = `
+*(\\_/)*
+*( •.•)*
+*/>*🤍`; 
+
+teddy = teddy.replace("🤍", emoji)
+  x = x + teddy;
+    
+   await sigma.sendMessage(man.chat, {text: x, edit: key})
+   await sleep(1500)
+  }
+  let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
+  let mzpic =   [
+{"mz": "https://telegra.ph/file/ecfa6242757a98a8f58fc.jpg"},
+{"mz": "https://telegra.ph/file/cf5685d223fe7a11916de.jpg"},
+{"mz": "https://telegra.ph/file/eb7c6043453c6f8445b36.jpg"},
+{"mz": "https://telegra.ph/file/f42b21e894a3341f4ac22.jpg"},
+{"mz": "https://telegra.ph/file/73ab7b02b54f266eab2e3.jpg"},
+{"mz": "https://telegra.ph/file/04b30f8a7d949ca516bb7.jpg"}
+               ] 
+  let random = mzpic[Math.floor(Math.random() * mzpic.length)]
+  let king = {            
+          image: {url:random.mz },
+          caption: cap,
+          headerType: 4}
+          return await sigma.sendMessage(man.chat,king);
+  
+})
 //-------------------------------------------------------------------------------------
 
 
