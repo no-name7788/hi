@@ -18,7 +18,7 @@
 
 const { dare, truth, random_question ,name,tlang } = require('../lib/truth-dare.js')
 const axios = require('axios')
-const { Module_Exports,sleep } = require('../lib')
+const { Module_Exports,sleep,Function } = require('../lib')
 const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
 
@@ -239,7 +239,36 @@ await sleep(1000)
         }
 
     )
+Function({
+	kingcmd: "teddy",
+	fromMe: true, 
+	infocmd: "send Teddy To Yur Love",
+    kingclass: "fun"
 
+},
+async(sigma, man)=>{
+let emo =  ['❤', '💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '❣️', '💖', '💘', '❤️', '💟', '🤍', '💓', '😍', '😘', '💚', '❤️'];
+const {key} = await man.reply("")
+
+  for (const emoji of emo) {
+  
+ await new Promise(res => setTimeout(res,2000));
+ 
+  let x = ""
+ let teddy = `
+*(\\_/)*
+*( •.•)*
+*/>*🤍`; 
+
+teddy = teddy.replace("🤍", emoji)
+  x = x + teddy;
+    
+   await sigma.sendMessage(man.chat, {text: x, edit: key})
+   await sleep(1500)
+  }
+
+  
+})
 
 // These Fun Commands are Developed By @Maher-Zubair
 // Whatsapp +923466319114
