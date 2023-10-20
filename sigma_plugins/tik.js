@@ -8,22 +8,33 @@ const ttdl = require('btch-downloader');
 
 
 
-const { tikd } = require('tiktokdl');
+const { TiktokDL } = require("@tobyg74/tiktok-api-dl");
 
-Module_Exports({kingcmd: "facebook",
-     shortcut: ["tik","fbdl"],
-     kingclass: "downloader",
-     infocmd: "downloads facebook videos",
-     use: "paste fb video link"
-     },
-    async(sigma, person, memo) => {
-        if (!memo) return person.reply(`Give me facebook video link`);
-         let txt = memo ? memo.split(" ")[0]:'';
- if (!/tiktok/.test(txt)) return await person.reply(`Please give me valid facebook video link..!`);
- const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226'
- // Using tiktokdl
- const data = await ttdl(url)       
-          {  return sigma.sendMessage(person.chat, { video: { url: data.result[0].url },caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${name.botname}`,width: 550,height: 470, },{ quoted: person }) }
-         return person.reply("Error while downloading your video") 
-})
+Module_Exports({
+  kingcmd: "tik",
+  infocmd: "to check owner number",
+  kingclass: "download",
+},
+async (bot, person) => {
 
+  const downloadTikTokVideo = async (tiktokUrl) => {
+    try {
+      const result = await TiktokDL(tiktokUrl, { version: "v1" });
+      if (result.status === "success" && result.result && result.result.video) {
+        return result.result.video[0]; 
+      } else {
+        throw new Error("Failed to download TikTok video.");
+      }
+    } catch (error) {
+      throw new Error("Failed to download TikTok video.");
+    }
+  };
+
+  const tiktokUrl = "https://vt.tiktok.com/ZS84BnrU9";
+  try {
+    const videoUrl = await downloadTikTokVideo(tiktokUrl);
+    person.reply("Download SIGMA: " + videoUrl);
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+});
