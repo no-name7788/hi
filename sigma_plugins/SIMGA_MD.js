@@ -79,8 +79,7 @@
   };
 
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-    kingcmd: "menu",
-    shortcut: ["help","list"],
+    kingcmd: "help",
     infocmd: "All Commands lists",
     kingclass: "general",
      
@@ -96,7 +95,18 @@ async(bot, person, text) => {
                     if (cmd.use) arr.push(`┃✗ •ᴜsᴀɢᴇ•\n ${prefix}${cmd.kingcmd} ${cmd.use}`);
                     if (cmd.infocmd) arr.push(`┃✗ •ɪɴꜰᴏ• ${cmd.infocmd}\n┗━━━━━━━━━━⦿`);
                     return await person.reply(arr.join('\n')); 
-        }
+        }})
+
+  sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
+    kingcmd: "menu",
+    shortcut: ["help","list"],
+    infocmd: "All Commands lists",
+    kingclass: "general",
+     
+},
+async(bot, person, text) => {
+    const { commands } = require('../lib');
+
         const cmds = {}
         try{
         commands.map(async(command, index) => {
