@@ -44,12 +44,12 @@ try{
 var sigma_time = new Date().toLocaleString('HI', { timeZone: global.timezone }).split(' ')[1]
 var sigma_date = new Date().toLocaleDateString(get_localized_date)
 var sigma_wish = ''
-if (hrs >= 1 && hrs <= 11 sigma_wish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ⛅'
+if (hrs >= 1 && hrs <= 11) sigma_wish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ⛅'
 if (hrs >= 11 && hrs <= 17) sigma_wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
 if (hrs >= 17 && hrs <= 24) sigma_wish = 'ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌞'
 //if (hrs >= 20 && hrs <= 24) sigma_wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
 var am_pm = ''
-if (hrs < 12) am_pm = 'ᴀᴍ'
+if (hrs >= 1 && hrs <= 11) am_pm = 'ᴀᴍ'
 if (hrs >= 12 && hrs <= 24) am_pm = 'ᴘᴍ'
 const Zubair= [99,81,2023,2005,78,5000]
 const king = {
