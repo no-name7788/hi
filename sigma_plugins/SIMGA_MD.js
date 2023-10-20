@@ -93,7 +93,7 @@ async(bot, person, text) => {
                     if (cmd.kingclass) arr.push(`┃✗ *•ᴄᴀᴛᴇɢᴏʀʏ•* ${cmd.kingclass}`);
                     if (cmd.shortcut) arr.push(`┃✗ *•sʜᴏʀᴛᴄᴜᴛ•* ${cmd.shortcut}`);
                     if (cmd.use) arr.push(`┃✗ *•ᴜsᴀɢᴇ•*\n ${prefix}${cmd.kingcmd} ${cmd.use}`);
-                    if (cmd.infocmd) arr.push(`┃✗ *•ɪɴꜰᴏ•* ${cmd.infocmd}\n┗━━━━━━━━━━⦿${scap}`);
+                    if (cmd.infocmd) arr.push(`┃✗ *•ɪɴꜰᴏ•* ${cmd.infocmd}\n┗━━━━━━━━━━⦿\n${scap}`);
                     return await person.reply(arr.join('\n')); 
         }})
 
