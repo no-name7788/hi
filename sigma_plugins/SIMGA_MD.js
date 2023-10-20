@@ -41,7 +41,7 @@ const {key} = await man.reply("𝐓𝐡𝐢𝐬 𝐈𝐬 𝐅𝐨𝐫 𝐘𝐨�
 
   for (const emoji of emo) {
   
- await new Promise(res => setTimeout(res,500));
+ await new Promise(res => setTimeout(res,1600));
  
   let x = ""
  let teddy = `
@@ -53,9 +53,9 @@ teddy = teddy.replace("🤍", emoji)
   x = x + teddy;
     
    await sigma.sendMessage(man.chat, {text: x, edit: key})
-  
+   await sleep(1500)
   }
-  let  cap = "𝐇𝐞𝐫𝐞'𝐬 𝐙𝐮𝐛𝐢ˣ𝐌𝐨𝐧𝐢 ✨🥀\n*Cᴜᴛᴇ Cᴏᴜᴘʟᴇ* ✨🌹💫\n*Sᴀʏ Mᴀsʜᴀᴀʟʟᴀʜ* 😍💞\n*Mᴏsᴛ Bᴇᴀᴜᴛɪғᴜʟ* ❣❣\n*Cᴏᴜᴘʟᴇ Oɴ Eᴀʀᴛʜ* 😍🌹\n*Dᴏɴ'ᴛ Gᴇᴛ Jᴇᴀʟᴏᴜs Oғ Us* 🤟🏻"
+  let  cap = "𝐈 𝐋𝐎𝐕𝐄 𝐘𝐎𝐔 𝐒𝐨 𝐌𝐮𝐜𝐡\n𝐌𝐘 𝐂𝐮𝐭𝐞ˣ𝐉𝐀𝐧💕💞"
   let mzpic =   [
 {"mz": "https://telegra.ph/file/ecfa6242757a98a8f58fc.jpg"},
 {"mz": "https://telegra.ph/file/cf5685d223fe7a11916de.jpg"},
