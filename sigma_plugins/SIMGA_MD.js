@@ -202,7 +202,7 @@ sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
     kingclass: "general",
  },
 async(Void, citel) => {
-    const { commands } = require('../lib');
+    const { sigma_plugins } = require('../lib');
     timestampe = sɪɢᴍᴀ_speed();
     latensie = sɪɢᴍᴀ_speed() - timestampe;
     let [sɪɢᴍᴀ_date, sɪɢᴍᴀ_time] = new Date()
@@ -228,11 +228,11 @@ async(Void, citel) => {
 ┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
 ┗━━━━━━━━━━━⦿\n${sɪɢᴍᴀ_readmore}`
 
-    for (let i = 0; i < commands.length; i++) 
+    for (let i = 0; i < sigma_plugins.length; i++) 
     {
-         if(commands[i].kingcmd==undefined) continue
-         Zubair +=       `┏➛ ${i+1} *${fancytext(commands[i].kingcmd,35)}*\n`                // ${i+1} 
-         Zubair += `┗➛ ${fancytext(commands[i].infocmd,35)}\n`
+         if(sigma_plugins[i].kingcmd==undefined) continue
+         Zubair +=       `┏➛ ${i+1} *${fancytext(sigma_plugins[i].kingcmd,35)}*\n`                // ${i+1} 
+         Zubair += `┗➛ ${fancytext(sigma_plugins[i].infocmd,35)}\n`
     }
 
 
