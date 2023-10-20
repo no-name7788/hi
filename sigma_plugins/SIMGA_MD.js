@@ -89,17 +89,17 @@ async(bot, person, text) => {
         let arr = [];
         const cmd =text ?  commands.find( (cmd) => cmd.kingcmd === (text) ) : false
         if(cmd){
-                    arr.push(`┏━━⟪ ${mztit} ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.kingcmd}`);
-                    if (cmd.kingclass) arr.push(`┃✗ •ᴄᴀᴛᴇɢᴏʀʏ• ${cmd.kingclass}`);
-                    if (cmd.shortcut) arr.push(`┃✗ •sʜᴏʀᴛᴄᴜᴛ• ${cmd.shortcut}`);
-                    if (cmd.use) arr.push(`┃✗ •ᴜsᴀɢᴇ•\n ${prefix}${cmd.kingcmd} ${cmd.use}`);
-                    if (cmd.infocmd) arr.push(`┃✗ •ɪɴꜰᴏ• ${cmd.infocmd}\n┗━━━━━━━━━━⦿`);
+                    arr.push(`┏━━⟪ ${mztit} ⟫━⦿\n┃✗ *•ᴄᴏᴍᴍᴀɴᴅ•* ${cmd.kingcmd}`);
+                    if (cmd.kingclass) arr.push(`┃✗ *•ᴄᴀᴛᴇɢᴏʀʏ•* ${cmd.kingclass}`);
+                    if (cmd.shortcut) arr.push(`┃✗ *•sʜᴏʀᴛᴄᴜᴛ•* ${cmd.shortcut}`);
+                    if (cmd.use) arr.push(`┃✗ *•ᴜsᴀɢᴇ•*\n ${prefix}${cmd.kingcmd} ${cmd.use}`);
+                    if (cmd.infocmd) arr.push(`┃✗ *•ɪɴꜰᴏ•* ${cmd.infocmd}\n┗━━━━━━━━━━⦿${scap}`);
                     return await person.reply(arr.join('\n')); 
         }})
 
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
     kingcmd: "menu",
-    shortcut: ["help","list"],
+    shortcut: ["list"],
     infocmd: "All Commands lists",
     kingclass: "general",
      
