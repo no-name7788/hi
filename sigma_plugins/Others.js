@@ -44,13 +44,12 @@ try{
 var sigma_time = new Date().toLocaleString('HI', { timeZone: global.timezone }).split(' ')[1]
 var sigma_date = new Date().toLocaleDateString(get_localized_date)
 var sigma_wish = ''
-if (hrs >= 12 && hrs <= 18) sigma_wish = 'ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌞'
-if (hrs >= 19 && hrs <= 23) sigma_wish = 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌙'
-if (hrs >= 24 && hrs <= 5) sigma_wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
-if (hrs >= 6 && hrs <= 11) sigma_wish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ⛅'
-//if (hrs >= 24 && hrs <= 1) sigma_wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
+if (hrs < 12) wish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ⛅'
+if (hrs >= 12 && hrs <= 16) sigma_wish = 'ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌞'
+if (hrs >= 16 && hrs <= 20) sigma_wish = 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌥'
+if (hrs >= 20 && hrs <= 24) sigma_wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
 var am_pm = ''
-if (hrs >= 1 && hrs <= 11) am_pm = 'ᴀᴍ'
+if (hrs < 12) am_pm = 'ᴀᴍ'
 if (hrs >= 12 && hrs <= 24) am_pm = 'ᴘᴍ'
 const Zubair= [99,81,2023,2005,78,5000]
 const king = {
