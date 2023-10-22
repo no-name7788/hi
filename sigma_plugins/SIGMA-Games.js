@@ -365,6 +365,16 @@ Module_Exports({
     sendQuestion(man);
 });
 
+Module_Exports({
+    kingcmd: "delquiz",
+    infocmd: "Reset and delete the quiz game.",
+    kinigcass: "games",
+    kingpath: __filename,
+}, async (sigma, man) => {
+    currentQuestionIndex = 0;
+    userScore = 0;
+    man.reply("+Quiz game reset. You can start a new game by using the !quiz command.");
+});
 
 // These Games Are Developed By @Maher-Zubair
 // Whatsapp +923466319114
