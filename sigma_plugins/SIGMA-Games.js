@@ -16,7 +16,7 @@
 //                                                                                                      //
 //══════════════════════════════════════════════════════════════════════════════════════════════════════//
 
-const { Module_Exports, parseJid, getAdmin, tlang, prefix,cmd } = require("../lib");
+const { Module_Exports, parseJid, getAdmin, tlang, prefix,cmd,getRandomInt } = require("../lib");
 const Maher_Zubair_NumGuess_Game =  {};
 
 
@@ -301,6 +301,70 @@ const _0x4ca740=_0x553e;(function(_0x287f66,_0x3144a8){const _0x142619=_0x553e,_
   [_0x941af5[_0x146d63(0x113)]];if(!_0x2d49e7)return;if(_0x2d49e7['id']===_0x941af5[_0x146d63(0x131)]&&_0x2d49e7['player']===_0x941af5[_0x146d63(0x113)]&&_0x2d49e7[_0x146d63(0x128)]!==_0x941af5['text']&&!_0x941af5['isBaileys']){_0x2d49e7[_0x146d63(0x118)]+=0x1,clearTimeout(_0x2d49e7[_0x146d63(0x137)]),_0x2d49e7[_0x146d63(0x128)]=_0x941af5[_0x146d63(0x119)];if(_0x941af5[_0x146d63(0x119)][_0x146d63(0x133)]()===_0x2d49e7[_0x146d63(0x116)][_0x146d63(0x133)]())await eco[_0x146d63(0x12e)](_0x941af5[_0x146d63(0x113)],_0x146d63(0x12a),captions[_0x146d63(0x13a)]),await _0x1d1f4c[_0x146d63(0x11d)](_0x941af5[_0x146d63(0x131)],{'text':captions[_0x146d63(0x12f)][_0x146d63(0x12d)](_0x146d63(0x110),_0x2d49e7['player'][_0x146d63(0x11b)]('@')[0x0])[_0x146d63(0x12d)](_0x146d63(0x117),_0x2d49e7[_0x146d63(0x12c)])[_0x146d63(0x12d)](_0x146d63(0x130),_0x2d49e7[_0x146d63(0x116)])[_0x146d63(0x12d)]('$amount',''+captions[_0x146d63(0x13a)])['replace']('$attempt',''+_0x2d49e7[_0x146d63(0x118)]),'mentions':[_0x2d49e7[_0x146d63(0x112)]]}),delete Maher_Zubair_Capital_Game
 [_0x941af5[_0x146d63(0x113)]];else{if(_0x2d49e7['attempts']<=0x3)await _0x1d1f4c[_0x146d63(0x11d)](_0x941af5['chat'],{'text':captions[_0x146d63(0x127)][_0x146d63(0x12d)]('$player',_0x2d49e7[_0x146d63(0x112)][_0x146d63(0x11b)]('@')[0x0])[_0x146d63(0x12d)](_0x146d63(0x114),''+(0x3-_0x2d49e7['attempts']))[_0x146d63(0x12d)](_0x146d63(0x126),_0x2d49e7[_0x146d63(0x135)]),'mentions':[_0x2d49e7['player']]}),_0x2d49e7[_0x146d63(0x137)]=setTimeout(()=>{timerFuntions(_0x1d1f4c,_0x941af5,_0x2d49e7);},_0x2d49e7[_0x146d63(0x135)]*0x3e8);else _0x2d49e7[_0x146d63(0x118)]>0x3&&(await _0x1d1f4c['sendMessage'](_0x941af5['chat'],{'text':captions[_0x146d63(0x11c)]['replace']('$player',_0x2d49e7['player'][_0x146d63(0x11b)]('@')[0x0])[_0x146d63(0x12d)](_0x146d63(0x117),_0x2d49e7[_0x146d63(0x12c)])[_0x146d63(0x12d)]('$capital',_0x2d49e7[_0x146d63(0x116)]),'mentions':[_0x2d49e7[_0x146d63(0x112)]]}),delete Maher_Zubair_Capital_Game
 [_0x941af5['sender']]);}}});function _0x83c9(){const _0x3be925=['fun','4fJOYYo','onStart','log','644829XWjaRv','2008897tgiGsl','Random\x20Question.','keys','$waitTime','onWrongAns','preAns','3096VlaObQ','secktor','random','country','replace','daily','onWinGame','$capital','chat','floor','toLowerCase','358623jOFfpI','waitTime','790RNGvRz','timer','11574hdeUeC','1776761xnedhq','winReward','$player','1690WQEDkf','player','sender','$attempt','2648750YmzyOs','capital','$country','attempts','text','8UPfhSa','split','onLimitEnd','sendMessage'];_0x83c9=function(){return _0x3be925;};return _0x83c9();}
+
+
+
+const quizQuestions = [
+    {
+        question: "What is the capital of France?",
+        options: ["A. London", "B. Berlin", "C. Paris"],
+        correctAnswer: "C"
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        options: ["A. Earth", "B. Mars", "C. Venus"],
+        correctAnswer: "B"
+    },
+    {
+        question: "The first iPhone was made in what year?",
+        options: ["A. 2004", "B. 2007", "C. 2012"],
+        correctAnswer: "B"
+    }
+    // Add more questions here
+];
+
+let currentQuestionIndex = 0;
+let userScore = 0;
+Module_Exports({
+    kingcmd: "quiz",
+    infocmd: "Start a quiz game.",
+    kinigcass: "games",
+    kingpath: __filename,
+}, async (sigma, man) => {
+    currentQuestionIndex = 0;
+    userScore = 0;
+    sendQuestion(man);
+});
+
+// Function to send the next question
+function sendQuestion(man) {
+    if (currentQuestionIndex < quizQuestions.length) {
+        const questionObj = quizQuestions[currentQuestionIndex];
+        const questionMessage = `${questionObj.question}\n${questionObj.options.join("\n")}`;
+        man.reply(questionMessage);
+    } else {
+        man.reply(`Quiz completed! Your score: ${userScore}/${quizQuestions.length}`);
+    }
+}
+
+// Create a command for answering quiz questions
+Module_Exports({
+    kingcmd: "answer",
+    infocmd: "Answer a quiz question (e.g., !answer A).",
+    kinigcass: "games",
+    kingpath: __filename,
+}, async (sigma, man, text) => {
+    const userAnswer = text.trim().toUpperCase();
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+
+    if (currentQuestion && userAnswer === currentQuestion.correctAnswer) {
+        userScore++;
+    }
+
+    currentQuestionIndex++;
+    sendQuestion(man);
+});
+
 
 // These Games Are Developed By @Maher-Zubair
 // Whatsapp +923466319114
