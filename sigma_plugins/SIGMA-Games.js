@@ -325,15 +325,17 @@ const quizQuestions = [
 
 let currentQuestionIndex = 0;
 let userScore = 0;
+
 Module_Exports({
     kingcmd: "quiz",
     infocmd: "Start a quiz game.",
     kinigcass: "games",
     kingpath: __filename,
 }, async (sigma, man) => {
-    currentQuestionIndex = 0;
-    userScore = 0;
-    sendQuestion(man);
+    if (currentQuestionIndex === 0) {
+        userScore = 0;
+        sendQuestion(man);
+    }
 });
 
 // Function to send the next question
@@ -343,37 +345,39 @@ function sendQuestion(man) {
         const questionMessage = `${questionObj.question}\n${questionObj.options.join("\n")}`;
         man.reply(questionMessage);
     } else {
-        man.reply(`Quiz completed! Your score: ${userScore}/${quizQuestions.length}`);
+        man.reply(`+Quiz completed! Your score: ${userScore}/${quizQuestions.length}`);
+        currentQuestionIndex = 0; // Reset the question index
     }
 }
 
-// Create a command for answering quiz questions
+// Automatically detect and respond to answers
 Module_Exports({
-    kingcmd: "answer",
-    infocmd: "Answer a quiz question (e.g., !answer A).",
-    kinigcass: "games",
-    kingpath: __filename,
-}, async (sigma, man, text) => {
-    const userAnswer = text.trim().toUpperCase();
+    on: 'text',
+}, async (sigma, man) => {
     const currentQuestion = quizQuestions[currentQuestionIndex];
-
-    if (currentQuestion && userAnswer === currentQuestion.correctAnswer) {
-        userScore++;
+    if (currentQuestion) {
+        const messageText = man.text || '';
+        const userAnswer = messageText.trim().toUpperCase();
+        if (userAnswer === "A" || userAnswer === "B" || userAnswer === "C") {
+            if (userAnswer === currentQuestion.correctAnswer) {
+                userScore++;
+            } else {
+                man.reply(`Your answer is not correct. The correct answer is ${currentQuestion.correctAnswer}`);
+            }
+            currentQuestionIndex++;
+            sendQuestion(man);
+        }
     }
-
-    currentQuestionIndex++;
-    sendQuestion(man);
 });
-
 Module_Exports({
     kingcmd: "delquiz",
     infocmd: "Reset and delete the quiz game.",
     kinigcass: "games",
     kingpath: __filename,
 }, async (sigma, man) => {
-    currentQuestionIndex = 0;
-    userScore = 0;
-    man.reply("+Quiz game reset. You can start a new game by using the !quiz command.");
+    currentQuestionIndex = 0; // Reset the question index
+    userScore = 0; // Reset the user's score
+    man.reply("+Quiz game reset. You can start a new game by using the !startquiz command.");
 });
 
 // These Games Are Developed By @Maher-Zubair
