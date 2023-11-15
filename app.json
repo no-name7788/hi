@@ -29,6 +29,11 @@
      "value": "chat.whatsapp.com,fb.com,instagram.com",
      "required" :false
     },
+    "ANTI_BAD_WORDS": {
+      "description": "Add Anti Bad_Words",
+       "value": "Fuck,porn,sex,xxx,mia,bc,mother,fucker,mf,madar,kuty,harami,lanti,asshole,saly,sala,mc,behen,chod,begharit,chutiya,fuck you,fuck off",
+       "required" :false
+      },
   "LEVEL_UP_MESSAGE": {
     "description": "Fill the value true if you want bot send Level up message in chat.",
      "required" :false,
