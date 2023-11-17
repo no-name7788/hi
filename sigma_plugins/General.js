@@ -100,11 +100,11 @@ global.AFK = {
       on: 'text',
   }, async (citel, Void) => {
      // if (citel.isGroup) {
+      let me = await citel.decodeJid(citel.user.id)
     if(!global.AFK.isAfk || Void.fromMe || Void.isBot) return;
-    let q = Void.quoted && Void.quoted.fromMe ? true : false
-
-      let m = Void.mentionedJid && Void.mentionedJid.includes(citel.user.id) ? true : false;
-      let pm = Void.isGroup ? false : true;
+    let q = Void.quoted && Void.quoted.sender===me ? true : false
+    let m = Void.mentionedJid && Void.mentionedJid.includes(me) ? true : false;
+    let pm = Void.isGroup ? false : true;
     if(q || m || pm) {
         //  if (text.includes(`@${citel.username}`)) {
   //console.log("chcking afk...")
