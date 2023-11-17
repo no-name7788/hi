@@ -52,6 +52,7 @@ Module_Exports({
   
 })
 
+
 //--------------------------------------------------------------------------
 global.AFK = {
     isAfk: false,
@@ -99,11 +100,11 @@ global.AFK = {
       on: 'text',
   }, async (citel, Void) => {
      // if (citel.isGroup) {
-    if(!global.AFK.isAfk || citel.fromMe || citel.isBot) return;
-    let q = citel.quoted && citel.reply_message.fromMe ? true : false
+    if(!global.AFK.isAfk || Void.fromMe || Void.isBot) return;
+    let q = Void.quoted && Void.quoted.fromMe ? true : false
 
-      let m = citel.mentionedJid && citel.mentionedJid.includes(citel.user.id) ? true : false;
-      let pm = citel.isGroup ? false : true;
+      let m = Void.mentionedJid && Void.mentionedJid.includes(citel.user.id) ? true : false;
+      let pm = Void.isGroup ? false : true;
     if(q || m || pm) {
         //  if (text.includes(`@${citel.username}`)) {
   //console.log("chcking afk...")
@@ -169,9 +170,6 @@ Module_Exports({
               {
               image: { url: await botpic() },
               caption: sigma_lists,
-              footer: tlang().footer,
-              headerType: 4,
-
               };
              
           return await bot.sendMessage(man.chat, lists, {   quoted: man, });
