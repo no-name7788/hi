@@ -428,7 +428,7 @@ return citel.reply("*_Group Link Revoked SuccesFully_*");
     let textt = text ? text.toLowerCase().trim() : false;
     let action = textt ? textt.split(" ")[0x0] : false;
     if (!action) {
-        return await citel.send("*_Antibadwords " + (checkinfo.antibot === "false" ? "Disabled" : 'Enabled') + " in this Group!_* \n " + (checkinfo.antibot === 'false' ? '' : "*Current Mode:* _" + checkinfo.antibot + '_') + `\n\n*Anti Bad_Words Modes:*\n  ${prefix}antibot kick (Delete Bad_Words & Kick Senders)\n  ${prefix}antibot delete (Delete Bad_Words Only)\n  ${prefix}antibot off (Disable Anti Bad_Words in chat)\n\n\n` + name.caption);
+        return await citel.send("*_AntiBot " + (checkinfo.antibot === "false" ? "Disabled" : 'Enabled') + " in this Group!_* \n " + (checkinfo.antibot === 'false' ? '' : "*Current Mode:* _" + checkinfo.antibot + '_') + `\n\n*AntiBot Modes:*\n  ${prefix}antibot kick (Delete Bot Messages & Kick Bot USers)\n  ${prefix}antibot delete (Delete Bot MEssages Ony)\n  ${prefix}antibot off (Disable AntiBot in chat)\n\n\n` + name.caption);
       } else {
         if (action.startsWith("off") || action.startsWith("deact") || action.startsWith("disable")) {
           await sck.updateOne({
@@ -436,7 +436,7 @@ return citel.reply("*_Group Link Revoked SuccesFully_*");
           }, {
             'antibot': "false"
           });
-          return await citel.send("*_Anti Bad_Words Disabled Succesfully!_*");
+          return await citel.send("*_AntiBot Disabled Succesfully!_*");
         } else {
           if (action.startsWith('kick')) {
             await sck.updateOne({
@@ -444,7 +444,7 @@ return citel.reply("*_Group Link Revoked SuccesFully_*");
             }, {
               'antibot': "kick"
             });
-            return await citel.send("*_AntiBot Succesfully Set To Kick Other's Bot!_*");
+            return await citel.send("*_AntiBot Succesfully Set To Kick Bot USers From Chat!_*");
           } else {
             if (action.startsWith('delete')) {
               await sck.updateOne({
@@ -452,7 +452,7 @@ return citel.reply("*_Group Link Revoked SuccesFully_*");
               }, {
                 'antibot': "delete"
               });
-              return await citel.send("*_Antibot Succesfully Set To Delete Bot Messages From Chat!_*");
+              return await citel.send("*_AntiBot Succesfully Set To Delete Bot Messages From Chat!_*");
             } else {
               return await citel.send("*_Please Provide Valid Instruction_*\n*Eg: _" + prefix + "antibot kick/delete/off_*");
             }
