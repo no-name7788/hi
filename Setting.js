@@ -43,6 +43,7 @@ module.exports = {
   antilink_values: process.env.ANTILINK_VALUES || 'https://,chat.whatsapp.com,youtube.com',
   antibadwords_values: process.env.ANTI_BAD_WORDS || 'Fuck,porn,sex,xxx,mia,bc,mother,fucker,mf,madar,kuty,harami,lanti,asshole,saly,sala,mc,behen,chod,begharit,chutiya,fuck you,fuck off',
   BRANCH: process.env.BRANCH || 'Main',
+  afk:  process.env.AFK ||true,
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
   HEROKU_API_KEY: process.env.HEROKU_API_KEY,
   REMOVE_BG_KEY: process.env.REMOVE_BG_KEY || "34wcCGPoe3yaGtpiBZgx4SN7",
