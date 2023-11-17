@@ -54,66 +54,6 @@ Module_Exports({
 
 
 //--------------------------------------------------------------------------
-global.AFK = {
-    isAfk: false,
-    reason: false,
-    lastseen: 0,
-  };
-
-  Module_Exports({
-      kingcmd: 'afk',
-      infocmd: 'away from keyboard',
-      kingclass: 'owner',
-  }, async (citel,Void, text,{isCreator}) => {
-    
-      if (!global.AFK) global.AFK = {};
-
-      if (!global.AFK.isAfk && !text) {
-          return await citel.sendMessage(Void.chat ,{ text : 'Example: My owner is AFK\nLast seen before #lastseen\nTo turn off AFK, send a message again.'});
-      }
-
-      if (!global.AFK.isAfk) {
-          if (text) global.AFK.reason = text;
-          global.AFK.isAfk = true;
-          global.AFK.lastseen = Math.round(new Date().getTime() / 1000);
-          return await citel.sendMessage(Void.chat ,{ text : text.replace('#lastseen',  global.AFK.lastseen) } );
-      }
-  });
-
-  Module_Exports({
-      kingcmd: 'unafk',
-      infocmd: 'turn off afk',
-      kingclass: 'owner',
-  }, async (citel,Void) => {
-      if (!global.AFK || !global.AFK.isAfk) {
-          return await citel.reply('I am not AFK.');
-      }
-
-      global.AFK.isAfk = false;
-      global.AFK.reason = false;
-      global.AFK.lastseen = 0; 
-
-      return await citel.sendMessage(Void.chat, {text : 'I am back!'});
-  });
-
-  Module_Exports({
-      on: 'text',
-  }, async (citel, Void) => {
-     // if (citel.isGroup) {
-      let me = await citel.decodeJid(citel.user.id)
-    if(!global.AFK.isAfk || Void.fromMe || Void.isBot) return;
-    let q = Void.quoted && Void.quoted.sender===me ? true : false
-    let m = Void.mentionedJid && Void.mentionedJid.includes(me) ? true : false;
-    let pm = Void.isGroup ? false : true;
-    if(q || m || pm) {
-        //  if (text.includes(`@${citel.username}`)) {
-  //console.log("chcking afk...")
-                  await citel.sendMessage(Void.chat ,{ text :`I'm currently AFK. Reason: ${global.AFK.reason}` } );
-
-         // }
-    }
-     // }
-  });
 
 //---------------------------------------------------------------------------
 Module_Exports({
