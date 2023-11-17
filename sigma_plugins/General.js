@@ -54,7 +54,6 @@ Module_Exports({
 
 //--------------------------------------------------------------------------
 global.AFK = {
-    msg : "",
     isAfk: false,
     reason: false,
     lastseen: 0,
@@ -64,50 +63,51 @@ global.AFK = {
       kingcmd: 'afk',
       infocmd: 'away from keyboard',
       kingclass: 'owner',
-  }, async ( citel, match,{isCreator}) => {
+  }, async (citel,Void, text,{isCreator}) => {
     
       if (!global.AFK) global.AFK = {};
 
-      if (!global.AFK.isAfk && !match) {
-          return await citel.reply('Example: My owner is AFK\nLast seen before #lastseen\nTo turn off AFK, send a message again.');
+      if (!global.AFK.isAfk && !text) {
+          return await citel.sendMessage(Void.chat ,{ text : 'Example: My owner is AFK\nLast seen before #lastseen\nTo turn off AFK, send a message again.'});
       }
 
       if (!global.AFK.isAfk) {
-          if (match) global.AFK.reason = match;
+          if (text) global.AFK.reason = text;
           global.AFK.isAfk = true;
           global.AFK.lastseen = Math.round(new Date().getTime() / 1000);
-          return await citel.reply(match.replace('#lastseen', Math.round(new Date().getTime() / 1000) - global.AFK.lastseen));
+          return await citel.sendMessage(Void.chat ,{ text : text.replace('#lastseen',  global.AFK.lastseen) } );
       }
   });
 
   Module_Exports({
       kingcmd: 'unafk',
-      infocmd: 'turn off away from keyboard',
+      infocmd: 'turn off afk',
       kingclass: 'owner',
-  }, async (citel) => {
+  }, async (citel,Void) => {
       if (!global.AFK || !global.AFK.isAfk) {
           return await citel.reply('I am not AFK.');
       }
 
       global.AFK.isAfk = false;
       global.AFK.reason = false;
-      global.AFK.lastseen = 0;
+      global.AFK.lastseen = 0; 
 
-      return await citel.reply('I am back!');
+      return await citel.sendMessage(Void.chat, {text : 'I am back!'});
   });
 
   Module_Exports({
       on: 'text',
-  }, async (citel, text) => {
+  }, async (citel, Void) => {
      // if (citel.isGroup) {
     if(!global.AFK.isAfk || citel.fromMe || citel.isBot) return;
     let q = citel.quoted && citel.reply_message.fromMe ? true : false
-      let m = citel.mentionedJid && citel.mentionedJid.includes(citel.user) ? true : false;
+
+      let m = citel.mentionedJid && citel.mentionedJid.includes(citel.user.id) ? true : false;
       let pm = citel.isGroup ? false : true;
     if(q || m || pm) {
         //  if (text.includes(`@${citel.username}`)) {
-  console.log("chcking afk...")
-                  await citel.reply(`I'm currently AFK. Reason: ${global.AFK.reason}`);
+  //console.log("chcking afk...")
+                  await citel.sendMessage(Void.chat ,{ text :`I'm currently AFK. Reason: ${global.AFK.reason}` } );
 
          // }
     }
