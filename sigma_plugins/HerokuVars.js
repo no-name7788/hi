@@ -55,7 +55,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
                   body: JSON.stringify({ [varName]: newVarValue })
         })
 .then(response => response.json())
-.then(data => { return citel.reply(`*_${user} Added Succesfully._*\n*_New Sudo Numbers:_* ${newVarValue}`); })
+.then(data => { return citel.reply(`*_${user} Added Succesfully._*`); })
 .catch(error => citel.reply('*_Error While Adding new Sudo:_* '+ error));
 
          })
@@ -107,7 +107,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
 .then(data => 
       { 
    console.log(data);
-   return citel.reply(`*_${user} Deleted Succesfully._*\n*_New Sudo Numbers:_* ${newVarValue}`);
+   return citel.reply(`*_${user} Deleted Succesfully._*`);
       })
   
 .catch(error => {     return citel.reply('*_Error While Adding new Sudo_*:'+ error);      })
