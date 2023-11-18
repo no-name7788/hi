@@ -17,6 +17,7 @@
                     "@tobyg74/tiktok-api-dl": "^1.0.10",
                     "@sampandey001/baileys": "latest",
                     "@shineiichijo/marika": "^2.0.3",
+                    "cache-manager": "^5.3.0",
                     "acrcloud": "^1.4.0",
                     "anime-character-random": "latest",
                     "aptoide-scraper": "^1.0.1",
