@@ -138,20 +138,17 @@ Module_Exports({
         mimetype: 'application/vnd.android.package-archive',
         fileName: data.name + `.apk`,
           headerType: 2,
-          contextInfo: {
-              externalAdReply: {
-                  title: snam,
-                  body: `apk ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-                 thumbnail: {url: data.icon},
-                  mediaType: 2,
-                  sourceUrl: zyt
-              }
-          }
       };
+      let Maher = {
+        document: fs.readFileSync(filePath),
+        mimetype: 'application/vnd.android.package-archive',
+        fileName: data.name + `.apk`,
+        caption : sgen
+      }
       // Sending the message with the app icon
       
       sigma.sendMessage(person.chat, buttonMessage,{  quoted: person });
-      //sigma.sendMessage(person.chat, buttonMessage, { quoted: person });
+      sigma.sendMessage(person.chat, Maher, { quoted: person });
       person.send(`*_𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶: ➪ ${text}_*`);
   
       fs.unlink(filePath, (err) => {
