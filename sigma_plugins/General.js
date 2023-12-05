@@ -86,6 +86,36 @@ Module_Exports({
 
 
 //--------------------------------------------------------------------------
+Module_Exports({
+  kingcmd: "ly",
+  kingclass: "search",
+  infocmd: "get songs lyrics"
+},
+ async(bot,person,text) => {
+  if (!text) person.sent("Give Me Song Name")
+
+  const apiUrl = `https://api.neoxr.eu/api/lyric?q=${encodeURIComponent(text)}&apikey=AlMiT7`;
+
+  try {
+    
+    const response = await axios.get(apiUrl);
+    const data = response.data;
+
+    if (response.status === 200) {
+      const lyrics = data.lyrics;
+      const thumbnail = data.thumbnail;
+
+      const sendLyrics = `Lyrics for "${text}":\n\n${lyrics}`;
+      bot.sendMessage(person.chat, { image: { url: thumbnail, caption: sendLyrics } });
+    } else {
+      const errorMessage = data.message || 'Unknown error occurred';
+      bot.sendMessage(person.chat, `Failed to get lyrics: ${errorMessage}`, 'text');
+    }
+  } catch (error) {
+    console.error(error);
+    person.reply('An error occurred while fetching lyrics', 'text '+errpr);
+  }})
+
 
 //---------------------------------------------------------------------------
 Module_Exports({
