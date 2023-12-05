@@ -115,9 +115,10 @@ Module_Exports({
   
     let  inf = `*_SIGMA-MD APK DOWNLOADER_*\n\n*_App Name ➪ ${data.name}_*`;
     inf += `\n*_App Size ➪ ${data.size}_*`;
-    inf += 	`\n*_Last Update Date ➪ ${formattedDate}_*`
+    inf += 	`\n*_Last Update ➪ ${formattedDate}_*`
+    inf += 	`\n*_Update Time ➪ ${formattedTime}_*`
     inf +=  `\n*_Package Name ➪ ${data.package}_*`
-    inf +=  `\n*_Requester  ${person.pushName}_*`
+    inf +=  `\n*_Requester ➪ ${person.pushName}_*`
   
     axios.get(url, { responseType: 'stream' })
     .then(response => {
