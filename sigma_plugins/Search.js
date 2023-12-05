@@ -81,7 +81,7 @@ let limit = 5;
  try {
     if (!text) return citel.reply("```Uhh Please, Give me Url!```");
     var url = text;
-    let urll = `https://s.vercel.app/api?url=${url.match(/\bhttps?:\/\/\S+/gi)[0]}&width=1280&height=720`
+    let urll = `https://vihangayt.me/tools/ssweb?url=${text.match(/\bhttps?:\/\/\S+/gi)[0]}&width=1280&height=720`
     let media  = await getBuffer(urll)
     return await Void.sendMessage(citel.chat ,{image : media } , {quoted:citel} )
  }
