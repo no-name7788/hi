@@ -150,7 +150,7 @@ Module_Exports({
       };
       // Sending the message with the app icon
       
-      sigma.sendMessage(person.chat, buttonMessage,{  quoted: person });
+      sigma.sendMessage(person.chat, buttonMessage,{image:{url:data.icon}},{  quoted: person });
       //sigma.sendMessage(person.chat, buttonMessage, { quoted: person });
       person.send(`*_𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶: ➪ ${text}_*`);
   
@@ -516,7 +516,7 @@ async(Void, citel, text) => {
                 }
             }
         };
-        return Void.sendMessage(citel.chat, buttonMessage,{image:{url:data.icon}}, { quoted: citel });
+        return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
     } catch (e) {
         return citel.sent("*_Unknow Error Occured_* "+e)
     }
