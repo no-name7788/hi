@@ -85,7 +85,7 @@ let limit = 5;
     let media  = await getBuffer(urll)
     return await Void.sendMessage(citel.chat ,{image : media } , {quoted:citel} )
  }
-catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
+catch (err) { return citel.reply("```Error While Fetching Snapshot``` " + err)}
         }
     )
 
