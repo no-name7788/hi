@@ -90,7 +90,7 @@ Module_Exports({
   
     const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; };
     let randomName = getRandom(".apk");
-    const filePath = `./${randomName}`; 
+    const filePath = `./temp/${randomName}`; 
     const { search, download } = require('aptoide-scraper');
   
     let searc = await search(text); 
@@ -108,17 +108,16 @@ Module_Exports({
     }
   
     const url = data.dllink;
-    const ico = data.icon;
+
     let lastUpdate = new Date(data.lastup);
     let formattedDate = `${lastUpdate.getDate()}/${lastUpdate.getMonth() + 1}/${lastUpdate.getFullYear()}`;
     let formattedTime = `${lastUpdate.getHours()}:${(lastUpdate.getMinutes() < 10 ? '0' : '') + lastUpdate.getMinutes()}`;
   
     let  inf = `*_SIGMA-MD APK DOWNLOADER_*\n\n*_App Name ➪ ${data.name}_*`;
     inf += `\n*_App Size ➪ ${data.size}_*`;
-    inf += 	`\n*_Last Update ➪ ${formattedDate}_*`
+    inf += 	`\n*_Last Update Date ➪ ${formattedDate}_*`
     inf +=  `\n*_Package Name ➪ ${data.package}_*`
-    inf +=  `\n*_Icon  ${data.icon}_*`
-    inf +=  `\n${name.caption}`
+    inf +=  `\n*_Requester  ${person.pushName}_*`
   
     axios.get(url, { responseType: 'stream' })
     .then(response => {
