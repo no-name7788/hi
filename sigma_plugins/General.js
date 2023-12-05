@@ -41,22 +41,31 @@ Module_Exports({
   infocmd: "Generated Ai Image with given Text",
   use: "Crown"
 },
-  async(sigma,man,text) =>{
- if (!text) man.sent("Give me Text To Get Dalle Response")
-  
-    try {
-      const response = await axios.get(`https://api.botcahx.live/api/search/openai-image?text=${text}&apikey=29y8XIYL`);
-  
-      const image = response.data;
-      const imageUrl = image.image;
+async (sigma, man, text) => {
+  if (!text) {
+    // Send a message asking for text if not provided
+    await man.sendMessage('Give me Text To Get DALL-E Response');
+    return;
+  }
 
-  
-     // let cap = `Dimensions: ${imageWidth} x ${imageHeight}\nSize: ${imageSize}`;
-      sigma.sendMessage(man.chat, { image: { url: imageUrl }, caption: sgen });
-    } catch (error) {
-      console.long('Error fetching image:', error);
-      man.reply('An error occurred while processing');
-    }})
+  try {
+    //const axios = require('axios'); // Make sure axios is imported
+    const response = await axios.get(`https://api.botcahx.live/api/search/openai-image?text=${text}&apikey=29y8XIYL`);
+
+    const image = response.data;
+    const imageUrl = image.image;
+
+    // Replace sgen with an appropriate caption if needed
+    let sgen = `Generated Image for: ${text}`;
+    
+    // Send the generated image back to the user
+    await sigma.sendMessage(man.chat, { image: { url: imageUrl }, caption: sgen });
+  } catch (error) {
+    console.error('Error fetching image:', error);
+    await man.reply('An error occurred while processing');
+  }
+});
+
 
 
 
