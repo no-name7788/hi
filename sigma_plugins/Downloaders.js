@@ -150,7 +150,7 @@ Module_Exports({
       };
       // Sending the message with the app icon
       
-      sigma.sendMessage(person.chat, buttonMessage,{image:{url:data.icon}},{  quoted: person });
+      sigma.sendMessage(person.chat, {image:{url:data.icon}},{  quoted: person });
       //sigma.sendMessage(person.chat, buttonMessage, { quoted: person });
       person.send(`*_𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶: ➪ ${text}_*`);
   
