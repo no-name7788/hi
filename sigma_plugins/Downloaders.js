@@ -132,12 +132,10 @@ Module_Exports({
     }).then(() => {
       
       let buttonMessage = {
-         // image: { url: data.icon },
+         image: { url: data.icon },
           caption: inf,
-          document: fs.readFileSync(filePath),
-        mimetype: 'application/vnd.android.package-archive',
-        fileName: data.name + `.apk`,
-          headerType: 4,
+          
+          headerType: 2,
           contextInfo: {
               externalAdReply: {
                   title: snam,
@@ -150,7 +148,7 @@ Module_Exports({
       };
       // Sending the message with the app icon
       
-      sigma.sendMessage(person.chat, {image:{url:data.icon},buttonMessage},{  quoted: person });
+      sigma.sendMessage(person.chat, buttonMessage,{  quoted: person });
       //sigma.sendMessage(person.chat, buttonMessage, { quoted: person });
       person.send(`*_𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶: ➪ ${text}_*`);
   
