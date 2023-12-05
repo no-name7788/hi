@@ -21,7 +21,7 @@ const fetch = require('node-fetch');
 const bocil = require('@bochilteam/scraper');
 const cheerio = require('cheerio')
 const axios= require('axios');
-const ttdl = require('btch-downloader');
+
 
 Module_Exports({
         kingcmd: "insta",

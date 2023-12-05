@@ -24,7 +24,7 @@ const fetch = require('node-fetch')
 
    //---------------------------------------------------------------------------
    const { shazam } = require('../lib')
-   let yts = require("secktor-pack");
+   let yts = require("sigma-md-yts");
    Module_Exports({
            kingcmd: "find",
            kingclass: "search",
