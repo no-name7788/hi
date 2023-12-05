@@ -516,7 +516,7 @@ async(Void, citel, text) => {
                 }
             }
         };
-        return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+        return Void.sendMessage(citel.chat, buttonMessage,{image:{url:data.icon}}, { quoted: citel });
     } catch (e) {
         return citel.sent("*_Unknow Error Occured_* "+e)
     }
