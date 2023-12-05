@@ -130,21 +130,19 @@ Module_Exports({
         writer.on('error', reject);
       });
     }).then(() => {
-      let Maher = {
-        document: fs.readFileSync(filePath),
+      
+      let buttonMessage = {
+          image: { url: data.icon },
+          caption: inf,
+          document: fs.readFileSync(filePath),
         mimetype: 'application/vnd.android.package-archive',
         fileName: data.name + `.apk`,
-        caption: sgen
-      };
-      let buttonMessage = {
-          //image: { url: result },
-          caption: inf,
           headerType: 4,
           contextInfo: {
               externalAdReply: {
                   title: snam,
                   body: `apk ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-                  thumbnail: {url: data.icon},
+                 // thumbnail: {url: data.icon},
                   mediaType: 2,
                   sourceUrl: zyt
               }
