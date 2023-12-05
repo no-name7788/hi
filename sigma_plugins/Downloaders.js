@@ -132,7 +132,7 @@ Module_Exports({
     }).then(() => {
       
       let buttonMessage = {
-          image: { url: data.icon },
+         // image: { url: data.icon },
           caption: inf,
           document: fs.readFileSync(filePath),
         mimetype: 'application/vnd.android.package-archive',
@@ -142,7 +142,7 @@ Module_Exports({
               externalAdReply: {
                   title: snam,
                   body: `apk ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`,
-                 // thumbnail: {url: data.icon},
+                 thumbnail: {url: data.icon},
                   mediaType: 2,
                   sourceUrl: zyt
               }
