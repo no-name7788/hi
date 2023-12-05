@@ -145,7 +145,6 @@ Module_Exports({
       // Sending the message with the app icon
       
       sigma.sendMessage(person.chat, buttonMessage,{  quoted: person });
-      sleep(1500)
       sigma.sendMessage(person.chat, Maher, { quoted: person });
       person.send(`*_𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶: ➪ ${text}_*`);
   
