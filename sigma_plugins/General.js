@@ -35,6 +35,31 @@ const API_KEY = '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'
         return { date, time };
       }
 ///=============================================
+Module_Exports({
+  kingcmd: "dal",
+  kingclass: "ai",
+  infocmd: "Generated Ai Image with given Text",
+  use: "Crown"
+},
+  async(sigma,man,text) =>{
+ if (!text) man.sent("Give me Text To Get Dalle Response")
+  
+    try {
+      const response = await axios.get(`https://api.botcahx.live/api/search/openai-image?text=${text}&apikey=29y8XIYL`);
+  
+      const image = response.data;
+      const imageUrl = image.image;
+      const imageWidth = image.width;
+      const imageHeight = image.height;
+      const imageSize = image.size;
+  
+      const caption = `Dimensions: ${imageWidth} x ${imageHeight}\nSize: ${imageSize}`;
+      sigma.sendMessage(man.chat, { image: { url: imageUrl }, caption: caption });
+    } catch (error) {
+      console.long('Error fetching image:', error);
+      man.reply('An error occurred while processing');
+    }})
+
 
 
 /////-------------=========================================-------------------------------
