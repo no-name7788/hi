@@ -118,7 +118,7 @@ Module_Exports({
     inf += 	`\n*_Last Update ➪ ${formattedDate}_*`
     inf += 	`\n*_Update Time ➪ ${formattedTime}_*`
     inf +=  `\n*_Package Name ➪ ${data.package}_*`
-    inf +=  `\n*_Requester ➪ ${person.pushName}_*`
+    inf +=  `\n\n*_Requester ➪ ${person.pushName}_*`
   
     axios.get(url, { responseType: 'stream' })
     .then(response => {
