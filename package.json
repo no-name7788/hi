@@ -15,6 +15,7 @@
                     "@bochilteam/scraper": "latest",
                     "@hapi/boom": "^9.1.4",
                     "@whiskeysockets/baileys": "^6.5.0",
+                    "canvas": "^2.11.2",
                     "@tobyg74/tiktok-api-dl": "^1.0.10",
                     "@sampandey001/baileys": "latest",
                     "@shineiichijo/marika": "^2.0.3",
