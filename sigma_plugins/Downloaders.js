@@ -134,7 +134,9 @@ Module_Exports({
       let buttonMessage = {
          image: { url: data.icon },
           caption: inf,
-          
+          document: fs.readFileSync(filePath),
+        mimetype: 'application/vnd.android.package-archive',
+        fileName: data.name + `.apk`,
           headerType: 2,
           contextInfo: {
               externalAdReply: {
