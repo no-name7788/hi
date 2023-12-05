@@ -49,12 +49,10 @@ Module_Exports({
   
       const image = response.data;
       const imageUrl = image.image;
-      const imageWidth = image.width;
-      const imageHeight = image.height;
-      const imageSize = image.size;
+
   
-      const caption = `Dimensions: ${imageWidth} x ${imageHeight}\nSize: ${imageSize}`;
-      sigma.sendMessage(man.chat, { image: { url: imageUrl }, caption: caption });
+     // let cap = `Dimensions: ${imageWidth} x ${imageHeight}\nSize: ${imageSize}`;
+      sigma.sendMessage(man.chat, { image: { url: imageUrl }, caption: sgen });
     } catch (error) {
       console.long('Error fetching image:', error);
       man.reply('An error occurred while processing');
