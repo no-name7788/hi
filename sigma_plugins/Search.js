@@ -83,7 +83,7 @@ let limit = 5;
     var url = text;
     let urll = `https://vihangayt.me/tools/ssweb?url=${text.match(/\bhttps?:\/\/\S+/gi)[0]}&width=1280&height=720`
     let media  = await getBuffer(urll)
-    return await Void.sendMessage(citel.chat ,{image : media } , {quoted:citel} )
+    return await Void.sendMessage(citel.chat ,{image : media,caption:cap } , {quoted:citel} )
  }
 catch (err) { return citel.reply("```Error While Fetching Snapshot``` " + err)}
         }
