@@ -206,7 +206,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`, { headers })
 
 //----------------------------------------------------------------------------------
 Module_Exports({
-        kingcmd: "setvar",
+        kingcmd: "set",
         shortcut:["svar"],
         infocmd: "To Set Heroku Vars",
         kingclass: "tools",
@@ -214,7 +214,7 @@ Module_Exports({
     },
     async(Void, citel , text,{ isCreator }) => {
 if (!isCreator) return citel.reply(tlang().owner);
-if (!text) return citel.reply (`*_Give me Variable Name_*\n*_Ex: ${prefix}setvar CAPTION: Powered By Maher Zubair_*`);
+if (!text) return citel.reply (`*_Give me Variable Name_*\n*_Ex: ${prefix}set CAPTION: Powered By Maher Zubair_*`);
 const headers = {
   'Accept': 'application/vnd.heroku+json; version=3',
   'Authorization': `Bearer ${authToken}`,
@@ -222,7 +222,7 @@ const headers = {
 };
 const varName = text.split(":")[0].toUpperCase();
 const newVarValue = text.split(":")[1]; 
-if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*_Ex : ${prefix}setvar AUTO_READ_STATUS:true_*`);       
+if (!newVarValue) return citel.reply (`Please give me Value After ':' \n*_Ex : ${prefix}set AUTO_READ_STATUS:true_*`);       
 fetch(`https://api.heroku.com/apps/${appName}/config-vars`, {
   method: 'GET',
   headers 
