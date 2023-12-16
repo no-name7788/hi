@@ -16,8 +16,8 @@
 //                                                                                                      //
 //══════════════════════════════════════════════════════════════════════════════════════════════════════//
 const { tlang, Module_Exports, sleep, getBuffer, prefix, name } = require('../lib')
-const ytdl = require('ytdl-secktor')
-const yts = require('secktor-pack')
+const ytdl = require('sigma-md-ytdl')
+const yts = require('sigma-md-yts')
 const fs = require('fs')
 var videotime = 60000 // 1000 min
 var dlsize = 250 // 250mb
